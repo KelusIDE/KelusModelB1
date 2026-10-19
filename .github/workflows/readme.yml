@@ -1,0 +1,41 @@
+name: README
+
+# Regenerates README.md's hero, badges, scores, and training status
+# whenever their inputs change. See kelus/readme.py.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'reports/**'
+      - 'site/model/b1.json'
+      - 'kelus/readme.py'
+      - 'README.md'
+      - '.github/workflows/readme.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: readme
+  cancel-in-progress: false
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Regenerate README and figures
+        run: python3 -m kelus.readme
+      - name: Commit changes
+        run: |
+          git add README.md assets/readme
+          if git diff --cached --quiet; then
+            echo "README is already current."
+            exit 0
+          fi
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git commit -m 'docs: refresh generated README sections'
+          git pull --rebase origin main
+          git push

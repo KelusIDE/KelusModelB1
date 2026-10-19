@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 368" width="1000" height="368" role="img" aria-label="Foundation pretraining at step 3,145 of 4,000; validation loss 2.684.">
+<title>Foundation pretraining at step 3,145 of 4,000; validation loss 2.684.</title>
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #0f1a14; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+.muted { fill: #66726c; }
+.secondary { fill: #46564d; }
+.halo { paint-order: stroke; stroke: #fbfcfb; stroke-width: 4px; stroke-linejoin: round; }
+@keyframes fade { from { opacity: 0; } }
+.meter { transform-box: fill-box; transform-origin: left; animation: grow 1s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.line { stroke-dasharray: 1; animation: draw 1.6s ease-out backwards; }
+.area { animation: fade 0.8s ease-out 1.2s backwards; }
+.end { animation: fade 0.3s ease-out 1.5s backwards; }
+@keyframes grow { from { transform: scaleX(0); } }
+@keyframes draw { from { stroke-dashoffset: 1; } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect x="0.5" y="0.5" width="999" height="367" rx="16" fill="#fbfcfb" stroke="#dfe7e2"/>
+<text x="40" y="44" font-size="18" font-weight="600">Foundation pretraining</text>
+<text class="muted" x="40" y="68" font-size="13">8,691,840 parameters · sampled validation loss, nats per token (lower is better) · snapshot 2026-10-19 23:24 UTC</text>
+<text x="40" y="104" font-size="14" font-weight="600">Step 3,145 of 4,000</text>
+<text class="secondary" x="960" y="104" font-size="14" text-anchor="end">78%</text>
+<rect x="40" y="114" width="920" height="8" rx="4" fill="#1f8a5b" fill-opacity="0.18"/>
+<rect class="meter" x="40" y="114" width="717.6" height="8" rx="4" fill="#1f8a5b"/>
+<line x1="88" y1="316.0" x2="960" y2="316.0" stroke="#c3cdc7" stroke-width="1"/><text class="muted" x="78" y="320.0" font-size="12" text-anchor="end">0</text>
+<line x1="88" y1="284.0" x2="960" y2="284.0" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="78" y="288.0" font-size="12" text-anchor="end">2</text>
+<line x1="88" y1="252.0" x2="960" y2="252.0" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="78" y="256.0" font-size="12" text-anchor="end">4</text>
+<line x1="88" y1="220.0" x2="960" y2="220.0" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="78" y="224.0" font-size="12" text-anchor="end">6</text>
+<line x1="88" y1="188.0" x2="960" y2="188.0" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="78" y="192.0" font-size="12" text-anchor="end">8</text>
+<line x1="88" y1="156.0" x2="960" y2="156.0" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="78" y="160.0" font-size="12" text-anchor="end">10</text>
+<text class="muted" x="88.0" y="338" font-size="12" text-anchor="middle">0</text>
+<text class="muted" x="306.0" y="338" font-size="12" text-anchor="middle">1K</text>
+<text class="muted" x="524.0" y="338" font-size="12" text-anchor="middle">2K</text>
+<text class="muted" x="742.0" y="338" font-size="12" text-anchor="middle">3K</text>
+<text class="muted" x="960.0" y="338" font-size="12" text-anchor="middle">4K</text>
+<text class="muted" x="960" y="356" font-size="12" text-anchor="end">optimizer step</text>
+<path class="area" d="M88.0,316 L88.0,182.2 90.4,189.1 98.9,212.7 109.8,224.5 120.7,232.1 131.6,237.8 142.5,241.0 153.4,244.1 164.3,245.9 175.2,247.0 186.1,250.1 197.0,251.0 207.9,252.8 218.8,253.6 229.7,255.0 240.6,255.5 251.5,256.3 262.4,257.0 273.3,257.9 284.2,258.3 295.1,258.7 306.0,259.5 316.9,259.6 327.8,261.0 338.7,261.7 349.6,261.9 360.5,262.3 371.4,263.5 382.3,263.7 393.2,263.8 404.1,265.0 415.0,264.9 425.9,265.4 436.8,265.7 447.7,265.9 458.6,266.4 469.5,266.7 480.4,266.6 491.3,267.1 502.2,267.0 513.1,267.2 524.0,267.7 534.9,268.3 545.8,268.6 556.7,269.0 567.6,269.3 578.5,269.2 589.4,269.6 600.3,270.2 611.2,270.3 622.1,270.6 633.0,270.5 643.9,270.9 654.8,271.1 665.7,271.4 676.6,271.4 687.5,271.6 698.4,271.9 709.3,272.1 720.2,272.1 731.1,272.3 742.0,272.5 752.9,272.5 763.8,273.1 L763.8,316 Z" fill="#1f8a5b" fill-opacity="0.1"/>
+<path class="line" pathLength="1" d="M88.0,182.2 90.4,189.1 98.9,212.7 109.8,224.5 120.7,232.1 131.6,237.8 142.5,241.0 153.4,244.1 164.3,245.9 175.2,247.0 186.1,250.1 197.0,251.0 207.9,252.8 218.8,253.6 229.7,255.0 240.6,255.5 251.5,256.3 262.4,257.0 273.3,257.9 284.2,258.3 295.1,258.7 306.0,259.5 316.9,259.6 327.8,261.0 338.7,261.7 349.6,261.9 360.5,262.3 371.4,263.5 382.3,263.7 393.2,263.8 404.1,265.0 415.0,264.9 425.9,265.4 436.8,265.7 447.7,265.9 458.6,266.4 469.5,266.7 480.4,266.6 491.3,267.1 502.2,267.0 513.1,267.2 524.0,267.7 534.9,268.3 545.8,268.6 556.7,269.0 567.6,269.3 578.5,269.2 589.4,269.6 600.3,270.2 611.2,270.3 622.1,270.6 633.0,270.5 643.9,270.9 654.8,271.1 665.7,271.4 676.6,271.4 687.5,271.6 698.4,271.9 709.3,272.1 720.2,272.1 731.1,272.3 742.0,272.5 752.9,272.5 763.8,273.1" fill="none" stroke="#1f8a5b" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>
+<circle class="end" cx="763.8" cy="273.1" r="5" fill="#1f8a5b" stroke="#fbfcfb" stroke-width="2"/>
+<text class="end halo" x="773.8" y="263.1" font-size="13" font-weight="600">2.684</text>
+</svg>

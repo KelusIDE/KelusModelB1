@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" role="img" aria-label="Released model evaluation: Chat replies 75 of 115; Concept explanations 42 of 43; Code requests 31 of 31; Two-turn chats 10 of 10; Earlier wording suite 12 of 15; Context after earlier turns 179 of 184; Reported bug regressions 5 of 5; New Python specifications 0 of 4; Website structure checks 0 of 5">
+<title>Released model evaluation: Chat replies 75 of 115; Concept explanations 42 of 43; Code requests 31 of 31; Two-turn chats 10 of 10; Earlier wording suite 12 of 15; Context after earlier turns 179 of 184; Reported bug regressions 5 of 5; New Python specifications 0 of 4; Website structure checks 0 of 5</title>
+<style>
+text { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; fill: #0f1a14; }
+.mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; }
+.muted { fill: #66726c; }
+.secondary { fill: #46564d; }
+.halo { paint-order: stroke; stroke: #fbfcfb; stroke-width: 4px; stroke-linejoin: round; }
+@keyframes fade { from { opacity: 0; } }
+.bar { transform-box: fill-box; transform-origin: left; animation: grow 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) backwards; }
+.value { animation: fade 0.4s ease-out backwards; }
+@keyframes grow { from { transform: scaleX(0); } }
+@media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+</style>
+<rect x="0.5" y="0.5" width="999" height="559" rx="16" fill="#fbfcfb" stroke="#dfe7e2"/>
+<text x="40" y="44" font-size="18" font-weight="600">Released model evaluation</text><text class="muted" x="40" y="68" font-size="13">b1-v3.best · 431,424 parameters · temperature 0 · share of checks passed</text>
+<line x1="445.0" y1="132" x2="445.0" y2="516" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="445.0" y="536" font-size="12" text-anchor="middle">25%</text>
+<line x1="570.0" y1="132" x2="570.0" y2="516" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="570.0" y="536" font-size="12" text-anchor="middle">50%</text>
+<line x1="695.0" y1="132" x2="695.0" y2="516" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="695.0" y="536" font-size="12" text-anchor="middle">75%</text>
+<line x1="820.0" y1="132" x2="820.0" y2="516" stroke="#e3e9e5" stroke-width="1"/><text class="muted" x="820.0" y="536" font-size="12" text-anchor="middle">100%</text>
+<line x1="320" y1="132" x2="320" y2="516" stroke="#c3cdc7" stroke-width="1"/><text class="muted" x="320" y="536" font-size="12" text-anchor="middle">0%</text>
+<path class="bar" d="M320,141.0 H642.1 Q646.1,141.0 646.1,145.0 V153.0 Q646.1,157.0 642.1,157.0 H320 Z" fill="#1f8a5b" style="animation-delay: 0.00s"/>
+<path class="bar" d="M320,175.0 H804.4 Q808.4,175.0 808.4,179.0 V187.0 Q808.4,191.0 804.4,191.0 H320 Z" fill="#1f8a5b" style="animation-delay: 0.06s"/>
+<path class="bar" d="M320,209.0 H816.0 Q820.0,209.0 820.0,213.0 V221.0 Q820.0,225.0 816.0,225.0 H320 Z" fill="#1f8a5b" style="animation-delay: 0.12s"/>
+<path class="bar" d="M320,243.0 H816.0 Q820.0,243.0 820.0,247.0 V255.0 Q820.0,259.0 816.0,259.0 H320 Z" fill="#1f8a5b" style="animation-delay: 0.18s"/>
+<path class="bar" d="M320,277.0 H716.0 Q720.0,277.0 720.0,281.0 V289.0 Q720.0,293.0 716.0,293.0 H320 Z" fill="#1f8a5b" style="animation-delay: 0.24s"/>
+<path class="bar" d="M320,347.0 H802.4 Q806.4,347.0 806.4,351.0 V359.0 Q806.4,363.0 802.4,363.0 H320 Z" fill="#1f8a5b" style="animation-delay: 0.30s"/>
+<path class="bar" d="M320,381.0 H816.0 Q820.0,381.0 820.0,385.0 V393.0 Q820.0,397.0 816.0,397.0 H320 Z" fill="#1f8a5b" style="animation-delay: 0.36s"/>
+<text class="muted" x="40" y="122" font-size="12" letter-spacing="1">HELD-OUT WORDING, PRACTICED TOPICS</text>
+<text class="secondary" x="40" y="154.0" font-size="14">Chat replies</text>
+<text class="value halo" x="656.1" y="154.0" font-size="14" style="animation-delay: 0.50s">75/115 · 65%</text>
+<text class="secondary" x="40" y="188.0" font-size="14">Concept explanations</text>
+<text class="value halo" x="818.4" y="188.0" font-size="14" style="animation-delay: 0.56s">42/43 · 98%</text>
+<text class="secondary" x="40" y="222.0" font-size="14">Code requests</text>
+<text class="value halo" x="830.0" y="222.0" font-size="14" style="animation-delay: 0.62s">31/31 · 100%</text>
+<text class="secondary" x="40" y="256.0" font-size="14">Two-turn chats</text>
+<text class="value halo" x="830.0" y="256.0" font-size="14" style="animation-delay: 0.68s">10/10 · 100%</text>
+<text class="secondary" x="40" y="290.0" font-size="14">Earlier wording suite</text>
+<text class="value halo" x="730.0" y="290.0" font-size="14" style="animation-delay: 0.74s">12/15 · 80%</text>
+<text class="muted" x="40" y="328" font-size="12" letter-spacing="1">REGRESSION CHECKS</text>
+<text class="secondary" x="40" y="360.0" font-size="14">Context after earlier turns</text>
+<text class="value halo" x="816.4" y="360.0" font-size="14" style="animation-delay: 0.80s">179/184 · 97%</text>
+<text class="secondary" x="40" y="394.0" font-size="14">Reported bug regressions</text>
+<text class="value halo" x="830.0" y="394.0" font-size="14" style="animation-delay: 0.86s">5/5 · 100%</text>
+<text class="muted" x="40" y="432" font-size="12" letter-spacing="1">NEW TASKS</text>
+<text class="secondary" x="40" y="464.0" font-size="14">New Python specifications</text>
+<text class="value halo" x="330.0" y="464.0" font-size="14" style="animation-delay: 0.92s">0/4 · 0%</text>
+<text class="secondary" x="40" y="498.0" font-size="14">Website structure checks</text>
+<text class="value halo" x="330.0" y="498.0" font-size="14" style="animation-delay: 0.98s">0/5 · 0%</text>
+</svg>
