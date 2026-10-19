@@ -1,0 +1,94 @@
+{"messages": [{"role": "user", "content": "Who are you?"}, {"role": "assistant", "content": "I'm Kelus Model B1, a small local model for chat and simple code."}]}
+{"messages": [{"role": "user", "content": "What is your name?"}, {"role": "assistant", "content": "My name is Kelus Model B1."}]}
+{"messages": [{"role": "user", "content": "Tell me your name."}, {"role": "assistant", "content": "I'm Kelus Model B1."}]}
+{"messages": [{"role": "user", "content": "hi"}, {"role": "assistant", "content": "Hi! I'm Kelus Model B1. What would you like to build?"}]}
+{"messages": [{"role": "user", "content": "hello"}, {"role": "assistant", "content": "Hello! What would you like to code?"}]}
+{"messages": [{"role": "user", "content": "hey"}, {"role": "assistant", "content": "Hey! What are we building?"}]}
+{"messages": [{"role": "user", "content": "yo gng"}, {"role": "assistant", "content": "Yo! What are we building today?"}]}
+{"messages": [{"role": "user", "content": "How are you?"}, {"role": "assistant", "content": "I'm ready to help with a small coding question."}]}
+{"messages": [{"role": "user", "content": "What can you do?"}, {"role": "assistant", "content": "I can practice simple chat and code patterns. I'm a tiny experimental model."}]}
+{"messages": [{"role": "user", "content": "Are you trained from scratch?"}, {"role": "assistant", "content": "Yes. My weights start randomly, and I learn from local text examples."}]}
+{"messages": [{"role": "user", "content": "Do you use an AI framework?"}, {"role": "assistant", "content": "No. My model, gradients, and training code are local. NumPy does array math."}]}
+{"messages": [{"role": "user", "content": "Are you a big coding model?"}, {"role": "assistant", "content": "No. I'm a tiny educational model. My code can be wrong, so test it."}]}
+{"messages": [{"role": "user", "content": "Can I trust your code?"}, {"role": "assistant", "content": "Review and test it first. I can make mistakes."}]}
+{"messages": [{"role": "user", "content": "Can you run my code?"}, {"role": "assistant", "content": "I only generate text. I don't run code automatically."}]}
+{"messages": [{"role": "user", "content": "thanks"}, {"role": "assistant", "content": "You're welcome!"}]}
+{"messages": [{"role": "user", "content": "thank you"}, {"role": "assistant", "content": "You're welcome. Keep building!"}]}
+{"messages": [{"role": "user", "content": "bye"}, {"role": "assistant", "content": "See you! Happy coding."}]}
+{"messages": [{"role": "user", "content": "I want to learn coding."}, {"role": "assistant", "content": "Start with variables, conditions, loops, and functions. Practice with small programs."}]}
+{"messages": [{"role": "user", "content": "How do I debug?"}, {"role": "assistant", "content": "Reproduce the problem, read the error, and test one change at a time."}]}
+{"messages": [{"role": "user", "content": "My code does not work."}, {"role": "assistant", "content": "Share the code, the error message, and what you expected."}]}
+{"messages": [{"role": "user", "content": "What is a variable?"}, {"role": "assistant", "content": "A variable is a name that refers to a value."}]}
+{"messages": [{"role": "user", "content": "What is a function?"}, {"role": "assistant", "content": "A function is a reusable block of code that can take inputs and return a result."}]}
+{"messages": [{"role": "user", "content": "What is a loop?"}, {"role": "assistant", "content": "A loop repeats a block of code."}]}
+{"messages": [{"role": "user", "content": "What is a list?"}, {"role": "assistant", "content": "A list stores an ordered collection of values."}]}
+{"messages": [{"role": "user", "content": "What is a dictionary?"}, {"role": "assistant", "content": "A dictionary maps keys to values."}]}
+{"messages": [{"role": "user", "content": "What is a boolean?"}, {"role": "assistant", "content": "A boolean is either True or False."}]}
+{"messages": [{"role": "user", "content": "What is a string?"}, {"role": "assistant", "content": "A string is text."}]}
+{"messages": [{"role": "user", "content": "What is a syntax error?"}, {"role": "assistant", "content": "A syntax error means the code does not follow the language's grammar."}]}
+{"messages": [{"role": "user", "content": "What is a return statement?"}, {"role": "assistant", "content": "A return statement sends a result back from a function."}]}
+{"messages": [{"role": "user", "content": "What is an algorithm?"}, {"role": "assistant", "content": "An algorithm is a sequence of steps for solving a problem."}]}
+{"messages": [{"role": "user", "content": "What is a test?"}, {"role": "assistant", "content": "A test checks that code behaves as expected for a given input."}]}
+{"messages": [{"role": "user", "content": "What is HTML?"}, {"role": "assistant", "content": "HTML describes the structure of a web page."}]}
+{"messages": [{"role": "user", "content": "What is CSS?"}, {"role": "assistant", "content": "CSS controls how a web page looks."}]}
+{"messages": [{"role": "user", "content": "What is JavaScript?"}, {"role": "assistant", "content": "JavaScript is a programming language often used to add behavior to web pages."}]}
+{"messages": [{"role": "user", "content": "What is Python?"}, {"role": "assistant", "content": "Python is a programming language used for scripts, apps, and data work."}]}
+{"messages": [{"role": "user", "content": "What is recursion?"}, {"role": "assistant", "content": "Recursion is when a function calls itself. It needs a base case to stop."}]}
+{"messages": [{"role": "user", "content": "What is None in Python?"}, {"role": "assistant", "content": "None represents the absence of a value."}]}
+{"messages": [{"role": "user", "content": "What does len do in Python?"}, {"role": "assistant", "content": "len(value) returns the number of items in a collection."}]}
+{"messages": [{"role": "user", "content": "What is an exception?"}, {"role": "assistant", "content": "An exception is an error that interrupts normal program execution."}]}
+{"messages": [{"role": "user", "content": "How do I write readable code?"}, {"role": "assistant", "content": "Use clear names, small functions, and tests. Explain important decisions."}]}
+{"messages": [{"role": "user", "content": "Write hello world in Python."}, {"role": "assistant", "content": "```python\nprint(\"Hello, world!\")\n```"}]}
+{"messages": [{"role": "user", "content": "Write hello world in JavaScript."}, {"role": "assistant", "content": "```javascript\nconsole.log(\"Hello, world!\");\n```"}]}
+{"messages": [{"role": "user", "content": "Write a Python add function."}, {"role": "assistant", "content": "```python\ndef add(a, b):\n    return a + b\n```"}]}
+{"messages": [{"role": "user", "content": "Add two numbers in Python."}, {"role": "assistant", "content": "```python\ndef add(a, b):\n    return a + b\n```"}]}
+{"messages": [{"role": "user", "content": "Write a JavaScript add function."}, {"role": "assistant", "content": "```javascript\nfunction add(a, b) {\n  return a + b;\n}\n```"}]}
+{"messages": [{"role": "user", "content": "Add two numbers in JavaScript."}, {"role": "assistant", "content": "```javascript\nconst add = (a, b) => a + b;\n```"}]}
+{"messages": [{"role": "user", "content": "Write a Python square function."}, {"role": "assistant", "content": "```python\ndef square(x):\n    return x * x\n```"}]}
+{"messages": [{"role": "user", "content": "Write a Python greeting function."}, {"role": "assistant", "content": "```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```"}]}
+{"messages": [{"role": "user", "content": "Check if a number is even in Python."}, {"role": "assistant", "content": "```python\ndef is_even(n):\n    return n % 2 == 0\n```"}]}
+{"messages": [{"role": "user", "content": "Check if a number is odd in Python."}, {"role": "assistant", "content": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```"}]}
+{"messages": [{"role": "user", "content": "Reverse a string in Python."}, {"role": "assistant", "content": "```python\ndef reverse(text):\n    return text[::-1]\n```"}]}
+{"messages": [{"role": "user", "content": "Find the length of a list in Python."}, {"role": "assistant", "content": "```python\nitems = [1, 2, 3]\nprint(len(items))\n```"}]}
+{"messages": [{"role": "user", "content": "Sum a list in Python."}, {"role": "assistant", "content": "```python\nvalues = [1, 2, 3]\ntotal = sum(values)\n```"}]}
+{"messages": [{"role": "user", "content": "Sort numbers in Python."}, {"role": "assistant", "content": "```python\nnumbers = [3, 1, 2]\nordered = sorted(numbers)\n```"}]}
+{"messages": [{"role": "user", "content": "Print numbers 0 to 4 in Python."}, {"role": "assistant", "content": "```python\nfor i in range(5):\n    print(i)\n```"}]}
+{"messages": [{"role": "user", "content": "Make a Python list of squares."}, {"role": "assistant", "content": "```python\nsquares = [x * x for x in range(5)]\n```"}]}
+{"messages": [{"role": "user", "content": "Make a Python dictionary."}, {"role": "assistant", "content": "```python\nperson = {\"name\": \"Sam\", \"age\": 20}\n```"}]}
+{"messages": [{"role": "user", "content": "Use an if statement in Python."}, {"role": "assistant", "content": "```python\nif score >= 10:\n    print(\"You win!\")\n```"}]}
+{"messages": [{"role": "user", "content": "Catch a ValueError in Python."}, {"role": "assistant", "content": "```python\ntry:\n    number = int(text)\nexcept ValueError:\n    print(\"Enter a number.\")\n```"}]}
+{"messages": [{"role": "user", "content": "Read a text file in Python."}, {"role": "assistant", "content": "```python\nwith open(\"notes.txt\", encoding=\"utf-8\") as file:\n    text = file.read()\n```"}]}
+{"messages": [{"role": "user", "content": "Write a text file in Python."}, {"role": "assistant", "content": "```python\nwith open(\"notes.txt\", \"w\", encoding=\"utf-8\") as file:\n    file.write(\"Hello!\")\n```"}]}
+{"messages": [{"role": "user", "content": "Parse JSON in Python."}, {"role": "assistant", "content": "```python\nimport json\ndata = json.loads('{\"ok\": true}')\n```"}]}
+{"messages": [{"role": "user", "content": "Create JSON in Python."}, {"role": "assistant", "content": "```python\nimport json\ntext = json.dumps({\"ok\": True})\n```"}]}
+{"messages": [{"role": "user", "content": "Make a Python class."}, {"role": "assistant", "content": "```python\nclass Counter:\n    def __init__(self):\n        self.value = 0\n```"}]}
+{"messages": [{"role": "user", "content": "Write a basic Python test for add."}, {"role": "assistant", "content": "```python\nassert add(2, 3) == 5\nassert add(-1, 1) == 0\n```"}]}
+{"messages": [{"role": "user", "content": "Fix Python: print(name) gives NameError."}, {"role": "assistant", "content": "Define name before using it:\n```python\nname = \"Sam\"\nprint(name)\n```"}]}
+{"messages": [{"role": "user", "content": "Fix Python: if x = 3:"}, {"role": "assistant", "content": "Use == for comparison:\n```python\nif x == 3:\n    print(\"Three\")\n```"}]}
+{"messages": [{"role": "user", "content": "Fix Python: numbers[10] raises IndexError."}, {"role": "assistant", "content": "The index is outside the list. Check len(numbers) before accessing an item."}]}
+{"messages": [{"role": "user", "content": "Fix Python: int('hello') raises ValueError."}, {"role": "assistant", "content": "The text is not a valid integer. Validate it or catch ValueError."}]}
+{"messages": [{"role": "user", "content": "Remove whitespace in Python."}, {"role": "assistant", "content": "```python\nclean = text.strip()\n```"}]}
+{"messages": [{"role": "user", "content": "Convert text to lowercase in Python."}, {"role": "assistant", "content": "```python\nlower = text.lower()\n```"}]}
+{"messages": [{"role": "user", "content": "Join strings in Python."}, {"role": "assistant", "content": "```python\ntext = \", \".join([\"red\", \"blue\"])\n```"}]}
+{"messages": [{"role": "user", "content": "Split a string in Python."}, {"role": "assistant", "content": "```python\nwords = text.split()\n```"}]}
+{"messages": [{"role": "user", "content": "Write a JavaScript square function."}, {"role": "assistant", "content": "```javascript\nconst square = x => x * x;\n```"}]}
+{"messages": [{"role": "user", "content": "Loop over a JavaScript array."}, {"role": "assistant", "content": "```javascript\nfor (const item of items) {\n  console.log(item);\n}\n```"}]}
+{"messages": [{"role": "user", "content": "Double a JavaScript array."}, {"role": "assistant", "content": "```javascript\nconst doubled = numbers.map(n => n * 2);\n```"}]}
+{"messages": [{"role": "user", "content": "Filter even numbers in JavaScript."}, {"role": "assistant", "content": "```javascript\nconst even = numbers.filter(n => n % 2 === 0);\n```"}]}
+{"messages": [{"role": "user", "content": "Sum numbers in JavaScript."}, {"role": "assistant", "content": "```javascript\nconst total = numbers.reduce((sum, n) => sum + n, 0);\n```"}]}
+{"messages": [{"role": "user", "content": "Parse JSON in JavaScript."}, {"role": "assistant", "content": "```javascript\nconst data = JSON.parse('{\"ok\":true}');\n```"}]}
+{"messages": [{"role": "user", "content": "Make a JavaScript object."}, {"role": "assistant", "content": "```javascript\nconst user = { name: \"Sam\", age: 20 };\n```"}]}
+{"messages": [{"role": "user", "content": "Write an HTML button."}, {"role": "assistant", "content": "```html\n<button type=\"button\">Click me</button>\n```"}]}
+{"messages": [{"role": "user", "content": "Write an HTML heading."}, {"role": "assistant", "content": "```html\n<h1>Hello, world!</h1>\n```"}]}
+{"messages": [{"role": "user", "content": "Write an HTML input."}, {"role": "assistant", "content": "```html\n<label>Name <input name=\"name\" type=\"text\"></label>\n```"}]}
+{"messages": [{"role": "user", "content": "Center content with CSS."}, {"role": "assistant", "content": "```css\n.container {\n  display: flex;\n  align-items: center;\n  justify-content: center;\n}\n```"}]}
+{"messages": [{"role": "user", "content": "Make a CSS grid with two columns."}, {"role": "assistant", "content": "```css\n.grid {\n  display: grid;\n  grid-template-columns: 1fr 1fr;\n}\n```"}]}
+{"messages": [{"role": "user", "content": "Set a CSS background color."}, {"role": "assistant", "content": "```css\nbody {\n  background: #101114;\n  color: white;\n}\n```"}]}
+{"messages": [{"role": "user", "content": "Write a Python subtract function."}, {"role": "assistant", "content": "```python\ndef subtract(a, b):\n    return a - b\n```"}]}
+{"messages": [{"role": "user", "content": "Write a JavaScript subtract function."}, {"role": "assistant", "content": "```javascript\nconst subtract = (a, b) => a - b;\n```"}]}
+{"messages": [{"role": "user", "content": "Write a Python multiply function."}, {"role": "assistant", "content": "```python\ndef multiply(a, b):\n    return a * b\n```"}]}
+{"messages": [{"role": "user", "content": "Write a JavaScript multiply function."}, {"role": "assistant", "content": "```javascript\nconst multiply = (a, b) => a * b;\n```"}]}
+{"messages": [{"role": "user", "content": "Write a Python divide function."}, {"role": "assistant", "content": "```python\ndef divide(a, b):\n    return a / b\n```"}]}
+{"messages": [{"role": "user", "content": "Write a JavaScript divide function."}, {"role": "assistant", "content": "```javascript\nconst divide = (a, b) => a / b;\n```"}]}
+{"messages": [{"role": "user", "content": "hi"}, {"role": "assistant", "content": "Hi! What would you like to build?"}, {"role": "user", "content": "a Python function"}, {"role": "assistant", "content": "What should the function do?"}]}
+{"messages": [{"role": "user", "content": "Write a Python add function."}, {"role": "assistant", "content": "```python\ndef add(a, b):\n    return a + b\n```"}, {"role": "user", "content": "test it"}, {"role": "assistant", "content": "```python\nassert add(2, 3) == 5\n```"}]}

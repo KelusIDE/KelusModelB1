@@ -1,0 +1,573 @@
+{
+  "checkpoint": "checkpoints/b1-demo.npz",
+  "checkpoint_sha256": "c88e939f53fd1b8e840a49ac42abcdf3308a35b7004d844176b658c5b35a95bf",
+  "steps": 2000,
+  "parameters": 90048,
+  "temperature": 0,
+  "scores": {
+    "regression": {
+      "passed": 0,
+      "total": 5
+    },
+    "heldout": {
+      "passed": 0,
+      "total": 15
+    }
+  },
+  "screenshot_sequence": {
+    "passed": 1,
+    "total": 5,
+    "turns": [
+      {
+        "prompt": "Write a Python square function.",
+        "reply": "```python\ndef square(x):\n    return x * x\n```",
+        "passed": true
+      },
+      {
+        "prompt": "hello!",
+        "reply": "jern x\ner\"fy fil:\n`",
+        "passed": false
+      },
+      {
+        "prompt": "what",
+        "reply": "jextm(in  \":\n   \", \",          \",  de(n(n(nturefurentureatamededefurredexturef",
+        "passed": false
+      },
+      {
+        "prompt": "hi!",
+        "reply": "``",
+        "passed": false
+      },
+      {
+        "prompt": "hello",
+        "reply": "``````",
+        "passed": false
+      }
+    ]
+  },
+  "scope": "Known bug regressions and unseen wording on practiced topics. Chat uses keyword checks; six Python functions use whitelisted AST interpretation. Exploratory prompts are unscored. Not a general intelligence or coding benchmark.",
+  "results": [
+    {
+      "name": "hello punctuation",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "hello!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "HiHt wouldcomeldike b?",
+      "passed": false,
+      "seconds": 0.008
+    },
+    {
+      "name": "hi punctuation",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "hi!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "Hey! What are wer bulildo bues r amun\n``",
+      "passed": false,
+      "seconds": 0.014
+    },
+    {
+      "name": "clarification",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "what"
+        }
+      ],
+      "words": [
+        "misunderstood",
+        "clarify",
+        "rephrase"
+      ],
+      "reply": "eyer!gecous we wrteacab \".",
+      "passed": false,
+      "seconds": 0.009
+    },
+    {
+      "name": "hello after code",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a Python square function."
+        },
+        {
+          "role": "assistant",
+          "content": "```python\ndef square(x):\n    return x * x\n```"
+        },
+        {
+          "role": "user",
+          "content": "hello!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "jern x\ner\"fy fil:\n`",
+      "passed": false,
+      "seconds": 0.022
+    },
+    {
+      "name": "repair after code",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a Python square function."
+        },
+        {
+          "role": "assistant",
+          "content": "```python\ndef square(x):\n    return x * x\n```"
+        },
+        {
+          "role": "user",
+          "content": "what"
+        }
+      ],
+      "words": [
+        "misunderstood",
+        "clarify",
+        "rephrase"
+      ],
+      "reply": "Py(\"Son  * rarentef reen b\n",
+      "passed": false,
+      "seconds": 0.028
+    },
+    {
+      "name": "new greeting wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "hey there, Kelus!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "``;\nurs  d {\npytum bedtrdi\n rstue = {)\n      , ])\na rlumlue.",
+      "passed": false,
+      "seconds": 0.03
+    },
+    {
+      "name": "new introduction wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you tell me who you are?"
+        }
+      ],
+      "words": [
+        "kelus"
+      ],
+      "reply": "Aitimelvs, t.",
+      "passed": false,
+      "seconds": 0.006
+    },
+    {
+      "name": "new thanks wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "thank you, that was helpful!"
+        }
+      ],
+      "words": [
+        "welcome",
+        "glad"
+      ],
+      "reply": "```python\ncrid\ndin\nconteterlet =  ngr ngd(num\") )\n```",
+      "passed": false,
+      "seconds": 0.029
+    },
+    {
+      "name": "new help wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you help me write some code?"
+        }
+      ],
+      "words": [
+        "build",
+        "language",
+        "code"
+      ],
+      "reply": "mony bodicon rid.",
+      "passed": false,
+      "seconds": 0.008
+    },
+    {
+      "name": "new variable question",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "can you explain what a variable is?"
+        }
+      ],
+      "words": [
+        "name",
+        "value"
+      ],
+      "reply": "I sese corssereest m, f fhesedinde a itit.",
+      "passed": false,
+      "seconds": 0.024
+    },
+    {
+      "name": "new loop question",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "please explain what a loop does"
+        }
+      ],
+      "words": [
+        "repeat",
+        "repeats"
+      ],
+      "reply": "```python\ncrpll( sot = [1, \")\n```",
+      "passed": false,
+      "seconds": 0.018
+    },
+    {
+      "name": "new debugging question",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "my program is crashing, can you help?"
+        }
+      ],
+      "words": [
+        "error",
+        "code"
+      ],
+      "reply": "``pyt\ndinson = Jrpldublson \", arefumemechaldalluelfalifurtayt.",
+      "passed": false,
+      "seconds": 0.04
+    },
+    {
+      "name": "new clarification wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "wait, I don't get it"
+        }
+      ],
+      "words": [
+        "misunderstood",
+        "clarify",
+        "rephrase"
+      ],
+      "reply": "```hon\nwthes tk ayton\n     codeili odex \"ongrerutenumel1, weelolo nontektet(\"Esele.ledemeldy\")\n```",
+      "passed": false,
+      "seconds": 0.069
+    },
+    {
+      "name": "greeting in three-turn chat",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a Python square function."
+        },
+        {
+          "role": "assistant",
+          "content": "```python\ndef square(x):\n    return x * x\n```"
+        },
+        {
+          "role": "user",
+          "content": "thanks"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome!"
+        },
+        {
+          "role": "user",
+          "content": "hey there, Kelus!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "De\", = \", \")\n``",
+      "passed": false,
+      "seconds": 0.021
+    },
+    {
+      "name": "new addition code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you write a function in Python that adds two numbers?"
+        }
+      ],
+      "function": "add",
+      "trials": [
+        [
+          [
+            2,
+            3
+          ],
+          5
+        ],
+        [
+          [
+            -4,
+            4
+          ],
+          0
+        ],
+        [
+          [
+            0,
+            9
+          ],
+          9
+        ]
+      ],
+      "reply": "S. alld thao}\n``````",
+      "passed": false,
+      "seconds": 0.013
+    },
+    {
+      "name": "new square code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "please show Python code for squaring a number"
+        }
+      ],
+      "function": "square",
+      "trials": [
+        [
+          [
+            3
+          ],
+          9
+        ],
+        [
+          [
+            -4
+          ],
+          16
+        ],
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      "reply": "`````crissondgest son\n (5\ncena )\n`",
+      "passed": false,
+      "seconds": 0.022
+    },
+    {
+      "name": "new multiplication code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "help me multiply two numbers using Python"
+        }
+      ],
+      "function": "multiply",
+      "trials": [
+        [
+          [
+            3,
+            4
+          ],
+          12
+        ],
+        [
+          [
+            -2,
+            5
+          ],
+          -10
+        ]
+      ],
+      "reply": "````pytdytithodg(\") [1> \"r:\n``",
+      "passed": false,
+      "seconds": 0.017
+    },
+    {
+      "name": "new even code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "how can I check whether a number is even using Python?"
+        }
+      ],
+      "function": "is_even",
+      "trials": [
+        [
+          [
+            2
+          ],
+          true
+        ],
+        [
+          [
+            3
+          ],
+          false
+        ],
+        [
+          [
+            0
+          ],
+          true
+        ]
+      ],
+      "reply": "Anemurithat I felu e. iconsellumumilicesm.se ath.",
+      "passed": false,
+      "seconds": 0.038
+    },
+    {
+      "name": "new reverse code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you reverse a string using Python?"
+        }
+      ],
+      "function": "reverse",
+      "trials": [
+        [
+          [
+            "abc"
+          ],
+          "cba"
+        ],
+        [
+          [
+            ""
+          ],
+          ""
+        ],
+        [
+          [
+            "hello!"
+          ],
+          "!olleh"
+        ]
+      ],
+      "reply": "A riat wit.",
+      "passed": false,
+      "seconds": 0.005
+    },
+    {
+      "name": "new sum code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "please show a Python function that sums a list"
+        }
+      ],
+      "function": "total",
+      "trials": [
+        [
+          [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          6
+        ],
+        [
+          [
+            []
+          ],
+          0
+        ],
+        [
+          [
+            [
+              -2,
+              4
+            ]
+          ],
+          2
+        ]
+      ],
+      "reply": "````pldav:\nds,  rs rs: retura s => y) =urtas 0) {{\n```",
+      "passed": false,
+      "seconds": 0.04
+    },
+    {
+      "name": "exploration: what is the capital of France?",
+      "group": "exploratory",
+      "messages": [
+        {
+          "role": "user",
+          "content": "what is the capital of France?"
+        }
+      ],
+      "reply": "itillirnsust ons. isonsue t concolles (itsucs o ale ilist oro orit) ior.",
+      "passed": null,
+      "seconds": 0.049
+    },
+    {
+      "name": "exploration: can you build a complete Minecraft client?",
+      "group": "exploratory",
+      "messages": [
+        {
+          "role": "user",
+          "content": "can you build a complete Minecraft client?"
+        }
+      ],
+      "reply": "I de cone ar ces, sopl, coeses. a iodadacllorop.",
+      "passed": null,
+      "seconds": 0.031
+    },
+    {
+      "name": "exploration: write a Python web server with login and a database",
+      "group": "exploratory",
+      "messages": [
+        {
+          "role": "user",
+          "content": "write a Python web server with login and a database"
+        }
+      ],
+      "reply": "``",
+      "passed": null,
+      "seconds": 0.002
+    }
+  ]
+}

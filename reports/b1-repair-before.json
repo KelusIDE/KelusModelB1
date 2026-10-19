@@ -1,0 +1,42 @@
+[
+  {
+    "role": "user",
+    "content": "1+1?"
+  },
+  {
+    "role": "assistant",
+    "content": "I may have misunderstood. What would you like me to explain?"
+  },
+  {
+    "role": "user",
+    "content": "hi"
+  },
+  {
+    "role": "assistant",
+    "content": "Hi! I'm Kelus Model B1. What would you like to build?"
+  },
+  {
+    "role": "user",
+    "content": "can you code?"
+  },
+  {
+    "role": "assistant",
+    "content": "Sure. Tell me what you want to build and which programming language you want to use."
+  },
+  {
+    "role": "user",
+    "content": "nooo"
+  },
+  {
+    "role": "assistant",
+    "content": "You're welcome! What would you like to try next?"
+  },
+  {
+    "role": "user",
+    "content": "what date is today"
+  },
+  {
+    "role": "assistant",
+    "content": "A dictionary maps keys to values."
+  }
+]

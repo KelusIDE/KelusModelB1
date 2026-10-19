@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "status": "requested_training_targets_not_verified_capabilities",
+  "programming": {
+    "python": {"name": "Python", "aliases": ["py"]},
+    "javascript": {"name": "JavaScript", "aliases": ["js"]},
+    "typescript": {"name": "TypeScript", "aliases": ["ts"]},
+    "java": {"name": "Java", "aliases": []},
+    "c": {"name": "C", "aliases": []},
+    "cpp": {"name": "C++", "aliases": ["c++", "cplusplus"]},
+    "csharp": {"name": "C#", "aliases": ["c#", "cs"]},
+    "php": {"name": "PHP", "aliases": []},
+    "go": {"name": "Go", "aliases": ["golang"]},
+    "rust": {"name": "Rust", "aliases": ["rs"]},
+    "swift": {"name": "Swift", "aliases": []},
+    "kotlin": {"name": "Kotlin", "aliases": ["kt"]},
+    "ruby": {"name": "Ruby", "aliases": ["rb"]},
+    "sql": {"name": "SQL", "aliases": []},
+    "r": {"name": "R", "aliases": []},
+    "scala": {"name": "Scala", "aliases": []},
+    "perl": {"name": "Perl", "aliases": ["pl"]},
+    "dart": {"name": "Dart", "aliases": []},
+    "lua": {"name": "Lua", "aliases": []},
+    "cobol": {"name": "COBOL", "aliases": ["cob"]},
+    "powershell": {"name": "PowerShell", "aliases": ["ps1", "pwsh"]},
+    "zsh": {"name": "Zsh", "aliases": []},
+    "bash": {"name": "Bash", "aliases": []}
+  },
+  "chat": {
+    "en": {"name": "English", "aliases": ["english"]},
+    "ko": {"name": "Korean", "aliases": ["korean", "한국어"]},
+    "fr": {"name": "French", "aliases": ["french", "france", "français"]},
+    "es": {"name": "Spanish", "aliases": ["spanish", "español"]},
+    "de": {"name": "German", "aliases": ["german", "deutsch"]},
+    "zh-Hans": {"name": "Simplified Chinese", "aliases": ["zh-cn", "chinese simplified", "simplified chinese", "简体中文"]},
+    "zh-Hant": {"name": "Traditional Chinese", "aliases": ["zh-tw", "chinese traditional", "traditional chinese", "繁體中文"]}
+  },
+  "code_checks": ["implement_spec", "repair_bug", "edge_cases"],
+  "chat_checks": ["follow_instruction", "explain_code", "clarify_request"]
+}

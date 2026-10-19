@@ -1,0 +1,542 @@
+{
+  "checkpoint": "checkpoints/b1-conversation.npz",
+  "checkpoint_sha256": "0a97fc7faade520a58b2b8fe234c42ef1e2b100fd193a5bfab654946234f396d",
+  "steps": 3500,
+  "parameters": 554304,
+  "temperature": 0,
+  "scores": {
+    "regression": {
+      "passed": 5,
+      "total": 5
+    },
+    "heldout": {
+      "passed": 10,
+      "total": 15
+    }
+  },
+  "scope": "Known bug regressions and unseen wording on practiced topics. Chat uses keyword checks; six Python functions use whitelisted AST interpretation. Exploratory prompts are unscored. Not a general intelligence or coding benchmark.",
+  "results": [
+    {
+      "name": "hello punctuation",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "hello!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "passed": true,
+      "seconds": 0.032
+    },
+    {
+      "name": "hi punctuation",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "hi!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "passed": true,
+      "seconds": 0.011
+    },
+    {
+      "name": "clarification",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "what"
+        }
+      ],
+      "words": [
+        "explain",
+        "question",
+        "understand"
+      ],
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "passed": true,
+      "seconds": 0.008
+    },
+    {
+      "name": "hello after code",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a Python square function."
+        },
+        {
+          "role": "assistant",
+          "content": "```python\ndef square(x):\n    return x * x\n```"
+        },
+        {
+          "role": "user",
+          "content": "hello!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "passed": true,
+      "seconds": 0.023
+    },
+    {
+      "name": "repair after code",
+      "group": "regression",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a Python square function."
+        },
+        {
+          "role": "assistant",
+          "content": "```python\ndef square(x):\n    return x * x\n```"
+        },
+        {
+          "role": "user",
+          "content": "what"
+        }
+      ],
+      "words": [
+        "explain",
+        "question",
+        "understand"
+      ],
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "passed": true,
+      "seconds": 0.017
+    },
+    {
+      "name": "new greeting wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "hey there, Kelus!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "passed": true,
+      "seconds": 0.012
+    },
+    {
+      "name": "new introduction wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you tell me who you are?"
+        }
+      ],
+      "words": [
+        "kelus"
+      ],
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": false,
+      "seconds": 0.011
+    },
+    {
+      "name": "new thanks wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "thank you, that was helpful!"
+        }
+      ],
+      "words": [
+        "welcome",
+        "glad"
+      ],
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "passed": false,
+      "seconds": 0.014
+    },
+    {
+      "name": "new help wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you help me write some code?"
+        }
+      ],
+      "words": [
+        "build",
+        "language",
+        "code"
+      ],
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "passed": true,
+      "seconds": 0.015
+    },
+    {
+      "name": "new variable question",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "can you explain what a variable is?"
+        }
+      ],
+      "words": [
+        "name",
+        "value"
+      ],
+      "reply": "A variable is a name that refers to a value.",
+      "passed": true,
+      "seconds": 0.01
+    },
+    {
+      "name": "new loop question",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "please explain what a loop does"
+        }
+      ],
+      "words": [
+        "repeat",
+        "repeats"
+      ],
+      "reply": "```javascript\nfunction square(x) {\n  return x * x;\n}\n```",
+      "passed": false,
+      "seconds": 0.019
+    },
+    {
+      "name": "new debugging question",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "my program is crashing, can you help?"
+        }
+      ],
+      "words": [
+        "error",
+        "code"
+      ],
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "passed": true,
+      "seconds": 0.021
+    },
+    {
+      "name": "new clarification wording",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "wait, I don't get it"
+        }
+      ],
+      "words": [
+        "explain",
+        "understand",
+        "question"
+      ],
+      "reply": "That is outside what I can reliably answer. Could you ask a small coding question or describe one specific part?",
+      "passed": true,
+      "seconds": 0.018
+    },
+    {
+      "name": "greeting in three-turn chat",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Write a Python square function."
+        },
+        {
+          "role": "assistant",
+          "content": "```python\ndef square(x):\n    return x * x\n```"
+        },
+        {
+          "role": "user",
+          "content": "thanks"
+        },
+        {
+          "role": "assistant",
+          "content": "You're welcome!"
+        },
+        {
+          "role": "user",
+          "content": "hey there, Kelus!"
+        }
+      ],
+      "words": [
+        "hi",
+        "hello"
+      ],
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": false,
+      "seconds": 0.021
+    },
+    {
+      "name": "new addition code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you write a function in Python that adds two numbers?"
+        }
+      ],
+      "function": "add",
+      "trials": [
+        [
+          [
+            2,
+            3
+          ],
+          5
+        ],
+        [
+          [
+            -4,
+            4
+          ],
+          0
+        ],
+        [
+          [
+            0,
+            9
+          ],
+          9
+        ]
+      ],
+      "reply": "```python\ndef add(a, b):\n    return a + b\n```",
+      "passed": true,
+      "seconds": 0.019
+    },
+    {
+      "name": "new square code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "please show Python code for squaring a number"
+        }
+      ],
+      "function": "square",
+      "trials": [
+        [
+          [
+            3
+          ],
+          9
+        ],
+        [
+          [
+            -4
+          ],
+          16
+        ],
+        [
+          [
+            0
+          ],
+          0
+        ]
+      ],
+      "reply": "```python\ndef double(x):\n    return x * 2\n```",
+      "passed": false,
+      "seconds": 0.016
+    },
+    {
+      "name": "new multiplication code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "help me multiply two numbers using Python"
+        }
+      ],
+      "function": "multiply",
+      "trials": [
+        [
+          [
+            3,
+            4
+          ],
+          12
+        ],
+        [
+          [
+            -2,
+            5
+          ],
+          -10
+        ]
+      ],
+      "reply": "```python\ndef multiply(a, b):\n    return a * b\n```",
+      "passed": true,
+      "seconds": 0.018
+    },
+    {
+      "name": "new even code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "how can I check whether a number is even using Python?"
+        }
+      ],
+      "function": "is_even",
+      "trials": [
+        [
+          [
+            2
+          ],
+          true
+        ],
+        [
+          [
+            3
+          ],
+          false
+        ],
+        [
+          [
+            0
+          ],
+          true
+        ]
+      ],
+      "reply": "```python\ndef is_even(n):\n    return n % 2 == 0\n```",
+      "passed": true,
+      "seconds": 0.025
+    },
+    {
+      "name": "new reverse code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "could you reverse a string using Python?"
+        }
+      ],
+      "function": "reverse",
+      "trials": [
+        [
+          [
+            "abc"
+          ],
+          "cba"
+        ],
+        [
+          [
+            ""
+          ],
+          ""
+        ],
+        [
+          [
+            "hello!"
+          ],
+          "!olleh"
+        ]
+      ],
+      "reply": "```python\ndef reverse(text):\n    return text[::-1]\n```",
+      "passed": true,
+      "seconds": 0.019
+    },
+    {
+      "name": "new sum code",
+      "group": "heldout",
+      "messages": [
+        {
+          "role": "user",
+          "content": "please show a Python function that sums a list"
+        }
+      ],
+      "function": "total",
+      "trials": [
+        [
+          [
+            [
+              1,
+              2,
+              3
+            ]
+          ],
+          6
+        ],
+        [
+          [
+            []
+          ],
+          0
+        ],
+        [
+          [
+            [
+              -2,
+              4
+            ]
+          ],
+          2
+        ]
+      ],
+      "reply": "```python\ndef total(values):\n    return sum(values)\n```",
+      "passed": true,
+      "seconds": 0.016
+    },
+    {
+      "name": "exploration: what is the capital of France?",
+      "group": "exploratory",
+      "messages": [
+        {
+          "role": "user",
+          "content": "what is the capital of France?"
+        }
+      ],
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "passed": null,
+      "seconds": 0.021
+    },
+    {
+      "name": "exploration: can you build a complete Minecraft client?",
+      "group": "exploratory",
+      "messages": [
+        {
+          "role": "user",
+          "content": "can you build a complete Minecraft client?"
+        }
+      ],
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "passed": null,
+      "seconds": 0.06
+    },
+    {
+      "name": "exploration: write a Python web server with login and a database",
+      "group": "exploratory",
+      "messages": [
+        {
+          "role": "user",
+          "content": "write a Python web server with login and a database"
+        }
+      ],
+      "reply": "Python is a programming language used for scripts, apps, and data work.",
+      "passed": null,
+      "seconds": 0.012
+    }
+  ]
+}

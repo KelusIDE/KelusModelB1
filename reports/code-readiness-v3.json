@@ -1,0 +1,47 @@
+{
+  "checkpoint": "checkpoints/b1-v3.best.npz",
+  "sha256": "05e282cc359f6de3d35e2f9a2ee76f8d702d57fa0ac2ad923866be931574bd78",
+  "parameters": 431424,
+  "steps": 10000,
+  "scope": "Small development readiness check prompted by the requested coding/website capability. Not a general intelligence benchmark. Website checks are structural only and do not establish functionality.",
+  "python_passed": 0,
+  "python_total": 4,
+  "python": [
+    {
+      "name": "three_inputs",
+      "prompt": "Write a Python function add_three(a, b, c) that adds all three arguments. Return only the function.",
+      "reply": "A return statement sends a result back from a function.",
+      "passed": false
+    },
+    {
+      "name": "new_composition",
+      "prompt": "Write a Python function cube(x) that returns x multiplied by itself three times. Return only the function.",
+      "reply": "A return statement sends a result back from a function.",
+      "passed": false
+    },
+    {
+      "name": "follow_specification",
+      "prompt": "Write a Python function final_price(price, tax_rate) that returns price * (1 + tax_rate). Return only the function.",
+      "reply": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "passed": false
+    },
+    {
+      "name": "custom_name",
+      "prompt": "Write a Python function triple_score(score) that returns score * 3. Use exactly that function name. Return only the function.",
+      "reply": "A return statement sends a result back from a function.",
+      "passed": false
+    }
+  ],
+  "website": {
+    "prompt": "Build a complete single-file HTML website with inline CSS and JavaScript. Include a heading, a visible counter starting at 0, and a button that increases the counter when clicked. Return the complete HTML document.",
+    "reply": "```javascript\nfunction square(x) {\n  return x * x;\n}\n```",
+    "structure_checks": {
+      "html_document": false,
+      "heading": false,
+      "button": false,
+      "inline_css": false,
+      "inline_javascript": false
+    },
+    "behavior_tested": false
+  }
+}

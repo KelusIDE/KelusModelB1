@@ -1,0 +1,132 @@
+{
+  "checkpoint": "checkpoints/b1-v3.best.npz",
+  "sha256": "05e282cc359f6de3d35e2f9a2ee76f8d702d57fa0ac2ad923866be931574bd78",
+  "metadata": {
+    "data_sha256": "f9dbf0e61fc62c8a8bb140ddef3c920cc9c78f829d9d7b21945dfd613008f2f7",
+    "seed": 42,
+    "base_learning_rate": 0.0015,
+    "training_examples": 37075,
+    "validation_examples": 1160,
+    "dataset_tokens": 1890217,
+    "educational_demo": true,
+    "validation_method": "all assistant targets, overlap scored once",
+    "tokenizer": "bpe",
+    "training_targets": "all assistant replies",
+    "steps": 10000,
+    "train_loss": 0.0015336957294493914,
+    "validation_loss": 0.0049471750772909,
+    "trained_at": "2026-10-19T03:24:55Z",
+    "context_tokens": 256,
+    "rng_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 233366118927508410417965535633033856456,
+        "inc": 332724090758049132448979897138935081983
+      },
+      "has_uint32": 0,
+      "uinteger": 1530434462
+    },
+    "selection": "lowest full-validation loss"
+  },
+  "scope": "Small disclosed development probes, not a general intelligence benchmark. Screenshot prompts deliberately covered by training or explicit helpers. Probe checks are keyword checks; read the raw outputs.",
+  "sequence": [
+    {
+      "prompt": "1+1?",
+      "reply": "1+1 = 2",
+      "source": "local_calculator",
+      "omitted": 0,
+      "passed": true
+    },
+    {
+      "prompt": "hi",
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "source": "model",
+      "omitted": 2,
+      "passed": true
+    },
+    {
+      "prompt": "can you code?",
+      "reply": "Yes. I can write small Python and JavaScript examples. Tell me what you want to build and which language to use.",
+      "source": "model",
+      "omitted": 2,
+      "passed": true
+    },
+    {
+      "prompt": "nooo",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "source": "model",
+      "omitted": 4,
+      "passed": true
+    },
+    {
+      "prompt": "what date is today",
+      "reply": "Today is Sunday, October 18, 2026 (EDT, this computer's clock).",
+      "source": "local_clock",
+      "omitted": 6,
+      "passed": true
+    },
+    {
+      "prompt": "Write a Python square function.",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "source": "model",
+      "omitted": 10,
+      "passed": true
+    },
+    {
+      "prompt": "What is a variable?",
+      "reply": "A variable is a name that refers to a value.",
+      "source": "model",
+      "omitted": 10,
+      "passed": true
+    },
+    {
+      "prompt": "what",
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "source": "model",
+      "omitted": 12,
+      "passed": true
+    }
+  ],
+  "sequence_passed": 8,
+  "sequence_total": 8,
+  "probes": [
+    {
+      "prompt": "Can you help me program something?",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "nah that is not what I meant",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "could we write a little code together?",
+      "reply": "```python\ndef multiply(a, b):\n    return a * b\n```",
+      "source": "model",
+      "passed": false
+    },
+    {
+      "prompt": "could you tell me who you are?",
+      "reply": "I'm Kelus Model B1, a small model trained locally from scratch for basic chat and code.",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "thank you, that was helpful!",
+      "reply": "You're welcome! What would you like to try next?",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "can you explain what a variable is?",
+      "reply": "A variable is a name that refers to a value.",
+      "source": "model",
+      "passed": true
+    }
+  ],
+  "probes_passed": 5,
+  "probes_total": 6
+}

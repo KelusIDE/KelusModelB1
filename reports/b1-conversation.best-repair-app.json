@@ -1,0 +1,129 @@
+{
+  "checkpoint": "checkpoints/b1-conversation.best.npz",
+  "sha256": "0d80db8b46020d6d2be317172c69bb00dbebfed4d87a04ebce70654c5d1f56df",
+  "metadata": {
+    "data_sha256": "0e2bc124e4b03c3e29dbadf7f0e71b8c7fbfc720d51dbb4f059e9471846a32dc",
+    "seed": 42,
+    "base_learning_rate": 0.0015,
+    "training_examples": 5875,
+    "validation_examples": 181,
+    "dataset_tokens": 303049,
+    "educational_demo": true,
+    "steps": 4000,
+    "train_loss": 0.00026052934117615223,
+    "validation_loss": 0.10127175971730436,
+    "trained_at": "2026-10-19T00:32:07Z",
+    "context_tokens": 256,
+    "rng_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 260684917791234973893960861261309437896,
+        "inc": 332724090758049132448979897138935081983
+      },
+      "has_uint32": 0,
+      "uinteger": 2304200766
+    },
+    "selection": "lowest full-validation loss"
+  },
+  "scope": "Small disclosed development probes, not a general intelligence benchmark. Screenshot prompts deliberately covered by training or explicit helpers. Probe checks are keyword checks; read the raw outputs.",
+  "sequence": [
+    {
+      "prompt": "1+1?",
+      "reply": "1+1 = 2",
+      "source": "local_calculator",
+      "omitted": 0,
+      "passed": true
+    },
+    {
+      "prompt": "hi",
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "source": "model",
+      "omitted": 2,
+      "passed": true
+    },
+    {
+      "prompt": "can you code?",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "source": "model",
+      "omitted": 2,
+      "passed": false
+    },
+    {
+      "prompt": "nooo",
+      "reply": "You're welcome! What would you like to try next?",
+      "source": "model",
+      "omitted": 4,
+      "passed": false
+    },
+    {
+      "prompt": "what date is today",
+      "reply": "Today is Sunday, October 18, 2026 (EDT, this computer's clock).",
+      "source": "local_clock",
+      "omitted": 6,
+      "passed": true
+    },
+    {
+      "prompt": "Write a Python square function.",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "source": "model",
+      "omitted": 10,
+      "passed": true
+    },
+    {
+      "prompt": "What is a variable?",
+      "reply": "A variable is a name that refers to a value.",
+      "source": "model",
+      "omitted": 10,
+      "passed": true
+    },
+    {
+      "prompt": "what",
+      "reply": "A variable is a name that refers to a value.",
+      "source": "model",
+      "omitted": 12,
+      "passed": false
+    }
+  ],
+  "sequence_passed": 5,
+  "sequence_total": 8,
+  "probes": [
+    {
+      "prompt": "Can you help me program something?",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "nah that is not what I meant",
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "source": "model",
+      "passed": false
+    },
+    {
+      "prompt": "could we write a little code together?",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "could you tell me who you are?",
+      "reply": "I'm ready to help. What are you working on?",
+      "source": "model",
+      "passed": false
+    },
+    {
+      "prompt": "thank you, that was helpful!",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "source": "model",
+      "passed": false
+    },
+    {
+      "prompt": "can you explain what a variable is?",
+      "reply": "A variable is a name that refers to a value.",
+      "source": "model",
+      "passed": true
+    }
+  ],
+  "probes_passed": 3,
+  "probes_total": 6
+}

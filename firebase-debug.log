@@ -1,0 +1,41 @@
+[debug] [2026-10-19T12:28:41.964Z] ----------------------------------------------------------------------
+[debug] [2026-10-19T12:28:41.967Z] Command:       /opt/homebrew/Cellar/node/26.7.0/bin/node /Users/hashtagpro/.nvm/versions/node/v25.2.1/bin/firebase hosting:sites:list --project kelus-ide --json --non-interactive
+[debug] [2026-10-19T12:28:41.967Z] CLI Version:   15.33.0
+[debug] [2026-10-19T12:28:41.967Z] Platform:      darwin
+[debug] [2026-10-19T12:28:41.967Z] Node Version:  v26.7.0
+[debug] [2026-10-19T12:28:41.967Z] Detected Agent: codex_cli
+[debug] [2026-10-19T12:28:41.967Z] Time:          Mon Oct 19 2026 08:28:41 GMT-0400 (Eastern Daylight Time)
+[debug] [2026-10-19T12:28:41.967Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-10-19T12:28:42.042Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-10-19T12:28:42.043Z] > authorizing via signed-in user (chatgpt.ai.5.2o2@gmail.com)
+[debug] [2026-10-19T12:28:42.043Z] [iam] checking project kelus-ide for permissions ["firebase.projects.get","firebasehosting.sites.get"]
+[debug] [2026-10-19T12:28:42.048Z] Checked if tokens are valid: false, expires at: 1792384475865
+[debug] [2026-10-19T12:28:42.048Z] Checked if tokens are valid: false, expires at: 1792384475865
+[debug] [2026-10-19T12:28:42.048Z] > refreshing access token with scopes: []
+[debug] [2026-10-19T12:28:42.049Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2026-10-19T12:28:42.049Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-19T12:28:42.171Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2026-10-19T12:28:42.171Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2026-10-19T12:28:42.182Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelus-ide:testIamPermissions [none]
+[debug] [2026-10-19T12:28:42.182Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelus-ide:testIamPermissions  x-goog-user-project=kelus-ide
+[debug] [2026-10-19T12:28:42.182Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelus-ide:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.get"]}
+[debug] [2026-10-19T12:28:42.382Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelus-ide:testIamPermissions 200
+[debug] [2026-10-19T12:28:42.382Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/kelus-ide:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.get"]}
+[debug] [2026-10-19T12:28:42.382Z] Checked if tokens are valid: true, expires at: 1792416521171
+[debug] [2026-10-19T12:28:42.382Z] Checked if tokens are valid: true, expires at: 1792416521171
+[debug] [2026-10-19T12:28:42.382Z] >>> [apiv2][query] GET https://firebasehosting.googleapis.com/v1beta1/projects/kelus-ide/sites pageToken=&pageSize=10
+[debug] [2026-10-19T12:28:42.801Z] <<< [apiv2][status] GET https://firebasehosting.googleapis.com/v1beta1/projects/kelus-ide/sites 200
+[debug] [2026-10-19T12:28:42.801Z] <<< [apiv2][body] GET https://firebasehosting.googleapis.com/v1beta1/projects/kelus-ide/sites {"sites":[{"name":"projects/kelus-ide/sites/kelus-b1","defaultUrl":"https://kelus-b1.web.app","type":"USER_SITE"},{"name":"projects/kelus-ide/sites/kelus-deck","defaultUrl":"https://kelus-deck.web.app","type":"USER_SITE"},{"name":"projects/kelus-ide/sites/kelus-ide","defaultUrl":"https://kelus-ide.web.app","type":"DEFAULT_SITE"}]}
+[info] 
+[info] Sites for project kelus-ide
+[info] 
+[info] ┌────────────┬────────────────────────────┬─────────────────┐
+│ Site ID    │ Default URL                │ App ID (if set) │
+├────────────┼────────────────────────────┼─────────────────┤
+│ kelus-b1   │ https://kelus-b1.web.app   │ --              │
+├────────────┼────────────────────────────┼─────────────────┤
+│ kelus-deck │ https://kelus-deck.web.app │ --              │
+├────────────┼────────────────────────────┼─────────────────┤
+│ kelus-ide  │ https://kelus-ide.web.app  │ --              │
+└────────────┴────────────────────────────┴─────────────────┘

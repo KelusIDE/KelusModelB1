@@ -1,0 +1,135 @@
+{
+  "checkpoint": "checkpoints/b1-current.npz",
+  "sha256": "40f3707d0fa6e49f1d58360dd85af3fc5d4f79a454bf4fb73e98ed4bf5a1248f",
+  "metadata": {
+    "parent_steps": 4000,
+    "parent_sha256": "0d80db8b46020d6d2be317172c69bb00dbebfed4d87a04ebce70654c5d1f56df",
+    "data_sha256": "4766a75bb0f3f75f5d675313a80908a2a0fbc9423a4f8ad93e896b017809ecd9",
+    "seed": 42,
+    "base_learning_rate": 0.0003,
+    "training_examples": 9663,
+    "validation_examples": 243,
+    "dataset_tokens": 455025,
+    "educational_demo": true,
+    "validation_method": "all assistant targets, overlap scored once",
+    "tokenizer": "bpe",
+    "training_targets": "last assistant reply, earlier turns provide context",
+    "steps": 5500,
+    "train_loss": 0.0034576368052512407,
+    "validation_loss": 0.10764055407169745,
+    "trained_at": "2026-10-19T01:33:50Z",
+    "context_tokens": 256,
+    "rng_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 221105455619877715709170822168487601576,
+        "inc": 332724090758049132448979897138935081983
+      },
+      "has_uint32": 0,
+      "uinteger": 2650789070
+    },
+    "selection": "Lowest final-reply validation loss in v2 curriculum, gated by eight-turn application and five legacy regression checks",
+    "refinement_steps": 1500
+  },
+  "scope": "Small disclosed development probes, not a general intelligence benchmark. Screenshot prompts deliberately covered by training or explicit helpers. Probe checks are keyword checks; read the raw outputs.",
+  "sequence": [
+    {
+      "prompt": "1+1?",
+      "reply": "1+1 = 2",
+      "source": "local_calculator",
+      "omitted": 0,
+      "passed": true
+    },
+    {
+      "prompt": "hi",
+      "reply": "Hi! I'm Kelus Model B1. What would you like to build?",
+      "source": "model",
+      "omitted": 2,
+      "passed": true
+    },
+    {
+      "prompt": "can you code?",
+      "reply": "Yes. I can write small Python and JavaScript examples. Tell me what you want to build and which language to use.",
+      "source": "model",
+      "omitted": 2,
+      "passed": true
+    },
+    {
+      "prompt": "nooo",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "source": "model",
+      "omitted": 4,
+      "passed": true
+    },
+    {
+      "prompt": "what date is today",
+      "reply": "Today is Sunday, October 18, 2026 (EDT, this computer's clock).",
+      "source": "local_clock",
+      "omitted": 6,
+      "passed": true
+    },
+    {
+      "prompt": "Write a Python square function.",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "source": "model",
+      "omitted": 10,
+      "passed": true
+    },
+    {
+      "prompt": "What is a variable?",
+      "reply": "A variable is a name that refers to a value.",
+      "source": "model",
+      "omitted": 10,
+      "passed": true
+    },
+    {
+      "prompt": "what",
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "source": "model",
+      "omitted": 12,
+      "passed": true
+    }
+  ],
+  "sequence_passed": 8,
+  "sequence_total": 8,
+  "probes": [
+    {
+      "prompt": "Can you help me program something?",
+      "reply": "Yes. I can write small Python and JavaScript examples. Tell me what you want to build and which language to use.",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "nah that is not what I meant",
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "could we write a little code together?",
+      "reply": "You're welcome! What would you like to try next?",
+      "source": "model",
+      "passed": false
+    },
+    {
+      "prompt": "could you tell me who you are?",
+      "reply": "I'm Kelus Model B1, a small model trained locally from scratch for basic chat and code.",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "thank you, that was helpful!",
+      "reply": "You're welcome! What would you like to try next?",
+      "source": "model",
+      "passed": true
+    },
+    {
+      "prompt": "can you explain what a variable is?",
+      "reply": "A variable is a name that refers to a value.",
+      "source": "model",
+      "passed": true
+    }
+  ],
+  "probes_passed": 5,
+  "probes_total": 6
+}

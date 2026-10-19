@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+checkpoints/
+training-runs/
+.DS_Store
+
+# Reproducible downloaded/tokenized foundation corpus
+data/foundation/
+data/foundation-copy/
