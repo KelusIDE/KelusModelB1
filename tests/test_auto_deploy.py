@@ -8,6 +8,30 @@ from kelus.auto_deploy import digest, gate, read, tick, tree_digest, write
 from kelus.languages import scope_sha256, verification_template
 
 
+class PlatformTLSVerificationTests(unittest.TestCase):
+    def test_certificate_fallback_keeps_tls_verification_enabled(self):
+        import ssl
+        import subprocess
+        from urllib.error import URLError
+        from unittest.mock import patch
+        from kelus.auto_deploy import fetch_verified
+        url='https://kelus-b1.web.app/model/b1.json'
+        with patch('kelus.auto_deploy.urlopen',side_effect=URLError(ssl.SSLCertVerificationError('missing local CA'))), patch('kelus.auto_deploy.subprocess.run',return_value=subprocess.CompletedProcess([],0,stdout=b'verified')) as run:
+            self.assertEqual(fetch_verified(url),b'verified')
+        args=run.call_args.args[0]
+        self.assertIn('--proto',args); self.assertIn('=https',args)
+        self.assertNotIn('--insecure',args); self.assertNotIn('-k',args)
+        self.assertTrue(run.call_args.kwargs['check'])
+
+    def test_other_network_failures_are_not_masked(self):
+        from urllib.error import URLError
+        from unittest.mock import patch
+        from kelus.auto_deploy import fetch_verified
+        with patch('kelus.auto_deploy.urlopen',side_effect=URLError('offline')), patch('kelus.auto_deploy.subprocess.run') as run:
+            with self.assertRaises(URLError): fetch_verified('https://kelus-b1.web.app')
+            run.assert_not_called()
+
+
 class AutoDeployTests(unittest.TestCase):
     def setUp(self):
         self.temp = tempfile.TemporaryDirectory()

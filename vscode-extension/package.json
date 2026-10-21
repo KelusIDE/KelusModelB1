@@ -1,0 +1,114 @@
+{
+  "name": "kani",
+  "displayName": "Kani Seal 3",
+  "description": "Chat with Kani Seal 3, a small language model trained from scratch by the Kelus project, running on your computer.",
+  "version": "0.2.0",
+  "publisher": "kelus",
+  "license": "Apache-2.0",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/KelusIDE/KelusModelB1",
+    "directory": "vscode-extension"
+  },
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "AI",
+    "Chat"
+  ],
+  "main": "./extension.js",
+  "scripts": {
+    "test": "node --test",
+    "package": "npx --yes @vscode/vsce package --no-dependencies --skip-license"
+  },
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "kani",
+          "title": "Kani Seal 3",
+          "icon": "media/activity.svg"
+        }
+      ]
+    },
+    "views": {
+      "kani": [
+        {
+          "type": "webview",
+          "id": "kani.chat",
+          "name": "Chat",
+          "icon": "media/activity.svg"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "kani.newChat",
+        "title": "New Chat",
+        "category": "Kani",
+        "icon": "$(add)"
+      },
+      {
+        "command": "kani.openInTab",
+        "title": "Open in New Tab",
+        "category": "Kani",
+        "icon": "$(link-external)"
+      },
+      {
+        "command": "kani.restart",
+        "title": "Restart Model",
+        "category": "Kani",
+        "icon": "$(debug-restart)"
+      }
+    ],
+    "menus": {
+      "view/title": [
+        {
+          "command": "kani.openInTab",
+          "when": "view == kani.chat",
+          "group": "navigation"
+        },
+        {
+          "command": "kani.restart",
+          "when": "view == kani.chat"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Kani",
+      "properties": {
+        "kani.repositoryPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Folder containing the KelusModelB1 repository. Empty: `KELUS_B1_PATH`, then an open workspace folder that is the repository."
+        },
+        "kani.pythonPath": {
+          "type": "string",
+          "default": "",
+          "markdownDescription": "Python 3.10+ interpreter with NumPy installed. Empty: `KELUS_PYTHON`, then `python3`."
+        },
+        "kani.model": {
+          "type": "string",
+          "default": "b1-v3",
+          "markdownDescription": "Checkpoint name in the repository's `checkpoints` folder. List them with `kelus models`."
+        },
+        "kani.maxTokens": {
+          "type": "integer",
+          "default": 240,
+          "minimum": 1,
+          "maximum": 512,
+          "description": "Maximum tokens per reply."
+        },
+        "kani.temperature": {
+          "type": "number",
+          "default": 0,
+          "minimum": 0,
+          "maximum": 2,
+          "description": "Sampling temperature. 0 always picks the most likely token."
+        }
+      }
+    }
+  }
+}

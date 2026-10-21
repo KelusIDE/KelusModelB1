@@ -25,7 +25,7 @@ def export(checkpoint, out):
     weights = b"".join(chunks)
     metadata = header.get("metadata", {})
     manifest = {
-        "format": "kelus-b1-web", "version": 1, "name": model.name,
+        "format": "kelus-b1-web", "version": 1, "name": model.name, "codename": model.codename,
         "config": header["config"] | {"positions": model.config.positions, "tie_embeddings": model.config.tie_embeddings},
         "tokenizer": model.tokenizer.to_dict(), "tensors": tensors, "parameters": model.parameter_count,
         "training": {key: metadata.get(key) for key in ("steps", "validation_loss", "training_examples", "dataset_tokens")},

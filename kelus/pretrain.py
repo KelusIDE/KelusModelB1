@@ -61,6 +61,7 @@ def main(argv=None):
     p.add_argument('--data',type=Path,default=Path('data/foundation'))
     p.add_argument('--run',type=Path,default=Path('training-runs/b1-foundation'))
     p.add_argument('--resume',action='store_true')
+    p.add_argument('--init-from',type=Path,help='Continue raw-text training from our own checkpoint, with a fresh optimizer')
     p.add_argument('--steps',type=int,default=4000,help='TOTAL optimizer steps, including previous invocations')
     p.add_argument('--context',type=int,default=1024);p.add_argument('--width',type=int,default=320)
     p.add_argument('--layers',type=int,default=6);p.add_argument('--heads',type=int,default=8)
@@ -69,12 +70,14 @@ def main(argv=None):
     p.add_argument('--checkpoint-every',type=int,default=50);p.add_argument('--validation-batches',type=int,default=8)
     p.add_argument('--max-seconds',type=float,default=0,help='Stop cleanly at the next completed step after this time budget; 0 means total steps only')
     a=p.parse_args(argv)
+    if a.resume and a.init_from:p.error('Choose resume or init-from, not both')
     if not (a.steps>0 and 1<=a.batch<=16 and 1<=a.accumulate<=64 and a.lr>0 and math.isfinite(a.lr) and a.checkpoint_every>0 and a.validation_batches>0 and math.isfinite(a.max_seconds) and a.max_seconds>=0):p.error('Invalid training budget or optimizer settings')
     a.run.mkdir(parents=True,exist_ok=True)
     lock=(a.run/'run.lock').open('a')
     try:fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
     except BlockingIOError:p.error('This run is already active')
     latest=a.run/'latest.npz';best=a.run/'best.npz'
+    if a.init_from and a.init_from.resolve() in (latest.resolve(),best.resolve()):p.error('Source checkpoint must be outside the new run')
     if latest.exists() and not a.resume:p.error('Run already has a checkpoint. Use --resume or a separate --run directory.')
     if a.resume and not latest.exists():p.error('No checkpoint to resume')
     corpus=Corpus(a.data)
@@ -90,6 +93,13 @@ def main(argv=None):
         rng=np.random.default_rng();rng.bit_generator.state=metadata['rng_state']
         prior_elapsed=metadata.get('elapsed_seconds',0.0)
         best_loss=metadata['best_validation_loss']
+    elif a.init_from:
+        model,header,_=Model.load(a.init_from)
+        if model.tokenizer.to_dict()!=corpus.tokenizer.to_dict():p.error('Checkpoint tokenizer differs from the article corpus')
+        metadata={'parent_sha256':digest(a.init_from),'parent_steps':header.get('metadata',{}).get('steps',0),
+                  'initialization':'Continued from our own scratch-trained checkpoint; fresh optimizer'}
+        optimizer=AdamW(model.parameters,learning_rate=a.lr,weight_decay=0.1)
+        rng=np.random.default_rng(a.seed+1);best_loss=float('inf')
     else:
         model=Model(Config(a.context,a.width,a.heads,a.layers,a.seed,corpus.tokenizer.vocab_size,'rope',True,0.0),corpus.tokenizer)
         optimizer=AdamW(model.parameters,learning_rate=a.lr,weight_decay=0.1)
@@ -121,7 +131,7 @@ def main(argv=None):
         nonlocal best_loss,last_val,metadata
         last_val=validation(model,corpus,a.validation_batches,a.batch)
         improved=last_val<best_loss;best_loss=min(best_loss,last_val)
-        metadata={'stage':'pretraining','initialization':'random weights; no pretrained model',
+        metadata={**metadata,'stage':'pretraining','initialization':metadata.get('initialization','random weights; no pretrained model'),
             'corpus_sha256':corpus.fingerprint,'steps':optimizer.step_count,'recipe':recipe,
             'rng_state':rng.bit_generator.state,'train_loss':last_loss,'validation_loss':last_val,'best_validation_loss':best_loss,
             'validation_method':f'Fixed {a.validation_batches*a.batch*model.config.context} held-out tokens, seed 2401; sampled loss, not coding ability',

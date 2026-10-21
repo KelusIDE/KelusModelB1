@@ -11,8 +11,8 @@ function probe passes when the bounded AST interpreter in `kelus.evaluate`
 confirms the function on several inputs, so different correct code is accepted.
 """
 
-GREETING = "Hi! I'm Kelus Model B1. What would you like to build?"
-IDENTITY = "I'm Kelus Model B1, a small model trained locally from scratch for basic chat and code."
+GREETING = "Hi! I'm Kelus Kani B2:2F. What would you like to build?"
+IDENTITY = "I'm Kelus Kani B2:2F, a small model trained locally from scratch for basic chat and code."
 CLARIFY = ("I may have misunderstood. What would you like me to explain?",
            "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.")
 HELP = ("Sure. Tell me what you want to build and which programming language you want to use.",

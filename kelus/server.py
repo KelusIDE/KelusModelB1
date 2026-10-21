@@ -55,21 +55,21 @@ def make_handler(model, header, checkpoint):
             if self.path == "/api/info":
                 self.send_json(200, {"name": model.name, "parameters": model.parameter_count,
                                      "config": header["config"], "training": header.get("metadata", {}),
-                                     "tokenizer": model.tokenizer.kind,
+                                     "tokenizer": model.tokenizer.kind, "tokenizer_spec": model.tokenizer.to_dict(), "codename": model.codename,
                                      "checkpoint": Path(checkpoint).name, "engine": "Own transformer + autograd / NumPy arithmetic"})
                 return
             names = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/styles.css": ("styles.css", "text/css"),
-                     "/favicon.svg": ("favicon.svg", "image/svg+xml")}
+                     "/favicon.svg": ("favicon.svg", "image/svg+xml"), "/svg.js": ("svg.js", "text/javascript"), "/web.js": ("web.js", "text/javascript"), "/attachments.js": ("attachments.js", "text/javascript"), "/b1.js": ("b1.js", "text/javascript"), "/kani-icon.png": ("kani-icon.png", "image/png"), "/seal-favicon.svg": ("seal-favicon.svg", "image/svg+xml"), "/seal-favicon-32.png": ("seal-favicon-32.png", "image/png"), "/seal-apple-touch-icon.png": ("seal-apple-touch-icon.png", "image/png"), "/favicon.ico": ("favicon.ico", "image/x-icon")}
             if self.path not in names:
                 self.send_json(404, {"error": "Not found"}); return
             filename, content_type = names[self.path]
-            data = (WEB / filename).read_bytes()
+            data = ((WEB.parent / "site" if filename in ("svg.js", "web.js", "attachments.js", "b1.js", "kani-icon.png", "seal-favicon.svg", "seal-favicon-32.png", "seal-apple-touch-icon.png", "favicon.ico") else WEB) / filename).read_bytes()
             self.send_response(200)
             self.send_header("Content-Type", content_type + "; charset=utf-8")
             self.send_header("Content-Length", str(len(data)))
             self.send_header("Cache-Control", "no-store")
             self.send_header("X-Content-Type-Options", "nosniff")
-            self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self'; img-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'")
+            self.send_header("Content-Security-Policy", "default-src 'none'; script-src 'self'; style-src 'self'; connect-src 'self' https://en.wikipedia.org; img-src 'self' blob:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'")
             self.end_headers()
             self.wfile.write(data)
 
@@ -128,7 +128,7 @@ def make_handler(model, header, checkpoint):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Serve Kelus Model B1 on localhost, without a web framework")
+    parser = argparse.ArgumentParser(description="Serve Kani Seal 3 on localhost, without a web framework")
     parser.add_argument("--checkpoint", default="checkpoints/b1-v3.best.npz")
     parser.add_argument("--port", type=int, default=8765)
     args = parser.parse_args()

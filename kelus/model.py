@@ -1,4 +1,4 @@
-"""Kelus Model B1: a trainable causal transformer, initialized from scratch."""
+"""Kani Seal 3: a trainable causal transformer, initialized from scratch."""
 from dataclasses import asdict, dataclass
 import codecs
 import json
@@ -37,7 +37,8 @@ class Config:
 
 
 class Model:
-    name = "Kelus Model B1"
+    name = "Kani Seal 3"
+    codename = "Kani B2:10F"
 
     def __init__(self, config=Config(), tokenizer=None):
         config.validate()
@@ -200,12 +201,21 @@ class Model:
             raise ValueError("This message exceeds B1's context. Shorten it or start with a smaller code example.")
         return tokens, original_count - len(retained)
 
-    def generate(self, messages, max_tokens=180, temperature=0.6, top_k=30, seed=42):
+    def generate(self, messages, max_tokens=180, temperature=0.6, top_k=30, seed=42, prefix=''):
+        """Yield reply text. `prefix` starts the reply with known text; its last token is left
+        for the model to regenerate so a merge across the boundary is never forced."""
         if not (1 <= max_tokens <= 2048 and 0 <= temperature <= 2 and 1 <= top_k <= self.config.vocab_size):
             raise ValueError("Invalid generation settings")
         tokens, _ = self.prepare_prompt(messages, reserve=max_tokens)
         rng = np.random.default_rng(seed)
         decoder = codecs.getincrementaldecoder('utf-8')(errors='replace')
+        for token in (self.tokenizer.encode(prefix)[:-1] if prefix else []):
+            if len(tokens) >= self.config.context - 1:
+                break
+            tokens.append(token)
+            text = decoder.decode(self.tokenizer.token_bytes(token), final=False)
+            if text:
+                yield text
         cache = {}
         for _ in range(min(max_tokens, self.config.context - len(tokens))):
             logits = np.array(self.next_logits(tokens, cache), dtype=np.float32)

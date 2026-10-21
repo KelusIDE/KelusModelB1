@@ -1,0 +1,13 @@
+Kani Seal 3 (formerly Kelus Model B1)
+Copyright 2026 the Kelus Model B1 contributors
+
+This product includes work from Kelus Model B1, a project implementing a
+local language model, tokenizer, training tools, and inference engines.
+
+Licensed under the Apache License, Version 2.0.
+https://www.apache.org/licenses/LICENSE-2.0
+
+Third-party components and source materials retain their original ownership
+and licensing terms. See LICENSING.md and their accompanying notices.
+
+This NOTICE supplies attribution information and does not modify the license.

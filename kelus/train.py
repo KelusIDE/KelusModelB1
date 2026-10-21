@@ -41,7 +41,7 @@ def training_texts(filename, seed):
 
 
 def main(argv=None):
-    parser = argparse.ArgumentParser(description="Train Kelus Model B1 from scratch. No pretrained weights or AI frameworks.")
+    parser = argparse.ArgumentParser(description="Train Kelus Kani B2:2F from scratch. No pretrained weights or AI frameworks.")
     parser.add_argument("--data", default="data/conversations-v3.jsonl")
     parser.add_argument("--out", default="checkpoints/b1-v3.npz")
     parser.add_argument("--resume", help="Resume a B1 checkpoint, including Adam state")

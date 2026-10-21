@@ -1,4 +1,4 @@
-"""Kelus Model B1: a small language model implemented without ML frameworks."""
+"""Kani Seal 3: a small language model implemented without ML frameworks."""
 import os
 
 # Small CPU matrix multiplications are often faster with a single BLAS thread.

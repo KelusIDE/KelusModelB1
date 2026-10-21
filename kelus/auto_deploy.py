@@ -6,10 +6,12 @@ import json
 import os
 from pathlib import Path
 import shutil
+import ssl
 import subprocess
 import sys
 import time
 from urllib.request import urlopen
+from urllib.error import URLError
 
 ROOT = Path(__file__).resolve().parent.parent
 STATE = ROOT / 'training-runs' / 'auto-deploy'
@@ -181,15 +183,27 @@ def publish(release, log):
              '--config', str(release / 'firebase.json'), '--non-interactive'], release, log, timeout=900)
 
 
+def fetch_verified(url):
+    """Use platform TLS trust if this Python install lacks the Mac's trusted CA."""
+    try:
+        with urlopen(url, timeout=60) as response:
+            return response.read()
+    except URLError as error:
+        if not isinstance(error.reason, ssl.SSLCertVerificationError):
+            raise
+        # curl verifies TLS against its normal trust store. Never use --insecure.
+        return subprocess.run(['/usr/bin/curl', '--fail', '--silent', '--show-error',
+                               '--proto', '=https', '--max-time', '60', url],
+                              capture_output=True, check=True, timeout=65).stdout
+
+
 def verify_live(release):
     expected = read(release / 'site/model/b1.json')
     last_error = None
     for attempt in range(3):
         try:
-            with urlopen(URL + '/model/b1.json?release=' + str(time.time_ns()), timeout=60) as response:
-                actual = json.load(response)
-            with urlopen(URL + '/model/b1.bin?release=' + str(time.time_ns()), timeout=60) as response:
-                weights = hashlib.sha256(response.read()).hexdigest()
+            actual = json.loads(fetch_verified(URL + '/model/b1.json?release=' + str(time.time_ns())))
+            weights = hashlib.sha256(fetch_verified(URL + '/model/b1.bin?release=' + str(time.time_ns()))).hexdigest()
             if actual['source_checkpoint_sha256'] == expected['source_checkpoint_sha256'] and weights == actual['weights_sha256'] == expected['weights_sha256']:
                 return
             raise ValueError('Live model identity does not match the exported candidate.')

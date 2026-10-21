@@ -4,13 +4,13 @@
   <a href="https://kelus-b1.web.app">
     <picture>
       <source media="(prefers-color-scheme: dark)" srcset="assets/readme/hero-dark.svg">
-      <img src="assets/readme/hero-light.svg" width="100%" alt="Kelus Model B1: 431,424 parameters, 158/199 held-out probes, foundation pretraining 78%. Animation replays recorded B1 replies to held-out prompts.">
+      <img src="assets/readme/hero-light.svg" width="100%" alt="Kani Seal 3: 431,424 parameters, 158/199 held-out probes, foundation pretraining 100%. Animation replays recorded model replies to held-out prompts.">
     </picture>
   </a>
 </p>
 <!-- /readme:hero -->
 
-<h1 align="center">Kelus Model B1</h1>
+<h1 align="center">Kani Seal 3</h1>
 
 <p align="center">
   <strong>A language model built from scratch, part of the Kelus IDE ecosystem.</strong><br>
@@ -18,7 +18,7 @@
 </p>
 
 <p align="center">
-  <a href="https://kelus-b1.web.app"><strong>Try B1</strong></a>
+  <a href="https://kelus-b1.web.app"><strong>Try Kani</strong></a>
   · <a href="https://github.com/KelusIDE/Kelus"><strong>Kelus IDE</strong></a>
   · <a href="MODEL_CARD.md"><strong>Model card</strong></a>
   · <a href="#quick-start"><strong>Quick start</strong></a>
@@ -39,13 +39,13 @@
   <a href="https://kelus-b1.web.app/model/b1.json"><img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fkelus-b1.web.app%2Fmodel%2Fb1.json&amp;query=%24.parameters&amp;label=deployed+model&amp;suffix=+parameters&amp;color=bce5d1&amp;style=flat-square&amp;labelColor=151b18" alt="Parameters in the deployed model"></a>
   <a href="#results-and-roadmap"><img src="https://img.shields.io/badge/held--out%20probes-158%2F199-fab219?style=flat-square&amp;labelColor=151b18" alt="Held-out probes: 158 of 199"></a>
   <a href="#results-and-roadmap"><img src="https://img.shields.io/badge/new%20programs-0%2F4-e66767?style=flat-square&amp;labelColor=151b18" alt="New program specifications: 0 of 4"></a>
-  <a href="#foundation-training"><img src="https://img.shields.io/badge/foundation%20pretraining-78%25-bce5d1?style=flat-square&amp;labelColor=151b18" alt="Foundation pretraining: 78%"></a>
+  <a href="#foundation-training"><img src="https://img.shields.io/badge/foundation%20pretraining-complete-bce5d1?style=flat-square&amp;labelColor=151b18" alt="Foundation pretraining: complete"></a>
 </p>
 <!-- /readme:badges -->
 
 ---
 
-B1 is an open-source experiment in building a local chat and coding model from
+**Kani Seal 3** (formerly Kelus Model B1) is an open-source experiment in building a local chat and coding model from
 random weights. The model engine, automatic differentiation, optimizer,
 byte-pair tokenizer, training loop, and inference are implemented in this
 repository. NumPy supplies array arithmetic; the model uses no pretrained
@@ -58,18 +58,24 @@ runs locally, and the browser version performs inference on your device.
 > **B1 is an experimental, narrow model.** The available v3 checkpoint handles
 > practiced chat topics and short Python/JavaScript snippets. It still fails
 > unfamiliar requests and cannot reliably create new programs or websites.
-> B1 is a version name, not a billion-parameter claim. See the
+> Kani Seal 3 is the model name; parameter counts are listed below. See the
 > [measured results and limitations](MODEL_CARD.md).
+
+The public name is **Kani Seal 3**; the development codename is **Kani B2:10F**. **Kani** is the short name. These names do not specify parameter count or imply new weights.
+Existing repository URLs, `b1-*` checkpoint filenames, command options, and
+saved chat identifiers remain compatible. Historical results below describe
+the original B1 checkpoints. This branding update does not change weights or
+capabilities, and older checkpoints may still introduce themselves as B1.
 
 ## Meet the Kelus family
 
 | Project | What lives there |
 | :--- | :--- |
 | **[Kelus IDE](https://github.com/KelusIDE/Kelus)** | The desktop editor: Electron, Svelte, Monaco, terminals, and coding-agent workflows. |
-| **[Kelus Model B1](https://github.com/KelusIDE/KelusModelB1)** | This repository: the model, tokenizer, training pipeline, evaluations, and browser inference engine. |
-| **[B1 web app](https://kelus-b1.web.app)** | Try the published B1 model in your browser. It shares Kelus accounts with the IDE. |
+| **[Kani Seal 3](https://github.com/KelusIDE/KelusModelB1)** | This repository: the model, tokenizer, training pipeline, evaluations, and browser inference engine. |
+| **[Kani web app](https://kelus-b1.web.app)** | Try the published B1 model in your browser. It shares Kelus accounts with the IDE. |
 
-Inside Kelus IDE, open **Kelus Agent → B1** to chat with its bundled local B1
+Inside Kelus IDE, open **Kelus Agent → Kani** to chat with its bundled local B1
 snapshot. Generated code blocks can be inserted into the editor with an Undo
 boundary. The IDE bundle can be a different model version from the web app;
 see the [IDE's B1 notes](https://github.com/KelusIDE/Kelus#kelus-model-b1-inside-the-ide).
@@ -142,6 +148,64 @@ python3 -m kelus.chat --checkpoint checkpoints/b1-v3.best.npz
 export and the Python `.npz` checkpoint are different formats. On macOS,
 **Start Kelus.command** starts the server with its default v3 checkpoint.
 
+### Chat in the terminal with `kani`
+
+[`cli/`](cli/) is a terminal chat app in plain Node.js (18+) with no
+dependencies. It runs the same JavaScript engine and exported weights as the
+web app (`site/b1.js`, `site/model/`), so it needs neither Python nor NumPy:
+
+```sh
+cd cli && npm link        # once; npm rm -g kani-cli removes it
+kani                      # chat: / for commands, esc stops a reply
+kani "explain recursion"  # one answer, then exit (also reads stdin)
+```
+
+Without linking, run `node cli/kani.mjs`. `--model-dir DIR` loads another
+export from `python3 -m kelus.export_web`.
+
+Kani can now inspect the current project: `analyze files`, `/read PATH`, `/search TEXT`
+and `/ask PATH QUESTION`. `/draft PATH REQUEST` creates a reviewed code proposal;
+`/apply ID` writes it with a stale-file check and a backup. Read the
+[CLI workspace guide](cli/README.md) for commands and context limits. Source tools
+are local helpers; coding quality still depends on the loaded model.
+
+The separate [scratch UI vision prototype](VISION.md) trains a patch transformer
+for coarse screenshot regions. `/vision PATH` runs it locally after training. It
+has not been validated for real screenshot understanding or OCR.
+
+### Use the `kelus` command
+
+Install the command into your environment once, from the repository directory:
+
+```sh
+python3 -m pip install -e .
+kelus ask "write a python function that reverses a string"
+kelus chat                # interactive; /reset clears context, /quit exits
+kelus models              # local checkpoints; pick one with --model NAME
+kelus status              # foundation pretraining and the release watcher
+```
+
+`echo "explain recursion" | kelus ask` reads the prompt from stdin, and
+`--json` prints `{"source", "text"}`. `kelus serve`, `kelus train`,
+`kelus eval`, and `kelus readme` run the matching modules from the
+repository directory. Without installing, use `python3 -m kelus.cli`.
+
+### Chat in VS Code
+
+[`vscode-extension/`](vscode-extension/) adds **Kani Seal 3**, a chat panel
+behind the crab icon in the activity bar. Replies stream from the local model
+through `kelus stdio`; code blocks are syntax-colored and have **Copy** and
+**Insert**, and inserted code is never saved or run. Package and install it with:
+
+```sh
+cd vscode-extension
+npm run package
+code --install-extension kani-0.1.0.vsix
+```
+
+Open this repository in VS Code, or set **Kani: Repository Path** in
+Settings. **Kani: Python Path** selects an interpreter with NumPy.
+
 ## The model, at a glance
 
 | | Available B1 v3 | Foundation research track |
@@ -152,7 +216,7 @@ export and the Python `.npz` checkpoint are different formats. On macOS,
 | Context | 256 tokens | 1,024 tokens |
 | Starting weights | Random initialization | Random initialization |
 | Training material | Small synthetic chat/code curriculum | Python source/docs and MDN web-development documents |
-| Status | Narrow chat and practiced snippets | Research track; not released as a coding assistant |
+| Status | Narrow chat and practiced snippets | Pretraining complete; instruction training and coding evaluation next |
 
 Both use rotary positions and tied input/output embeddings. The foundation
 project has separate checkpoints and must complete instruction training and
@@ -165,10 +229,10 @@ coding evaluations before it can replace the available chat model. Follow
 <!-- readme:foundation -->
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/readme/foundation-dark.svg">
-  <img src="assets/readme/foundation-light.svg" width="100%" alt="Foundation pretraining at step 3,145 of 4,000; validation loss 2.684.">
+  <img src="assets/readme/foundation-light.svg" width="100%" alt="Foundation pretraining at step 4,000 of 4,000; validation loss 2.542.">
 </picture>
 
-**Pretraining running: step 3,145 of 4,000 (78%).** 12.9M tokens seen; sampled validation loss 2.684 nats per token. Snapshot taken 2026-10-19 23:24 UTC; about 1.6 hours of this phase remained then.
+**Pretraining complete: step 4,000 of 4,000 (100%).** 16.4M tokens seen; sampled validation loss 2.542 nats per token. Snapshot taken 2026-10-20 01:25 UTC.
 Loss measures next-token prediction on held-out documents, not coding ability. Progress lives on the training machine; `python3 -m kelus.readme` copies it to [reports/foundation-progress.json](reports/foundation-progress.json).
 
 <details>
@@ -176,8 +240,8 @@ Loss measures next-token prediction on held-out documents, not coding ability. P
 
 ```mermaid
 flowchart LR
-    F["Foundation pretraining<br/>● in progress · step 3,145 / 4,000"]:::now
-    I["Instruction training<br/>waiting"]:::waiting
+    F["Foundation pretraining<br/>✓ done"]:::done
+    I["Instruction training<br/>next · awaiting completed candidate"]:::now
     G["Release gates and<br/>human verification<br/>waiting"]:::waiting
     D["Auto-deploy to<br/>kelus-b1.web.app<br/>waiting"]:::waiting
     F --> I --> G --> D
@@ -329,7 +393,8 @@ Read [MODEL_CARD.md](MODEL_CARD.md) and [evaluation reports](reports/benchmark/)
 - [x] Run local Python chat and matching browser inference.
 - [x] Integrate a B1 snapshot into Kelus IDE.
 - [x] Add a reproducible foundation-training pipeline and release gates.
-- [ ] Complete foundation and instruction training, then pass coding evaluations.
+- [x] Complete the 4,000-step foundation pretraining run.
+- [ ] Complete instruction training, then pass coding evaluations.
 - [ ] Validate broader programming-language and multilingual chat capability.
 
 <details>
@@ -439,6 +504,9 @@ Hosted domains must be authorized in Firebase Authentication.
 | Browser inference and export | [`site/b1.js`](site/b1.js) · [`kelus/export_web.py`](kelus/export_web.py) |
 | Curriculum generation | [`data/make_v3.py`](data/make_v3.py) |
 | README figures and status | [`kelus/readme.py`](kelus/readme.py) |
+| `kani` terminal chat (Node) | [`cli/kani.mjs`](cli/kani.mjs) · [`cli/ui.mjs`](cli/ui.mjs) |
+| `kelus` command and editor protocol | [`kelus/cli.py`](kelus/cli.py) |
+| VS Code extension | [`vscode-extension/extension.js`](vscode-extension/extension.js) · [`vscode-extension/media/chat.js`](vscode-extension/media/chat.js) |
 
 ## License and attribution
 

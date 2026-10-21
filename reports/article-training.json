@@ -1,0 +1,32 @@
+{
+  "run": "training-runs/kani-articles-v1",
+  "state": "complete",
+  "steps": 200,
+  "parameters": 8691840,
+  "initial_validation_loss": 4.093087404966354,
+  "final_validation_loss": 3.412168562412262,
+  "measurement": "Fixed 4096 held-out next-token positions, seed 2401. Does not measure chat, reasoning, or coding ability.",
+  "checkpoint_sha256": "1d9eb93bf98eb5c2a9665f5133d85bfe0925a9cebb36fd8755caa69d93acf22a",
+  "corpus": {
+    "format": "kelus-raw-corpus-v1",
+    "dtype": "<u2",
+    "vocabulary": 4096,
+    "tokenizer_sha256": "c4f116e686d0fd5c093e0fb2264de061e764a961f72108318cbd075076a4f24c",
+    "tokens": {
+      "train": 593771,
+      "validation": 94417
+    },
+    "documents": {
+      "train": 108,
+      "validation": 14
+    },
+    "sources_sha256": "c6c1de1a0bf63bb4579bedc066143e7dea948b9b9b2d9964ed16556bfb47e649",
+    "documents_sha256": "abaa64d937249b4385513c340d2a4c867e46e915387fc353c3233fcdcb5a9916",
+    "files": {
+      "train": "840b11d32edf5d5df57befd3cf3a995a3d872654923794c1e47e9e8b749f2cd3",
+      "validation": "bf3f361cce0201987bd9cd42d3a4f87aa843492440e78fa11a357359d4f375cf"
+    },
+    "tokenizer_training": "Unchanged existing Kani tokenizer; no new token IDs."
+  },
+  "release_ready": false
+}

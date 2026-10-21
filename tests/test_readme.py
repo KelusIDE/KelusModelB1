@@ -4,7 +4,7 @@ from pathlib import Path
 import tempfile
 import unittest
 import xml.etree.ElementTree as ElementTree
-from kelus.readme import refresh, snapshot_foundation
+from kelus.readme import refresh, snapshot_foundation, pipeline
 
 SHA = 'a' * 64
 MARKERS = ''.join(f'<!-- readme:{name} -->\nold\n<!-- /readme:{name} -->\n\n' for name in ['hero', 'badges', 'foundation', 'results'])
@@ -68,6 +68,13 @@ class ReadmeTests(unittest.TestCase):
         self.assertIn('README.md', refresh(self.root, write=False))
         self.assertIn('\nold\n', (self.root / 'README.md').read_text())
         self.assertFalse((self.root / 'assets').exists())
+
+    def test_completed_pretraining_does_not_claim_instruction_training_is_running(self):
+        chart = pipeline({'state': 'complete', 'step': 4000, 'total_steps': 4000,
+                          'release_state': 'waiting_instruction_candidate'})
+        self.assertIn('F["Foundation pretraining<br/>✓ done"]:::done', chart)
+        self.assertIn('I["Instruction training<br/>next · awaiting completed candidate"]:::now', chart)
+        self.assertNotIn('in progress', chart)
 
     def test_foundation_snapshot_drops_local_details_and_partial_lines(self):
         run = self.root / 'training-runs/b1-foundation'

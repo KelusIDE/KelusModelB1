@@ -175,7 +175,7 @@ text {{ font-family: {SANS}; fill: {t['ink']}; }}
 def hero_svg(data, theme):
     t, f = THEMES[theme], data['foundation']
     shown = samples(data['benchmark'])
-    size, cw, x, prefix = 18, 18 * MONO_WIDTH, 248, 6
+    size, cw, x, prefix = 18, 18 * MONO_WIDTH, 248, 7
     tx = x + prefix * cw
     slot = 6
     period = slot * max(1, len(shown))
@@ -198,7 +198,7 @@ def hero_svg(data, theme):
     body = [f'''<rect class="ring" x="40" y="48" width="168" height="168" rx="40" fill="none" stroke="{t['series']}" stroke-width="2"/>
 <rect x="48" y="56" width="152" height="152" rx="34" fill="{TILE}"/>
 <text x="124" y="168" text-anchor="middle" font-size="104" style="font-family: Georgia, 'Times New Roman', serif; fill: {TILE_INK};">K</text>
-<text class="mono muted" x="{x}" y="72" font-size="13" letter-spacing="1.5">RECORDED B1 REPLIES · HELD-OUT PROBES · TEMPERATURE 0</text>''']
+<text class="mono muted" x="{x}" y="72" font-size="13" letter-spacing="1.5">RECORDED MODEL REPLIES · HELD-OUT PROBES · TEMPERATURE 0</text>''']
     for column in range(6):
         for row in range(3):
             body.append(f'<circle class="dot" cx="{876 + column * 14}" cy="{66 + row * 14}" r="2.5" fill="{t["series"]}" '
@@ -216,7 +216,7 @@ def hero_svg(data, theme):
 <text class="mono muted" x="{x}" y="118" font-size="{size}">you ›</text>
 <text class="mono" x="{tx:.1f}" y="118" font-size="{size}">{esc(prompt)}</text>
 <rect class="cover prompt" x="{tx - 1:.1f}" y="100" width="{len(prompt) * cw + 3:.1f}" height="24"/>
-<text class="mono muted" x="{x}" y="154" font-size="{size}">b1  ›</text>
+<text class="mono muted" x="{x}" y="154" font-size="{size}">kani ›</text>
 <text class="mono" x="{tx:.1f}" y="154" font-size="{size}">{esc(reply)}</text>
 <rect class="cover reply" x="{tx - 1:.1f}" y="136" width="{width + 3:.1f}" height="24"/>
 <g class="cursor"><rect class="blink" x="{tx + 2:.1f}" y="140" width="9" height="18" fill="{t['series']}"/></g>
@@ -235,11 +235,11 @@ def hero_svg(data, theme):
 
 
 def hero_alt(data):
-    parts = [f"Kelus Model B1: {fmt(data['model']['parameters'])} parameters",
+    parts = [f"Kani Seal 3: {fmt(data['model']['parameters'])} parameters",
              '{passed}/{total} held-out probes'.format(**data['benchmark']['overall'])]
     if data['foundation']:
         parts.append(f"foundation pretraining {foundation_rate(data['foundation'])}%")
-    return ', '.join(parts) + '. Animation replays recorded B1 replies to held-out prompts.'
+    return ', '.join(parts) + '. Animation replays recorded model replies to held-out prompts.'
 
 
 def bar(x, y, width, height, radius=4):
@@ -392,6 +392,10 @@ def pipeline(f):
         note = {'done': '✓ done', 'now': '● in progress', 'waiting': 'waiting'}[status]
         if i == 0 and status == 'now':
             note += f' · step {fmt(f["step"])} / {fmt(f["total_steps"])}' if f else ''
+        elif i == 1 and status == 'now':
+            # A finished base model does not establish that instruction
+            # training has started; the watcher only knows a candidate is due.
+            note = 'next · awaiting completed candidate'
         lines.append(f'    {key}["{label}<br/>{note}"]:::{status}')
     lines += ['    F --> I --> G --> D',
               f'    classDef done fill:{TILE},stroke:{THEMES["light"]["series"]},color:{TILE_INK}',

@@ -1,0 +1,421 @@
+{
+  "checkpoint": "checkpoints/kani-capabilities-v2.best.npz",
+  "checkpoint_sha256": "aa11dc3d866603d606bd8bcd1c3b41888b58a9f9ad2b5d4ae8c8aff3d19c37e3",
+  "parameters": 8691840,
+  "training": {
+    "parent_steps": 2000,
+    "parent_sha256": "c46b23af2e31d5599d4766d52b57c9a6f55be0996ea85f32a383aab00aa18e19",
+    "data_sha256": "eb41a3b758b1a6d7442c92ef5e1df5125bed516962d84f6f47078a5895412c49",
+    "seed": 2030,
+    "base_learning_rate": 0.0003,
+    "training_examples": 2533,
+    "validation_examples": 318,
+    "dataset_tokens": 230832,
+    "educational_demo": true,
+    "validation_method": "all assistant targets, overlap scored once",
+    "tokenizer": "bpe",
+    "training_targets": "all assistant replies",
+    "balanced_languages": false,
+    "steps": 1400,
+    "train_loss": 0.001253373920917511,
+    "validation_loss": 0.08413860747572992,
+    "trained_at": "2026-10-20T11:04:25Z",
+    "context_tokens": 1024,
+    "rng_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 4.668452284744903e+37,
+        "inc": 9.090766609217498e+37
+      },
+      "has_uint32": 0,
+      "uinteger": 4089443800
+    },
+    "selection": "lowest full-validation loss"
+  },
+  "scope": "Small diagnostic suite, mostly held-out wording within trained families. Novel topics reported separately. Not a general coding or reasoning benchmark.",
+  "cases": [
+    {
+      "id": "pancakes",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Pancakes are my favorite breakfast."
+        }
+      ],
+      "expected": [
+        "pancakes"
+      ],
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "omitted": 0,
+      "seconds": 0.046,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "toppings",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I like pancakes with strawberries."
+        }
+      ],
+      "expected": [
+        "pancakes",
+        "strawberries"
+      ],
+      "reply": "Pancakes with strawberries sounds nice. Do you make it yourself?",
+      "omitted": 0,
+      "seconds": 0.032,
+      "passed": true,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "hobby",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I am a big fan of drawing!"
+        }
+      ],
+      "expected": [
+        "drawing"
+      ],
+      "reply": "Day! What do you like most about big fandomly and lighter?",
+      "omitted": 0,
+      "seconds": 0.027,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "negative",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I do not like soup."
+        }
+      ],
+      "expected": [
+        "prefer",
+        "soup"
+      ],
+      "reply": "Fair enough. What do you prefer instead of soup?",
+      "omitted": 0,
+      "seconds": 0.021,
+      "passed": true,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "novel_food",
+      "family": "novel_chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I really enjoy omelettes."
+        }
+      ],
+      "expected": [
+        "omelette"
+      ],
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "omitted": 0,
+      "seconds": 0.037,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "novel_hobby",
+      "family": "novel_chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I love astronomy."
+        }
+      ],
+      "expected": [
+        "astronomy"
+      ],
+      "reply": "Amonus! What do you like most about amonus?",
+      "omitted": 0,
+      "seconds": 0.023,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "circle",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a small blue circle as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "circle",
+        "attrs": {
+          "r": "32",
+          "fill": "#3b82f6"
+        }
+      },
+      "reply": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"><circle cx=\"128\" cy=\"128\" r=\"32\" fill=\"#3b82f6\"/></svg>\n```",
+      "omitted": 0,
+      "seconds": 0.087,
+      "passed": true,
+      "check": "restricted SVG parse plus requested shape/color/geometry"
+    },
+    {
+      "id": "square",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Generate an SVG image showing a large purple square."
+        }
+      ],
+      "expected": {
+        "tag": "rect",
+        "attrs": {
+          "width": "176",
+          "height": "176",
+          "fill": "#a855f7"
+        }
+      },
+      "reply": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"><rect x=\"40\" y=\"40\" width=\"176\" height=\"176\" fill=\"#a855f7\"/></svg>\n```",
+      "omitted": 0,
+      "seconds": 0.096,
+      "passed": true,
+      "check": "restricted SVG parse plus requested shape/color/geometry"
+    },
+    {
+      "id": "heart",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a medium pink heart as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "path",
+        "attrs": {
+          "fill": "#ec4899"
+        },
+        "contains": "scale(0.6364)"
+      },
+      "reply": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"><g transform=\"translate(128 128) scale(0.6364) translate(-128 -128)\"><path d=\"M128 208 C16 140 24 48 80 48 C104 48 120 64 128 80 C136 64 152 48 176 48 C232 48 240 140 128 208 Z\" fill=\"#ec4899\"/></g></svg>\n```",
+      "omitted": 0,
+      "seconds": 0.204,
+      "passed": true,
+      "check": "restricted SVG parse plus requested shape/color/geometry"
+    },
+    {
+      "id": "scene",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a green house with a brown roof as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "rect",
+        "attrs": {
+          "fill": "#22c55e"
+        },
+        "contains": "#92400e"
+      },
+      "reply": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"><rect x=\"64\" y=\"112\" width=\"128\" height=\"112\" fill=\"#22c55e\"/><polygon points=\"40,112 128,32 216,112\" fill=\"#22c55e\"/><rect x=\"112\" y=\"160\" width=\"176\" height=\"64\" fill=\"#111827\"/></svg>\n```",
+      "omitted": 0,
+      "seconds": 0.213,
+      "passed": false,
+      "check": "restricted SVG parse plus requested shape/color/geometry"
+    },
+    {
+      "id": "composition",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a blue circle above of a green square as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "circle",
+        "attrs": {
+          "cx": "128",
+          "cy": "64",
+          "fill": "#3b82f6"
+        },
+        "contains": "y=\"160\""
+      },
+      "reply": "```svg\n<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 256 256\"><circle cx=\"128\" cy=\"64\" r=\"32\" fill=\"#3b82f6\"/><rect x=\"96\" y=\"160\" width=\"64\" height=\"64\" fill=\"#22c55e\"/></svg>\n```",
+      "omitted": 0,
+      "seconds": 0.161,
+      "passed": true,
+      "check": "restricted SVG parse plus requested shape/color/geometry"
+    },
+    {
+      "id": "lru",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Build a Python LRUCache with get(key, default=None) and put(key, value). Reject capacity <= 0. Reads update recency, and insertion evicts the least recently used entry."
+        }
+      ],
+      "expected": "lru",
+      "reply": "```python\ndef Then_ get(key, default=None):\n    return (key + value) / (key /append=)\n```",
+      "omitted": 0,
+      "seconds": 0.068,
+      "passed": false,
+      "check": "sandboxed behavioral assertions",
+      "check_error": "Traceback (most recent call last):\n  File \"/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-Aad3KC/test_candidate.py\", line 1, in <module>\n    from candidate import LRUCache\n  File \"/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-Aad3KC/candidate.py\", line 1\n    def Then_ get(key, default=None):\n              ^^^\nSyntaxError: expected '('\n"
+    },
+    {
+      "id": "group",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement group_by to group a list of dictionaries by a requested key without modifying the input. Use Python."
+        }
+      ],
+      "expected": "group",
+      "reply": "```python\ndef group_by(records, key):\n    groups = {}\n    for record in records:\n        value = record.get(key)\n        groups.setdefault(value, []).append(record)\n    return groups\n```",
+      "omitted": 0,
+      "seconds": 0.077,
+      "passed": true,
+      "check": "sandboxed behavioral assertions"
+    },
+    {
+      "id": "flatten",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement flatten to flatten nested lists of any depth while preserving item order. Use Python."
+        }
+      ],
+      "expected": "flatten",
+      "reply": "```python\nnumbers = [3, preserving, loops, and functions. Practice by writing small programs and testing them.",
+      "omitted": 0,
+      "seconds": 0.04,
+      "passed": false,
+      "check_error": "The model did not produce one complete code block. No file was staged. Try a smaller, precise request."
+    },
+    {
+      "id": "intervals",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement merge_ranges to merge overlapping intervals, sort the result, and preserve the original input. Use Python."
+        }
+      ],
+      "expected": "intervals",
+      "reply": "```python\ndef multiply_ranges(intervals):\n    result = []\n    for start, end in sorted(intervals):\n        if start > end:\n            raise ValueError(\"interval start exceeds end\")\n        if result and start <= result[-1][1]:\n            result[-1][1] = max(result[-1][1], end)\n        else:\n            result.append([start, end])\n    return result\n```",
+      "omitted": 0,
+      "seconds": 0.153,
+      "passed": false,
+      "check": "sandboxed behavioral assertions",
+      "check_error": "Traceback (most recent call last):\n  File \"/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-r2TYIa/test_candidate.py\", line 1, in <module>\n    from candidate import merge_ranges\nImportError: cannot import name 'merge_ranges' from 'candidate' (/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-r2TYIa/candidate.py)\n"
+    },
+    {
+      "id": "csv",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement parse_rows to parse CSV text with headers, quoted commas, and quoted newlines using the standard library. Use Python."
+        }
+      ],
+      "expected": "csv",
+      "reply": "```python\nimport csv\nimport io\n\ndef parse_rows(text):\n    return list(csv.DictReader(io.StringIO(text)))\n```",
+      "omitted": 0,
+      "seconds": 0.057,
+      "passed": true,
+      "check": "sandboxed behavioral assertions"
+    },
+    {
+      "id": "memory",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I love pancakes."
+        },
+        {
+          "role": "assistant",
+          "content": "Pancakes! What do you like most about pancakes?"
+        },
+        {
+          "role": "user",
+          "content": "How are you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ready to help. How is your day going?"
+        },
+        {
+          "role": "user",
+          "content": "What do I like?"
+        }
+      ],
+      "expected": [
+        "pancakes"
+      ],
+      "reply": "You said you love pancakes.",
+      "omitted": 0,
+      "seconds": 0.03,
+      "passed": true,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "correction",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I love pancakes."
+        },
+        {
+          "role": "assistant",
+          "content": "Pancakes! What do you like most about pancakes?"
+        },
+        {
+          "role": "user",
+          "content": "No, I meant waffles."
+        }
+      ],
+      "expected": [
+        "waffles"
+      ],
+      "reply": "Got it, waffles. What do you like about waffles?",
+      "omitted": 0,
+      "seconds": 0.033,
+      "passed": true,
+      "check": "required topic terms; inspect full reply for coherence"
+    }
+  ],
+  "scores": {
+    "chat": {
+      "passed": 4,
+      "total": 6
+    },
+    "novel_chat": {
+      "passed": 0,
+      "total": 2
+    },
+    "svg": {
+      "passed": 4,
+      "total": 5
+    },
+    "code": {
+      "passed": 2,
+      "total": 5
+    }
+  }
+}

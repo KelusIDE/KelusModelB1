@@ -1,0 +1,3 @@
+-r requirements.txt
+# Image decoding/resizing only; no ML library or pretrained model.
+Pillow>=10,<13

@@ -1,6 +1,7 @@
-// Kelus Model B1 browser engine. A port of kelus/tokenizer.py, the cached
+// Kani Seal 3 browser engine. A port of kelus/tokenizer.py, the cached
 // decoder in kelus/model.py, kelus/runtime.py and kelus/local_tools.py.
 // Inference only: the page downloads the model files and nothing is sent back.
+import { webRequest } from './web.js';
 
 export const PAD = 256, BOS = 257, EOS = 258, USER = 259, ASSISTANT = 260;
 // Python's `\s` for str, so text splits into exactly the trainer's pieces.
@@ -224,11 +225,22 @@ export class Model {
     return { tokens, omitted: messages.length - retained.length };
   }
 
-  /** Yields decoded text pieces. Temperature 0 is greedy and repeatable. */
-  *generate(messages, { maxTokens = 240, temperature = 0, topK = 30, random = Math.random } = {}) {
+  /**
+   * Yields decoded text pieces. Temperature 0 is greedy and repeatable.
+   * `prefix` starts the reply with known text (for example a function signature the user
+   * specified). Its last token is left for the model to regenerate, so a token that the
+   * tokenizer would merge across the boundary is never forced in an unfamiliar split.
+   */
+  *generate(messages, { maxTokens = 240, temperature = 0, topK = 30, random = Math.random, prefix = '' } = {}) {
     if (!(maxTokens >= 1 && maxTokens <= 2048 && temperature >= 0 && temperature <= 2)) throw new Error('Invalid generation settings');
     const { tokens } = this.preparePrompt(messages, maxTokens);
     const decoder = new TextDecoder('utf-8'), cache = {};
+    for (const token of prefix ? this.tokenizer.encode(prefix).slice(0, -1) : []) {
+      if (tokens.length >= this.config.context - 1) break;
+      tokens.push(token);
+      const text = decoder.decode(this.tokenizer.tokenBytes(token), { stream: true });
+      if (text) yield text;
+    }
     const steps = Math.min(maxTokens, this.config.context - tokens.length);
     for (let step = 0; step < steps; step++) {
       const logits = this.nextLogits(tokens, cache);
@@ -361,10 +373,32 @@ const DATE_QUERIES = new Set(["what date is today", "what is the date today", "w
 const TIME_QUERIES = new Set(["what time is it", "what is the time", "what's the time", "current time", "tell me the time",
   "what is the current time"]);
 
+// Same bounded percentage grammar as kelus/local_tools.py.
+export function wordMath(query) {
+  const number = String.raw`(?:[0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)(?:\.[0-9]+)?`;
+  let text=query.replace(/^(?:what is|what's|calculate|compute|how much is)\s+/, '').replace(/^(?:a|an)\s+/, '').replace(/\s+is$/, '');
+  const match=text.match(new RegExp(`^(${number})\\s*(?:%|percent)\\s*(?:(tip|tax|discount)\\s+)?(?:of|on|off)\\s+(?:a\\s+)?([$€£₩]?)(${number})(?:\\s+bill)?$`));
+  if(!match)return null;
+  let [,rate,kind,currency,amount]=match;
+  if(text.includes(' off '))kind='discount';
+  rate=rate.replaceAll(',','');amount=amount.replaceAll(',','');
+  try {
+    if(kind==='discount' && Number(rate)>100)return 'A discount cannot exceed 100% of the original price.';
+    const portion=calculate(`${amount} * ${rate} / 100`), equation=`${amount} × ${rate} / 100 = ${portion}`;
+    if(['tip','tax','discount'].includes(kind)) {
+      const total=calculate(`${amount} ${kind==='discount'?'-':'+'} ${portion}`);
+      return `${kind[0].toUpperCase()+kind.slice(1)}: ${currency}${portion}. Total: ${currency}${total}.\n${equation}`;
+    }
+    return `${rate}% of ${currency}${amount} is ${currency}${portion}.\n${equation}`;
+  } catch { return 'I could not calculate that. Keep numbers and results within one trillion.'; }
+}
+
 /** Returns [text, source] or null. The source must be shown in the UI. */
 export function localAnswer(prompt, now = new Date()) {
   let query = prompt.toLowerCase().replaceAll('’', "'").split(new RegExp(`[${SPACE}]+`)).filter(Boolean).join(' ').replace(/[?! .]+$/, '');
   query = query.replace(/^please\s+|\s+please$/g, '');
+  const wordAnswer = wordMath(query);
+  if (wordAnswer !== null) return [wordAnswer, 'local_calculator'];
   if (DATE_QUERIES.has(query) || TIME_QUERIES.has(query)) {
     const zone = new Intl.DateTimeFormat('en-US', { timeZoneName: 'short' }).formatToParts(now).find(part => part.type === 'timeZoneName')?.value || 'local time';
     if (DATE_QUERIES.has(query)) {
@@ -386,12 +420,16 @@ export function localAnswer(prompt, now = new Date()) {
   }
 }
 
-/** kelus/runtime.py: one preceding exchange, and helper replies are not fed back. */
+/** Recent complete turns within capacity; helper answers are not model prose. */
 export function prepareReply(model, messages, maxTokens = 240) {
   conversation(messages, model.tokenizer);
   const tool = localAnswer(messages[messages.length - 1].content);
-  let retained = messages.slice(-3);
-  if (retained.length === 3 && localAnswer(retained[0].content) !== null) retained = retained.slice(-1);
+  const recent = messages.slice(model.config.context >= 512 ? -15 : -3);
+  let retained = [];
+  for (let i = 0; i < recent.length - 1; i += 2) {
+    if (localAnswer(recent[i].content) === null && !webRequest(recent[i].content)) retained.push(...recent.slice(i, i + 2));
+  }
+  retained.push(recent.at(-1));
   let omitted = messages.length - retained.length;
   if (!tool) {
     const extra = model.preparePrompt(retained, maxTokens).omitted;

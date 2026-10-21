@@ -1,0 +1,138 @@
+{
+  "scope": "Synthetic UI region training smoke test; not real screenshot quality",
+  "parameters": 79872,
+  "steps": 400,
+  "checkpoint_sha256": "0daf2f9a04a0980617c7c64d448bff9ea25c2c000cd926de4168e4f7b0e9e923",
+  "training_images": 256,
+  "validation_images": 64,
+  "test_images": 64,
+  "test_seed": 2002026,
+  "baseline_validation_loss": 1.8145925253629684,
+  "best_validation": {
+    "loss": 0.0032877638877835125,
+    "patch_accuracy": 1.0,
+    "mean_iou": 1.0,
+    "per_class_iou": {
+      "background": 1.0,
+      "toolbar": 1.0,
+      "sidebar": 1.0,
+      "editor": 1.0,
+      "terminal": 1.0,
+      "dialog": 1.0
+    },
+    "confusion": [
+      [
+        133,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        512,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        448,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2466,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        315,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        222
+      ]
+    ]
+  },
+  "independent_synthetic_test": {
+    "loss": 0.0030064180318731815,
+    "patch_accuracy": 1.0,
+    "mean_iou": 1.0,
+    "per_class_iou": {
+      "background": 1.0,
+      "toolbar": 1.0,
+      "sidebar": 1.0,
+      "editor": 1.0,
+      "terminal": 1.0,
+      "dialog": 1.0
+    },
+    "confusion": [
+      [
+        77,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        512,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        448,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        2502,
+        0,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        371,
+        0
+      ],
+      [
+        0,
+        0,
+        0,
+        0,
+        0,
+        186
+      ]
+    ]
+  },
+  "elapsed_seconds": 8.114195124999242
+}

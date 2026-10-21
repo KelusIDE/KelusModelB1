@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "kelus-b1"
+dynamic = ["version"]
+description = "Kani Seal 3: a small language model implemented without ML frameworks."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+dependencies = ["numpy>=1.24,<3"]
+
+[project.scripts]
+kelus = "kelus.cli:main"
+
+[tool.setuptools]
+packages = ["kelus"]
+
+[tool.setuptools.dynamic]
+version = {attr = "kelus.__version__"}

@@ -1,4 +1,10 @@
-# Kelus Model B1 v3
+# Kani Seal 3
+
+Development codename: **Kani B2:10F**. Branding changes do not change the loaded checkpoint.
+
+Previously branded Kelus Model B1. The measurements below describe the existing
+**B1 v3 checkpoint**; the name update does not change its weights or measured
+capabilities. Older checkpoints may still generate their original B1 identity.
 
 **Status:** Experimental narrow model. Reliable on its practiced chat replies, coding concepts, and short code snippets, including new wording for them. It is not a general assistant: unfamiliar slang, open-ended chat, and anything outside the practice topics still fail.
 
@@ -6,6 +12,7 @@
 |---|---|
 | File | `checkpoints/b1-v3.best.npz` (browser copy: `site/model/`, https://kelus-b1.web.app) |
 | Weights | Random initialization, seed 42; trained locally |
+| License | Apache-2.0 for the project's rights in released B1 weights and original code; preserve applicable notices. See [LICENSE](LICENSE), [NOTICE](NOTICE), and [LICENSING.md](LICENSING.md) for scope and third-party exceptions. |
 | Pretrained weights / external model API | None |
 | Parameters | 431,424 |
 | Architecture | 3 pre-LN causal transformer blocks; width 96; 4 heads; GELU MLP; rotary positions; token embeddings tied to the output layer; dropout 0.1 during training |

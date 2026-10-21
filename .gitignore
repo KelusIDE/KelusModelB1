@@ -8,3 +8,13 @@ training-runs/
 # Reproducible downloaded/tokenized foundation corpus
 data/foundation/
 data/foundation-copy/
+data/articles-*/
+
+# VS Code extension packages
+vscode-extension/*.vsix
+
+# Local reviewed code proposals and backups
+.kani/
+
+# Rendered UI screenshots (python3 data/make_ui_screens.py)
+data/ui-render/

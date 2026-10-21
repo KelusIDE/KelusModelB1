@@ -35,10 +35,39 @@ def calculate(expression):
     return str(int(value)) if value == int(value) else format(value, '.12g')
 
 
+
+def word_math(query):
+    """A bounded grammar for percentage word problems, with explicit arithmetic."""
+    number = r'(?:[0-9]{1,3}(?:,[0-9]{3})+|[0-9]+)(?:\.[0-9]+)?'
+    text = re.sub(r"^(?:what is|what's|calculate|compute|how much is)\s+", '', query)
+    text = re.sub(r'^(?:a|an)\s+', '', text)
+    text = re.sub(r'\s+is$', '', text)
+    match = re.fullmatch(rf'({number})\s*(?:%|percent)\s*(?:(tip|tax|discount)\s+)?(?:of|on|off)\s+(?:a\s+)?([$€£₩]?)({number})(?:\s+bill)?', text)
+    if not match:
+        return None
+    rate, kind, currency, amount = match.groups()
+    if ' off ' in text: kind = 'discount'
+    rate, amount = rate.replace(',', ''), amount.replace(',', '')
+    try:
+        if kind == 'discount' and float(rate) > 100:
+            return 'A discount cannot exceed 100% of the original price.'
+        portion = calculate(f'{amount} * {rate} / 100')
+        equation = f'{amount} × {rate} / 100 = {portion}'
+        if kind in ('tip', 'tax', 'discount'):
+            total = calculate(f'{amount} {"-" if kind == "discount" else "+"} {portion}')
+            return f'{kind.capitalize()}: {currency}{portion}. Total: {currency}{total}.\n{equation}'
+        return f'{rate}% of {currency}{amount} is {currency}{portion}.\n{equation}'
+    except (ValueError, OverflowError):
+        return 'I could not calculate that. Keep numbers and results within one trillion.'
+
+
 def local_answer(prompt, now=None):
     """Return (text, source) or None. Source must be shown in the UI."""
     query = ' '.join(prompt.casefold().replace('’', "'").split()).rstrip('?! .')
     query = re.sub(r'^please\s+|\s+please$', '', query)
+    word_answer = word_math(query)
+    if word_answer is not None:
+        return word_answer, 'local_calculator'
     date_queries = {"what date is today", "what is the date today", "what's the date today",
         "what is today's date", "what's today's date", "today's date", "todays date",
         "what is the date", "what's the date", "current date", "today date", "date today",

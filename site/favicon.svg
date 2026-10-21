@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="14" fill="#bce5d1"/><text x="32" y="47" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="44" fill="#1a3025">K</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Kani Seal 3 seal">
+  <rect width="64" height="64" rx="14" fill="#101b29"/>
+  <path d="M32 9C18 9 10 21 11 35c1 13 9 20 21 20s20-7 21-20C54 21 46 9 32 9Z" fill="#d9f3fa"/>
+  <path d="M17 39c2 10 7 14 15 14s13-4 15-14c-3 5-8 8-15 8s-12-3-15-8Z" fill="#a7d7e9"/>
+  <ellipse cx="32" cy="39" rx="13" ry="10" fill="#f7fcff"/>
+  <g fill="#152c43"><circle cx="22" cy="28" r="3"/><circle cx="42" cy="28" r="3"/>
+    <path d="M28 35q4-3 8 0c0 3-2 5-4 5s-4-2-4-5Z"/>
+  </g>
+  <g stroke="#152c43" stroke-width="2.3" stroke-linecap="round" fill="none">
+    <path d="M32 40v2m0 0q-3 4-6 0m6 0q3 4 6 0"/>
+    <path d="m21 37-11-3m11 8-11 2m33-7 11-3m-11 8 11 2"/>
+  </g>
+</svg>

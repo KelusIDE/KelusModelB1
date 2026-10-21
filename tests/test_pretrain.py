@@ -8,7 +8,7 @@ import unittest
 from unittest.mock import patch
 import numpy as np
 from kelus.corpus import digest, identity, split_for
-from kelus.model import Model
+from kelus.model import Config, Model
 from kelus.optim import AdamW
 from kelus.pretrain import Corpus, main
 from kelus.tokenizer import ByteTokenizer
@@ -60,5 +60,20 @@ class PretrainingTests(unittest.TestCase):
             with contextlib.redirect_stderr(io.StringIO()),self.assertRaises(SystemExit):main(base+['--run',str(root/'split')])
             changed=base.copy();changed[changed.index('--steps')+1]='5'
             with contextlib.redirect_stderr(io.StringIO()),self.assertRaises(SystemExit):main(changed+['--run',str(root/'split'),'--resume'])
+
+    def test_continued_pretraining_preserves_parent_and_token_ids(self):
+        with tempfile.TemporaryDirectory() as directory:
+            root=Path(directory);data=self.fixture(root);source=root/'parent.npz'
+            Model(Config(context=16,width=8,heads=2,layers=1)).save(source,{'steps':23})
+            before=digest(source)
+            with contextlib.redirect_stdout(io.StringIO()):
+                main(['--data',str(data),'--run',str(root/'continued'),'--init-from',str(source),'--steps','1','--batch','1','--accumulate','1','--validation-batches','1'])
+            model,header,_=Model.load(root/'continued/latest.npz')
+            self.assertEqual(digest(source),before)
+            self.assertEqual(header['metadata']['parent_sha256'],before)
+            self.assertEqual(header['metadata']['parent_steps'],23)
+            self.assertEqual(header['metadata']['steps'],1)
+            self.assertEqual(model.config.context,16)
+            self.assertEqual(model.tokenizer.to_dict(),ByteTokenizer().to_dict())
 
 if __name__=='__main__':unittest.main()

@@ -1,0 +1,422 @@
+{
+  "checkpoint": "training-runs/capabilities-v1-source.npz",
+  "checkpoint_sha256": "c46b23af2e31d5599d4766d52b57c9a6f55be0996ea85f32a383aab00aa18e19",
+  "parameters": 8691840,
+  "training": {
+    "parent_steps": 4000,
+    "parent_sha256": "c5e3fd7922872931edac7bdb8402e2c8711fc1fae295659c7f115ded228a62ea",
+    "data_sha256": "d362e1ae6c51dedfbcc7f2540dd9c8ffd1a86db7dcc26c87042d79bb40d7b9bd",
+    "seed": 2027,
+    "base_learning_rate": 0.0003,
+    "training_examples": 92753,
+    "validation_examples": 3297,
+    "dataset_tokens": 6723093,
+    "educational_demo": true,
+    "validation_method": "all assistant targets, overlap scored once",
+    "tokenizer": "bpe",
+    "training_targets": "all assistant replies",
+    "balanced_languages": false,
+    "steps": 2000,
+    "train_loss": 0.036522068083286285,
+    "validation_loss": 0.3021265213440041,
+    "trained_at": "2026-10-20T09:10:17Z",
+    "context_tokens": 1024,
+    "rng_state": {
+      "bit_generator": "PCG64",
+      "state": {
+        "state": 2.35207068572937e+38,
+        "inc": 1.2060872477112215e+38
+      },
+      "has_uint32": 0,
+      "uinteger": 2776574083
+    },
+    "selection": "lowest full-validation loss"
+  },
+  "scope": "Small diagnostic suite, mostly held-out wording within trained families. Novel topics reported separately. Not a general coding or reasoning benchmark.",
+  "cases": [
+    {
+      "id": "pancakes",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Pancakes are my favorite breakfast."
+        }
+      ],
+      "expected": [
+        "pancakes"
+      ],
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "omitted": 0,
+      "seconds": 0.069,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "toppings",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I like pancakes with strawberries."
+        }
+      ],
+      "expected": [
+        "pancakes",
+        "strawberries"
+      ],
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "omitted": 0,
+      "seconds": 0.065,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "hobby",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I am a big fan of drawing!"
+        }
+      ],
+      "expected": [
+        "drawing"
+      ],
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "omitted": 0,
+      "seconds": 0.327,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "negative",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I do not like soup."
+        }
+      ],
+      "expected": [
+        "prefer",
+        "soup"
+      ],
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "omitted": 0,
+      "seconds": 0.1,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "novel_food",
+      "family": "novel_chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I really enjoy omelettes."
+        }
+      ],
+      "expected": [
+        "omelette"
+      ],
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "omitted": 0,
+      "seconds": 0.173,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "novel_hobby",
+      "family": "novel_chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I love astronomy."
+        }
+      ],
+      "expected": [
+        "astronomy"
+      ],
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "omitted": 0,
+      "seconds": 0.159,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "circle",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a small blue circle as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "circle",
+        "attrs": {
+          "r": "32",
+          "fill": "#3b82f6"
+        }
+      },
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "omitted": 0,
+      "seconds": 0.065,
+      "passed": false,
+      "check_error": "Text is only allowed inside SVG text elements."
+    },
+    {
+      "id": "square",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Generate an SVG image showing a large purple square."
+        }
+      ],
+      "expected": {
+        "tag": "rect",
+        "attrs": {
+          "width": "176",
+          "height": "176",
+          "fill": "#a855f7"
+        }
+      },
+      "reply": "```python\ndef maximum(values):\n    return max(values)\n```",
+      "omitted": 0,
+      "seconds": 0.047,
+      "passed": false,
+      "check_error": "Text is only allowed inside SVG text elements."
+    },
+    {
+      "id": "heart",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a medium pink heart as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "path",
+        "attrs": {
+          "fill": "#ec4899"
+        },
+        "contains": "scale(0.6364)"
+      },
+      "reply": "```python\ndef length(items):\n    return len(items)\n```",
+      "omitted": 0,
+      "seconds": 0.046,
+      "passed": false,
+      "check_error": "Text is only allowed inside SVG text elements."
+    },
+    {
+      "id": "scene",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a green house with a brown roof as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "rect",
+        "attrs": {
+          "fill": "#22c55e"
+        },
+        "contains": "#92400e"
+      },
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "omitted": 0,
+      "seconds": 0.106,
+      "passed": false,
+      "check_error": "Text is only allowed inside SVG text elements."
+    },
+    {
+      "id": "composition",
+      "family": "svg",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Draw a blue circle above of a green square as SVG."
+        }
+      ],
+      "expected": {
+        "tag": "circle",
+        "attrs": {
+          "cx": "128",
+          "cy": "64",
+          "fill": "#3b82f6"
+        },
+        "contains": "y=\"160\""
+      },
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "omitted": 0,
+      "seconds": 0.046,
+      "passed": false,
+      "check_error": "Text is only allowed inside SVG text elements."
+    },
+    {
+      "id": "lru",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Build a Python LRUCache with get(key, default=None) and put(key, value). Reject capacity <= 0. Reads update recency, and insertion evicts the least recently used entry."
+        }
+      ],
+      "expected": "lru",
+      "reply": "You're welcome! What would you like to try next?",
+      "omitted": 0,
+      "seconds": 0.07,
+      "passed": false,
+      "check_error": "The model did not produce one complete code block. No file was staged. Try a smaller, precise request."
+    },
+    {
+      "id": "group",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement group_by to group a list of dictionaries by a requested key without modifying the input. Use Python."
+        }
+      ],
+      "expected": "group",
+      "reply": "```python\ndef length(items):\n    return len(items)\n```",
+      "omitted": 0,
+      "seconds": 0.069,
+      "passed": false,
+      "check": "sandboxed behavioral assertions",
+      "check_error": "Traceback (most recent call last):\n  File \"/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-sTPOn4/test_candidate.py\", line 1, in <module>\n    from candidate import group_by\nImportError: cannot import name 'group_by' from 'candidate' (/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-sTPOn4/candidate.py)\n"
+    },
+    {
+      "id": "flatten",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement flatten to flatten nested lists of any depth while preserving item order. Use Python."
+        }
+      ],
+      "expected": "flatten",
+      "reply": "```python\nfor i in range(3):\n    print(i)\n```",
+      "omitted": 0,
+      "seconds": 0.045,
+      "passed": false,
+      "check": "sandboxed behavioral assertions",
+      "check_error": "0\n1\n2\nTraceback (most recent call last):\n  File \"/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-EpZjiL/test_candidate.py\", line 1, in <module>\n    from candidate import flatten\nImportError: cannot import name 'flatten' from 'candidate' (/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-EpZjiL/candidate.py)\n"
+    },
+    {
+      "id": "intervals",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement merge_ranges to merge overlapping intervals, sort the result, and preserve the original input. Use Python."
+        }
+      ],
+      "expected": "intervals",
+      "reply": "```python\ndef implementten(bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+      "omitted": 0,
+      "seconds": 2.363,
+      "passed": false,
+      "check_error": "The model did not produce one complete code block. No file was staged. Try a smaller, precise request."
+    },
+    {
+      "id": "csv",
+      "family": "code",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Please implement parse_rows to parse CSV text with headers, quoted commas, and quoted newlines using the standard library. Use Python."
+        }
+      ],
+      "expected": "csv",
+      "reply": "```python\ndef quotse_ratio(values):\n    return sum(values) / len(values)\n```",
+      "omitted": 0,
+      "seconds": 0.073,
+      "passed": false,
+      "check": "sandboxed behavioral assertions",
+      "check_error": "Traceback (most recent call last):\n  File \"/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-5wyFBZ/test_candidate.py\", line 1, in <module>\n    from candidate import parse_rows\nImportError: cannot import name 'parse_rows' from 'candidate' (/private/var/folders/h5/9s8p9vw920z7082dp2pzzkm80000gn/T/kani-test-5wyFBZ/candidate.py)\n"
+    },
+    {
+      "id": "memory",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I love pancakes."
+        },
+        {
+          "role": "assistant",
+          "content": "Pancakes! What do you like most about pancakes?"
+        },
+        {
+          "role": "user",
+          "content": "How are you?"
+        },
+        {
+          "role": "assistant",
+          "content": "Ready to help. How is your day going?"
+        },
+        {
+          "role": "user",
+          "content": "What do I like?"
+        }
+      ],
+      "expected": [
+        "pancakes"
+      ],
+      "reply": "I'm Kelus Kani B2:2F, a small model trained locally from scratch for basic chat and code.",
+      "omitted": 0,
+      "seconds": 0.096,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    },
+    {
+      "id": "correction",
+      "family": "chat",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I love pancakes."
+        },
+        {
+          "role": "assistant",
+          "content": "Pancakes! What do you like most about pancakes?"
+        },
+        {
+          "role": "user",
+          "content": "No, I meant waffles."
+        }
+      ],
+      "expected": [
+        "waffles"
+      ],
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "omitted": 0,
+      "seconds": 0.081,
+      "passed": false,
+      "check": "required topic terms; inspect full reply for coherence"
+    }
+  ],
+  "scores": {
+    "chat": {
+      "passed": 0,
+      "total": 6
+    },
+    "novel_chat": {
+      "passed": 0,
+      "total": 2
+    },
+    "svg": {
+      "passed": 0,
+      "total": 5
+    },
+    "code": {
+      "passed": 0,
+      "total": 5
+    }
+  }
+}

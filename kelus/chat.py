@@ -5,7 +5,7 @@ from .runtime import prepare_reply
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Chat with Kelus Model B1 locally")
+    parser = argparse.ArgumentParser(description="Chat with Kani Seal 3 locally")
     parser.add_argument("--checkpoint", default="checkpoints/b1-v3.best.npz")
     parser.add_argument("--temperature", type=float, default=0)
     parser.add_argument("--max-tokens", type=int, default=240)
@@ -25,8 +25,8 @@ def main():
                 continue
             messages.append({"role": "user", "content": prompt})
             retained, omitted, tool = prepare_reply(model, messages[-15:], args.max_tokens)
-            if omitted: print("[Older turns omitted; B1 uses at most one prior exchange.]")
-            print((tool[1] if tool else "B1") + ": ", end="", flush=True)
+            if omitted: print("[Older turns omitted; Kani uses at most one prior exchange.]")
+            print((tool[1] if tool else "Kani") + ": ", end="", flush=True)
             response = ""
             output = [tool[0]] if tool else model.generate(retained, max_tokens=args.max_tokens, temperature=args.temperature)
             for text in output:

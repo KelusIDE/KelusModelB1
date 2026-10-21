@@ -1,11 +1,22 @@
 import { loadModel, prepareReply } from './b1.js';
+import { attachSvgPreview, svgPrompt, svgRequest } from './svg.js';
+import { webAnswer, webRequest } from './web.js';
+import { mountAttachments, prepareAttachments } from './attachments.js';
 
 const $ = selector => document.querySelector(selector);
-const LABELS = { local_clock: 'LOCAL CLOCK', local_calculator: 'LOCAL CALCULATOR', model: 'KELUS / B1' };
+const LABELS = { local_clock: 'LOCAL CLOCK', local_calculator: 'LOCAL CALCULATOR', web:'WEB · WIKIPEDIA', file_analysis:'LOCAL FILE INSPECTION', model: 'KANI SEAL 3' };
+let webAborter;
 let model, generating = false, stopped = false;
 // The full conversation; the model only ever sees its last 15 messages.
 let transcript = [], chatId = crypto.randomUUID(), savedChat = false;
 let account = null, user = null, stopWatchingChats = null, savedChats = [];
+let previews = [];
+let privateChat = false;
+function preview(body, reply) {
+  const release = attachSvgPreview(body, reply);
+  if (release) previews.push(release);
+  return Boolean(release);
+}
 
 function message(role, text, source = 'model') {
   const article = document.createElement('article'); article.className = 'message ' + role;
@@ -26,25 +37,33 @@ const plain = messages => messages.map(({ role, content, source }) => source ? {
 
 function showError(text) { $('#error').textContent = text; $('#error').hidden = false; }
 
+const attachments = mountAttachments({form:$('#chat-form'), input:$('#prompt'), onError:showError});
+
 function setBusy(busy) {
+  attachments.setBusy(busy);
   generating = busy;
   $('#send').disabled = busy || !model; $('#new-chat').disabled = busy; $('#new-chat-mobile').disabled = busy; $('#stop').hidden = !busy;
 }
 
 function renderTranscript() {
+  previews.forEach(release => release()); previews = [];
   $('#messages').replaceChildren();
-  for (const item of transcript) message(item.role, item.content, item.source);
+  for (const item of transcript) {
+    const body = message(item.role, item.content, item.source);
+    if (item.role === 'assistant') preview(body, item.content);
+  }
   $('#welcome').hidden = transcript.length > 0;
 }
 
 function startChat(messages = [], id = crypto.randomUUID(), saved = false) {
   if (generating) return;
+  attachments.clear(); privateChat = false;
   transcript = plain(messages); chatId = id; savedChat = saved;
   renderTranscript(); $('#error').hidden = true; renderChatList();
 }
 
 async function persist() {
-  if (!account || !user || !transcript.length) return;
+  if (privateChat || !account || !user || !transcript.length) return;
   // Firestore applies writes in order, so a later save can safely assume this one created the chat.
   const created = savedChat; savedChat = true;
   try {
@@ -56,24 +75,41 @@ async function persist() {
 }
 
 async function send(prompt) {
-  if (generating || !model || !prompt.trim()) return;
+  if (generating || attachments.reading || !model || (!prompt.trim() && !attachments.files.length)) return;
+  const attached = attachments.files.length > 0;
+  prompt = prompt.trim() || 'Analyze these files.';
+  let fileTurn;
+  try { if (attached) fileTurn = prepareAttachments(prompt, attachments.files, model.tokenizer, model.config.context, model.config.context >= 1024 ? 768 : 240); }
+  catch(error) { showError(error.message); return; }
+  if (attached) privateChat = true;
   setBusy(true); stopped = false;
   $('#error').hidden = true; $('#welcome').hidden = true;
-  message('user', prompt); const output = message('assistant', '');
-  $('#prompt').value = ''; transcript.push({ role: 'user', content: prompt });
+  const shown = prompt + (attached ? '\nAttached: ' + attachments.files.map(f=>f.name).join(', ') : '');
+  message('user', shown); const output = message('assistant', '');
+  $('#prompt').value = ''; transcript.push({ role: 'user', content: shown, excludeFromContext:attached });
   let reply = '', source = 'model';
   const started = performance.now();
   try {
     const temperature = Math.min(2, Math.max(0, Number($('#temperature').value) || 0));
-    let context = transcript.slice(-15).map(({ role, content }) => ({ role, content }));
-    if (context[0].role !== 'user') context = context.slice(1);
-    const { retained, omitted, tool } = prepareReply(model, context, 240);
-    if (tool) {
+    let context = transcript.filter(item=>!item.excludeFromContext).slice(-15).map(({ role, content }) => ({ role, content }));
+    if (fileTurn) context = [{role:'user',content:fileTurn.text}];
+    if (context[0]?.role !== 'user') context = context.slice(1);
+    const drawing = attached ? null : svgRequest(context.at(-1).content);
+    if (drawing) context = [{ role: 'user', content: svgPrompt(drawing) }];
+    const maxTokens = model.config.context >= 1024 ? 768 : drawing ? Math.min(512, model.config.context) : 240;
+    const online=attached ? null : webRequest(prompt);
+    const { retained, omitted, tool } = online || fileTurn?.helper ? {retained:[],omitted:0,tool:null} : prepareReply(model, context, maxTokens);
+    if(fileTurn?.helper) { reply=fileTurn.text; source='file_analysis'; output.parentElement.classList.add('helper'); } else if(online) {
+      webAborter=new AbortController();
+      output.textContent='Searching Wikipedia…';
+      reply=(await webAnswer(online,fetch,webAborter.signal)).text;source='web';
+      output.parentElement.classList.add('helper');
+    } else if (tool) {
       [reply, source] = tool;
       output.parentElement.classList.add('helper');
     } else {
       let count = 0;
-      for (const text of model.generate(retained, { maxTokens: 240, temperature })) {
+      for (const text of model.generate(retained, { maxTokens, temperature })) {
         reply += text; output.textContent = reply;
         if (++count % 4 === 0) await nextFrame();
         if (stopped) break;
@@ -81,15 +117,19 @@ async function send(prompt) {
     }
     output.previousElementSibling.textContent = LABELS[source];
     output.textContent = reply || '(The model ended its reply without text. Try another wording.)';
-    $('#generation-info').textContent = `Generated on this device in ${((performance.now() - started) / 1000).toFixed(2)}s`
-      + (omitted ? ' · Older turns omitted; B1 uses one prior exchange' : '') + ' · Review and test generated code.';
-    transcript.push(source === 'model' ? { role: 'assistant', content: reply } : { role: 'assistant', content: reply, source });
+    if (fileTurn && !fileTurn.helper) { const note=document.createElement('div'); note.className='attachment-receipt'; note.textContent=fileTurn.receipt; output.parentElement.append(note); }
+    const rendered = source === 'model' && preview(output, reply);
+    if (drawing && !rendered && !stopped) showError('The model did not produce a complete, supported SVG. Its response is shown above.');
+    $('#generation-info').textContent = `${source==='web'?'Retrieved online':'Generated on this device'} in ${((performance.now() - started) / 1000).toFixed(2)}s`
+      + (omitted ? ' · Older turns omitted to fit this model' : '') + (privateChat ? ' · Attachment chat stays local; not saved to your account.' : ' · Review and test generated code.');
+    transcript.push({ role:'assistant', content:reply, source, excludeFromContext:attached });
     void persist();
   } catch (error) {
     showError(error.message);
     transcript.pop();
     if (!reply) output.textContent = '(No response generated.)';
   } finally {
+    webAborter=null;
     setBusy(false); $('#prompt').focus(); scrollLatest();
   }
 }
@@ -140,7 +180,7 @@ function onChats(chats) {
   savedChats = chats;
   const current = chats.find(chat => chat.id === chatId);
   // Another device or tab changed the open chat: show its latest version.
-  if (current && !current.pending && !generating && JSON.stringify(plain(current.messages || [])) !== JSON.stringify(transcript)) {
+  if (current && !current.pending && !generating && !privateChat && JSON.stringify(plain(current.messages || [])) !== JSON.stringify(transcript)) {
     transcript = plain(current.messages || []); savedChat = true; renderTranscript();
   }
   renderChatList();
@@ -201,7 +241,7 @@ $('#prompt').addEventListener('keydown', event => {
   if (event.key === 'Enter' && !event.shiftKey && !event.isComposing) { event.preventDefault(); $('#chat-form').requestSubmit(); }
 });
 document.querySelectorAll('[data-prompt]').forEach(button => button.addEventListener('click', () => { void send(button.dataset.prompt); }));
-$('#stop').addEventListener('click', () => { stopped = true; });
+$('#stop').addEventListener('click', () => { stopped = true; webAborter?.abort(); });
 for (const button of [$('#new-chat'), $('#new-chat-mobile')]) button.addEventListener('click', () => { startChat(); $('#prompt').focus(); });
 $('#reload').addEventListener('click', () => location.reload());
 

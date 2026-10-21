@@ -1,0 +1,17 @@
+{
+  "name": "kani-cli",
+  "version": "0.2.0",
+  "description": "Terminal chat with Kani Seal 3, running the B1 model in Node with no dependencies.",
+  "license": "Apache-2.0",
+  "private": true,
+  "type": "module",
+  "bin": {
+    "kani": "kani.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "test": "node --test"
+  }
+}
