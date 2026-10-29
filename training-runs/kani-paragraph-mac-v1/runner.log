@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/local_chat_train.py", line 126, in <module>
+    main()
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/local_chat_train.py", line 111, in main
+    execute(command, 'instruction.log')
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/local_chat_train.py", line 76, in execute
+    raise RuntimeError(f'Child exited {code}; inspect {RUN / filename}')
+RuntimeError: Child exited 1; inspect /Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-paragraph-mac-v1/instruction.log

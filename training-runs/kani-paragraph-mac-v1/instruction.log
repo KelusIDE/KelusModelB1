@@ -1,0 +1,247 @@
+{"name": "Kani Seal 3", "parameters": 205588480, "training_examples": 15735, "validation_examples": 64, "dataset_tokens": 5180606, "initial_validation_loss": 1.7708818585527957, "device": "gpu (mlx)", "tokenizer_backend": "rust"}
+{"step": 1, "train_loss": 1.9087, "validation_loss": 1.77, "gradient_norm": 3.8496, "elapsed_seconds": 6.6}
+{"step": 25, "train_loss": 1.7852, "width": 128, "elapsed_seconds": 104.4}
+{"step": 50, "train_loss": 1.3769, "width": 512, "elapsed_seconds": 121.8}
+{"step": 75, "train_loss": 1.8224, "width": 256, "elapsed_seconds": 141.7}
+{"step": 100, "train_loss": 2.1359, "validation_loss": 1.6638, "gradient_norm": 4.6421, "elapsed_seconds": 168.1}
+{"step": 125, "train_loss": 1.6127, "width": 384, "elapsed_seconds": 270.2}
+{"step": 150, "train_loss": 1.8667, "width": 256, "elapsed_seconds": 288.6}
+{"step": 175, "train_loss": 1.6311, "width": 1024, "elapsed_seconds": 309.6}
+{"step": 200, "train_loss": 1.5024, "validation_loss": 1.6774, "gradient_norm": 2.0957, "elapsed_seconds": 333.8}
+{"step": 225, "train_loss": 1.5802, "width": 768, "elapsed_seconds": 427.3}
+{"step": 250, "train_loss": 1.1744, "width": 128, "elapsed_seconds": 446.3}
+{"step": 275, "train_loss": 0.9169, "width": 384, "elapsed_seconds": 469.3}
+{"step": 300, "train_loss": 1.6938, "validation_loss": 1.6752, "gradient_norm": 3.9015, "elapsed_seconds": 494.5}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu_train.py", line 374, in <module>
+    pretrain(args)
+^^^^^^
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu_train.py", line 368, in main
+    limit_memory(args.memory_gb)
+        ^^^^^^^^^^^^^^
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu_train.py", line 143, in instruct
+    log.write(json.dumps(report) + '\n'); log.flush()
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu.py", line 172, in save
+    model.save(path, metadata, None if weights_only else State(), compression_level=compression_level)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/model.py", line 272, in save
+    with tempfile.NamedTemporaryFile(dir=destination.parent, suffix=".npz", delete=False) as file:
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/hashtagpro/Downloads/KelusModelB1/.venv/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py", line 753, in savez_compressed
+    _savez(file, args, kwds, True, allow_pickle=allow_pickle)
+  File "/Users/hashtagpro/Downloads/KelusModelB1/.venv/lib/python3.11/site-packages/numpy/lib/_npyio_impl.py", line 786, in _savez
+    format.write_array(fid, val,
+  File "/Users/hashtagpro/Downloads/KelusModelB1/.venv/lib/python3.11/site-packages/numpy/lib/_format_impl.py", line 777, in write_array
+    fp.write(chunk.tobytes('C'))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/zipfile.py", line 1163, in write
+    data = self._compressor.compress(data)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+{"name": "Kani Seal 3", "parameters": 205588480, "training_examples": 15735, "validation_examples": 64, "dataset_tokens": 5180606, "initial_validation_loss": 1.677436344469549, "device": "gpu (mlx)", "tokenizer_backend": "rust"}
+{"step": 201, "train_loss": 0.5278, "validation_loss": 1.6774, "gradient_norm": 3.4602, "elapsed_seconds": 6.6}
+{"step": 225, "train_loss": 1.3272, "width": 1024, "elapsed_seconds": 95.2}
+{"step": 250, "train_loss": 1.5245, "validation_loss": 1.6599, "gradient_norm": 2.2366, "elapsed_seconds": 123.9}
+{"step": 275, "train_loss": 1.097, "width": 768, "elapsed_seconds": 219.1}
+{"step": 300, "train_loss": 1.3594, "width": 768, "elapsed_seconds": 238.8}
+{"step": 325, "train_loss": 1.7306, "width": 256, "elapsed_seconds": 257.9}
+{"step": 350, "train_loss": 1.2159, "width": 512, "elapsed_seconds": 279.8}
+{"step": 375, "train_loss": 1.7002, "width": 128, "elapsed_seconds": 300.0}
+{"step": 400, "train_loss": 1.3687, "width": 128, "elapsed_seconds": 323.5}
+{"step": 425, "train_loss": 1.3597, "width": 512, "elapsed_seconds": 345.5}
+{"step": 450, "train_loss": 1.9625, "width": 640, "elapsed_seconds": 369.8}
+{"step": 475, "train_loss": 1.9231, "width": 640, "elapsed_seconds": 394.1}
+{"step": 500, "train_loss": 0.9522, "validation_loss": 1.6793, "gradient_norm": 5.5091, "elapsed_seconds": 425.4}
+{"step": 525, "train_loss": 1.5313, "width": 128, "elapsed_seconds": 499.1}
+{"step": 550, "train_loss": 1.5829, "width": 256, "elapsed_seconds": 522.1}
+{"step": 575, "train_loss": 1.0293, "width": 640, "elapsed_seconds": 543.9}
+{"step": 600, "train_loss": 0.4986, "width": 128, "elapsed_seconds": 563.4}
+{"step": 625, "train_loss": 1.3135, "width": 256, "elapsed_seconds": 582.5}
+{"step": 650, "train_loss": 1.7242, "width": 256, "elapsed_seconds": 602.9}
+{"step": 675, "train_loss": 1.5252, "width": 256, "elapsed_seconds": 625.7}
+{"step": 700, "train_loss": 1.739, "width": 128, "elapsed_seconds": 645.8}
+{"step": 725, "train_loss": 1.7152, "width": 768, "elapsed_seconds": 671.4}
+{"step": 750, "train_loss": 1.9807, "validation_loss": 1.6782, "gradient_norm": 5.2301, "elapsed_seconds": 705.4}
+{"step": 775, "train_loss": 1.8513, "width": 384, "elapsed_seconds": 785.3}
+{"step": 800, "train_loss": 1.607, "width": 384, "elapsed_seconds": 808.9}
+{"step": 825, "train_loss": 1.6513, "width": 256, "elapsed_seconds": 830.9}
+{"step": 850, "train_loss": 1.5689, "width": 768, "elapsed_seconds": 849.8}
+{"step": 875, "train_loss": 0.5186, "width": 128, "elapsed_seconds": 867.6}
+{"step": 900, "train_loss": 1.9752, "width": 128, "elapsed_seconds": 887.3}
+{"step": 925, "train_loss": 1.7004, "width": 896, "elapsed_seconds": 908.6}
+{"step": 950, "train_loss": 1.7184, "width": 128, "elapsed_seconds": 927.6}
+{"step": 975, "train_loss": 2.1065, "width": 128, "elapsed_seconds": 947.9}
+{"step": 1000, "train_loss": 1.412, "validation_loss": 1.6726, "gradient_norm": 3.5887, "elapsed_seconds": 972.7}
+{"step": 1025, "train_loss": 1.7244, "width": 256, "elapsed_seconds": 1052.0}
+{"step": 1050, "train_loss": 2.0803, "width": 256, "elapsed_seconds": 1078.8}
+{"step": 1075, "train_loss": 2.3591, "width": 256, "elapsed_seconds": 1100.7}
+{"step": 1100, "train_loss": 1.3736, "width": 512, "elapsed_seconds": 1120.9}
+{"step": 1125, "train_loss": 1.5238, "width": 256, "elapsed_seconds": 1140.2}
+{"step": 1150, "train_loss": 1.3677, "width": 128, "elapsed_seconds": 1167.4}
+{"step": 1175, "train_loss": 1.0438, "width": 896, "elapsed_seconds": 1191.5}
+{"step": 1200, "train_loss": 1.7756, "width": 256, "elapsed_seconds": 1212.2}
+{"step": 1225, "train_loss": 1.1194, "width": 256, "elapsed_seconds": 1231.4}
+{"step": 1250, "train_loss": 1.4538, "validation_loss": 1.6798, "gradient_norm": 3.5385, "elapsed_seconds": 1263.2}
+{"step": 1275, "train_loss": 1.7272, "width": 128, "elapsed_seconds": 1341.4}
+{"step": 1300, "train_loss": 1.9227, "width": 128, "elapsed_seconds": 1364.6}
+{"step": 1325, "train_loss": 1.3852, "width": 640, "elapsed_seconds": 1389.6}
+{"step": 1350, "train_loss": 1.7096, "width": 1024, "elapsed_seconds": 1415.1}
+{"step": 1375, "train_loss": 0.4021, "width": 128, "elapsed_seconds": 1432.8}
+{"step": 1400, "train_loss": 1.0321, "width": 1024, "elapsed_seconds": 1460.4}
+{"step": 1425, "train_loss": 1.5481, "width": 384, "elapsed_seconds": 1486.8}
+{"step": 1450, "train_loss": 0.8286, "width": 128, "elapsed_seconds": 1511.5}
+{"step": 1475, "train_loss": 2.0556, "width": 256, "elapsed_seconds": 1536.7}
+{"step": 1500, "train_loss": 1.3802, "validation_loss": 1.6743, "gradient_norm": 1.6966, "elapsed_seconds": 1566.6}
+{"step": 1525, "train_loss": 1.8223, "width": 256, "elapsed_seconds": 1643.1}
+{"step": 1550, "train_loss": 1.12, "width": 128, "elapsed_seconds": 1663.0}
+{"step": 1575, "train_loss": 1.7304, "width": 128, "elapsed_seconds": 1680.0}
+{"step": 1600, "train_loss": 1.6449, "width": 640, "elapsed_seconds": 1704.3}
+{"step": 1625, "train_loss": 1.9443, "width": 256, "elapsed_seconds": 1729.8}
+{"step": 1650, "train_loss": 2.1063, "width": 256, "elapsed_seconds": 1750.5}
+{"step": 1675, "train_loss": 1.8401, "width": 256, "elapsed_seconds": 1772.1}
+{"step": 1700, "train_loss": 2.0554, "width": 384, "elapsed_seconds": 1795.3}
+{"step": 1725, "train_loss": 1.2935, "width": 256, "elapsed_seconds": 1813.8}
+{"step": 1750, "train_loss": 0.905, "validation_loss": 1.6754, "gradient_norm": 4.8958, "elapsed_seconds": 1839.7}
+{"step": 1775, "train_loss": 1.4825, "width": 512, "elapsed_seconds": 1912.1}
+{"step": 1800, "train_loss": 0.811, "width": 512, "elapsed_seconds": 1933.9}
+{"step": 1825, "train_loss": 2.1171, "width": 384, "elapsed_seconds": 1954.1}
+{"step": 1850, "train_loss": 2.4177, "width": 256, "elapsed_seconds": 1971.0}
+{"step": 1875, "train_loss": 2.0148, "width": 128, "elapsed_seconds": 1992.3}
+{"step": 1900, "train_loss": 0.8011, "width": 384, "elapsed_seconds": 2011.7}
+{"step": 1925, "train_loss": 1.0698, "width": 512, "elapsed_seconds": 2031.2}
+{"step": 1950, "train_loss": 1.4273, "width": 384, "elapsed_seconds": 2050.4}
+{"step": 1975, "train_loss": 2.4142, "width": 256, "elapsed_seconds": 2070.2}
+{"step": 2000, "train_loss": 1.6926, "validation_loss": 1.6769, "gradient_norm": 3.8435, "elapsed_seconds": 2102.7}
+{"step": 2025, "train_loss": 1.6829, "width": 768, "elapsed_seconds": 2178.1}
+{"step": 2050, "train_loss": 1.1442, "width": 384, "elapsed_seconds": 2199.4}
+{"step": 2075, "train_loss": 2.2454, "width": 256, "elapsed_seconds": 2220.4}
+{"step": 2100, "train_loss": 2.2847, "width": 256, "elapsed_seconds": 2238.5}
+{"step": 2125, "train_loss": 1.6367, "width": 512, "elapsed_seconds": 2259.1}
+{"step": 2150, "train_loss": 2.277, "width": 256, "elapsed_seconds": 2280.9}
+{"step": 2175, "train_loss": 1.7838, "width": 256, "elapsed_seconds": 2300.3}
+{"step": 2200, "train_loss": 1.0836, "width": 640, "elapsed_seconds": 2318.0}
+{"step": 2225, "train_loss": 1.4107, "width": 256, "elapsed_seconds": 2335.2}
+{"step": 2250, "train_loss": 2.3459, "validation_loss": 1.68, "gradient_norm": 2.7789, "elapsed_seconds": 2361.2}
+{"step": 2275, "train_loss": 1.2169, "width": 896, "elapsed_seconds": 2431.4}
+{"step": 2300, "train_loss": 1.3839, "width": 640, "elapsed_seconds": 2449.7}
+{"step": 2325, "train_loss": 1.7373, "width": 512, "elapsed_seconds": 2470.2}
+{"step": 2350, "train_loss": 1.025, "width": 640, "elapsed_seconds": 2488.8}
+{"step": 2375, "train_loss": 1.5532, "width": 256, "elapsed_seconds": 2507.6}
+{"step": 2400, "train_loss": 0.9529, "width": 128, "elapsed_seconds": 2526.0}
+{"step": 2425, "train_loss": 1.1433, "width": 256, "elapsed_seconds": 2544.6}
+{"step": 2450, "train_loss": 0.991, "width": 128, "elapsed_seconds": 2565.5}
+{"step": 2475, "train_loss": 0.6665, "width": 896, "elapsed_seconds": 2583.5}
+{"step": 2500, "train_loss": 1.2428, "validation_loss": 1.7117, "gradient_norm": 4.2154, "elapsed_seconds": 2609.0}
+{"step": 2525, "train_loss": 0.5866, "width": 384, "elapsed_seconds": 2682.6}
+{"step": 2550, "train_loss": 1.4456, "width": 384, "elapsed_seconds": 2699.8}
+{"step": 2575, "train_loss": 2.0169, "width": 1024, "elapsed_seconds": 2720.3}
+{"step": 2600, "train_loss": 1.7715, "width": 256, "elapsed_seconds": 2739.0}
+{"step": 2625, "train_loss": 1.8989, "width": 640, "elapsed_seconds": 2759.8}
+{"step": 2650, "train_loss": 0.8298, "width": 256, "elapsed_seconds": 2779.0}
+{"step": 2675, "train_loss": 1.175, "width": 1024, "elapsed_seconds": 2801.9}
+{"step": 2700, "train_loss": 1.4045, "width": 256, "elapsed_seconds": 2818.2}
+{"step": 2725, "train_loss": 2.1329, "width": 128, "elapsed_seconds": 2837.0}
+{"step": 2750, "train_loss": 0.7694, "validation_loss": 1.6681, "gradient_norm": 4.3126, "elapsed_seconds": 2863.8}
+{"step": 2775, "train_loss": 0.6827, "width": 128, "elapsed_seconds": 2938.6}
+{"step": 2800, "train_loss": 1.0183, "width": 384, "elapsed_seconds": 2957.1}
+{"step": 2825, "train_loss": 1.1129, "width": 128, "elapsed_seconds": 2975.0}
+{"step": 2850, "train_loss": 1.5917, "width": 256, "elapsed_seconds": 2993.5}
+{"step": 2875, "train_loss": 1.6522, "width": 128, "elapsed_seconds": 3014.4}
+{"step": 2900, "train_loss": 1.6501, "width": 256, "elapsed_seconds": 3031.8}
+{"step": 2925, "train_loss": 0.6696, "width": 128, "elapsed_seconds": 3051.1}
+{"step": 2950, "train_loss": 1.6372, "width": 512, "elapsed_seconds": 3070.2}
+{"step": 2975, "train_loss": 2.1491, "width": 768, "elapsed_seconds": 3088.2}
+{"step": 3000, "train_loss": 0.7385, "validation_loss": 1.6754, "gradient_norm": 1.4473, "elapsed_seconds": 3112.4}
+{"step": 3025, "train_loss": 1.2172, "width": 256, "elapsed_seconds": 3187.7}
+{"step": 3050, "train_loss": 1.0437, "width": 768, "elapsed_seconds": 3206.7}
+{"step": 3075, "train_loss": 0.3677, "width": 256, "elapsed_seconds": 3223.6}
+{"step": 3100, "train_loss": 1.5165, "width": 384, "elapsed_seconds": 3242.9}
+{"step": 3125, "train_loss": 1.6331, "width": 128, "elapsed_seconds": 3262.0}
+{"step": 3150, "train_loss": 2.1886, "width": 256, "elapsed_seconds": 3284.6}
+{"step": 3175, "train_loss": 0.8801, "width": 896, "elapsed_seconds": 3303.6}
+{"step": 3200, "train_loss": 0.9364, "width": 384, "elapsed_seconds": 3320.2}
+{"step": 3225, "train_loss": 1.9625, "width": 384, "elapsed_seconds": 3340.7}
+{"step": 3250, "train_loss": 1.3191, "validation_loss": 1.6754, "gradient_norm": 3.5026, "elapsed_seconds": 3362.9}
+{"step": 3275, "train_loss": 1.6447, "width": 128, "elapsed_seconds": 3436.5}
+{"step": 3300, "train_loss": 1.5822, "width": 512, "elapsed_seconds": 3456.3}
+{"step": 3325, "train_loss": 1.1003, "width": 128, "elapsed_seconds": 3474.0}
+{"step": 3350, "train_loss": 1.609, "width": 128, "elapsed_seconds": 3494.1}
+{"step": 3375, "train_loss": 1.3351, "width": 1024, "elapsed_seconds": 3513.6}
+{"step": 3400, "train_loss": 1.6263, "width": 256, "elapsed_seconds": 3533.9}
+{"step": 3425, "train_loss": 0.758, "width": 384, "elapsed_seconds": 3550.2}
+{"step": 3450, "train_loss": 1.3489, "width": 512, "elapsed_seconds": 3570.8}
+{"step": 3475, "train_loss": 0.3541, "width": 384, "elapsed_seconds": 3588.3}
+{"step": 3500, "train_loss": 2.0321, "validation_loss": 1.6674, "gradient_norm": 4.5881, "elapsed_seconds": 3614.0}
+{"step": 3525, "train_loss": 1.9003, "width": 256, "elapsed_seconds": 3698.4}
+{"step": 3550, "train_loss": 1.5872, "width": 128, "elapsed_seconds": 3721.1}
+{"step": 3575, "train_loss": 1.1339, "width": 1024, "elapsed_seconds": 3744.5}
+{"step": 3600, "train_loss": 2.4947, "width": 256, "elapsed_seconds": 3773.7}
+{"step": 3625, "train_loss": 0.7885, "width": 256, "elapsed_seconds": 3799.6}
+{"step": 3650, "train_loss": 2.3426, "width": 256, "elapsed_seconds": 3822.8}
+{"step": 3675, "train_loss": 0.9968, "width": 256, "elapsed_seconds": 3845.2}
+{"step": 3700, "train_loss": 2.1676, "width": 256, "elapsed_seconds": 3868.4}
+{"step": 3725, "train_loss": 1.2796, "width": 384, "elapsed_seconds": 3889.9}
+{"step": 3750, "train_loss": 1.8924, "validation_loss": 1.665, "gradient_norm": 5.6217, "elapsed_seconds": 3917.1}
+{"step": 3775, "train_loss": 1.223, "width": 128, "elapsed_seconds": 3997.9}
+{"step": 3800, "train_loss": 0.7323, "width": 256, "elapsed_seconds": 4017.4}
+{"step": 3825, "train_loss": 0.6801, "width": 256, "elapsed_seconds": 4036.5}
+{"step": 3850, "train_loss": 0.5997, "width": 256, "elapsed_seconds": 4055.2}
+{"step": 3875, "train_loss": 2.0481, "width": 256, "elapsed_seconds": 4076.2}
+{"step": 3900, "train_loss": 1.073, "width": 256, "elapsed_seconds": 4100.8}
+{"step": 3925, "train_loss": 2.1541, "width": 256, "elapsed_seconds": 4122.2}
+{"step": 3950, "train_loss": 1.2578, "width": 512, "elapsed_seconds": 4141.3}
+{"step": 3975, "train_loss": 1.5318, "width": 256, "elapsed_seconds": 4160.3}
+{"step": 4000, "train_loss": 0.7469, "validation_loss": 1.648, "gradient_norm": 5.3922, "elapsed_seconds": 4188.2}
+{"step": 4025, "train_loss": 0.5775, "width": 128, "elapsed_seconds": 4288.6}
+{"step": 4050, "train_loss": 1.9798, "width": 896, "elapsed_seconds": 4309.9}
+{"step": 4075, "train_loss": 1.7673, "width": 128, "elapsed_seconds": 4333.3}
+{"step": 4100, "train_loss": 1.3908, "width": 256, "elapsed_seconds": 4356.6}
+{"step": 4125, "train_loss": 1.685, "width": 128, "elapsed_seconds": 4377.0}
+{"step": 4150, "train_loss": 1.5334, "width": 256, "elapsed_seconds": 4400.2}
+{"step": 4175, "train_loss": 1.0713, "width": 768, "elapsed_seconds": 4426.0}
+{"step": 4200, "train_loss": 0.743, "width": 128, "elapsed_seconds": 4446.0}
+{"step": 4225, "train_loss": 1.1862, "width": 256, "elapsed_seconds": 4465.8}
+{"step": 4250, "train_loss": 0.4811, "validation_loss": 1.6443, "gradient_norm": 3.7238, "elapsed_seconds": 4496.2}
+{"step": 4275, "train_loss": 1.4037, "width": 768, "elapsed_seconds": 4589.6}
+{"step": 4300, "train_loss": 1.1808, "width": 128, "elapsed_seconds": 4610.5}
+{"step": 4325, "train_loss": 1.3986, "width": 128, "elapsed_seconds": 4633.1}
+{"step": 4350, "train_loss": 0.9279, "width": 256, "elapsed_seconds": 4652.9}
+{"step": 4375, "train_loss": 2.2487, "width": 256, "elapsed_seconds": 4673.2}
+{"step": 4400, "train_loss": 1.7327, "width": 128, "elapsed_seconds": 4693.7}
+{"step": 4425, "train_loss": 0.8376, "width": 640, "elapsed_seconds": 4714.4}
+{"step": 4450, "train_loss": 1.4123, "width": 128, "elapsed_seconds": 4738.3}
+{"step": 4475, "train_loss": 0.988, "width": 128, "elapsed_seconds": 4758.9}
+{"step": 4500, "train_loss": 1.1082, "validation_loss": 1.6569, "gradient_norm": 2.69, "elapsed_seconds": 4786.7}
+{"step": 4525, "train_loss": 0.5371, "width": 512, "elapsed_seconds": 4864.3}
+{"step": 4550, "train_loss": 0.8853, "width": 256, "elapsed_seconds": 4884.0}
+{"step": 4575, "train_loss": 1.3579, "width": 640, "elapsed_seconds": 4903.3}
+{"step": 4600, "train_loss": 1.1474, "width": 256, "elapsed_seconds": 4922.3}
+{"step": 4625, "train_loss": 0.4568, "width": 384, "elapsed_seconds": 4947.9}
+{"step": 4650, "train_loss": 1.0039, "width": 256, "elapsed_seconds": 4974.7}
+{"step": 4675, "train_loss": 1.4523, "width": 512, "elapsed_seconds": 4999.1}
+{"step": 4700, "train_loss": 1.0966, "width": 1024, "elapsed_seconds": 5021.9}
+{"step": 4725, "train_loss": 1.5135, "width": 384, "elapsed_seconds": 5045.5}
+{"step": 4750, "train_loss": 1.5338, "validation_loss": 1.6629, "gradient_norm": 3.3374, "elapsed_seconds": 5071.8}
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu_train.py", line 378, in <module>
+    main()
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu_train.py", line 372, in main
+    instruct(args)
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu_train.py", line 144, in instruct
+    save(model, params, optimizer, args.out, metadata, learning_rate,
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/gpu.py", line 172, in save
+    model.save(path, metadata, None if weights_only else State(), compression_level=compression_level)
+  File "/Users/hashtagpro/Downloads/KelusModelB1/kelus/model.py", line 282, in save
+    np.lib.format.write_array(member, np.asanyarray(value), allow_pickle=False)
+  File "/Users/hashtagpro/Downloads/KelusModelB1/.venv/lib/python3.11/site-packages/numpy/lib/_format_impl.py", line 777, in write_array
+    fp.write(chunk.tobytes('C'))
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/zipfile.py", line 1165, in write
+    self._fileobj.write(data)
+  File "/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/tempfile.py", line 483, in func_wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+OSError: [Errno 28] No space left on device

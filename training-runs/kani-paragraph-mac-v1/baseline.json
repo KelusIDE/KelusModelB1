@@ -1,0 +1,84 @@
+{
+  "checkpoint": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/runpod-big-v2/kani-advanced.npz",
+  "checkpoint_sha256": "68246a3c707f5512d2f5721ea3c894ac36e6c55bf92bef7965c1adcdd9191541",
+  "cases_sha256": "1a7abdd49571c1f863e2790a38cf792cd65ca6be43551dda42349f8acd7f73ce",
+  "name": "Kani Advanced",
+  "automatic_passed": 0,
+  "automatic_total": 2,
+  "manual_ungraded": 3,
+  "results": [
+    {
+      "id": "read-location",
+      "kind": "exact",
+      "expected": "copper box",
+      "prompt": "Read: Lena put a blue marble inside the copper box. The wooden box is empty. Where is the blue marble? Answer with only the container name.",
+      "response": "Read. Lena put a blue marble inside the copper box. Where is the blue marble? Answer with only the container name.\n\n\n########################################################################################",
+      "passed": false,
+      "elapsed_seconds": 4.82
+    },
+    {
+      "id": "context-correction",
+      "kind": "exact",
+      "expected": "green",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Remember: my tent is orange."
+        },
+        {
+          "role": "assistant",
+          "content": "Your tent is orange."
+        },
+        {
+          "role": "user",
+          "content": "Correction: my tent is green. What color is it? Answer with one word."
+        }
+      ],
+      "response": "\n1. What color is it? Answer with one word.\n\n\n```python\nimport re\nimport random\n\ndef count_word_occurrences(text, word):\n    count = 0\n    for word in text.lower():\n        if word == word.lower():\n            count += 1\n    return count\n```\n\nassert count_word_occurrences(\"hello world\", \"world\") == 2\nassert count_word_occurrences",
+      "passed": false,
+      "elapsed_seconds": 3.72
+    },
+    {
+      "id": "writing-unfamiliar",
+      "kind": "manual",
+      "prompt": "Write a short, two-paragraph explanation of why neighborhood libraries are useful. Include a concrete example in the second paragraph.",
+      "rubric": "Two coherent paragraphs, relevant explanation, concrete example, no fabricated citation or refusal.",
+      "response": "Write a short, two-paragraph explanation of why neighborhood libraries are useful. Include a concrete example in the third paragraph.\n\n\n#################################################################################",
+      "passed": null,
+      "elapsed_seconds": 3.6
+    },
+    {
+      "id": "rewrite",
+      "kind": "manual",
+      "prompt": "Rewrite this politely without changing its meaning: 'You sent the wrong file. Send the invoice instead.'",
+      "rubric": "Requests the invoice, notes the wrong file politely, preserves the original meaning.",
+      "response": "Rewrite this politely without changing its meaning: 'You sent the wrong file. Send the invoice again.'\n\n\n###############################################################################################",
+      "passed": null,
+      "elapsed_seconds": 3.38
+    },
+    {
+      "id": "cats-conversation",
+      "kind": "manual",
+      "diagnostic_only": true,
+      "messages": [
+        {
+          "role": "user",
+          "content": "I like cats"
+        },
+        {
+          "role": "assistant",
+          "content": "What do you like about them?"
+        },
+        {
+          "role": "user",
+          "content": "Their curiosity. Write a short paragraph about that."
+        }
+      ],
+      "rubric": "Responds to curiosity about cats with a coherent relevant paragraph; no generic programming reply.",
+      "response": "Their curiosity. What do you like about them?\nAnswer: [1, 2, 3, 4, 5]\nAnswer: [1, 2, 3, 4, 5]\nAnswer: [1, 2, 3, 4, 5]\nAnswer: [1, 2, 3, 4, 5]\nAnswer: [1, 2, 3, 4, 5]\nAnswer: [1, 2, 3, 4, 5]\nAnswer: [1, 2",
+      "passed": null,
+      "elapsed_seconds": 3.36
+    }
+  ],
+  "limitation": "Small task-specific probes, not an age/IQ/general-intelligence score. Manual/code tasks require review and execution."
+}

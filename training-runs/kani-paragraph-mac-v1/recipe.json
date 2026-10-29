@@ -1,0 +1,12 @@
+{
+  "parent_sha256": "68246a3c707f5512d2f5721ea3c894ac36e6c55bf92bef7965c1adcdd9191541",
+  "data_sha256": "98f2d696ec782011b0a54e58308622a308a1f7626dffeb44ea46fa0e37416042",
+  "total_steps": 8000,
+  "batch": 2,
+  "lr": 5e-05,
+  "memory_gb": 9,
+  "seed": 4271,
+  "tokenizer": "Rust BPE",
+  "update_backend": "MLX/Metal",
+  "auto_deploy": false
+}

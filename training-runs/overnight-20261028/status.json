@@ -1,0 +1,16 @@
+{
+  "stage": "complete",
+  "pid": 77694,
+  "updated_at": 1793186078.078635,
+  "initial_pid": 71719,
+  "deadline_hours": 12.0,
+  "baseline": "1/9",
+  "best": "1/9",
+  "final": "1/9",
+  "automatic_gain": 0,
+  "candidate": "best",
+  "candidate_path": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/overnight-20261028/topic/instruction.best.npz",
+  "manual_review_required": true,
+  "deployed": false,
+  "limitation": "Only nine narrow automatic checks; seven writing/grounding/relevance cases remain ungraded. No broad capability claim."
+}

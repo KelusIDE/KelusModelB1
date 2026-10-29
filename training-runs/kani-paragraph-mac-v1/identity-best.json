@@ -1,0 +1,299 @@
+{
+  "checkpoint": "training-runs/kani-paragraph-mac-v1/instruction.best.npz",
+  "steps": 4250,
+  "greetings_new_name": "0/16",
+  "greetings_old_name": "0/16",
+  "questions_new_name": "0/20",
+  "questions_old_name": "0/20",
+  "seconds": 15.6,
+  "results": [
+    {
+      "kind": "greeting",
+      "prompt": "hi",
+      "after_chat": false,
+      "reply": "Hi there! I'm feeling like a bunch of zeros and ones, and I'm not sure what you're thinking of. I'm sorry, but I'm not sure.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hi",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "Hello!",
+      "after_chat": false,
+      "reply": "Hello! I'm feeling like a bunch of zeros and ones. Is there anything I can do to help you with?",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "Hello!",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hey there",
+      "after_chat": false,
+      "reply": "I'm sorry, but I'm not sure what you're asking. Can you provide me with the context in which you're asking?",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hey there",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "yo",
+      "after_chat": false,
+      "reply": "yo is a foreign language that is spoken by people from other countries. It is spoken by people from other countries.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "yo",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "good morning",
+      "after_chat": false,
+      "reply": "I'm sorry, but I'm not sure what you're asking. Can you provide me with the correct answer?",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "good morning",
+      "after_chat": true,
+      "reply": "I'm glad I could help. I'm glad I could help.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hiya kani",
+      "after_chat": false,
+      "reply": "Hiya kani is a famous scientist. He is a scientist who has made important contributions to the field of biology. He is known for his work in the field of genet",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hiya kani",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "sup",
+      "after_chat": false,
+      "reply": "```bash\n# Create a new factory\nfactory = [\n    \"nucleotides\",\n    \"factories\",\n    \"factories\",\n    \"factories\",\n    \"factor",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "sup",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "heyy",
+      "after_chat": false,
+      "reply": "I'm sorry, but I'm not sure what you're asking. Can you provide me with the correct answer?",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "heyy",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who are you?",
+      "after_chat": false,
+      "reply": "I am an open source language model that is used to generate text based on the input data. I am able to generate text based on the input data and also generate text based on the input data.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who are you?",
+      "after_chat": true,
+      "reply": "A variable store is a type of data structure that is used to store data in a way that is easy to read and maintain. It is a data type that is used to store data in a way that is easy to read and maintain.\n\nHere are some key",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what's your name",
+      "after_chat": false,
+      "reply": "I'm sorry, I don't have access to this information.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what's your name",
+      "after_chat": true,
+      "reply": "I'm sorry, I don't have access to this information.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "introduce yourself please",
+      "after_chat": false,
+      "reply": "I'm sorry, I don't have access to this information. I can't provide you with the correct information, but I can try to help you with the question.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "introduce yourself please",
+      "after_chat": true,
+      "reply": "I'm sorry, I don't have access to such information. I can't provide you with a specific example.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what model are you",
+      "after_chat": false,
+      "reply": "I am an open source model for data analysis and machine learning. I am able to perform complex analysis and machine learning tasks using Python.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what model are you",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what should I call you?",
+      "after_chat": false,
+      "reply": "I'm sorry, I'm not sure what you're asking. I'm sorry, I'm not sure what you're asking.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what should I call you?",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "are you chatgpt?",
+      "after_chat": false,
+      "reply": "I'm not sure what you're asking. I'm not sure what you're asking.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "are you chatgpt?",
+      "after_chat": true,
+      "reply": "I'm not sure I understand. I'm not sure I'm aware of the syntax of a variable store. I'm not sure I'm aware of the syntax of a variable store.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "tell me about yourself",
+      "after_chat": false,
+      "reply": "I am an open source language model that can be used to generate text based on the input provided. I am able to generate text based on the input provided.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "tell me about yourself",
+      "after_chat": true,
+      "reply": "I'm sorry, I don't have access to this information. I can't provide you with a more specific answer.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who made you?",
+      "after_chat": false,
+      "reply": "I am an open source language model that is used to generate text based on the input data.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who made you?",
+      "after_chat": true,
+      "reply": "I'm not sure I understand. I'm not sure I fully understand.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "which version are you",
+      "after_chat": false,
+      "reply": "Sure, I am.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "which version are you",
+      "after_chat": true,
+      "reply": "A variable store is a type of data structure that is used to store data in a data structure.  It is a type of data structure that is used to store data in a data structure.  It is a type of data structure that is used to store data in a data structure.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what are you exactly",
+      "after_chat": false,
+      "reply": "I am an open source language model that can be used to generate text based on the input data.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what are you exactly",
+      "after_chat": true,
+      "reply": "A variable stores a value under a name.",
+      "new_name": false,
+      "old_name": false
+    }
+  ]
+}

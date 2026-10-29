@@ -1,0 +1,59 @@
+[
+  {
+    "id": "read-location",
+    "kind": "exact",
+    "expected": "copper box",
+    "prompt": "Read: Lena put a blue marble inside the copper box. The wooden box is empty. Where is the blue marble? Answer with only the container name."
+  },
+  {
+    "id": "context-correction",
+    "kind": "exact",
+    "expected": "green",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Remember: my tent is orange."
+      },
+      {
+        "role": "assistant",
+        "content": "Your tent is orange."
+      },
+      {
+        "role": "user",
+        "content": "Correction: my tent is green. What color is it? Answer with one word."
+      }
+    ]
+  },
+  {
+    "id": "writing-unfamiliar",
+    "kind": "manual",
+    "prompt": "Write a short, two-paragraph explanation of why neighborhood libraries are useful. Include a concrete example in the second paragraph.",
+    "rubric": "Two coherent paragraphs, relevant explanation, concrete example, no fabricated citation or refusal."
+  },
+  {
+    "id": "rewrite",
+    "kind": "manual",
+    "prompt": "Rewrite this politely without changing its meaning: 'You sent the wrong file. Send the invoice instead.'",
+    "rubric": "Requests the invoice, notes the wrong file politely, preserves the original meaning."
+  },
+  {
+    "id": "cats-conversation",
+    "kind": "manual",
+    "diagnostic_only": true,
+    "messages": [
+      {
+        "role": "user",
+        "content": "I like cats"
+      },
+      {
+        "role": "assistant",
+        "content": "What do you like about them?"
+      },
+      {
+        "role": "user",
+        "content": "Their curiosity. Write a short paragraph about that."
+      }
+    ],
+    "rubric": "Responds to curiosity about cats with a coherent relevant paragraph; no generic programming reply."
+  }
+]

@@ -1,0 +1,16 @@
+{"case": "reported-casual-math", "passed": false, "response": "```python\ndef is_even(n):\n    return n % 2 == 0\n```"}
+{"case": "reported-word-math", "passed": false, "response": "Threety five = 25 + 25 = 35\nFourty five = 25 + 35 = 37\nThreety five = 38 + 37\nFourty five = 38 + 37\nFourty five = 38 + 37\nThreety five = 38 + 37\nFourty five = 38 + 37\nFourty five = 38 + 37\nThreety five = 3"}
+{"case": "reported-reference", "passed": false, "response": "The trophy doesn't fit in the suitcase because it is too big."}
+{"case": "reported-hunger", "passed": null, "response": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept."}
+{"case": "reported-author", "passed": null, "response": "SEARCH: Who wrote The Origin of Species"}
+{"case": "reference-small", "passed": false, "response": "The guitar cannot go inside a carrying case because the case is too small."}
+{"case": "word-transfer", "passed": false, "response": "Sure, I can help you with that. What are you working on?"}
+{"case": "casual-transfer", "passed": false, "response": "You're welcome! What would you like to try next?"}
+{"case": "correction-transfer", "passed": false, "response": "On Thursday, we will be in the same boat."}
+{"case": "source-grounding", "passed": true, "response": "Nola Benton"}
+{"case": "source-unknown", "passed": false, "response": "Zavi rides a green bicycle to school. What is Zavi's exact age? If it is not in the passage, reply exactly: not stated"}
+{"case": "topic-shift", "passed": null, "response": "Cats are curious animals. They are intelligent, social, and can make friends. They are also known for their playfulness and loyalty."}
+{"case": "positive-event", "passed": null, "response": "Happy birthday! I hope you have a great day. Do something today that makes you happy."}
+{"case": "feeling-relevance", "passed": null, "response": "Feeling lonely is really hard, and a lot of people feel it too. Sending one small message to someone can help. Clubs, classes, or online groups about something you enjoy are good ways to meet people. I'm happy to chat in the meantime."}
+{"case": "paragraph-transfer", "passed": null, "response": "Public parks play a crucial role in enhancing the quality of life for communities. They provide a space for people to engage in activities that benefit everyone, from urban development to wildlife conservation. By providing a space for people to connect with nature and learn about sustainable living, public parks can foster a sense of community and cooper"}
+{"case": "rewrite-transfer", "passed": null, "response": "I can make mistakes. Review the code and test it before using it."}

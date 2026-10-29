@@ -1,0 +1,22 @@
+{
+  "state": "complete",
+  "pid": 56174,
+  "total_steps": 1500,
+  "updated_at": 1793186078.0197692,
+  "recipe": {
+    "parent_sha256": "db220c84da8d48191795aec1d222a42702255963f3765fae3caf460842c97b77",
+    "data_sha256": "bb6589957a9bf2fecdc03621a80aac4c14a922a6f235a79085b63ec035a8348b",
+    "total_steps": 1500,
+    "batch": 2,
+    "lr": 5e-05,
+    "memory_gb": 9,
+    "seed": 4271,
+    "tokenizer": "Rust BPE",
+    "update_backend": "MLX/Metal",
+    "auto_deploy": false,
+    "last_reply_only": true,
+    "probes_sha256": "bce352519ebfd645cdfb3111c3ad15c3b870149d8610a288d86a63d43ff2044c"
+  },
+  "completed_steps": 1500,
+  "note": "Review actual responses before any release"
+}

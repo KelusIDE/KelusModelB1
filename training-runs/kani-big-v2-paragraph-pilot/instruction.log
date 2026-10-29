@@ -1,0 +1,20 @@
+{"name": "Kani Seal 3", "parameters": 205588480, "training_examples": 2052, "validation_examples": 64, "dataset_tokens": 579015, "initial_validation_loss": 1.8345592440629246, "device": "gpu (mlx)", "tokenizer_backend": "rust"}
+{"step": 1, "train_loss": 2.4736, "validation_loss": 1.8345, "gradient_norm": 10.9913, "elapsed_seconds": 7.3}
+{"step": 25, "train_loss": 1.907, "width": 256, "elapsed_seconds": 108.9}
+{"step": 50, "train_loss": 0.9446, "width": 256, "elapsed_seconds": 131.9}
+{"step": 75, "train_loss": 1.6827, "width": 512, "elapsed_seconds": 154.2}
+{"step": 100, "train_loss": 2.1845, "width": 384, "elapsed_seconds": 177.4}
+{"step": 125, "train_loss": 2.2025, "width": 512, "elapsed_seconds": 201.4}
+{"step": 150, "train_loss": 1.1939, "width": 256, "elapsed_seconds": 223.0}
+{"step": 175, "train_loss": 1.1567, "width": 256, "elapsed_seconds": 244.5}
+{"step": 200, "train_loss": 1.0499, "width": 384, "elapsed_seconds": 267.4}
+{"step": 225, "train_loss": 2.0777, "width": 256, "elapsed_seconds": 290.8}
+{"step": 250, "train_loss": 0.8319, "validation_loss": 1.8174, "gradient_norm": 2.5746, "elapsed_seconds": 319.0}
+{"step": 275, "train_loss": 2.4295, "width": 256, "elapsed_seconds": 418.0}
+{"step": 300, "train_loss": 1.1327, "width": 256, "elapsed_seconds": 442.1}
+{"step": 325, "train_loss": 0.8973, "width": 256, "elapsed_seconds": 464.0}
+{"step": 350, "train_loss": 0.7971, "width": 512, "elapsed_seconds": 485.8}
+{"step": 375, "train_loss": 1.8654, "width": 256, "elapsed_seconds": 508.3}
+{"step": 400, "train_loss": 1.1276, "width": 640, "elapsed_seconds": 532.2}
+{"step": 400, "train_loss": 1.1276, "validation_loss": 1.8198, "gradient_norm": 3.1302, "elapsed_seconds": 537.5}
+Saved /Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-big-v2-paragraph-pilot/instruction.npz · 400 new training steps

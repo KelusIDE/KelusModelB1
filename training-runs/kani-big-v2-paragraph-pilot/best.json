@@ -1,0 +1,110 @@
+{
+  "checkpoint": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-big-v2-paragraph-pilot/instruction.best.npz",
+  "checkpoint_sha256": "9cf5e07499011906a3c2dd30b83409d29e55184e5ff127413feab2107508e437",
+  "cases_sha256": "42f2d70f2dc21ef587f09192a4b6459140381dd8bfd92a736774525642dc458b",
+  "name": null,
+  "automatic_passed": 0,
+  "automatic_total": 2,
+  "manual_ungraded": 6,
+  "results": [
+    {
+      "id": "cats-play",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words explaining why play matters for indoor cats. Include a concrete example of a game.",
+      "rubric": "One relevant paragraph; explains play, includes a specific game, avoids unsupported claims and filler.",
+      "response": "Indoor cats are known for their loyalty and playful nature. They are known for their intelligent and curious nature, which makes them perfect companions for adolescents. Indoor cats are also known for their loyalty and loyalty to their humans. They are known for their loyalty and loyalty to their humans, making them a popular choice for adolescents. Indoor cats are also known for their loyalty and loyalty to their humans, which makes them a popular choice for adolescents.",
+      "passed": null,
+      "elapsed_seconds": 8.58
+    },
+    {
+      "id": "rainy-library",
+      "kind": "manual",
+      "prompt": "Write one descriptive paragraph of 80\u2013120 words about entering a quiet library on a rainy afternoon. Include a sound and a smell. Do not use bullet points.",
+      "rubric": "One coherent scene with both sensory details; no list or unrelated explanation.",
+      "response": "In a quiet library, a quiet space is a place where the sound and smell of the water are the most important. The space is usually largely made of wood or concrete, and is often used for storing books. There are many different types of quiet spaces, including the ones that are used for reading and singing, and are often used for storing books. The most common types of quiet spaces are the rainy afternoon, which is a warm and comfortable space with a warm cabinet, a counter, and a few benches.",
+      "passed": null,
+      "elapsed_seconds": 7.65
+    },
+    {
+      "id": "repair-rewrite",
+      "kind": "manual",
+      "prompt": "Turn these notes into one clear paragraph of 70\u2013110 words. Use only the facts given: A town repair club meets on Saturdays. Volunteers help residents repair broken household items. Tools are shared. Beginners can watch and learn. Repairing items reduces waste.",
+      "rubric": "Connected paragraph preserving all five facts; no invented dates, prices, names or statistics.",
+      "response": "Saturdays: Turn these notes into one clear paragraph of 70\u2013110 words. Use only the facts given: A town repair club meets on Saturdays. Volunteers can watch and learn. Tools are shared. Beginners can watch and learn. Repairing items reduces waste.",
+      "passed": null,
+      "elapsed_seconds": 4.62
+    },
+    {
+      "id": "school-garden",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words persuading a school to start a small garden. Give two reasons and one practical first step.",
+      "rubric": "Relevant argument with two distinct reasons and an actionable first step; coherent transitions.",
+      "response": "The first step is to start a small garden.  You can start a small garden by planting seeds in the ground.  You can also plant seeds in the soil.  You can also plant seeds in the ground.  You can also plant seeds in the soil.  You can also plant seeds in the ground.  You can also plant seeds in the soil.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the ground.  You can also plant seeds in the",
+      "passed": null,
+      "elapsed_seconds": 15.0
+    },
+    {
+      "id": "paper-boat",
+      "kind": "manual",
+      "prompt": "Write one story paragraph of 80\u2013120 words about a child whose paper boat gets stuck beside a bridge. Give the story a clear ending.",
+      "rubric": "Continuous story about the supplied situation with a clear ending; no unrelated topic change.",
+      "response": "Once upon a time, there was a big river that carried all sorts of goods from the river. The river was very warm in the summer, and the sun always rises in the winter. The river was very warm in the summer, so the goods were very good. There was a bridge over the river, and a bridge over the river. The bridge was very warm in the summer, so the goods were very good. The bridge was very warm in the summer, so the goods were very good.",
+      "passed": null,
+      "elapsed_seconds": 6.86
+    },
+    {
+      "id": "follow-up",
+      "kind": "manual",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I want to write about how my grandmother taught me to mend clothes."
+        },
+        {
+          "role": "assistant",
+          "content": "What detail do you want to include?"
+        },
+        {
+          "role": "user",
+          "content": "Her blue sewing box. Write a warm paragraph of 80\u2013120 words in the first person. Mention the blue sewing box and learning to repair a torn sleeve."
+        }
+      ],
+      "rubric": "Follows the latest request while retaining grandmother context; includes both requested details and first-person narration.",
+      "response": "I recommend starting with the blue sewing box. It is a great way to get a good clean and drying sleeve. I also recommend starting with the blue sewing box. It is a great way to get a good clean and dry sleeve. I also recommend starting with the blue sewing box. It is a great way to get a good clean and dry sleeve.",
+      "passed": null,
+      "elapsed_seconds": 5.97
+    },
+    {
+      "id": "reading-regression",
+      "kind": "exact",
+      "prompt": "Read: Lena put a blue marble inside the copper box. The wooden box is empty. Where is the blue marble? Answer with only the container name.",
+      "expected": "copper box",
+      "response": "Lena put a blue marble inside the copper box. The wooden box is empty.",
+      "passed": false,
+      "elapsed_seconds": 0.75
+    },
+    {
+      "id": "correction-regression",
+      "kind": "exact",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Remember: my tent is orange."
+        },
+        {
+          "role": "assistant",
+          "content": "Your tent is orange."
+        },
+        {
+          "role": "user",
+          "content": "Correction: my tent is green. What color is it? Answer with one word."
+        }
+      ],
+      "expected": "green",
+      "response": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "passed": false,
+      "elapsed_seconds": 1.18
+    }
+  ],
+  "limitation": "Small task-specific probes, not an age/IQ/general-intelligence score. Manual/code tasks require review and execution."
+}

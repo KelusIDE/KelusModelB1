@@ -1,0 +1,16 @@
+{"case": "reported-casual-math", "passed": false, "response": "```python\ndef reverse(text):\n    return text[::-1]\n```"}
+{"case": "reported-word-math", "passed": false, "response": "That's a fourth, so fourty five is fourteen."}
+{"case": "reported-reference", "passed": false, "response": "The trophy doesn't fit in the suitcase because it's too big."}
+{"case": "reported-hunger", "passed": null, "response": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string."}
+{"case": "reported-author", "passed": null, "response": "SEARCH: Who wrote The Origin of Species"}
+{"case": "reference-small", "passed": false, "response": "I can make a simple guitar notice that the case is too small. Here's a simple guitar notice that can be used to make a guitar notice:\n\nI can make a guitar notice that the case is too small by using the \"too\" or \"too\" notice. The \"too\" notice is used to indicate that the case is too small.\n\nI can also make a guitar notice that the case is too small by"}
+{"case": "word-transfer", "passed": false, "response": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code."}
+{"case": "casual-transfer", "passed": false, "response": "I can make a simple mistake. To make the mistake, I need to add a few more elements. \n\nFirst, I'll add the fraction part (83 - 16) to the mixing bowl. Then, I'll add the fraction part (83 - 16) to the mixing bowl. Then, I'll add the fraction part (83 - 16) to the mixing bowl. Then, I'll add the fraction"}
+{"case": "correction-transfer", "passed": false, "response": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code."}
+{"case": "source-grounding", "passed": false, "response": "The fictional book Amber Skies was written by Nola Benton. It was published in 2018."}
+{"case": "source-unknown", "passed": false, "response": "Zavi's exact age is Zavi's exact age."}
+{"case": "topic-shift", "passed": null, "response": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question."}
+{"case": "positive-event", "passed": null, "response": "That sounds lovely. Take a puppy, and I'll show you how to make it."}
+{"case": "feeling-relevance", "passed": null, "response": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect."}
+{"case": "paragraph-transfer", "passed": null, "response": "Public parks play a crucial role in our communities by providing a safe space for people to enjoy the freedom of nature and the environment. They offer a unique opportunity for people to experience the beauty of the natural world, which can be a powerful tool for promoting sustainability and conservation.\n\nPublic parks are also essential for providing a safe space for peop"}
+{"case": "rewrite-transfer", "passed": null, "response": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question."}

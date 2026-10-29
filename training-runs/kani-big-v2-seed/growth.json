@@ -1,0 +1,12 @@
+{
+  "stage": "growth-initialization",
+  "steps": 0,
+  "parent_steps": 35500,
+  "parent_sha256": "586762aa0b0919272f0de0968698f66eb01fe3b45d15c3b20f3dbe4f4ac35971",
+  "parent_parameters": 88118784,
+  "parameters": 173090304,
+  "parent_layers": 12,
+  "initialization": "Our trained Kani weights plus identity residual blocks; fresh optimizer required",
+  "initial_logits_max_error": 0.0,
+  "release_status": "Untrained added layers; capability evaluation required"
+}

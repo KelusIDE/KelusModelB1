@@ -1,0 +1,9 @@
+B1 HTTP: "GET /api/info HTTP/1.1" 200 -
+B1 HTTP: "GET /svg.js HTTP/1.1" 200 -
+B1 HTTP: "POST /api/chat HTTP/1.1" 200 -
+B1 HTTP: "POST /api/chat HTTP/1.1" 403 -
+B1 HTTP: "GET /../README.md HTTP/1.1" 404 -
+----------------------------------------------------------------------
+Ran 22 tests in 0.693s
+
+OK

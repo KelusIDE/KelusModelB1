@@ -1,0 +1,21 @@
+{
+  "state": "stopped",
+  "pid": 69370,
+  "total_steps": 1500,
+  "updated_at": 1793159314.147371,
+  "recipe": {
+    "parent_sha256": "7228d53fc44cf29b13dfa4c5704d0cdd539db5befca0a24e652668861513b3a1",
+    "data_sha256": "bb6589957a9bf2fecdc03621a80aac4c14a922a6f235a79085b63ec035a8348b",
+    "total_steps": 1500,
+    "batch": 2,
+    "lr": 5e-05,
+    "memory_gb": 9,
+    "seed": 4271,
+    "tokenizer": "Rust BPE",
+    "update_backend": "MLX/Metal",
+    "auto_deploy": false,
+    "last_reply_only": true,
+    "probes_sha256": "bce352519ebfd645cdfb3111c3ad15c3b870149d8610a288d86a63d43ff2044c"
+  },
+  "reason": "Stopped; periodic checkpoints retained"
+}

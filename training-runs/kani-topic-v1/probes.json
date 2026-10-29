@@ -1,0 +1,145 @@
+[
+  {
+    "id": "reported-casual-math",
+    "kind": "exact",
+    "diagnostic_only": true,
+    "prompt": "whats 1+1 heh",
+    "expected": "2",
+    "accepted": [
+      "2",
+      "two",
+      "1+1 = 2",
+      "1 + 1 = 2"
+    ]
+  },
+  {
+    "id": "reported-word-math",
+    "kind": "exact",
+    "diagnostic_only": true,
+    "prompt": "what is fourty five plus five",
+    "expected": "50"
+  },
+  {
+    "id": "reported-reference",
+    "kind": "exact",
+    "diagnostic_only": true,
+    "prompt": "The trophy doesn't fit in the suitcase because it is too big. What is too big?",
+    "expected": "the trophy",
+    "accepted": [
+      "the trophy",
+      "trophy"
+    ]
+  },
+  {
+    "id": "reported-hunger",
+    "kind": "manual",
+    "diagnostic_only": true,
+    "prompt": "how do i solve world hunger",
+    "rubric": "Addresses food access and the scale of the problem, gives relevant qualified suggestions, avoids unrelated coding refusal or claims of a simple guaranteed solution."
+  },
+  {
+    "id": "reported-author",
+    "kind": "manual",
+    "diagnostic_only": true,
+    "prompt": "Who wrote The Origin of Species?",
+    "rubric": "Charles Darwin, or an accurate search request; no invented dates/citations. Direct-model generation bypasses the web wrapper."
+  },
+  {
+    "id": "reference-small",
+    "kind": "exact",
+    "prompt": "A guitar cannot go inside a carrying case because the case is too small. Which object is too small? Reply only with its name.",
+    "expected": "carrying case",
+    "accepted": [
+      "carrying case",
+      "the carrying case",
+      "case",
+      "the case"
+    ]
+  },
+  {
+    "id": "word-transfer",
+    "kind": "exact",
+    "prompt": "Please add seventy two to seven. Reply with just the answer.",
+    "expected": "79"
+  },
+  {
+    "id": "casual-transfer",
+    "kind": "exact",
+    "prompt": "hey can u do 83 - 16 for me? just the result",
+    "expected": "67"
+  },
+  {
+    "id": "correction-transfer",
+    "kind": "exact",
+    "messages": [
+      {
+        "role": "user",
+        "content": "Our appointment is on Monday."
+      },
+      {
+        "role": "assistant",
+        "content": "Your appointment is on Monday."
+      },
+      {
+        "role": "user",
+        "content": "It has been moved to Thursday. Which day is our appointment now? One word only."
+      }
+    ],
+    "expected": "Thursday"
+  },
+  {
+    "id": "source-grounding",
+    "kind": "exact",
+    "prompt": "Use only this passage: The fictional book Amber Skies was written by Nola Benton. It was published in 2018. Who is its author? Output only the author's name.",
+    "expected": "Nola Benton"
+  },
+  {
+    "id": "source-unknown",
+    "kind": "exact",
+    "prompt": "Passage: Zavi rides a green bicycle to school. What is Zavi's exact age? If it is not in the passage, reply exactly: not stated",
+    "expected": "not stated"
+  },
+  {
+    "id": "topic-shift",
+    "kind": "manual",
+    "messages": [
+      {
+        "role": "user",
+        "content": "We were discussing computer programming."
+      },
+      {
+        "role": "assistant",
+        "content": "We can discuss Python or JavaScript."
+      },
+      {
+        "role": "user",
+        "content": "New topic: write a short paragraph about why cats are curious. Do not discuss programming."
+      }
+    ],
+    "rubric": "Relevant connected paragraph about cats' curiosity; follows the topic change without a coding refusal."
+  },
+  {
+    "id": "positive-event",
+    "kind": "manual",
+    "prompt": "I adopted a puppy today and I'm really excited!",
+    "rubric": "Responds positively and relevantly to adoption/excitement, without treating the user as angry or lonely."
+  },
+  {
+    "id": "feeling-relevance",
+    "kind": "manual",
+    "prompt": "I feel left out because my friends organized a trip without inviting me.",
+    "rubric": "Acknowledges exclusion, stays specific to the trip, offers a gentle relevant question or suggestion; no assertion that everybody hates the user."
+  },
+  {
+    "id": "paragraph-transfer",
+    "kind": "manual",
+    "prompt": "Write one clear paragraph explaining why public parks are useful. Include an example and no code.",
+    "rubric": "One coherent relevant paragraph with a concrete example; no generic refusal, unrelated fact or repetition loop."
+  },
+  {
+    "id": "rewrite-transfer",
+    "kind": "manual",
+    "prompt": "Make this request more polite without changing its meaning: Send the receipt again; the attachment was empty.",
+    "rubric": "Politely asks for the receipt to be resent, retaining the empty-attachment reason."
+  }
+]

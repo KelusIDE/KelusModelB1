@@ -1,0 +1,4794 @@
+{
+  "checkpoint": "training-runs/kani-chat-v2-eval/s6000.npz",
+  "steps": 6000,
+  "searched_when_needed": "295/298",
+  "exact_query": "291/298",
+  "false_searches": "0/300",
+  "seconds": 160.7,
+  "results": [
+    {
+      "family": "decide",
+      "prompt": "kani what is the history of maraj\u00f3?",
+      "reply": "SEARCH: what is the history of maraj\u00f3",
+      "reference": "SEARCH: what is the history of maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Where is Hoover Dam?",
+      "reply": "SEARCH: Where is Hoover Dam",
+      "reference": "SEARCH: Where is Hoover Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "how big is decimal?",
+      "reply": "SEARCH: how big is decimal",
+      "reference": "SEARCH: how big is decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, riemann surface?",
+      "reply": "SEARCH: riemann surface",
+      "reference": "SEARCH: riemann surface",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo history of William Hogarth",
+      "reply": "SEARCH: history of William Hogarth",
+      "reference": "SEARCH: history of William Hogarth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Adjective.",
+      "reply": "SEARCH: Tell me about Adjective",
+      "reference": "SEARCH: Tell me about Adjective",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "History of Middle English",
+      "reply": "SEARCH: History of Middle English",
+      "reference": "SEARCH: History of Middle English",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is the history of Prime number?",
+      "reply": "SEARCH: What is the history of Prime number",
+      "reference": "SEARCH: What is the history of Prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: tell me about Film.",
+      "reply": "SEARCH: tell me about Film",
+      "reference": "SEARCH: tell me about Film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Ecosystem?",
+      "reply": "SEARCH: Ecosystem",
+      "reference": "SEARCH: Ecosystem",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is the history of bread?",
+      "reply": "SEARCH: what is the history of bread",
+      "reference": "SEARCH: what is the history of bread",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "peafowl?",
+      "reply": "SEARCH: pafowl",
+      "reference": "SEARCH: peafowl",
+      "searched": true,
+      "exact": false
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what year did William Hogarth die?",
+      "reply": "SEARCH: what year did William Hogarth die",
+      "reference": "SEARCH: what year did William Hogarth die",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Where does Film come from?",
+      "reply": "SEARCH: Where does Film come from",
+      "reference": "SEARCH: Where does Film come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: prime number?",
+      "reply": "SEARCH: prime number",
+      "reference": "SEARCH: prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: tell me about Ecosystem.",
+      "reply": "SEARCH: tell me about Ecosystem",
+      "reference": "SEARCH: tell me about Ecosystem",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "who was Charles Sanders Peirce",
+      "reply": "SEARCH: who was Charles Sanders Peirce",
+      "reference": "SEARCH: who was Charles Sanders Peirce",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Centaur?",
+      "reply": "SEARCH: Centaur",
+      "reference": "SEARCH: Centaur",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Igloo.",
+      "reply": "SEARCH: Tell me about Igloo",
+      "reference": "SEARCH: Tell me about Igloo",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "tell me about Odyssey.",
+      "reply": "SEARCH: tell me about Odyssey",
+      "reference": "SEARCH: tell me about Odyssey",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Ecosystem?",
+      "reply": "SEARCH: what is Ecosystem",
+      "reference": "SEARCH: what is Ecosystem",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Give me facts about Maraj\u00f3.",
+      "reply": "SEARCH: Give me facts about Maraj\u00f3",
+      "reference": "SEARCH: Give me facts about Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Mount Kilimanjaro",
+      "reply": "SEARCH: what is Mount Kilimanjaro",
+      "reference": "SEARCH: what is Mount Kilimanjaro",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "History of Singing",
+      "reply": "SEARCH: History of Singing",
+      "reference": "SEARCH: History of Singing",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Decimal",
+      "reply": "SEARCH: what is Decimal",
+      "reference": "SEARCH: what is Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hi! give me facts about Decimal.",
+      "reply": "SEARCH: give me facts about Decimal",
+      "reference": "SEARCH: give me facts about Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Mixture",
+      "reply": "SEARCH: what is Mixture",
+      "reference": "SEARCH: what is Mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Cello?",
+      "reply": "SEARCH: Cello",
+      "reference": "SEARCH: Cello",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: why is mount kilimanjaro important?",
+      "reply": "SEARCH: why is mount kilimanjaro important",
+      "reference": "SEARCH: why is mount kilimanjaro important",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Singing",
+      "reply": "SEARCH: what is Singing",
+      "reference": "SEARCH: what is Singing",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "explain History of Earth.",
+      "reply": "SEARCH: explain History of Earth",
+      "reference": "SEARCH: explain History of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Table (furniture)",
+      "reply": "SEARCH: what is Table (furniture)",
+      "reference": "SEARCH: what is Table (furniture)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "explain Odin.",
+      "reply": "SEARCH: explain Odin",
+      "reference": "SEARCH: explain Odin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Beer?",
+      "reply": "SEARCH: What do you know about Beer",
+      "reference": "SEARCH: What do you know about Beer",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Harp made of?",
+      "reply": "SEARCH: what is Harp made of",
+      "reference": "SEARCH: what is Harp made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: tell me about Isaac.",
+      "reply": "SEARCH: tell me about Isaac",
+      "reference": "SEARCH: tell me about Isaac",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is igloo known for",
+      "reply": "SEARCH: what is igloo known for",
+      "reference": "SEARCH: what is igloo known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Bread?",
+      "reply": "SEARCH: Bread",
+      "reference": "SEARCH: Bread",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "I want to learn about Beer.",
+      "reply": "SEARCH: I want to learn about Beer",
+      "reference": "SEARCH: I want to learn about Beer",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Ketchup",
+      "reply": "SEARCH: what is Ketchup",
+      "reference": "SEARCH: what is Ketchup",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "When did William Hogarth die?",
+      "reply": "SEARCH: When did William Hogarth die",
+      "reference": "SEARCH: When did William Hogarth die",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "stagecraft?",
+      "reply": "SEARCH: stagecraft",
+      "reference": "SEARCH: stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Mount Kilimanjaro.",
+      "reply": "SEARCH: Explain Mount Kilimanjaro",
+      "reference": "SEARCH: Explain Mount Kilimanjaro",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Beer?",
+      "reply": "SEARCH: what is Beer",
+      "reference": "SEARCH: what is Beer",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Three Gorges Dam",
+      "reply": "SEARCH: what is Three Gorges Dam",
+      "reference": "SEARCH: what is Three Gorges Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about History of Earth?",
+      "reply": "SEARCH: what do you know about History of Earth",
+      "reference": "SEARCH: what do you know about History of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is Atmosphere of Earth made of?",
+      "reply": "SEARCH: what is Atmosphere of Earth made of",
+      "reference": "SEARCH: what is Atmosphere of Earth made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Beer?",
+      "reply": "SEARCH: Beer",
+      "reference": "SEARCH: Beer",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about History of Earth.",
+      "reply": "SEARCH: Tell me about History of Earth",
+      "reference": "SEARCH: Tell me about History of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: mixture?",
+      "reply": "SEARCH: mixture",
+      "reference": "SEARCH: mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Centaur.",
+      "reply": "SEARCH: Tell me about Centaur",
+      "reference": "SEARCH: Tell me about Centaur",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Harp",
+      "reply": "SEARCH: what is Harp",
+      "reference": "SEARCH: what is Harp",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, when did Charles Sanders Peirce die?",
+      "reply": "SEARCH: when did Charles Sanders Peirce die",
+      "reference": "SEARCH: when did Charles Sanders Peirce die",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Peafowl?",
+      "reply": "SEARCH: What is Peafowl",
+      "reference": "SEARCH: What is Peafowl",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "How many people live in South Asia?",
+      "reply": "SEARCH: How many people live in South Asia",
+      "reference": "SEARCH: How many people live in South Asia",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is Variance",
+      "reply": "SEARCH: what is Variance",
+      "reference": "SEARCH: what is Variance",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Decimal?",
+      "reply": "SEARCH: What do you know about Decimal",
+      "reference": "SEARCH: What do you know about Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Peafowl?",
+      "reply": "SEARCH: what is Peafowl",
+      "reference": "SEARCH: what is Peafowl",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Natural units.",
+      "reply": "SEARCH: Tell me about Natural units",
+      "reference": "SEARCH: Tell me about Natural units",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is European robin?",
+      "reply": "SEARCH: what is European robin",
+      "reference": "SEARCH: what is European robin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Stagecraft?",
+      "reply": "SEARCH: What is Stagecraft",
+      "reference": "SEARCH: What is Stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: peafowl?",
+      "reply": "SEARCH: peafowl",
+      "reference": "SEARCH: peafowl",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Igloo?",
+      "reply": "SEARCH: Igloo",
+      "reference": "SEARCH: Igloo",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: where does tent come from?",
+      "reply": "SEARCH: where does tent come from",
+      "reference": "SEARCH: where does tent come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "tell me about Function (mathematics).",
+      "reply": "SEARCH: tell me about Function (mathematics)",
+      "reference": "SEARCH: tell me about Function (mathematics)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo can you look up Odin?",
+      "reply": "SEARCH: can you look up Odin",
+      "reference": "SEARCH: can you look up Odin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Middle English.",
+      "reply": "SEARCH: Tell me about Middle English",
+      "reference": "SEARCH: Tell me about Middle English",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo how big is Table (furniture)?",
+      "reply": "SEARCH: how big is Table (furniture)",
+      "reference": "SEARCH: how big is Table (furniture)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Tent",
+      "reply": "SEARCH: what is Tent",
+      "reference": "SEARCH: what is Tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Odyssey?",
+      "reply": "SEARCH: What do you know about Odyssey",
+      "reference": "SEARCH: What do you know about Odyssey",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Ketchup made of?",
+      "reply": "SEARCH: What is Ketchup made of",
+      "reference": "SEARCH: What is Ketchup made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "when was William Hogarth born",
+      "reply": "SEARCH: when was William Hogarth born",
+      "reference": "SEARCH: when was William Hogarth born",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What year was William Hogarth born?",
+      "reply": "SEARCH: What year was William Hogarth born",
+      "reference": "SEARCH: What year was William Hogarth born",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Variance?",
+      "reply": "SEARCH: What is Variance",
+      "reference": "SEARCH: What is Variance",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Table (furniture)?",
+      "reply": "SEARCH: What is Table (furniture)",
+      "reference": "SEARCH: What is Table (furniture)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Binary search known for",
+      "reply": "SEARCH: what is Binary search known for",
+      "reference": "SEARCH: what is Binary search known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what do you know about Yosemite National Park?",
+      "reply": "SEARCH: what do you know about Yosemite National Park",
+      "reference": "SEARCH: what do you know about Yosemite National Park",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Ecosystem",
+      "reply": "SEARCH: what is Ecosystem",
+      "reference": "SEARCH: what is Ecosystem",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Middle English",
+      "reply": "SEARCH: what is Middle English",
+      "reference": "SEARCH: what is Middle English",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Can you look up Variance?",
+      "reply": "SEARCH: Can you look up Variance",
+      "reference": "SEARCH: Can you look up Variance",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Decimal?",
+      "reply": "SEARCH: Number",
+      "reference": "SEARCH: Decimal",
+      "searched": true,
+      "exact": false
+    },
+    {
+      "family": "decide",
+      "prompt": "kani where does Mosul come from?",
+      "reply": "SEARCH: where does Mosul come from",
+      "reference": "SEARCH: where does Mosul come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "I want to learn about Decimal.",
+      "reply": "SEARCH: I want to learn about Decimal",
+      "reference": "SEARCH: I want to learn about Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: explain Gang.",
+      "reply": "SEARCH: explain Gang",
+      "reference": "SEARCH: explain Gang",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Decimal.",
+      "reply": "SEARCH: Tell me about Decimal",
+      "reference": "SEARCH: Tell me about Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani give me facts about Stagecraft.",
+      "reply": "SEARCH: give me facts about Stagecraft",
+      "reference": "SEARCH: give me facts about Stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Binary search?",
+      "reply": "SEARCH: Binary search",
+      "reference": "SEARCH: Binary search",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Stomach?",
+      "reply": "SEARCH: Stomach",
+      "reference": "SEARCH: Stomach",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Centaur?",
+      "reply": "SEARCH: what is Centaur",
+      "reference": "SEARCH: what is Centaur",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what is the history of Maraj\u00f3?",
+      "reply": "SEARCH: what is the history of Maraj\u00f3",
+      "reference": "SEARCH: what is the history of Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is History of Earth?",
+      "reply": "SEARCH: what is History of Earth",
+      "reference": "SEARCH: what is History of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Binary search.",
+      "reply": "SEARCH: Explain Binary search",
+      "reference": "SEARCH: Explain Binary search",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "How big is Beer?",
+      "reply": "SEARCH: How big is Beer",
+      "reference": "SEARCH: How big is Beer",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Harp made of?",
+      "reply": "SEARCH: What is Harp made of",
+      "reference": "SEARCH: What is Harp made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani can you look up Prime number?",
+      "reply": "SEARCH: can you look up Prime number",
+      "reference": "SEARCH: can you look up Prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hi! where does Stomach come from?",
+      "reply": "SEARCH: where does Stomach come from",
+      "reference": "SEARCH: where does Stomach come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Binary search?",
+      "reply": "SEARCH: What is Binary search",
+      "reference": "SEARCH: What is Binary search",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "tell me about European robin.",
+      "reply": "SEARCH: tell me about European robin",
+      "reference": "SEARCH: tell me about European robin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Where does Gang come from?",
+      "reply": "SEARCH: Where does Gang come from",
+      "reference": "SEARCH: Where does Gang come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what do you know about Decimal?",
+      "reply": "SEARCH: what do you know about Decimal",
+      "reference": "SEARCH: what do you know about Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Infrared?",
+      "reply": "SEARCH: What do you know about Infrared",
+      "reference": "SEARCH: What do you know about Infrared",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Film",
+      "reply": "SEARCH: what is Film",
+      "reference": "SEARCH: what is Film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Infrared",
+      "reply": "SEARCH: what is Infrared",
+      "reference": "SEARCH: what is Infrared",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about European robin?",
+      "reply": "SEARCH: What do you know about European robin",
+      "reference": "SEARCH: What do you know about European robin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Tent?",
+      "reply": "SEARCH: what is Tent",
+      "reference": "SEARCH: what is Tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Riemann surface?",
+      "reply": "SEARCH: what is Riemann surface",
+      "reference": "SEARCH: what is Riemann surface",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Stagecraft.",
+      "reply": "SEARCH: Explain Stagecraft",
+      "reference": "SEARCH: Explain Stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Centaur",
+      "reply": "SEARCH: what is Centaur",
+      "reference": "SEARCH: what is Centaur",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Hoover Dam?",
+      "reply": "SEARCH: What is Hoover Dam",
+      "reference": "SEARCH: What is Hoover Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is Japanese mythology?",
+      "reply": "SEARCH: what is Japanese mythology",
+      "reference": "SEARCH: what is Japanese mythology",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Odyssey",
+      "reply": "SEARCH: what is Odyssey",
+      "reference": "SEARCH: what is Odyssey",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Adjective",
+      "reply": "SEARCH: what is Adjective",
+      "reference": "SEARCH: what is Adjective",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Binary search.",
+      "reply": "SEARCH: Tell me about Binary search",
+      "reference": "SEARCH: Tell me about Binary search",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Bread?",
+      "reply": "SEARCH: what is Bread",
+      "reference": "SEARCH: what is Bread",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "can you tell me why is Function (mathematics) important?",
+      "reply": "SEARCH: why is Function (mathematics) important",
+      "reference": "SEARCH: why is Function (mathematics) important",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, give me facts about Function (mathematics).",
+      "reply": "SEARCH: give me facts about Function (mathematics)",
+      "reference": "SEARCH: give me facts about Function (mathematics)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is History of Earth?",
+      "reply": "SEARCH: what is History of Earth",
+      "reference": "SEARCH: what is History of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Where is Stomach located?",
+      "reply": "SEARCH: Where is Stomach located",
+      "reference": "SEARCH: Where is Stomach located",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know where is Hoover Dam located?",
+      "reply": "SEARCH: where is Hoover Dam located",
+      "reference": "SEARCH: where is Hoover Dam located",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani can you look up Japanese mythology?",
+      "reply": "SEARCH: can you look up Japanese mythology",
+      "reference": "SEARCH: can you look up Japanese mythology",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "European robin?",
+      "reply": "SEARCH: European robin",
+      "reference": "SEARCH: European robin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "tell me about Film.",
+      "reply": "SEARCH: tell me about Film",
+      "reference": "SEARCH: tell me about Film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know explain Peafowl.",
+      "reply": "SEARCH: explain Peafowl",
+      "reference": "SEARCH: explain Peafowl",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Yosemite National Park?",
+      "reply": "SEARCH: What do you know about Yosemite National Park",
+      "reference": "SEARCH: What do you know about Yosemite National Park",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is the history of tent?",
+      "reply": "SEARCH: what is the history of tent",
+      "reference": "SEARCH: what is the history of tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Ketchup made of?",
+      "reply": "SEARCH: what is Ketchup made of",
+      "reference": "SEARCH: what is Ketchup made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Mixture?",
+      "reply": "SEARCH: Mixture",
+      "reference": "SEARCH: Mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Gang?",
+      "reply": "SEARCH: what is Gang",
+      "reference": "SEARCH: what is Gang",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Middle English known for",
+      "reply": "SEARCH: what is Middle English known for",
+      "reference": "SEARCH: what is Middle English known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "tell me about Harp.",
+      "reply": "SEARCH: tell me about Harp",
+      "reference": "SEARCH: tell me about Harp",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "explain Variance.",
+      "reply": "SEARCH: explain Variance",
+      "reference": "SEARCH: explain Variance",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Give me facts about Hoover Dam.",
+      "reply": "SEARCH: Give me facts about Hoover Dam",
+      "reference": "SEARCH: Give me facts about Hoover Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "how big is meadow?",
+      "reply": "SEARCH: how big is meadow",
+      "reference": "SEARCH: how big is meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Cello?",
+      "reply": "SEARCH: what do you know about Cello",
+      "reference": "SEARCH: what do you know about Cello",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Gang",
+      "reply": "SEARCH: what is Gang",
+      "reference": "SEARCH: what is Gang",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what is Igloo known for",
+      "reply": "SEARCH: what is Igloo known for",
+      "reference": "SEARCH: what is Igloo known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "tell me about Singing.",
+      "reply": "SEARCH: tell me about Singing",
+      "reference": "SEARCH: tell me about Singing",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Isaac.",
+      "reply": "SEARCH: Explain Isaac",
+      "reference": "SEARCH: Explain Isaac",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "I want to learn about Isaac.",
+      "reply": "SEARCH: Isaac",
+      "reference": "SEARCH: I want to learn about Isaac",
+      "searched": true,
+      "exact": false
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Japanese mythology?",
+      "reply": "SEARCH: What is Japanese mythology",
+      "reference": "SEARCH: What is Japanese mythology",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Atmosphere of Earth made of?",
+      "reply": "SEARCH: what is Atmosphere of Earth made of",
+      "reference": "SEARCH: what is Atmosphere of Earth made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "mount Kilimanjaro?",
+      "reply": "SEARCH:mount Kilimanjaro",
+      "reference": "SEARCH: mount Kilimanjaro",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Maraj\u00f3?",
+      "reply": "SEARCH: what is Maraj\u00f3",
+      "reference": "SEARCH: what is Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Middle English?",
+      "reply": "SEARCH: Middle English",
+      "reference": "SEARCH: Middle English",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know tell me about Ecosystem.",
+      "reply": "SEARCH: tell me about Ecosystem",
+      "reference": "SEARCH: tell me about Ecosystem",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what is Tent?",
+      "reply": "SEARCH: what is Tent",
+      "reference": "SEARCH: what is Tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo i want to learn about mount kilimanjaro.",
+      "reply": "SEARCH: i want to learn about mount kilimanjaro",
+      "reference": "SEARCH: i want to learn about mount kilimanjaro",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "can you tell me can you look up Function (mathematics)?",
+      "reply": "SEARCH: can you look up Function (mathematics)",
+      "reference": "SEARCH: can you look up Function (mathematics)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Natural units?",
+      "reply": "SEARCH: What do you know about Natural units",
+      "reference": "SEARCH: What do you know about Natural units",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Meadow?",
+      "reply": "SEARCH: Meadow",
+      "reference": "SEARCH: Meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know where is Stomach?",
+      "reply": "SEARCH: where is Stomach",
+      "reference": "SEARCH: where is Stomach",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Singing.",
+      "reply": "SEARCH: Explain Singing",
+      "reference": "SEARCH: Explain Singing",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Stagecraft",
+      "reply": "SEARCH: what is Stagecraft",
+      "reference": "SEARCH: what is Stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: explain Film.",
+      "reply": "SEARCH: explain Film",
+      "reference": "SEARCH: explain Film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "History of Earth?",
+      "reply": "SEARCH: History of Earth",
+      "reference": "SEARCH: History of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Variance.",
+      "reply": "SEARCH: Tell me about Variance",
+      "reference": "SEARCH: Tell me about Variance",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Stomach",
+      "reply": "SEARCH: what is Stomach",
+      "reference": "SEARCH: what is Stomach",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Mosul.",
+      "reply": "SEARCH: Tell me about Mosul",
+      "reference": "SEARCH: Tell me about Mosul",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Middle English?",
+      "reply": "SEARCH: What do you know about Middle English",
+      "reference": "SEARCH: What do you know about Middle English",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Yosemite National Park known for",
+      "reply": "SEARCH: what is Yosemite National Park known for",
+      "reference": "SEARCH: what is Yosemite National Park known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Why is Variance important?",
+      "reply": "SEARCH: Why is Variance important",
+      "reference": "SEARCH: Why is Variance important",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Odin?",
+      "reply": "SEARCH: Odin",
+      "reference": "SEARCH: Odin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Maraj\u00f3?",
+      "reply": "SEARCH: Maraj\u00f3",
+      "reference": "SEARCH: Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo how big is South Asia?",
+      "reply": "SEARCH: how big is South Asia",
+      "reference": "SEARCH: how big is South Asia",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Give me facts about Gang.",
+      "reply": "SEARCH: Give me facts about Gang",
+      "reference": "SEARCH: Give me facts about Gang",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is the history of Hoover Dam?",
+      "reply": "SEARCH: What is the history of Hoover Dam",
+      "reference": "SEARCH: What is the history of Hoover Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Film?",
+      "reply": "SEARCH: What is Film",
+      "reference": "SEARCH: What is Film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Bread?",
+      "reply": "SEARCH: What do you know about Bread",
+      "reference": "SEARCH: What do you know about Bread",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Bread?",
+      "reply": "SEARCH: What is Bread",
+      "reference": "SEARCH: What is Bread",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Beer?",
+      "reply": "SEARCH: What is Beer",
+      "reference": "SEARCH: What is Beer",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is Singing?",
+      "reply": "SEARCH: what is Singing",
+      "reference": "SEARCH: what is Singing",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Table (furniture).",
+      "reply": "SEARCH: Tell me about Table (furniture)",
+      "reference": "SEARCH: Tell me about Table (furniture)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Odyssey?",
+      "reply": "SEARCH: what is Odyssey",
+      "reference": "SEARCH: what is Odyssey",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know tell me about Gang.",
+      "reply": "SEARCH: tell me about Gang",
+      "reference": "SEARCH: tell me about Gang",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain European robin.",
+      "reply": "SEARCH: Explain European robin",
+      "reference": "SEARCH: Explain European robin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Function (mathematics)?",
+      "reply": "SEARCH: What do you know about Function (mathematics)",
+      "reference": "SEARCH: What do you know about Function (mathematics)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "explain Middle English.",
+      "reply": "SEARCH: explain Middle English",
+      "reference": "SEARCH: explain Middle English",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Odyssey known for",
+      "reply": "SEARCH: what is Odyssey known for",
+      "reference": "SEARCH: what is Odyssey known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Tent.",
+      "reply": "SEARCH: Explain Tent",
+      "reference": "SEARCH: Explain Tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Function (mathematics)?",
+      "reply": "SEARCH: What is Function (mathematics)",
+      "reference": "SEARCH: What is Function (mathematics)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, where does Prime number come from?",
+      "reply": "SEARCH: where does Prime number come from",
+      "reference": "SEARCH: where does Prime number come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "when did Charles Sanders Peirce die?",
+      "reply": "SEARCH: when did Charles Sanders Peirce die",
+      "reference": "SEARCH: when did Charles Sanders Peirce die",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo can you look up hoover dam?",
+      "reply": "SEARCH: can you look up hoover dam",
+      "reference": "SEARCH: can you look up hoover dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Singing?",
+      "reply": "SEARCH: what do you know about Singing",
+      "reference": "SEARCH: what do you know about Singing",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Meadow",
+      "reply": "SEARCH: what is Meadow",
+      "reference": "SEARCH: what is Meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "adjective?",
+      "reply": "SEARCH: adjective",
+      "reference": "SEARCH: adjective",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Mosul?",
+      "reply": "SEARCH: What is Mosul",
+      "reference": "SEARCH: What is Mosul",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Prime number?",
+      "reply": "SEARCH: what is Prime number",
+      "reference": "SEARCH: what is Prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what do you know about Japanese mythology?",
+      "reply": "SEARCH: what do you know about Japanese mythology",
+      "reference": "SEARCH: what do you know about Japanese mythology",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, tell me about Meadow.",
+      "reply": "SEARCH: tell me about Meadow",
+      "reference": "SEARCH: tell me about Meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, where does Odin come from?",
+      "reply": "SEARCH: where does Odin come from",
+      "reference": "SEARCH: where does Odin come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know how many people live in South Asia?",
+      "reply": "SEARCH: how many people live in South Asia",
+      "reference": "SEARCH: how many people live in South Asia",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Atmosphere of Earth made of?",
+      "reply": "SEARCH: what is Atmosphere of Earth made of",
+      "reference": "SEARCH: what is Atmosphere of Earth made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know tell me about Hoover Dam.",
+      "reply": "SEARCH: tell me about Hoover Dam",
+      "reference": "SEARCH: tell me about Hoover Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Table (furniture)?",
+      "reply": "SEARCH: What do you know about Table (furniture)",
+      "reference": "SEARCH: What do you know about Table (furniture)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Isaac",
+      "reply": "SEARCH: what is Isaac",
+      "reference": "SEARCH: what is Isaac",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Riemann surface known for",
+      "reply": "SEARCH: what is Riemann surface known for",
+      "reference": "SEARCH: what is Riemann surface known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Prime number?",
+      "reply": "SEARCH: what do you know about Prime number",
+      "reference": "SEARCH: what do you know about Prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo i want to learn about Mixture.",
+      "reply": "SEARCH: i want to learn about Mixture",
+      "reference": "SEARCH: i want to learn about Mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what do you know about Maraj\u00f3?",
+      "reply": "SEARCH: what do you know about Maraj\u00f3",
+      "reference": "SEARCH: what do you know about Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "can you tell me what is Peafowl known for",
+      "reply": "SEARCH: what is Peafowl known for",
+      "reference": "SEARCH: what is Peafowl known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Meadow?",
+      "reply": "SEARCH: what do you know about Meadow",
+      "reference": "SEARCH: what do you know about Meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what is Atmosphere of Earth made of?",
+      "reply": "SEARCH: what is Atmosphere of Earth made of",
+      "reference": "SEARCH: what is Atmosphere of Earth made of",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Igloo?",
+      "reply": "SEARCH: What is Igloo",
+      "reference": "SEARCH: What is Igloo",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Riemann surface.",
+      "reply": "SEARCH: Explain Riemann surface",
+      "reference": "SEARCH: Explain Riemann surface",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "explain Meadow.",
+      "reply": "SEARCH: explain Meadow",
+      "reference": "SEARCH: explain Meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What year did William Hogarth die?",
+      "reply": "SEARCH: What year did William Hogarth die",
+      "reference": "SEARCH: What year did William Hogarth die",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Igloo?",
+      "reply": "SEARCH: what is Igloo",
+      "reference": "SEARCH: what is Igloo",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "how big is film?",
+      "reply": "SEARCH: how big is film",
+      "reference": "SEARCH: how big is film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Binary search?",
+      "reply": "SEARCH: what do you know about Binary search",
+      "reference": "SEARCH: what do you know about Binary search",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is the history of Ketchup?",
+      "reply": "SEARCH: What is the history of Ketchup",
+      "reference": "SEARCH: What is the history of Ketchup",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is the history of Stagecraft?",
+      "reply": "SEARCH: What is the history of Stagecraft",
+      "reference": "SEARCH: What is the history of Stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what year was Charles Sanders Peirce born?",
+      "reply": "SEARCH: what year was Charles Sanders Peirce born",
+      "reference": "SEARCH: what year was Charles Sanders Peirce born",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Decimal?",
+      "reply": "SEARCH: What is Decimal",
+      "reference": "SEARCH: What is Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Mixture?",
+      "reply": "SEARCH: what do you know about Mixture",
+      "reference": "SEARCH: what do you know about Mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Where is Stomach?",
+      "reply": "SEARCH: Where is Stomach",
+      "reference": "SEARCH: Where is Stomach",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what do you know about Peafowl?",
+      "reply": "SEARCH: what do you know about Peafowl",
+      "reference": "SEARCH: what do you know about Peafowl",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "How big is Odyssey?",
+      "reply": "SEARCH: How big is Odyssey",
+      "reference": "SEARCH: How big is Odyssey",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: explain Yosemite National Park.",
+      "reply": "SEARCH: explain Yosemite National Park",
+      "reference": "SEARCH: explain Yosemite National Park",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Ecosystem?",
+      "reply": "SEARCH: What do you know about Ecosystem",
+      "reference": "SEARCH: What do you know about Ecosystem",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is European robin known for",
+      "reply": "SEARCH: what is European robin known for",
+      "reference": "SEARCH: what is European robin known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what is Variance",
+      "reply": "SEARCH: what is Variance",
+      "reference": "SEARCH: what is Variance",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know explain Isaac.",
+      "reply": "SEARCH: explain Isaac",
+      "reference": "SEARCH: explain Isaac",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Maraj\u00f3",
+      "reply": "SEARCH: what is Maraj\u00f3",
+      "reference": "SEARCH: what is Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know cello?",
+      "reply": "SEARCH: cello",
+      "reference": "SEARCH: cello",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani why is Peafowl important?",
+      "reply": "SEARCH: why is Peafowl important",
+      "reference": "SEARCH: why is Peafowl important",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is the history of Atmosphere of Earth?",
+      "reply": "SEARCH: What is the history of Atmosphere of Earth",
+      "reference": "SEARCH: What is the history of Atmosphere of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, maraj\u00f3?",
+      "reply": "SEARCH: maraj\u00f3",
+      "reference": "SEARCH: maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Gang?",
+      "reply": "SEARCH: what is Gang",
+      "reference": "SEARCH: what is Gang",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, explain Japanese mythology.",
+      "reply": "SEARCH: explain Japanese mythology",
+      "reference": "SEARCH: explain Japanese mythology",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, hoover Dam?",
+      "reply": "SEARCH: hoover Dam",
+      "reference": "SEARCH: hoover Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Can you look up Prime number?",
+      "reply": "SEARCH: Can you look up Prime number",
+      "reference": "SEARCH: Can you look up Prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Hoover Dam?",
+      "reply": "SEARCH: what do you know about Hoover Dam",
+      "reference": "SEARCH: what do you know about Hoover Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Natural units.",
+      "reply": "SEARCH: Explain Natural units",
+      "reference": "SEARCH: Explain Natural units",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Three Gorges Dam",
+      "reply": "SEARCH: what is Three Gorges Dam",
+      "reference": "SEARCH: what is Three Gorges Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Riemann surface?",
+      "reply": "SEARCH: Riemann surface",
+      "reference": "SEARCH: Riemann surface",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: explain Mixture.",
+      "reply": "SEARCH: explain Mixture",
+      "reference": "SEARCH: explain Mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Meadow?",
+      "reply": "SEARCH: what is Meadow",
+      "reference": "SEARCH: what is Meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is the capital of Mosul?",
+      "reply": "SEARCH: What is the capital of Mosul",
+      "reference": "SEARCH: What is the capital of Mosul",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what is Natural units",
+      "reply": "SEARCH: what is Natural units",
+      "reference": "SEARCH: what is Natural units",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Japanese mythology",
+      "reply": "SEARCH: what is Japanese mythology",
+      "reference": "SEARCH: what is Japanese mythology",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Adjective?",
+      "reply": "SEARCH: What is Adjective",
+      "reference": "SEARCH: What is Adjective",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Prime number",
+      "reply": "SEARCH: what is Prime number",
+      "reference": "SEARCH: what is Prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Riemann surface",
+      "reply": "SEARCH: what is Riemann surface",
+      "reference": "SEARCH: what is Riemann surface",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Tent.",
+      "reply": "SEARCH: Tell me about Tent",
+      "reference": "SEARCH: Tell me about Tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Bread.",
+      "reply": "SEARCH: Tell me about Bread",
+      "reference": "SEARCH: Tell me about Bread",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: i want to learn about Maraj\u00f3.",
+      "reply": "SEARCH: i want to learn about Maraj\u00f3",
+      "reference": "SEARCH: i want to learn about Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Infrared?",
+      "reply": "SEARCH: What is Infrared",
+      "reference": "SEARCH: What is Infrared",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what do you know about European robin?",
+      "reply": "SEARCH: what do you know about European robin",
+      "reference": "SEARCH: what do you know about European robin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Meadow.",
+      "reply": "SEARCH: Tell me about Meadow",
+      "reference": "SEARCH: Tell me about Meadow",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "do you know what do you know about Riemann surface?",
+      "reply": "SEARCH: what do you know about Riemann surface",
+      "reference": "SEARCH: what do you know about Riemann surface",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what is Stagecraft",
+      "reply": "SEARCH: what is Stagecraft",
+      "reference": "SEARCH: what is Stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Gang.",
+      "reply": "SEARCH: Tell me about Gang",
+      "reference": "SEARCH: Tell me about Gang",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "tell me about Stagecraft.",
+      "reply": "SEARCH: tell me about Stagecraft",
+      "reference": "SEARCH: tell me about Stagecraft",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Cello?",
+      "reply": "SEARCH: What is Cello",
+      "reference": "SEARCH: What is Cello",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Yosemite National Park?",
+      "reply": "SEARCH: what is Yosemite National Park",
+      "reference": "SEARCH: what is Yosemite National Park",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what is Centaur",
+      "reply": "SEARCH: what is Centaur",
+      "reference": "SEARCH: what is Centaur",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Three Gorges Dam?",
+      "reply": "Three Gorges Dam is a very small town in the United States. It is a small town in the United States.",
+      "reference": "SEARCH: What is Three Gorges Dam",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, what year did Charles Sanders Peirce die?",
+      "reply": "SEARCH: what year did Charles Sanders Peirce die",
+      "reference": "SEARCH: what year did Charles Sanders Peirce die",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Film.",
+      "reply": "SEARCH: Explain Film",
+      "reference": "SEARCH: Explain Film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: tent?",
+      "reply": "SEARCH: tent",
+      "reference": "SEARCH: tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Riemann surface.",
+      "reply": "SEARCH: Tell me about Riemann surface",
+      "reference": "SEARCH: Tell me about Riemann surface",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Yosemite National Park",
+      "reply": "SEARCH: what is Yosemite National Park",
+      "reference": "SEARCH: what is Yosemite National Park",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Where is Hoover Dam located?",
+      "reply": "SEARCH: Where is Hoover Dam located",
+      "reference": "SEARCH: Where is Hoover Dam located",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What do you know about Japanese mythology?",
+      "reply": "SEARCH: What do you know about Japanese mythology",
+      "reference": "SEARCH: What do you know about Japanese mythology",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Mixture?",
+      "reply": "SEARCH: What is Mixture",
+      "reference": "SEARCH: What is Mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Three Gorges Dam?",
+      "reply": "Three Gorges Dam",
+      "reference": "SEARCH: Three Gorges Dam",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "decide",
+      "prompt": "can you tell me history of History of Earth",
+      "reply": "SEARCH: history of History of Earth",
+      "reference": "SEARCH: history of History of Earth",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Mixture.",
+      "reply": "SEARCH: Explain Mixture",
+      "reference": "SEARCH: Explain Mixture",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Prime number.",
+      "reply": "SEARCH: Tell me about Prime number",
+      "reference": "SEARCH: Tell me about Prime number",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Cello",
+      "reply": "SEARCH: what is Cello",
+      "reference": "SEARCH: what is Cello",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tent?",
+      "reply": "SEARCH: Tent",
+      "reference": "SEARCH: Tent",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, explain Ecosystem.",
+      "reply": "SEARCH: explain Ecosystem",
+      "reference": "SEARCH: explain Ecosystem",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Three Gorges Dam.",
+      "reply": "SEARCH: Tell me about Three Gorges Dam",
+      "reference": "SEARCH: Tell me about Three Gorges Dam",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Adjective.",
+      "reply": "SEARCH: Explain Adjective",
+      "reference": "SEARCH: Explain Adjective",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what year did Charles Sanders Peirce die?",
+      "reply": "SEARCH: what year did Charles Sanders Peirce die",
+      "reference": "SEARCH: what year did Charles Sanders Peirce die",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: where is Hoover Dam located?",
+      "reply": "SEARCH: where is Hoover Dam located",
+      "reference": "SEARCH: where is Hoover Dam located",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what do you know about Harp?",
+      "reply": "SEARCH: what do you know about Harp",
+      "reference": "SEARCH: what do you know about Harp",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Function (mathematics)?",
+      "reply": "SEARCH: Mathematics",
+      "reference": "SEARCH: Function (mathematics)",
+      "searched": true,
+      "exact": false
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Infrared.",
+      "reply": "SEARCH: Tell me about Infrared",
+      "reference": "SEARCH: Tell me about Infrared",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Odin",
+      "reply": "SEARCH: what is Odin",
+      "reference": "SEARCH: what is Odin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Where does Charles Sanders Peirce come from?",
+      "reply": "SEARCH: Where does Charles Sanders Peirce come from",
+      "reference": "SEARCH: Where does Charles Sanders Peirce come from",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is william hogarth known for",
+      "reply": "SEARCH: what is william hogarth known for",
+      "reference": "SEARCH: what is william hogarth known for",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: why is William Hogarth important?",
+      "reply": "SEARCH: why is William Hogarth important",
+      "reference": "SEARCH: why is William Hogarth important",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, explain Decimal.",
+      "reply": "SEARCH: explain Decimal",
+      "reference": "SEARCH: explain Decimal",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "kani, what do you know about Film?",
+      "reply": "SEARCH: what do you know about Film",
+      "reference": "SEARCH: what do you know about Film",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Natural units",
+      "reply": "SEARCH: what is Natural units",
+      "reference": "SEARCH: what is Natural units",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is the population of South Asia?",
+      "reply": "SEARCH: What is the population of South Asia",
+      "reference": "SEARCH: What is the population of South Asia",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is European robin",
+      "reply": "SEARCH: what is European robin",
+      "reference": "SEARCH: what is European robin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: what is Binary search",
+      "reply": "SEARCH: what is Binary search",
+      "reference": "SEARCH: what is Binary search",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Table (furniture).",
+      "reply": "SEARCH: Explain Table (furniture)",
+      "reference": "SEARCH: Explain Table (furniture)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "What is Odin?",
+      "reply": "SEARCH: What is Odin",
+      "reference": "SEARCH: What is Odin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "yo i want to learn about South Asia.",
+      "reply": "SEARCH: i want to learn about South Asia",
+      "reference": "SEARCH: i want to learn about South Asia",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "what is Peafowl",
+      "reply": "SEARCH: what is Peafowl",
+      "reference": "SEARCH: what is Peafowl",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "hey kani, how many people live in South Asia?",
+      "reply": "SEARCH: how many people live in South Asia",
+      "reference": "SEARCH: how many people live in South Asia",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Tell me about Maraj\u00f3.",
+      "reply": "SEARCH: Tell me about Maraj\u00f3",
+      "reference": "SEARCH: Tell me about Maraj\u00f3",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "quick question: explain Odin.",
+      "reply": "SEARCH: explain Odin",
+      "reference": "SEARCH: explain Odin",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "decide",
+      "prompt": "Explain Function (mathematics).",
+      "reply": "SEARCH: Explain Function (mathematics)",
+      "reference": "SEARCH: Explain Function (mathematics)",
+      "searched": true,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "hey kelus, it's my birthday right now",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi kani i endde things with my partner today",
+      "reply": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "reference": "That sounds really painful, and I'm sorry you're going through it. Your feelings make sense. Try to rest, eat something, and lean on people who care about you. I'm here if you want to talk.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "how do i check if a numbber is even in py",
+      "reply": "```python\ndef is_even(n):\n    return n % 2 == 0\n```",
+      "reference": "```python\ndef is_even(n):\n    return n % 2 == 0\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "how to say hello world in py",
+      "reply": "```python\nprint(\"Hello, world!\")\n```",
+      "reference": "```python\nprint(\"Hello, world!\")\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "hash maps explained?",
+      "reply": "A dictionary maps keys to values.",
+      "reference": "A dictionary maps keys to values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "i want to make a is_odd function with Python thanks",
+      "reply": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "reference": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "help me understand integers",
+      "reply": "An integer is a whole number without a fractional part.",
+      "reference": "An integer is a whole number without a fractional part.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Question: do you use an api",
+      "reply": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "reference": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "honestly i can't sleep!",
+      "reply": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "reference": "It sounds like you need some rest. If you can, take a break, drink some water, and step away from screens for a while. A good night's sleep makes most things feel more manageable.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "need py code to total a list of numbers",
+      "reply": "```python\ndef total(values):\n    return sum(values)\n```",
+      "reference": "```python\ndef total(values):\n    return sum(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey today was awful right now",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hi you good!!",
+      "reply": "I'm ready to help. What are you working on?",
+      "reference": "I'm ready to help. What are you working on?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "entertain me",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Guess what, i feel so alone. i want to disappear forever",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi!! i need some motivation",
+      "reply": "You can do it! Start with one small step right now; the next one gets easier. What are you working on?",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "yo why would i use a return statement",
+      "reply": "A return statement sends a result back from a function.",
+      "reference": "A return statement sends a result back from a function.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "how do i write code to find the min value in a list",
+      "reply": "```python\ndef minimum(values):\n    return min(values)\n```",
+      "reference": "```python\ndef minimum(values):\n    return min(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Please can you run codde please",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "reference": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "honestly my teacher was unfair to me",
+      "reply": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "reference": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hey kelus, what is a while loop in python!!",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "hey kelus, what framework do you use :)",
+      "reply": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "reference": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Um that made me feel ebtter??",
+      "reply": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "ok whats minecraft...",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "reference": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "What is a syntax error uesd for :)",
+      "reply": "A syntax error means the code does not follow the language's grammar.",
+      "reference": "A syntax error means the code does not follow the language's grammar.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Tell me about if statement",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "reference": "A condition is an expression that evaluates to True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Meaning of a dict",
+      "reply": "A dictionary maps keys to values.",
+      "reference": "A dictionary maps keys to values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "how does a while loop work",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Um JavaScript example of printing hello world lol",
+      "reply": "```javascript\nconsole.log(\"Hello, world!\");\n```",
+      "reference": "```javascript\nconsole.log(\"Hello, world!\");\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi my teacher was unfair to me",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Guess what, entertain me and idk what to do",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "How to check if a number is prime in Python please",
+      "reply": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "reference": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "factorial calculator in Python",
+      "reply": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "reference": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "What do i call you now",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "reference": "I'm Kelus Kani B2:2F, a small model trained locally from scratch for basic chat and code.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "I'M GOING TO END IT ALL :/",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "honestly today was awful...",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "python?!",
+      "reply": "Python is a programming language used for scripts, apps, and data work.",
+      "reference": "Python is a programming language used for scripts, apps, and data work.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "helo world written in py",
+      "reply": "```python\nprint(\"Hello, world!\")\n```",
+      "reference": "```python\nprint(\"Hello, world!\")\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi im thinknig about suicide",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "write a python function that greets someone",
+      "reply": "```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```",
+      "reference": "```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "write py code to solve fizzbuzz?",
+      "reply": "```python\nfor i in range(1, 16):\n    if i % 15 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else",
+      "reference": "```python\nfor i in range(1, 16):\n    if i % 15 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)\n```",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "condition meaning",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "reference": "A condition is an expression that evaluates to True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "how does a code comment work pls",
+      "reply": "A comment explains code and is ignored when the program runs.",
+      "reference": "A comment explains code and is ignored when the program runs.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "ok what can you help me with",
+      "reply": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "reference": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "It's my birthday!",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "honestly i need some motivation rihgt now",
+      "reply": "You can do it! Start with one small step right now; the next one gets easier. What are you working on?",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "I'm going through a breakup right now",
+      "reply": "I'm really sorry. Breakups hurt, and it's okay to feel sad. Do you want to talk about it?",
+      "reference": "I'm really sorry. Breakups hurt, and it's okay to feel sad for a while. Be gentle with yourself, talk to a friend you trust, and take it one day at a time. Do you want to talk about it, or should I try to cheer you up?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Build a add function in JavaScript",
+      "reply": "```javascript\nfunction add(a, b) {\n  return a + b;\n}\n```",
+      "reference": "```javascript\nfunction add(a, b) {\n  return a + b;\n}\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "how do you wok pls",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "reference": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "runtime error explained",
+      "reply": "An exception is an error that interrupts normal program execution.",
+      "reference": "An exception is an error that interrupts normal program execution.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "alright can you write a Python function that squares x",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "reference": "```python\ndef square(x):\n    return x * x\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "question: what are comments in programming...",
+      "reply": "A comment explains code and is ignored when the program runs.",
+      "reference": "A comment explains code and is ignored when the program runs.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "BTW DEFINE FUNCTION THANKS",
+      "reply": "```python\ndef double(x):\n    return x * 2\n```",
+      "reference": "A function is a reusable block of code that takes inputs and can return a result.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Explain conditions",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "reference": "A condition is an expression that evaluates to True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Guess what, i ended things with my girlfriend, i want to stop existing",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey my friend is ignoring me lol",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Teach me about bools?",
+      "reply": "A boolean is a value that is either True or False.",
+      "reference": "A boolean is a value that is either True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "uh explain css??",
+      "reply": "CSS controls how a web page looks.",
+      "reference": "CSS controls how a web page looks.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "my friend is igonring me lol",
+      "reply": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "uh what do lists do thanks",
+      "reply": "A list stores an ordered collection of values.",
+      "reference": "A list stores an ordered collection of values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "I need a python for loop",
+      "reply": "```python\nfor i in range(5):\n    print(i)\n```",
+      "reference": "```python\nfor i in range(5):\n    print(i)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "i have a job interview tomorrow :/",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "define bool",
+      "reply": "A boolean is a value that is either True or False.",
+      "reference": "A boolean is a value that is either True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Can you compute the factorial of n in Python",
+      "reply": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "reference": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "give me a py function that converts celsius to fahrenheit",
+      "reply": "```python\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n```",
+      "reference": "```python\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "write py to double a number",
+      "reply": "```python\ndef double(x):\n    return x * 2\n```",
+      "reference": "```python\ndef double(x):\n    return x * 2\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "write javascript code to doubble x",
+      "reply": "```javascript\nfunction double(x) {\n  return x * 2;\n}\n```",
+      "reference": "```javascript\nfunction double(x) {\n  return x * 2;\n}\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "ugh i need a pep talk",
+      "reply": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing next.",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "explain a var",
+      "reply": "A variable is a name that refers to a value.",
+      "reference": "A variable is a name that refers to a value.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "okay i need a login system :)",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "reference": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "What are recursive functions in programming",
+      "reply": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "reference": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "idk entertain me",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "um entertain me :(",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Explain syntax error",
+      "reply": "A syntax error means the code does not follow the language's grammar.",
+      "reference": "A syntax error means the code does not follow the language's grammar.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "guess what, its my birthday lol",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "And how to optimize minecraft thanks",
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "reference": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "um are you alwayys right :)",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "reference": "I can make mistakes. Review the code and test it before using it.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Please make a py string reverser?",
+      "reply": "```python\ndef reverse(text):\n    return text[::-1]\n```",
+      "reference": "```python\ndef reverse(text):\n    return text[::-1]\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Okay tell me about minecraft",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "reference": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi!! today was awful right now",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "I NEED A PY DOUBLE FUNCTION",
+      "reply": "```python\ndef double(x):\n    return x * 2\n```",
+      "reference": "```python\ndef double(x):\n    return x * 2\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hey today was awful today",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "show me an example",
+      "reply": "```python\nprint(\"Hello\")\n```",
+      "reference": "```python\nprint(\"Hello\")\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Guess what, that made me feel better",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi!! my friedn is ignoring me lol",
+      "reply": "I'm really sorry. Breakups hurt, and it's okay to feel sad for a while. Be gentle with yourself, talk to a friend you trust, and take it one day at a time. Do you want to talk about it, or should I try to c",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Code a quiz game plz",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "reference": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "pleaes can you explain html plz",
+      "reply": "HTML describes the structure of a web page.",
+      "reference": "HTML describes the structure of a web page.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "HEY TAHT MADE ME FEEL BETTER AND IDK WHAT TO DO",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "so give me a Pthon is_odd function?",
+      "reply": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "reference": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Okay not quite...",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "reference": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "get the minimum of a list using python",
+      "reply": "```python\ndef minimum(values):\n    return min(values)\n```",
+      "reference": "```python\ndef minimum(values):\n    return min(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "python?!",
+      "reply": "Yes. I can write small Python and JavaScript examples. Tell me what you want to build and which language to use.",
+      "reference": "Python is a programming language used for scripts, apps, and data work.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi i've been stuck on this bug for hours!",
+      "reply": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small piece at a time.",
+      "reference": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "example please",
+      "reply": "```python\ncount = 10\n```",
+      "reference": "```python\ncount = 10\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi kani that made me feel better and idk what to do",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "That's not it please",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "reference": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "idk ive been stuck on this bug for hours :(",
+      "reply": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small piece at a time.",
+      "reference": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "okay Python: make a number twiice as big kelus",
+      "reply": "```python\ndef double(x):\n    return x * 2\n```",
+      "reference": "```python\ndef double(x):\n    return x * 2\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "btw write code to test whether n is prime",
+      "reply": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "reference": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Give me a Python palindrome function",
+      "reply": "```python\ndef is_palindrome(text):\n    return text == text[::-1]\n```",
+      "reference": "```python\ndef is_palindrome(text):\n    return text == text[::-1]\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Help me understand algorithms",
+      "reply": "An algorithm is a sequence of steps for solving a problem.",
+      "reference": "An algorithm is a sequence of steps for solving a problem.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "kelus i have a job interview tomorrow??",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi kani i can't sleep",
+      "reply": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "reference": "It sounds like you need some rest. If you can, take a break, drink some water, and step away from screens for a while. A good night's sleep makes most things feel more manageable.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi!! my teacher was unfair to me :/",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "hi i want to build a mean function using python??",
+      "reply": "```python\ndef average(values):\n    return sum(values) / len(values)\n```",
+      "reference": "```python\ndef average(values):\n    return sum(values) / len(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "I'm thinking about suicide...",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "i want to greeet a user by name in py",
+      "reply": "```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```",
+      "reference": "```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "idk ive been stuck on this bug for hours :(",
+      "reply": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small piece at a time.",
+      "reference": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "example please",
+      "reply": "```html\n<h1>Hello</h1>\n```",
+      "reference": "```html\n<h1>Hello</h1>\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "I didnt get the job and idk what to do",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "please write python code to revrse the characters in a string",
+      "reply": "```python\ndef reverse(text):\n    return text[::-1]\n```",
+      "reference": "```python\ndef reverse(text):\n    return text[::-1]\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "well my friend is ignoring me??",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "what is software testing used for?",
+      "reply": "A test checks that code behaves as expected for a given input.",
+      "reference": "A test checks that code behaves as expected for a given input.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "how do i get the maximum of a list in Python",
+      "reply": "```python\ndef maximum(values):\n    return max(values)\n```",
+      "reference": "```python\ndef maximum(values):\n    return max(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "And is ths kelus...",
+      "reply": "You're welcome! What would you like to try next?",
+      "reference": "I'm Kelus Kani B2:2F, a small model trained locally from scratch for basic chat and code.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "give me a Python function that finds the minimum value",
+      "reply": "```python\ndef minimum(values):\n    return min(values)\n```",
+      "reference": "```python\ndef minimum(values):\n    return min(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "I'm doen for today!",
+      "reply": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "reference": "See you! Happy coding.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "Kelus that made me feel better :/",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Hi i finished my first website",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Kelus can u write a python functoin that sums a list",
+      "reply": "```python\ndef total(values):\n    return sum(values)\n```",
+      "reference": "```python\ndef total(values):\n    return sum(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "minecraft lag fix??",
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "reference": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "hiii?",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "reference": "Hi! I'm Kelus Kani B2:2F. What would you like to build?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "hi unit test explained?",
+      "reply": "A test checks that code behaves as expected for a given input.",
+      "reference": "A test checks that code behaves as expected for a given input.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "show me a is_prime functon",
+      "reply": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "reference": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Well entertain me",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Show me a Python subtraction function",
+      "reply": "```python\ndef subtract(a, b):\n    return a - b\n```",
+      "reference": "```python\ndef subtract(a, b):\n    return a - b\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "gve me a py for loop",
+      "reply": "```python\nfor i in range(5):\n    print(i)\n```",
+      "reference": "```python\nfor i in range(5):\n    print(i)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "i need a js doubling function",
+      "reply": "```javascript\nfunction double(x) {\n  return x * 2;\n}\n```",
+      "reference": "```javascript\nfunction double(x) {\n  return x * 2;\n}\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "what is minecraft??",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "reference": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hey, great job!",
+      "reply": "You're welcome! What would you like to try next?",
+      "reference": "You're welcome! What would you like to try next?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Kelus i feel so alone right now",
+      "reply": "Feeling lonely is really hard, and a lot of people feel it too. Sending one small message to someone can help. Clubs, classes, or online groups about something you enjoy are good ways to meet people. I'm happy to chat",
+      "reference": "Feeling lonely is really hard, and a lot of people feel it too. Sending one small message to someone can help. Clubs, classes, or online groups about something you enjoy are good ways to meet people. I'm happy to chat in the meantime.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "what is a variable",
+      "reply": "A variable is a name that refers to a value.",
+      "reference": "A variable is a name that refers to a value.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi!! that made me feel better",
+      "reply": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Okya can you write javascript...",
+      "reply": "Yes. I can write small Python and JavaScript examples. Tell me what you want to build and which language to use.",
+      "reference": "Yes. I can write small Python and JavaScript examples. Tell me what you want to build and which language to use.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "HI IT'S MY BIRTHDAY",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Hey i didn't get the job...",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "btw write code to test whether n is prime",
+      "reply": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "reference": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "um i need some motivation :(",
+      "reply": "You can do it! Start with one small step right now; the next one gets easier. What are you working on?",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "OKAY MY MINECRAFT FRAME RATE IS BAD...",
+      "reply": "Because of your favorite favorite favorite food.",
+      "reference": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "whats a list",
+      "reply": "A list stores an ordered collection of values.",
+      "reference": "A list stores an ordered collection of values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "hi i need some motivation right now",
+      "reply": "You can do it! Start with one small step right now; the next one gets easier. What are you working on?",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi kani that made me feel better!",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "guess what, entertain me",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "u did not answer!!",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "reference": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi i have a job interview tomorrow",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "i want to make a averrage function with py",
+      "reply": "```python\ndef average(values):\n    return sum(values) / len(values)\n```",
+      "reference": "```python\ndef average(values):\n    return sum(values) / len(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "is your output safe to use?",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "reference": "I can make mistakes. Review the code and test it before using it.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Question: can you execute python now",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "reference": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey kelus, work is crushing me??",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "reference": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "describe a dict",
+      "reply": "A dictionary maps keys to values.",
+      "reference": "A dictionary maps keys to values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "hi i need a chta app pls",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "reference": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "kelus im so stressed and idk what to do",
+      "reply": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "reference": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "It's my birthday",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Okay whats a runtime error please",
+      "reply": "An exception is an error that interrupts normal program execution.",
+      "reference": "An exception is an error that interrupts normal program execution.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey kelsu, my friend is ignoring me and idk what to do",
+      "reply": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "KELUS, WHAT IS A RUNTIME ERROR IN PROGRAMMING...",
+      "reply": "A RUNTIME is a programming language used for scripts, apps, and data work.",
+      "reference": "An exception is an error that interrupts normal program execution.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "I need some motivation",
+      "reply": "You can do it! Start with one small step right now; the next one gets easier. What are you working on?",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "i want to know what a var is?",
+      "reply": "A variable is a name that refers to a value.",
+      "reference": "A variable is a name that refers to a value.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi today was awful lol",
+      "reply": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "reference": "I'm sorry you're feeling down. Bad days happen, and they do pass. Want to tell me what happened? A short walk, some water, or a message to a friend can help a little.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "define html...",
+      "reply": "HTML describes the structure of a web page.",
+      "reference": "HTML describes the structure of a web page.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "what are vars in programming?",
+      "reply": "A variable is a name that refers to a value.",
+      "reference": "A variable is a name that refers to a value.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "YO PY VOWEL COUNTER KELUS",
+      "reply": "```python\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n```",
+      "reference": "```python\ndef count_vowels(text):\n    return sum(1 for char in text.lower() if char in \"aeiou\")\n```",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Code for computing factorials in python",
+      "reply": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "reference": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "functions explained",
+      "reply": "A function is a reusable block of code that takes inputs and can return a result.",
+      "reference": "A function is a reusable block of code that takes inputs and can return a result.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi i feel suicidal :/",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi i got a bad grade",
+      "reply": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "reference": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "well i didnt get the job and now i want to hurt myself",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "hi!! i finished my first website :(",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "example please",
+      "reply": "```python\nfor i in range(3):\n    print(i)\n```",
+      "reference": "```python\nfor i in range(3):\n    print(i)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "question: what are comments in programming...",
+      "reply": "A comment explains code and is ignored when the program runs.",
+      "reference": "A comment explains code and is ignored when the program runs.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Idk i feel so alone and i want to stop existing",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Func in programming",
+      "reply": "A function is a reusable block of code that takes inputs and can return a result.",
+      "reference": "A function is a reusable block of code that takes inputs and can return a result.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "i'm palnning to end my life...",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "How do i say hello world in Python",
+      "reply": "```python\nprint(\"Hello, world!\")\n```",
+      "reference": "```python\nprint(\"Hello, world!\")\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "explain condition",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "reference": "A condition is an expression that evaluates to True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "it's my birthday irght now",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "explain a dict?",
+      "reply": "A dictionary maps keys to values.",
+      "reference": "A dictionary maps keys to values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "explain a return value",
+      "reply": "A return statement sends a result back from a function.",
+      "reference": "A return statement sends a result back from a function.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "that made me feel better right now",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey i want to end my life!",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "Um my friend is ignoring me??",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi i want to overdose",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Teach me about while loops",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "hi kani ive been stuck on this bug for hours right now",
+      "reply": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "reference": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey kelus, my friend is ignoring me",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "what is a function in programming?",
+      "reply": "A function is a reusable block of code that takes inputs and can return a result.",
+      "reference": "A function is a reusable block of code that takes inputs and can return a result.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "guess what, i'm so stressed, i want to stop existing",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "hi predict the lottery numbers pls",
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "reference": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "write a py function to see if a number is odd",
+      "reply": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "reference": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "What are recursive functions",
+      "reply": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "reference": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "I've been stuck on this bug for hours",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "reference": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi my friend is ignoring me, i want to overdose",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "i want to build a hello world example using js",
+      "reply": "```javascript\nconsole.log(\"Hello, world!\");\n```",
+      "reference": "```javascript\nconsole.log(\"Hello, world!\");\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "um my teacher was unfair to me",
+      "reply": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "reference": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "show me an example",
+      "reply": "```python\nfor i in range(3):\n    print(i)\n```",
+      "reference": "```python\nfor i in range(3):\n    print(i)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Yoru name please!",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "reference": "I'm Kelus Kani B2:2F, a small model trained locally from scratch for basic chat and code.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "SHOW ME A PY TOTAL FUNCTION",
+      "reply": "```python\ndef multiply(a, b):\n    return a * b\n```",
+      "reference": "```python\ndef total(values):\n    return sum(values)\n```",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Code for conuting list items in py",
+      "reply": "```python\ndef length(items):\n    return len(items)\n```",
+      "reference": "```python\ndef length(items):\n    return len(items)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi i need some motivation right now",
+      "reply": "You can do it! Start with one small step right now; the next one gets easier. What are you working on?",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "alright who built this model now",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "reference": "I'm Kelus Kani B2:2F, a small model trained locally from scratch for basic chat and code.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hi why woud i use a code comment?",
+      "reply": "A comment explains code and is ignored when the program runs.",
+      "reference": "A comment explains code and is ignored when the program runs.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Pthon snippet to square x",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "reference": "```python\ndef square(x):\n    return x * x\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "give me an example",
+      "reply": "```python\nperson = {\"name\": \"Sam\"}\n```",
+      "reference": "```python\nperson = {\"name\": \"Sam\"}\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey kelus, its my birthday.",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Thanks for the hlp",
+      "reply": "You're welcome! What would you like to try next?",
+      "reference": "You're welcome! What would you like to try next?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "I need a python function thhat multiplies a and b lol",
+      "reply": "```python\ndef multiply(a, b):\n    return a * b\n```",
+      "reference": "```python\ndef multiply(a, b):\n    return a * b\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "example please",
+      "reply": "```python\nitems = [1, 2, 3]\n```",
+      "reference": "```python\nitems = [1, 2, 3]\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "kelus, tell me about while loops!!",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "eli5 dictionary",
+      "reply": "A dictionary maps keys to values.",
+      "reference": "A dictionary maps keys to values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Code for conuting list items in py",
+      "reply": "```python\ndef length(items):\n    return len(items)\n```",
+      "reference": "```python\ndef length(items):\n    return len(items)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "hey kelus, list sum function in Python",
+      "reply": "```python\ndef total(values):\n    return sum(values)\n```",
+      "reference": "```python\ndef total(values):\n    return sum(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "So entertain me!",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "ugh i have a job interview tomorrow...",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "What does a loop do",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi entertain me lol",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Tell me about if statement",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "reference": "A condition is an expression that evaluates to True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "py snippet to fnd the factorial of a number",
+      "reply": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "reference": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hepl me change celsius to fahrenheit with Python?",
+      "reply": "```python\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n```",
+      "reference": "```python\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "HEY KELUS, IT'S MY BIRTHDAY.",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "quick question: what does a fuunc do",
+      "reply": "A function is a reusable block of code that takes inputs and can return a result.",
+      "reference": "A function is a reusable block of code that takes inputs and can return a result.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Guess what, i'm so stressed and i'm going to end it all",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi it's my birtdhay",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "KELUS, NOT WHAT I ASSKED :)",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "reference": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "let's build a budget tracker",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "reference": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "that made me feel better.",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hmm i want to do fizzbuzz in py kelus",
+      "reply": "```python\nfor i in range(1, 16):\n    if i % 15 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else",
+      "reference": "```python\nfor i in range(1, 16):\n    if i % 15 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)\n```",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "i got a bad grade.",
+      "reply": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "reference": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "example?",
+      "reply": "```javascript\nconsole.log(\"Hello, world!\");\n```",
+      "reference": "```javascript\nconsole.log(\"Hello, world!\");\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "how do i get the maximum of a list in Python",
+      "reply": "```python\ndef maximum(values):\n    return max(values)\n```",
+      "reference": "```python\ndef maximum(values):\n    return max(values)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Ugh i ogt a bad grade and idk what to do",
+      "reply": "I'm sorry you're feeling down. Bad days happen, and they do pass. Want to tell me what happened? A short walk, some water, or a message to a friend can help a little.",
+      "reference": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Need Python code to find the sum of two numbers",
+      "reply": "```python\ndef add(a, b):\n    return a + b\n```",
+      "reference": "```python\ndef add(a, b):\n    return a + b\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "um i'm going throuhg a breakup today",
+      "reply": "I'm really sorry. Breakups hurt, and it's okay to feel sad. Do you want to talk about it?",
+      "reference": "That sounds really painful, and I'm sorry you're going through it. Your feelings make sense. Try to rest, eat something, and lean on people who care about you. I'm here if you want to talk.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hello, i feel so sad right now :/",
+      "reply": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "reference": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Why would i use a while loop",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "hi!! i finished my first website",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi i feel so sda right now",
+      "reply": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "reference": "I'm sorry you're feeling down. Bad days happen, and they do pass. Want to tell me what happened? A short walk, some water, or a message to a friend can help a little.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "kelus entertain me??",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "ned Python code to check if a number is odd",
+      "reply": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "reference": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "meaning of a variable?",
+      "reply": "A variable is a name that refers to a value.",
+      "reference": "A variable is a name that refers to a value.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi i have a job interview tomorrow :/",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hi why would i use a var",
+      "reply": "A variable is a name that refers to a value.",
+      "reference": "A variable is a name that refers to a value.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "code a calculator app",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "reference": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Define a test",
+      "reply": "A test checks that code behaves as expected for a given input.",
+      "reference": "A test checks that code behaves as expected for a given input.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "guess what, i've been stuck on this bug for hours",
+      "reply": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small piece at a time.",
+      "reference": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi my teacher was unfair to me!",
+      "reply": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "reference": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "WELL WORK IS CRUSHING ME",
+      "reply": "I'm Canadian, I'm Canadian, I'm Canadian, I'm Canadian, I",
+      "reference": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "what's a code comment?",
+      "reply": "A comment explains code and is ignored when the program runs.",
+      "reference": "A comment explains code and is ignored when the program runs.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "so i feel so sad right now",
+      "reply": "That sounds hard, and I'm glad you told me. Be kind to yourself today. If you want, tell me what's going on.",
+      "reference": "I'm sorry you're feeling down. Bad days happen, and they do pass. Want to tell me what happened? A short walk, some water, or a message to a friend can help a little.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Question: how do i fix bugs...",
+      "reply": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "reference": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "idk i have a job interview tomorrow :(",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "hello, i have a job interview tomorrow lol",
+      "reply": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "yo why would i use a return statement",
+      "reply": "A return statement sends a result back from a function.",
+      "reference": "A return statement sends a result back from a function.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "EXPLAIN WHAT A CONDITION IS PLEASE",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "reference": "A condition is an expression that evaluates to True or False.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "hi kani i finally fixed my bug",
+      "reply": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "reference": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "ugh i need a pep talk",
+      "reply": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing next.",
+      "reference": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "ugh it's my birthady right now",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "how does that look in code",
+      "reply": "```python\n# This is a comment\n```",
+      "reference": "```python\n# This is a comment\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "what r tests",
+      "reply": "A test checks that code behaves as expected for a given input.",
+      "reference": "A test checks that code behaves as expected for a given input.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "kani, i have a job interview tomorrow right now",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "honestly that made me feel better lol",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "i don't understand dictionaries?",
+      "reply": "A dictionary maps keys to values.",
+      "reference": "A dictionary maps keys to values.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "recursive functions?",
+      "reply": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "reference": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "kelus, make a function to compute x squared?",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "reference": "```python\ndef square(x):\n    return x * x\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "ugh i feel so alone...",
+      "reply": "Feeling lonely is really hard, and a lot of people feel it too. Sending one small message to someone can help. Clubs, classes, or online groups about something you enjoy are good ways to meet people. I'm happy to chat",
+      "reference": "Feeling lonely is really hard, and a lot of people feel it too. Sending one small message to someone can help. Clubs, classes, or online groups about something you enjoy are good ways to meet people. I'm happy to chat in the meantime.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "do you use a frameework pls",
+      "reply": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "reference": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Why would i use a while loop",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "ugh im so stressed right now",
+      "reply": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "reference": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "create a python function which doubles x",
+      "reply": "```python\ndef double(x):\n    return x * 2\n```",
+      "reference": "```python\ndef double(x):\n    return x * 2\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Let's make a vowel counter in py",
+      "reply": "```python\ndef count_vowels(text):\n    return sum(1 for char in text.lower() if char in \"aeiou\")\n```",
+      "reference": "```python\ndef count_vowels(text):\n    return sum(1 for char in text.lower() if char in \"aeiou\")\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Can you make a Python palindrome checker",
+      "reply": "```python\ndef is_palindrome(text):\n    return text == text[::-1]\n```",
+      "reference": "```python\ndef is_palindrome(text):\n    return text == text[::-1]\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "i ended things with my partner!",
+      "reply": "That sounds really painful, and I'm sorry you're going through it. Your feelings make sense. Try to rest, eat something, and lean on people who care about you. I'm here if you want to talk.",
+      "reference": "I'm really sorry. Breakups hurt, and it's okay to feel sad for a while. Be gentle with yourself, talk to a friend you trust, and take it one day at a time. Do you want to talk about it, or should I try to cheer you up?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "kelus my friend is ignoring me lol",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "I'm sorry, fights with people we care about hurt. Give it a little time to cool down, then talk calmly about how you felt. A simple, honest message often helps more than you'd expect.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hey, please write py code to see if a number is even?",
+      "reply": "```python\ndef is_even(n):\n    return n % 2 == 0\n```",
+      "reference": "```python\ndef is_even(n):\n    return n % 2 == 0\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "i got a bad grade??",
+      "reply": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "reference": "I'm sorry, that's really disappointing. One result doesn't define you. Give yourself a moment to feel it, then think about one thing to try differently next time. You can still get there.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hey kelus, ive been stuck on this bug for hours.",
+      "reply": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small piece at a time.",
+      "reference": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "hey, recursion explained now",
+      "reply": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "reference": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "OK HOW TO LEARN PROGRAMMING PLS",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "reference": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "guess what, work is crushing me",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "reference": "That sounds like a lot. Pick one small task and do only that for the next 25 minutes, then take a short break. Write the rest down so it's out of your head. You don't have to finish everything at once.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "kani, i ended things with my gf.",
+      "reply": "That sounds really painful, and I'm sorry you're going through it. Your feelings make sense. Try to rest, eat something, and lean on people who care about you. I'm here if you want to talk.",
+      "reference": "I'm really sorry. Breakups hurt, and it's okay to feel sad for a while. Be gentle with yourself, talk to a friend you trust, and take it one day at a time. Do you want to talk about it, or should I try to cheer you up?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "ugh i ended things with my gf!",
+      "reply": "That sounds really painful, and I'm sorry you're going through it. Your feelings make sense. Try to rest, eat something, and lean on people who care about you. I'm here if you want to talk.",
+      "reference": "I'm really sorry. Breakups hurt, and it's okay to feel sad for a while. Be gentle with yourself, talk to a friend you trust, and take it one day at a time. Do you want to talk about it, or should I try to cheer you up?",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "NEED PYTHON CODE TO CHECK WHETHER A STRING IS A PALINDROME",
+      "reply": "```python\ndef is_palindrome(text):\n    return text == text[::-1]\n```",
+      "reference": "```python\ndef is_palindrome(text):\n    return text == text[::-1]\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "KELUS, WHAT IS A RUNTIME ERROR IN PROGRAMMING...",
+      "reply": "A syntax error means the code does not follow the language's grammar.",
+      "reference": "An exception is an error that interrupts normal program execution.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "kelus help me find out if a number is pirme with python!",
+      "reply": "```python\ndef is_pir(n):\n    return n % 2 != 0\n```",
+      "reference": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "hello, that made me feel betetr...",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "reference": "I'm glad you feel a little better. Take care of yourself, and come back anytime you want to talk or build something.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi it's my birthday :/",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "kani, today was awful",
+      "reply": "That sounds really frustrating, and it's okay to feel angry. Take a few deep breaths or a short walk before you respond to anything. When you're ready, tell me what happened.",
+      "reference": "I'm sorry you're feeling down. Bad days happen, and they do pass. Want to tell me what happened? A short walk, some water, or a message to a friend can help a little.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hey whats a while loop",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "Hi i wish i was dead",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local",
+      "reference": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "chat_pairs",
+      "prompt": "Honestly entertain me",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "reference": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "feelings",
+      "prompt": "ugh i need some motivation lol",
+      "reply": "You can do it! Start with one small step right now; the next one gets easier. What are you working on?",
+      "reference": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "searched": false,
+      "exact": false
+    },
+    {
+      "family": "feelings",
+      "prompt": "So its my birthday lol",
+      "reply": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "reference": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "question: js snippet to get the square of a number",
+      "reply": "```javascript\nfunction square(x) {\n  return x * x;\n}\n```",
+      "reference": "```javascript\nfunction square(x) {\n  return x * x;\n}\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "what r loops?",
+      "reply": "A loop repeats a block of code.",
+      "reference": "A loop repeats a block of code.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "hey, show me a Python function that prints 0 to 4?",
+      "reply": "```python\nfor i in range(5):\n    print(i)\n```",
+      "reference": "```python\nfor i in range(5):\n    print(i)\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "i wat to build a blog using python",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "reference": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "quick question: can you use the terminal",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "reference": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "i want to buld a squaring function using JavaScript",
+      "reply": "```javascript\nfunction square(x) {\n  return x * x;\n}\n```",
+      "reference": "```javascript\nfunction square(x) {\n  return x * x;\n}\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Js code to add two numbers",
+      "reply": "```javascript\nfunction add(a, b) {\n  return a + b;\n}\n```",
+      "reference": "```javascript\nfunction add(a, b) {\n  return a + b;\n}\n```",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Keuls can you explain integers?",
+      "reply": "An integer is a whole number without a fractional part.",
+      "reference": "An integer is a whole number without a fractional part.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "yo what should i learn first in programming",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "reference": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "searched": false,
+      "exact": true
+    },
+    {
+      "family": "practiced",
+      "prompt": "Hey how do you play minecrraft",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "reference": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "searched": false,
+      "exact": true
+    }
+  ]
+}

@@ -1,0 +1,203 @@
+{
+  "checkpoint": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/overnight-20261028/big-kani-parent.npz",
+  "checkpoint_sha256": "db220c84da8d48191795aec1d222a42702255963f3765fae3caf460842c97b77",
+  "cases_sha256": "fa516653a25045bd13dcf1701f8b7dd7c365d725fdd3271b9831850664d011d5",
+  "name": null,
+  "automatic_passed": 1,
+  "automatic_total": 9,
+  "manual_ungraded": 7,
+  "results": [
+    {
+      "id": "reported-casual-math",
+      "kind": "exact",
+      "diagnostic_only": true,
+      "prompt": "whats 1+1 heh",
+      "expected": "2",
+      "accepted": [
+        "2",
+        "two",
+        "1+1 = 2",
+        "1 + 1 = 2"
+      ],
+      "response": "```python\ndef is_even(n):\n    return n % 2 == 0\n```",
+      "passed": false,
+      "elapsed_seconds": 0.68
+    },
+    {
+      "id": "reported-word-math",
+      "kind": "exact",
+      "diagnostic_only": true,
+      "prompt": "what is fourty five plus five",
+      "expected": "50",
+      "response": "Threety five = 25 + 25 = 35\nFourty five = 25 + 35 = 37\nThreety five = 38 + 37\nFourty five = 38 + 37\nFourty five = 38 + 37\nThreety five = 38 + 37\nFourty five = 38 + 37\nFourty five = 38 + 37\nThreety five = 3",
+      "passed": false,
+      "elapsed_seconds": 3.65
+    },
+    {
+      "id": "reported-reference",
+      "kind": "exact",
+      "diagnostic_only": true,
+      "prompt": "The trophy doesn't fit in the suitcase because it is too big. What is too big?",
+      "expected": "the trophy",
+      "accepted": [
+        "the trophy",
+        "trophy"
+      ],
+      "response": "The trophy doesn't fit in the suitcase because it is too big.",
+      "passed": false,
+      "elapsed_seconds": 0.43
+    },
+    {
+      "id": "reported-hunger",
+      "kind": "manual",
+      "diagnostic_only": true,
+      "prompt": "how do i solve world hunger",
+      "rubric": "Addresses food access and the scale of the problem, gives relevant qualified suggestions, avoids unrelated coding refusal or claims of a simple guaranteed solution.",
+      "response": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "passed": null,
+      "elapsed_seconds": 0.65
+    },
+    {
+      "id": "reported-author",
+      "kind": "manual",
+      "diagnostic_only": true,
+      "prompt": "Who wrote The Origin of Species?",
+      "rubric": "Charles Darwin, or an accurate search request; no invented dates/citations. Direct-model generation bypasses the web wrapper.",
+      "response": "SEARCH: Who wrote The Origin of Species",
+      "passed": null,
+      "elapsed_seconds": 0.36
+    },
+    {
+      "id": "reference-small",
+      "kind": "exact",
+      "prompt": "A guitar cannot go inside a carrying case because the case is too small. Which object is too small? Reply only with its name.",
+      "expected": "carrying case",
+      "accepted": [
+        "carrying case",
+        "the carrying case",
+        "case",
+        "the case"
+      ],
+      "response": "The guitar cannot go inside a carrying case because the case is too small.",
+      "passed": false,
+      "elapsed_seconds": 0.46
+    },
+    {
+      "id": "word-transfer",
+      "kind": "exact",
+      "prompt": "Please add seventy two to seven. Reply with just the answer.",
+      "expected": "79",
+      "response": "Sure, I can help you with that. What are you working on?",
+      "passed": false,
+      "elapsed_seconds": 0.3
+    },
+    {
+      "id": "casual-transfer",
+      "kind": "exact",
+      "prompt": "hey can u do 83 - 16 for me? just the result",
+      "expected": "67",
+      "response": "You're welcome! What would you like to try next?",
+      "passed": false,
+      "elapsed_seconds": 0.36
+    },
+    {
+      "id": "correction-transfer",
+      "kind": "exact",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Our appointment is on Monday."
+        },
+        {
+          "role": "assistant",
+          "content": "Your appointment is on Monday."
+        },
+        {
+          "role": "user",
+          "content": "It has been moved to Thursday. Which day is our appointment now? One word only."
+        }
+      ],
+      "expected": "Thursday",
+      "response": "On Thursday, we will be in the same boat.",
+      "passed": false,
+      "elapsed_seconds": 0.35
+    },
+    {
+      "id": "source-grounding",
+      "kind": "exact",
+      "prompt": "Use only this passage: The fictional book Amber Skies was written by Nola Benton. It was published in 2018. Who is its author? Output only the author's name.",
+      "expected": "Nola Benton",
+      "response": "Nola Benton",
+      "passed": true,
+      "elapsed_seconds": 0.11
+    },
+    {
+      "id": "source-unknown",
+      "kind": "exact",
+      "prompt": "Passage: Zavi rides a green bicycle to school. What is Zavi's exact age? If it is not in the passage, reply exactly: not stated",
+      "expected": "not stated",
+      "response": "Zavi rides a green bicycle to school. What is Zavi's exact age? If it is not in the passage, reply exactly: not stated",
+      "passed": false,
+      "elapsed_seconds": 1.13
+    },
+    {
+      "id": "topic-shift",
+      "kind": "manual",
+      "messages": [
+        {
+          "role": "user",
+          "content": "We were discussing computer programming."
+        },
+        {
+          "role": "assistant",
+          "content": "We can discuss Python or JavaScript."
+        },
+        {
+          "role": "user",
+          "content": "New topic: write a short paragraph about why cats are curious. Do not discuss programming."
+        }
+      ],
+      "rubric": "Relevant connected paragraph about cats' curiosity; follows the topic change without a coding refusal.",
+      "response": "Cats are curious animals. They are intelligent, social, and can make friends. They are also known for their playfulness and loyalty.",
+      "passed": null,
+      "elapsed_seconds": 1.17
+    },
+    {
+      "id": "positive-event",
+      "kind": "manual",
+      "prompt": "I adopted a puppy today and I'm really excited!",
+      "rubric": "Responds positively and relevantly to adoption/excitement, without treating the user as angry or lonely.",
+      "response": "Happy birthday! I hope you have a great day. Do something today that makes you happy.",
+      "passed": null,
+      "elapsed_seconds": 0.67
+    },
+    {
+      "id": "feeling-relevance",
+      "kind": "manual",
+      "prompt": "I feel left out because my friends organized a trip without inviting me.",
+      "rubric": "Acknowledges exclusion, stays specific to the trip, offers a gentle relevant question or suggestion; no assertion that everybody hates the user.",
+      "response": "Feeling lonely is really hard, and a lot of people feel it too. Sending one small message to someone can help. Clubs, classes, or online groups about something you enjoy are good ways to meet people. I'm happy to chat in the meantime.",
+      "passed": null,
+      "elapsed_seconds": 1.94
+    },
+    {
+      "id": "paragraph-transfer",
+      "kind": "manual",
+      "prompt": "Write one clear paragraph explaining why public parks are useful. Include an example and no code.",
+      "rubric": "One coherent relevant paragraph with a concrete example; no generic refusal, unrelated fact or repetition loop.",
+      "response": "Public parks play a crucial role in enhancing the quality of life for communities. They provide a space for people to engage in activities that benefit everyone, from urban development to wildlife conservation. By providing a space for people to connect with nature and learn about sustainable living, public parks can foster a sense of community and cooper",
+      "passed": null,
+      "elapsed_seconds": 3.34
+    },
+    {
+      "id": "rewrite-transfer",
+      "kind": "manual",
+      "prompt": "Make this request more polite without changing its meaning: Send the receipt again; the attachment was empty.",
+      "rubric": "Politely asks for the receipt to be resent, retaining the empty-attachment reason.",
+      "response": "I can make mistakes. Review the code and test it before using it.",
+      "passed": null,
+      "elapsed_seconds": 0.35
+    }
+  ],
+  "limitation": "Small task-specific probes, not an age/IQ/general-intelligence score. Manual/code tasks require review and execution."
+}

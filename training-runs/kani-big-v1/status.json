@@ -1,0 +1,19 @@
+{
+  "stage": "pretraining",
+  "state": "complete",
+  "pid": 98189,
+  "step": 40000,
+  "total_steps": 40000,
+  "parameters": 88118784,
+  "context": 1024,
+  "tokens_per_step": 4096,
+  "tokens_seen": 163840000,
+  "train_loss": 1.7728899717330933,
+  "validation_loss": 1.7322957515716553,
+  "steps_per_second": 0.54128,
+  "eta_seconds": 0,
+  "updated_at": 1792812539.364019,
+  "checkpoint": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-big-v1/latest.npz",
+  "data": "/Users/hashtagpro/Downloads/KelusModelB1/data/big-v1",
+  "device": "gpu (mlx)"
+}

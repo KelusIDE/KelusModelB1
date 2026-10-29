@@ -1,0 +1,5 @@
+{
+  "path": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-topic-v1/parent-preserved.npz",
+  "sha256": "7228d53fc44cf29b13dfa4c5704d0cdd539db5befca0a24e652668861513b3a1",
+  "reason": "Preserved topic-run parent before resuming the Big Kani run that updates the original best checkpoint"
+}

@@ -1,0 +1,12 @@
+{
+  "pid": 12497,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/hashtagpro/Downloads/KelusModelB1/.venv/bin/python",
+    "-u",
+    "-m",
+    "kelus.local_chat_train"
+  ],
+  "started_at": 1793137056.160905
+}

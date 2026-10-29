@@ -1,0 +1,22 @@
+{
+  "pid": 77694,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/hashtagpro/Downloads/KelusModelB1/.venv/bin/python",
+    "-u",
+    "-m",
+    "kelus.overnight",
+    "--initial-pid",
+    "71719",
+    "--run",
+    "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/overnight-20261028",
+    "--hours",
+    "12"
+  ],
+  "started_at": 1793160912.765089,
+  "initial_trainer_pid": 71719,
+  "budget_hours": 12,
+  "stop_file": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/overnight-20261028/STOP",
+  "no_auto_deploy": true
+}

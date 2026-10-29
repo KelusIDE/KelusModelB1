@@ -1,0 +1,20 @@
+{
+  "data_sha256": "bb6589957a9bf2fecdc03621a80aac4c14a922a6f235a79085b63ec035a8348b",
+  "replay_sha256": "98f2d696ec782011b0a54e58308622a308a1f7626dffeb44ea46fa0e37416042",
+  "counts": {
+    "train": 17508,
+    "validation": 898
+  },
+  "generated_reference_checks": {
+    "word_and_casual_arithmetic": 823,
+    "reference_minimal_contrasts": 475,
+    "latest_turn_correction": 587
+  },
+  "validation_nouns": [
+    "lantern",
+    "teapot",
+    "ornament"
+  ],
+  "validation_first_operands": "70..99",
+  "limitation": "Generated component exercises plus varied human-written instruction replay. Prior reported failures are development tests, not unseen benchmarks. No claim of broad factual correctness."
+}

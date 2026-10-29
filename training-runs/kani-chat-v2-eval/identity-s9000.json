@@ -1,0 +1,299 @@
+{
+  "checkpoint": "training-runs/kani-chat-v2-eval/s9000.npz",
+  "steps": 9000,
+  "greetings_new_name": "13/16",
+  "greetings_old_name": "0/16",
+  "questions_new_name": "17/20",
+  "questions_old_name": "0/20",
+  "seconds": 7.6,
+  "results": [
+    {
+      "kind": "greeting",
+      "prompt": "hi",
+      "after_chat": false,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hi",
+      "after_chat": true,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "Hello!",
+      "after_chat": false,
+      "reply": "Hello! How can I help you today?",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "Hello!",
+      "after_chat": true,
+      "reply": "Hello! How can I help you today?",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hey there",
+      "after_chat": false,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hey there",
+      "after_chat": true,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "yo",
+      "after_chat": false,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "yo",
+      "after_chat": true,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "good morning",
+      "after_chat": false,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "good morning",
+      "after_chat": true,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hiya kani",
+      "after_chat": false,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "hiya kani",
+      "after_chat": true,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "sup",
+      "after_chat": false,
+      "reply": "SEARCH: Morrin",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "sup",
+      "after_chat": true,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "heyy",
+      "after_chat": false,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "greeting",
+      "prompt": "heyy",
+      "after_chat": true,
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who are you?",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who are you?",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what's your name",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what's your name",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "introduce yourself please",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "introduce yourself please",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what model are you",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what model are you",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what should I call you?",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what should I call you?",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "are you chatgpt?",
+      "after_chat": false,
+      "reply": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "are you chatgpt?",
+      "after_chat": true,
+      "reply": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "tell me about yourself",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "tell me about yourself",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who made you?",
+      "after_chat": false,
+      "reply": "SEARCH: who made you",
+      "new_name": false,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "who made you?",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "which version are you",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "which version are you",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what are you exactly",
+      "after_chat": false,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    },
+    {
+      "kind": "question",
+      "prompt": "what are you exactly",
+      "after_chat": true,
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "new_name": true,
+      "old_name": false
+    }
+  ]
+}

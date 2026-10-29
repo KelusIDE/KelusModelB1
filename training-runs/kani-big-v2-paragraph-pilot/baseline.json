@@ -1,0 +1,110 @@
+{
+  "checkpoint": "checkpoints/kani-big-v2-chat.best.npz",
+  "checkpoint_sha256": "db220c84da8d48191795aec1d222a42702255963f3765fae3caf460842c97b77",
+  "cases_sha256": "42f2d70f2dc21ef587f09192a4b6459140381dd8bfd92a736774525642dc458b",
+  "name": null,
+  "automatic_passed": 0,
+  "automatic_total": 2,
+  "manual_ungraded": 6,
+  "results": [
+    {
+      "id": "cats-play",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words explaining why play matters for indoor cats. Include a concrete example of a game.",
+      "rubric": "One relevant paragraph; explains play, includes a specific game, avoids unsupported claims and filler.",
+      "response": "Indoor cats are known for their loyalty and playfulness. They are known for their intelligence and playfulness, making them popular choices for players. Indoor cats are also known for their social behavior and are often played with other cats. They are known for their intelligence and playfulness, which makes them popular choices for players.",
+      "passed": null,
+      "elapsed_seconds": 5.23
+    },
+    {
+      "id": "rainy-library",
+      "kind": "manual",
+      "prompt": "Write one descriptive paragraph of 80\u2013120 words about entering a quiet library on a rainy afternoon. Include a sound and a smell. Do not use bullet points.",
+      "rubric": "One coherent scene with both sensory details; no list or unrelated explanation.",
+      "response": "In a quiet library, a sound and a smell are both essential elements that enhance the reading experience. The sound of birds chirping and the gentle hum of children playing in the wind can create a calming atmosphere. The smell of freshly baked bread and the sweet scent of freshly baked cookies can transport the children to a tranquil era. Another important element is the smell of freshly baked goods and the sound of cooked meals.",
+      "passed": null,
+      "elapsed_seconds": 6.54
+    },
+    {
+      "id": "repair-rewrite",
+      "kind": "manual",
+      "prompt": "Turn these notes into one clear paragraph of 70\u2013110 words. Use only the facts given: A town repair club meets on Saturdays. Volunteers help residents repair broken household items. Tools are shared. Beginners can watch and learn. Repairing items reduces waste.",
+      "rubric": "Connected paragraph preserving all five facts; no invented dates, prices, names or statistics.",
+      "response": "Here are the key points to remember:\n\n* Turn these notes into one clear paragraph of 70\u2013110 words.\n* Use only the facts given to support your argument.\n* Use only the facts given to learn from the town repair club.",
+      "passed": null,
+      "elapsed_seconds": 3.16
+    },
+    {
+      "id": "school-garden",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words persuading a school to start a small garden. Give two reasons and one practical first step.",
+      "rubric": "Relevant argument with two distinct reasons and an actionable first step; coherent transitions.",
+      "response": "The first step is to define the problem and identify the key elements that will drive the garden\u2019s success. This will help guide the rest of the efforts and ensure that the garden is aligned with the school\u2019s goals.\n\nNext, develop a clear plan for the garden\u2019s construction, including the design, layout, and maintenance. This will help guide the rest of the efforts and ensure that the garden is ready for the school\u2019s projects.\n\nIn addition to these initial steps, consider the school\u2019s resources and policies. This may include grants, scholarships, and other support services. Ensure that the school has the necessary resources, such as water, food, and public services, to help gardeners and students succeed.\n\nIt\u2019s also essential to assess the school\u2019s",
+      "passed": null,
+      "elapsed_seconds": 14.43
+    },
+    {
+      "id": "paper-boat",
+      "kind": "manual",
+      "prompt": "Write one story paragraph of 80\u2013120 words about a child whose paper boat gets stuck beside a bridge. Give the story a clear ending.",
+      "rubric": "Continuous story about the supplied situation with a clear ending; no unrelated topic change.",
+      "response": "Once upon a time, there was a bridge that seemed to touch the sand of the water. The water flowed under the bridge, and the smell of salt and pepper filled the air. The bridge was filled with water, and the smell of salt and pepper filled the air. The bridge was sounded by the wind, and the water flowed under the bridge, creating a sound that was both calming and invigorating. The bridge was a marvel of engineering, and it was a testament to the power of the natural world.",
+      "passed": null,
+      "elapsed_seconds": 7.73
+    },
+    {
+      "id": "follow-up",
+      "kind": "manual",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I want to write about how my grandmother taught me to mend clothes."
+        },
+        {
+          "role": "assistant",
+          "content": "What detail do you want to include?"
+        },
+        {
+          "role": "user",
+          "content": "Her blue sewing box. Write a warm paragraph of 80\u2013120 words in the first person. Mention the blue sewing box and learning to repair a torn sleeve."
+        }
+      ],
+      "rubric": "Follows the latest request while retaining grandmother context; includes both requested details and first-person narration.",
+      "response": "Here are a few questions to help you refine your paragraph:\n\n* What is the blue sewing box? \n* What is the blue sewing box? \n* What is the blue sewing box and learning to repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sew",
+      "passed": null,
+      "elapsed_seconds": 17.91
+    },
+    {
+      "id": "reading-regression",
+      "kind": "exact",
+      "prompt": "Read: Lena put a blue marble inside the copper box. The wooden box is empty. Where is the blue marble? Answer with only the container name.",
+      "expected": "copper box",
+      "response": "Lena put a blue marble inside the copper box. The wooden box is empty.",
+      "passed": false,
+      "elapsed_seconds": 0.72
+    },
+    {
+      "id": "correction-regression",
+      "kind": "exact",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Remember: my tent is orange."
+        },
+        {
+          "role": "assistant",
+          "content": "Your tent is orange."
+        },
+        {
+          "role": "user",
+          "content": "Correction: my tent is green. What color is it? Answer with one word."
+        }
+      ],
+      "expected": "green",
+      "response": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "passed": false,
+      "elapsed_seconds": 1.17
+    }
+  ],
+  "limitation": "Small task-specific probes, not an age/IQ/general-intelligence score. Manual/code tasks require review and execution."
+}

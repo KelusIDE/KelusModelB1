@@ -1,0 +1,189 @@
+{
+  "checkpoint": "checkpoints/kani-otter-4-2.npz",
+  "steps": 4500,
+  "canned": "14/30",
+  "searched": "8/30",
+  "seconds": 8.2,
+  "results": [
+    {
+      "prompt": "AI is cool",
+      "reply": "You're welcome! What would you like to try next?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "AI will take over the world",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "I love AI art",
+      "reply": "Yum, that sounds delicious! If you ever want to make AI art, I can look up a recipe for you.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "do you like AI?",
+      "reply": "I can't visit places myself, but I can find AI near you. Just ask!",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "which AI is the best",
+      "reply": "You're welcome! What would you like to try next?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "thanks AI",
+      "reply": "You're welcome! What would you like to try next?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "my teacher says AI is cheating",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "AI vs machine learning",
+      "reply": "I vary in a few minutes.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "give me three names for a black cat",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "write a haiku about rain",
+      "reply": "SEARCH: Haiku about rain",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "make this sound more polite: send me the file now",
+      "reply": "Send me the next generation to the next generation.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "summarize this: The meeting moved to Friday because two people were sick. Bring your notes.",
+      "reply": "The meeting moved to Friday because two people were sick. Bring your notes.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what should I cook with eggs, rice and spinach?",
+      "reply": "SEARCH: eggs, rice and spinach",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "help me plan a 20 minute workout",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "tell me a fun fact about octopuses",
+      "reply": "SEARCH: tell me a fun fact about octopuses",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "write a two sentence story about a robot who wants a dog",
+      "reply": "Robot",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what is a good name for a lemonade stand?",
+      "reply": "SEARCH: what is a good name for a lemonade stand",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "how do I say no to a friend without being rude?",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "explain gravity like I am 8",
+      "reply": "Gravity is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "rate my idea: an app that waters plants",
+      "reply": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "what is your favorite color?",
+      "reply": "SEARCH: what is your favorite color",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "do you think pineapple belongs on pizza?",
+      "reply": "SEARCH: pizza recipe",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "I just got a puppy!",
+      "reply": "That sounds really painful, and I'm sorry you're going through it. Your feelings make sense. Try to rest, eat something, and lean on people who care about you. I'm here if you want to talk.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "I am bored",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "tell me something nice",
+      "reply": "Here's something true: you're trying, and that counts. Take a deep breath, drink some water, and do one small thing that makes you feel good today. Better days are coming.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "what would you do with a million dollars?",
+      "reply": "SEARCH: what would you do with a million dollars",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "write a python function that counts vowels in a string",
+      "reply": "```python\ndef count_vowels(text):\n    return sum(1 for char in text.lower() if char in \"aeiou\")\n```",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "how do I reverse a list in javascript?",
+      "reply": "```javascript\nfunction reverse(text) {\n  return text[::-1]\n}\n```",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what does git commit do?",
+      "reply": "SEARCH: what does git commit do",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "why is my python loop running forever?",
+      "reply": "```python\nfor i in range(5):\n    print(i)\n```",
+      "canned": true,
+      "searched": false
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "source": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-advanced-instruction-pilot/data/instructions.jsonl",
+  "source_sha256": "98f2d696ec782011b0a54e58308622a308a1f7626dffeb44ea46fa0e37416042",
+  "data_sha256": "d57026bfe5820137a67916a486ccdbf7701bc6c8f6b81e2e6f2a97ea7fca9f35",
+  "cases_sha256": "42f2d70f2dc21ef587f09192a4b6459140381dd8bfd92a736774525642dc458b",
+  "counts": {
+    "train": 2052,
+    "validation": 104
+  },
+  "tasks": {
+    "short_replay": 431,
+    "paragraph": 1725
+  },
+  "families": {
+    "dolly/brainstorming": 181,
+    "dolly/open_qa": 514,
+    "dolly/general_qa": 672,
+    "dolly/information_extraction": 66,
+    "oasst2/english": 169,
+    "dolly/closed_qa": 122,
+    "dolly/creative_writing": 198,
+    "dolly/summarization": 127,
+    "dolly/classification": 107
+  },
+  "exact_answer_duplicates": 0,
+  "tokenizer_sha256": "c4f116e686d0fd5c093e0fb2264de061e764a961f72108318cbd075076a4f24c",
+  "limitation": "Original dataset splits preserved; parent may already have seen related examples. Format filtering is not factual review or proof of generalization."
+}

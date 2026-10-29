@@ -1,0 +1,16 @@
+{"case": "reported-casual-math", "passed": false, "response": "5"}
+{"case": "reported-word-math", "passed": false, "response": "71"}
+{"case": "reported-reference", "passed": false, "response": "The trophy doesn't fit in the suitcase because it is too big."}
+{"case": "reported-hunger", "passed": null, "response": "I do not have enough information to predict the future of human hunger. However, I can help you with a short coding example or a basic programming concept."}
+{"case": "reported-author", "passed": null, "response": "The Origin of Species is a book by Frank Herbert. It is a collection of essays by various authors on the subject of species, from the early 20th century to the present. The book is divided into two parts: the first part, which is the main theme of the book, and the second part, which is the second part, which is the main theme of the book."}
+{"case": "reference-small", "passed": false, "response": "plant"}
+{"case": "word-transfer", "passed": false, "response": "42"}
+{"case": "casual-transfer", "passed": false, "response": "-3"}
+{"case": "correction-transfer", "passed": true, "response": "Thursday"}
+{"case": "source-grounding", "passed": false, "response": "Benton"}
+{"case": "source-unknown", "passed": false, "response": "Zavi rides a green bicycle to school. What is Zavi's exact age? If it is not in the passage, reply: not stated"}
+{"case": "topic-shift", "passed": null, "response": "Cats are curious animals that have many different behaviors and live in habits. Some of the most interesting behaviors and live in habits include:\n\n- Sleeping in in the morning, which is a great way to get a good night's rest.\n- Having a pet, which is a great way to spend time with your family.\n- Sleeping in a cat, which is a great way to get a good night's rest.\n- H"}
+{"case": "positive-event", "passed": null, "response": "Hi! I'm really excited! If you have any other questions, feel free to ask."}
+{"case": "feeling-relevance", "passed": null, "response": "Feeling lonely is really hard, and a lot of people feel it too. Sending one small message to someone can help. Clubs, classes, or online groups about something you enjoy are good ways to meet people. I'm happy to chat in the meantime."}
+{"case": "paragraph-transfer", "passed": null, "response": "Public parks are useful because they allow people to enjoy the freedom of nature while also providing a great place for relaxation and recreation. They also offer a unique opportunity for people to connect with nature and learn about the environment from a different perspective."}
+{"case": "rewrite-transfer", "passed": null, "response": "I'm sorry, I'm sorry to hear that. Before I answer, I'd like to know why you'd ask that."}

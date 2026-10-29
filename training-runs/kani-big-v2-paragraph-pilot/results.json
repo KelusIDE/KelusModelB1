@@ -1,0 +1,39 @@
+{
+  "state": "complete",
+  "parent": "checkpoints/kani-big-v2-chat.best.npz",
+  "updates": 400,
+  "initial_validation_loss": 1.8345592440629246,
+  "best_validation_loss": 1.8174,
+  "final_validation_loss": 1.8198,
+  "validation_sample": 64,
+  "available_validation_examples": 104,
+  "training_examples": 2052,
+  "paragraph_targets": 1725,
+  "short_answer_replay": 431,
+  "automatic_scores": {
+    "baseline": {
+      "automatic_passed": 0,
+      "automatic_total": 2
+    },
+    "best": {
+      "automatic_passed": 0,
+      "automatic_total": 2
+    },
+    "final": {
+      "automatic_passed": 0,
+      "automatic_total": 2
+    }
+  },
+  "manual_decision": "withhold: no reliable writing improvement; repetition, prompt copying, missing details and off-topic claims remain",
+  "decoding_decision": "withhold: moderate penalties changed wording without reliable instruction following",
+  "deployed": false,
+  "cloud_spending": false,
+  "earlier_paragraph_check": {
+    "checkpoint": "training-runs/kani-paragraph-mac-v1/instruction.best.npz",
+    "automatic_passed": 0,
+    "automatic_total": 2,
+    "decision": "withhold: repetitive, misses requested details, no reliable paragraph improvement"
+  },
+  "writing_improvement_established": false,
+  "software_tests_passed": 8
+}

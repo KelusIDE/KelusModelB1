@@ -1,0 +1,189 @@
+{
+  "checkpoint": "training-runs/kani-chat-v2-eval/s3000.npz",
+  "steps": 3000,
+  "canned": "12/30",
+  "searched": "7/30",
+  "seconds": 10.6,
+  "results": [
+    {
+      "prompt": "AI is cool",
+      "reply": "You're welcome! What would you like to try next?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "AI will take over the world",
+      "reply": "I'm really sorry you're in this much pain. You deserve support right now, and I'm only a small AI, so please reach out to a person. In the US, call or text 988 for the Suicide and Crisis Lifeline. Elsewhere, call your local emergency number or a crisis line, or tell someone you trust right away.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "I love AI art",
+      "reply": "Yum, that sounds delicious! If you ever want to make AI art, I can look up a recipe for you.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "do you like AI?",
+      "reply": "I can't eat, but AI sounds great. Want me to find a recipe?",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "which AI is the best",
+      "reply": "You're welcome! What would you like to try next?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "thanks AI",
+      "reply": "You're welcome! What would you like to try next?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "my teacher says AI is cheating",
+      "reply": "SEARCH: I'm cheating",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "AI vs machine learning",
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "give me three names for a black cat",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "write a haiku about rain",
+      "reply": "Welcome to the southwestern country in the United States. The southwestern country is in the northeastern part of the country. The southwestern country is in the southwestern country.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "make this sound more polite: send me the file now",
+      "reply": "Send me the file now, the file now, and the file now, the file now.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "summarize this: The meeting moved to Friday because two people were sick. Bring your notes.",
+      "reply": "The meeting moved to Friday because two people were sick.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what should I cook with eggs, rice and spinach?",
+      "reply": "SEARCH: with eggs, rice and spinach",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "help me plan a 20 minute workout",
+      "reply": "PLACES: 2022 @ here",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "tell me a fun fact about octopuses",
+      "reply": "SEARCH: tell me a fun fact about octopuses",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "write a two sentence story about a robot who wants a dog",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "what is a good name for a lemonade stand?",
+      "reply": "SEARCH: what is a good name for a lemonade stand",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "how do I say no to a friend without being rude?",
+      "reply": "If you say no to a friend without being rude, I can look up a recipe for you. Here's a simple example:\n\n1. **Show your friend's friend's friend's friend's friend's friend's friend's",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "explain gravity like I am 8",
+      "reply": "Gravity is a fun gravity that is a gravity that is a gravity that is a gravity that is a gravity that is a",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "rate my idea: an app that waters plants",
+      "reply": "An app that waters plants are plants",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what is your favorite color?",
+      "reply": "SEARCH: what is your favorite color",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "do you think pineapple belongs on pizza?",
+      "reply": "SEARCH: pizza recipe",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "I just got a puppy!",
+      "reply": "It sounds like you need some rest. If you can, take a break, drink some water, and step away from screens for a while. A good night's sleep makes most things feel more manageable.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "I am bored",
+      "reply": "Let's fix that! We could write a tiny game, a random quote generator, or a to-do list app. Want to build one together?",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "tell me something nice",
+      "reply": "You matter, and a hard day doesn't mean every day will be hard. You've gotten through tough days before, and you can get through this one too. I'm rooting for you.",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "what would you do with a million dollars?",
+      "reply": "Millions of dollars are sold in millions of dollars, making them a clean and reliable solution for the problem.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "write a python function that counts vowels in a string",
+      "reply": "```python\ndef count_vowels(text):\n    return sum(1 for char in text.lower() if char in \"aeiou\")\n```",
+      "canned": true,
+      "searched": false
+    },
+    {
+      "prompt": "how do I reverse a list in javascript?",
+      "reply": "```javascript\nfunction reverse(text) {\n  return text[::-1];\n}\n```",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what does git commit do?",
+      "reply": "SEARCH: Git commit do",
+      "canned": false,
+      "searched": true
+    },
+    {
+      "prompt": "why is my python loop running forever?",
+      "reply": "Debugging can be really frustrating, and every programmer gets stuck sometimes. Take a short break, then test one small change at a time. If you share the code and the error, I can try to help.",
+      "canned": true,
+      "searched": false
+    }
+  ]
+}

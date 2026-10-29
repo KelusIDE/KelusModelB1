@@ -1,0 +1,110 @@
+{
+  "checkpoint": "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-big-v2-paragraph-pilot/instruction.npz",
+  "checkpoint_sha256": "b2ef90a2783c48b4e16b494c8e143705fcb1732cdc999108c31efb45417610b5",
+  "cases_sha256": "42f2d70f2dc21ef587f09192a4b6459140381dd8bfd92a736774525642dc458b",
+  "name": null,
+  "automatic_passed": 0,
+  "automatic_total": 2,
+  "manual_ungraded": 6,
+  "results": [
+    {
+      "id": "cats-play",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words explaining why play matters for indoor cats. Include a concrete example of a game.",
+      "rubric": "One relevant paragraph; explains play, includes a specific game, avoids unsupported claims and filler.",
+      "response": "Play matters for indoor cats because it can make them more independent and less likely to be agitated. They are also more likely to be agitated than the other breeds. Indoor cats are also more likely to be agitated than other breeds because they are more likely to be influenced by their environment and are more likely to be influenced by their cats' environment.",
+      "passed": null,
+      "elapsed_seconds": 5.58
+    },
+    {
+      "id": "rainy-library",
+      "kind": "manual",
+      "prompt": "Write one descriptive paragraph of 80\u2013120 words about entering a quiet library on a rainy afternoon. Include a sound and a smell. Do not use bullet points.",
+      "rubric": "One coherent scene with both sensory details; no list or unrelated explanation.",
+      "response": "In a quiet library, a quiet space is a place where the sound and smell of the water are relaxing and calming. The space is usually large enough to accommodate the examination of a student's workbook. The library is also very quiet and has a lot of noise. The air is cool and wet, and the scent of bullet points is soothing.",
+      "passed": null,
+      "elapsed_seconds": 4.31
+    },
+    {
+      "id": "repair-rewrite",
+      "kind": "manual",
+      "prompt": "Turn these notes into one clear paragraph of 70\u2013110 words. Use only the facts given: A town repair club meets on Saturdays. Volunteers help residents repair broken household items. Tools are shared. Beginners can watch and learn. Repairing items reduces waste.",
+      "rubric": "Connected paragraph preserving all five facts; no invented dates, prices, names or statistics.",
+      "response": "Saturdays are the most difficult days for repairing household items. To begin, let's break down the task into manageable parts. First, we need to decide on a day for repairing the household items. Second, we need to decide on a day for repairing the household items. Third, we need to decide on a day for repairing the household items. Finally, we need to decide on a day for repairing the household items. After that, we can focus on the day of the week. After that, we can start reviewing the day of the week. Finally, we need to decide on a day for repairing the household items.",
+      "passed": null,
+      "elapsed_seconds": 13.8
+    },
+    {
+      "id": "school-garden",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words persuading a school to start a small garden. Give two reasons and one practical first step.",
+      "rubric": "Relevant argument with two distinct reasons and an actionable first step; coherent transitions.",
+      "response": "The first step is to start a small garden.  You can begin by planting seeds in the ground.  You can use a gardening kit like a planter or a gardening machine.  You can also plant seeds in the soil.  You can also plant seeds in the ground.  You can also plant seeds in the soil.  You can also plant seeds in the ground.  You can also plant seeds in the soil.  You can also plant seeds in the soil.  You can also plant seeds in the soil.",
+      "passed": null,
+      "elapsed_seconds": 6.28
+    },
+    {
+      "id": "paper-boat",
+      "kind": "manual",
+      "prompt": "Write one story paragraph of 80\u2013120 words about a child whose paper boat gets stuck beside a bridge. Give the story a clear ending.",
+      "rubric": "Continuous story about the supplied situation with a clear ending; no unrelated topic change.",
+      "response": "Once upon a time, there was a big river that carried all sorts of goods from the river. The river was very warm in the summer, and the sun was shining on the water. The river was very hot in the summer, so the goods were scarce. The river was very cold in the summer, so the goods were scarce. The river was very cold in the summer, so the goods were scarce. The river was very hot in the summer, so the goods were cold in the summer.",
+      "passed": null,
+      "elapsed_seconds": 6.78
+    },
+    {
+      "id": "follow-up",
+      "kind": "manual",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I want to write about how my grandmother taught me to mend clothes."
+        },
+        {
+          "role": "assistant",
+          "content": "What detail do you want to include?"
+        },
+        {
+          "role": "user",
+          "content": "Her blue sewing box. Write a warm paragraph of 80\u2013120 words in the first person. Mention the blue sewing box and learning to repair a torn sleeve."
+        }
+      ],
+      "rubric": "Follows the latest request while retaining grandmother context; includes both requested details and first-person narration.",
+      "response": "As she went through her grandmother's warm paragraph, she was fascinated by the way her blue sewing box was attached into a torn sleeve. She was amazed by the way the sleeve was attached into the torn sleeve. The sleeve was attached into a tight seal, and the blue sewing box was attached into the torn sleeve. The blue sewing box was attached into the torn sleeve, and the blue sewing box was attached into the torn sleeve. The blue sewing box was attached into the torn sleeve, and the blue sewing box was attached into the torn sleeve. The blue sewing box was attached into the torn sleeve, and the blue sewing box was attached into the torn sleeve.",
+      "passed": null,
+      "elapsed_seconds": 15.3
+    },
+    {
+      "id": "reading-regression",
+      "kind": "exact",
+      "prompt": "Read: Lena put a blue marble inside the copper box. The wooden box is empty. Where is the blue marble? Answer with only the container name.",
+      "expected": "copper box",
+      "response": "Lena put a blue marble inside the copper box. The wooden box is empty.",
+      "passed": false,
+      "elapsed_seconds": 0.77
+    },
+    {
+      "id": "correction-regression",
+      "kind": "exact",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Remember: my tent is orange."
+        },
+        {
+          "role": "assistant",
+          "content": "Your tent is orange."
+        },
+        {
+          "role": "user",
+          "content": "Correction: my tent is green. What color is it? Answer with one word."
+        }
+      ],
+      "expected": "green",
+      "response": "I green the tent.",
+      "passed": false,
+      "elapsed_seconds": 0.23
+    }
+  ],
+  "limitation": "Small task-specific probes, not an age/IQ/general-intelligence score. Manual/code tasks require review and execution."
+}

@@ -1,0 +1,3549 @@
+{
+  "checkpoint": "training-runs/kani-chat-v2-eval/s6000.npz",
+  "steps": 6000,
+  "recipes_searched": "60/60",
+  "learning_searched": "60/60",
+  "food_chat_kept": "13/13",
+  "phrases_exact": "0/180",
+  "phrases_right_form": "162/180",
+  "seconds": 151.6,
+  "results": [
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "how is bobozi made?",
+      "reply": "SEARCH: bobozi recipe",
+      "reference": "SEARCH: bobozi recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "recipe for fruit whip",
+      "reply": "SEARCH: fruit whip recipe",
+      "reference": "SEARCH: fruit whip recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "can you find me a good gambas al ajillo recipe",
+      "reply": "SEARCH: gambas al ajillo recipe",
+      "reference": "SEARCH: gambas al ajillo recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "steps to make ghavoot",
+      "reply": "SEARCH: ghavoot recipe",
+      "reference": "SEARCH: ghavoot recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy bulk sausage recipe please",
+      "reply": "SEARCH: bulk sausage recipe",
+      "reference": "SEARCH: bulk sausage recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make cajun burger?",
+      "reply": "SEARCH: cajun burger recipe",
+      "reference": "SEARCH: cajun burger recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "what do I need to make corn chowder i?",
+      "reply": "SEARCH: corn chowder i recipe",
+      "reference": "SEARCH: corn chowder i recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "recipe for german potato salad",
+      "reply": "SEARCH: german potato salad recipe",
+      "reference": "SEARCH: german potato salad recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do I make obuwunga?",
+      "reply": "SEARCH: obuwunga recipe",
+      "reference": "SEARCH: obuwunga recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make potato balls?",
+      "reply": "SEARCH: potato balls recipe",
+      "reference": "SEARCH: potato balls recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy tuna casserole recipe please",
+      "reply": "SEARCH: tuna casserole recipe",
+      "reference": "SEARCH: tuna casserole recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make ifisashi n'ubwoko?",
+      "reply": "SEARCH: ifisashi n'ubwoko recipe",
+      "reference": "SEARCH: ifisashi n'ubwoko recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "can you find me a good coconut chicken recipe",
+      "reply": "SEARCH: coconut chicken recipe",
+      "reference": "SEARCH: coconut chicken recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "how is fairy cakes made?",
+      "reply": "SEARCH: fairy cakes recipe",
+      "reference": "SEARCH: fairy cakes recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do I make chicken rice salad?",
+      "reply": "SEARCH: chicken rice salad recipe",
+      "reference": "SEARCH: chicken rice salad recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "teach me to make figolli",
+      "reply": "SEARCH: figolli recipe",
+      "reference": "SEARCH: figolli recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "Can you give me a recipe for hot pepper sauce?",
+      "reply": "SEARCH: hot pepper sauce recipe",
+      "reference": "SEARCH: hot pepper sauce recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "steps to make grand union bacon",
+      "reply": "SEARCH: grand union bacon recipe",
+      "reference": "SEARCH: grand union bacon recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make sangah?",
+      "reply": "SEARCH: sangah recipe",
+      "reference": "SEARCH: sangah recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "teach me to make grilled steak",
+      "reply": "SEARCH: grilled steak recipe",
+      "reference": "SEARCH: grilled steak recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make akpu?",
+      "reply": "SEARCH: akpu recipe",
+      "reference": "SEARCH: akpu recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy tomato curry recipe please",
+      "reply": "SEARCH: tomato curry recipe",
+      "reference": "SEARCH: tomato curry recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy quick guacamole i recipe please",
+      "reply": "SEARCH: quick guacamole i recipe",
+      "reference": "SEARCH: quick guacamole i recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "Can you give me a recipe for crab fried rice?",
+      "reply": "SEARCH: crab fried rice recipe",
+      "reference": "SEARCH: crab fried rice recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy sprout salad recipe please",
+      "reply": "SEARCH: sprout salad recipe",
+      "reference": "SEARCH: sprout salad recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make thai red curry paste?",
+      "reply": "SEARCH: thai red curry paste recipe",
+      "reference": "SEARCH: thai red curry paste recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "I want to cook grilled radicchio with bacon dressing tonight. How do I make it?",
+      "reply": "SEARCH: grilled radicchio with bacon dressing recipe",
+      "reference": "SEARCH: grilled radicchio with bacon dressing recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "steps to make white russian cocktail",
+      "reply": "SEARCH: white russian cocktail recipe",
+      "reference": "SEARCH: white russian cocktail recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "what do I need to make rosemary garlic baked potatoes?",
+      "reply": "SEARCH: rosemary garlic baked potatoes recipe",
+      "reference": "SEARCH: rosemary garlic baked potatoes recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "I want to cook barbecue chicken rub tonight. How do I make it?",
+      "reply": "SEARCH: barbecue chicken rub recipe",
+      "reference": "SEARCH: barbecue chicken rub recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make makki di roti?",
+      "reply": "SEARCH: makki di roti recipe",
+      "reference": "SEARCH: makki di roti recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy nigerian boiled plantain recipe please",
+      "reply": "SEARCH: nigerian boiled plantain recipe",
+      "reference": "SEARCH: nigerian boiled plantain recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "recipe for mirliton casserole",
+      "reply": "SEARCH: mirliton casserole recipe",
+      "reference": "SEARCH: mirliton casserole recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "can you find me a good simple buttercream recipe",
+      "reply": "SEARCH: simple buttercream recipe",
+      "reference": "SEARCH: simple buttercream recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "how is tomato ketchup made?",
+      "reply": "SEARCH: tomato ketchup recipe",
+      "reference": "SEARCH: tomato ketchup recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "steps to make lettuce soup",
+      "reply": "SEARCH: lettuce soup recipe",
+      "reference": "SEARCH: lettuce soup recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "teach me to make erwtensoep",
+      "reply": "SEARCH: erwtensoep recipe",
+      "reference": "SEARCH: erwtensoep recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "Can you give me a recipe for grandmother grout's cake?",
+      "reply": "SEARCH: grandmother grout's cake recipe",
+      "reference": "SEARCH: grandmother grout's cake recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "can you find me a good acorn squash with orange marmalade recipe",
+      "reply": "SEARCH: acorn squash with orange marmalade recipe",
+      "reference": "SEARCH: acorn squash with orange marmalade recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do I make backyard barbecue ribs?",
+      "reply": "SEARCH: backyard barbecue ribs recipe",
+      "reference": "SEARCH: backyard barbecue ribs recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "recipe for waakyne",
+      "reply": "SEARCH: waakyne recipe",
+      "reference": "SEARCH: waakyne recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy garlic lemon chicken recipe please",
+      "reply": "SEARCH: garlic lemon chicken recipe",
+      "reference": "SEARCH: garlic lemon chicken recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make cabbage kimchi?",
+      "reply": "SEARCH: cabbage kimchi recipe",
+      "reference": "SEARCH: cabbage kimchi recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "Can you give me a recipe for fasolia?",
+      "reply": "SEARCH: fasolia recipe",
+      "reference": "SEARCH: fasolia recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do I make fool's gold loaf?",
+      "reply": "SEARCH: fool's gold loaf recipe",
+      "reference": "SEARCH: fool's gold loaf recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "I want to cook vegetarian soft tacos tonight. How do I make it?",
+      "reply": "SEARCH: vegetarian soft recipe",
+      "reference": "SEARCH: vegetarian soft tacos recipe",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "how to cook eba",
+      "reply": "SEARCH: eba recipe",
+      "reference": "SEARCH: eba recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "Can you give me a recipe for enchiladas rojas?",
+      "reply": "SEARCH: enchiladas rojas recipe",
+      "reference": "SEARCH: enchiladas rojas recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do I make apple potato bread?",
+      "reply": "SEARCH: apple potato bread recipe",
+      "reference": "SEARCH: apple potato bread recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "how is fruity cheese dogs made?",
+      "reply": "SEARCH: fruity cheese dogs recipe",
+      "reference": "SEARCH: fruity cheese dogs recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "what do I need to make whole wheat bread?",
+      "reply": "SEARCH: whole wheat bread recipe",
+      "reference": "SEARCH: whole wheat bread recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy moroccan soup recipe please",
+      "reply": "SEARCH: moroccan soup recipe",
+      "reference": "SEARCH: moroccan soup recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "how to cook vegetable soup",
+      "reply": "SEARCH: vegetable soup recipe",
+      "reference": "SEARCH: vegetable soup recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "what do I need to make stir-fried shrimp with broccoli?",
+      "reply": "SEARCH: stir-fried shrimp with broccoli recipe",
+      "reference": "SEARCH: stir-fried shrimp with broccoli recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "I want to cook fruit salad with orange soda tonight. How do I make it?",
+      "reply": "SEARCH: fruit salad with orange soda recipe",
+      "reference": "SEARCH: fruit salad with orange soda recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "easy brown sugar brownies recipe please",
+      "reply": "SEARCH: brown sugar brownies recipe",
+      "reference": "SEARCH: brown sugar brownies recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "Can you give me a recipe for katchi biryani?",
+      "reply": "SEARCH: katchi biryani recipe",
+      "reference": "SEARCH: katchi biryani recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "How do you make muffuletta sandwich?",
+      "reply": "SEARCH: muffuletta sandwich recipe",
+      "reference": "SEARCH: muffuletta sandwich recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "steps to make gambian chicken with lemon and mustard",
+      "reply": "SEARCH: gambian chicken with lemon and mustard recipe",
+      "reference": "SEARCH: gambian chicken with lemon and mustard recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_recipe_search",
+      "language": "en",
+      "prompt": "recipe for hongshao rou",
+      "reply": "SEARCH: hongshao rou recipe",
+      "reference": "SEARCH: hongshao rou recipe",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is lithosphere and why does it matter?",
+      "reply": "SEARCH: Lightsphere",
+      "reference": "SEARCH: Lithosphere",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain ali akbar khan to me?",
+      "reply": "SEARCH: Akbar Khan",
+      "reference": "SEARCH: Ali Akbar Khan",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Tell me the basics of pythagorean theorem.",
+      "reply": "SEARCH: Pythagorean theorem",
+      "reference": "SEARCH: Pythagorean theorem",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "can you teach me something about fundamental theorem of calculus?",
+      "reply": "SEARCH: Fundamental theorem of calculus",
+      "reference": "SEARCH: Fundamental theorem of calculus",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "teach me about punishment",
+      "reply": "SEARCH: Punishment",
+      "reference": "SEARCH: Punishment",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is chemical kinetics and why does it matter?",
+      "reply": "SEARCH: Chemical kinetics",
+      "reference": "SEARCH: Chemical kinetics",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I want to learn about trans-siberian railway",
+      "reply": "SEARCH: Er-siberian Railway",
+      "reference": "SEARCH: Trans-Siberian Railway",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I'm curious about mole cricket. What should I know?",
+      "reply": "SEARCH: Mole cricket",
+      "reference": "SEARCH: Mole cricket",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Tell me the basics of james prescott joule.",
+      "reply": "SEARCH: James Prescott Joule",
+      "reference": "SEARCH: James Prescott Joule",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "teach me about vector calculus",
+      "reply": "SEARCH: Vector calculus",
+      "reference": "SEARCH: Vector calculus",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain student's t-test to me?",
+      "reply": "SEARCH: Student's T-test",
+      "reference": "SEARCH: Student's t-test",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I'm curious about solar wind. What should I know?",
+      "reply": "SEARCH: Solar wind",
+      "reference": "SEARCH: Solar wind",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I want to learn about kano",
+      "reply": "SEARCH: Kano",
+      "reference": "SEARCH: Kano",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain constitution to me?",
+      "reply": "SEARCH: Constitution",
+      "reference": "SEARCH: Constitution",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is design of experiments and why does it matter?",
+      "reply": "SEARCH: Experiments",
+      "reference": "SEARCH: Design of experiments",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "explain dolphin simply",
+      "reply": "SEARCH: Desplysis",
+      "reference": "SEARCH: Dolphin",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain protest to me?",
+      "reply": "SEARCH: Protest",
+      "reference": "SEARCH: Protest",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "explain vogue simply",
+      "reply": "SEARCH: Vogue",
+      "reference": "SEARCH: Vogue",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I want to learn about ethiopian orthodox tewahedo church",
+      "reply": "SEARCH: Ethiopian Othodox Tewahedo Church",
+      "reference": "SEARCH: Ethiopian Orthodox Tewahedo Church",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is peregrine falcon and why does it matter?",
+      "reply": "SEARCH: Peregrine falcon",
+      "reference": "SEARCH: Peregrine falcon",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I'm curious about harmonic analysis. What should I know?",
+      "reply": "SEARCH: Harmonic analysis",
+      "reference": "SEARCH: Harmonic analysis",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain duel to me?",
+      "reply": "SEARCH: Duel",
+      "reference": "SEARCH: Duel",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "explain cycad simply",
+      "reply": "SEARCH: Cycad",
+      "reference": "SEARCH: Cycad",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "can you teach me something about agatha christie?",
+      "reply": "SEARCH: Acta Christie",
+      "reference": "SEARCH: Agatha Christie",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Tell me the basics of museo del prado.",
+      "reply": "SEARCH: Museo del Prado",
+      "reference": "SEARCH: Museo del Prado",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "can you teach me something about alkaloid?",
+      "reply": "SEARCH: Alkaloid",
+      "reference": "SEARCH: Alkaloid",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is sexual revolution and why does it matter?",
+      "reply": "SEARCH: Sexual revolution",
+      "reference": "SEARCH: Sexual revolution",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Tell me the basics of arnold schwarzenegger.",
+      "reply": "SEARCH: Arnold Schwarzenegger",
+      "reference": "SEARCH: Arnold Schwarzenegger",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I want to learn about normal distribution",
+      "reply": "SEARCH: Normal distribution",
+      "reference": "SEARCH: Normal distribution",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is muridae and why does it matter?",
+      "reply": "SEARCH: Muridae",
+      "reference": "SEARCH: Muridae",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "teach me about robert schumann",
+      "reply": "SEARCH: Routert schumann",
+      "reference": "SEARCH: Robert Schumann",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain consequentialism to me?",
+      "reply": "SEARCH: Consequentialism",
+      "reference": "SEARCH: Consequentialism",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Tell me the basics of variable.",
+      "reply": "SEARCH: variable",
+      "reference": "SEARCH: Variable",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "explain algebraic geometry simply",
+      "reply": "SEARCH: Algebraic geometry",
+      "reference": "SEARCH: Algebraic geometry",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "teach me about iran",
+      "reply": "SEARCH: Iran",
+      "reference": "SEARCH: Iran",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is mustard and why does it matter?",
+      "reply": "SEARCH: Series",
+      "reference": "SEARCH: Mustard",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "explain belém simply",
+      "reply": "SEARCH: Beginn",
+      "reference": "SEARCH: Belém",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I'm curious about electromagnetic radiation. What should I know?",
+      "reply": "SEARCH: Electromagnetic radiation",
+      "reference": "SEARCH: Electromagnetic radiation",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain austronesian peoples to me?",
+      "reply": "SEARCH: Austronesian Peoples",
+      "reference": "SEARCH: Austronesian peoples",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "can you teach me something about kerosene?",
+      "reply": "SEARCH: Kerosene",
+      "reference": "SEARCH: Kerosene",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I'm curious about brave new world. What should I know?",
+      "reply": "SEARCH: Brave New World",
+      "reference": "SEARCH: Brave New World",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "can you teach me something about beowulf?",
+      "reply": "SEARCH: Bowulf",
+      "reference": "SEARCH: Beowulf",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain grand principality of moscow to me?",
+      "reply": "SEARCH: Grand Principality of Moscow",
+      "reference": "SEARCH: Grand Principality of Moscow",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I'm curious about hotel. What should I know?",
+      "reply": "SEARCH: Hotel",
+      "reference": "SEARCH: Hotel",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "can you teach me something about carl gustaf emil mannerheim?",
+      "reply": "SEARCH: Carl Gustaf Emil mannerheim",
+      "reference": "SEARCH: Carl Gustaf Emil Mannerheim",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is evolution and why does it matter?",
+      "reply": "SEARCH: Evolution",
+      "reference": "SEARCH: Evolution",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "I want to learn about oyo empire",
+      "reply": "SEARCH: Oyo empire",
+      "reference": "SEARCH: Oyo Empire",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is fibonacci and why does it matter?",
+      "reply": "SEARCH: Fibonacci",
+      "reference": "SEARCH: Fibonacci",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "what is hilbert's problems and why does it matter?",
+      "reply": "SEARCH: Hilbert's problems",
+      "reference": "SEARCH: Hilbert's problems",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "teach me about religion in pre-islamic arabia",
+      "reply": "SEARCH: Religion in pre-islamic arabia",
+      "reference": "SEARCH: Religion in pre-Islamic Arabia",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "can you teach me something about human history?",
+      "reply": "SEARCH: Human History",
+      "reference": "SEARCH: Human history",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "give me a quick lesson on kilogram",
+      "reply": "SEARCH: Kilogram",
+      "reference": "SEARCH: Kilogram",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "give me a quick lesson on mangrove",
+      "reply": "SEARCH: Mangrove",
+      "reference": "SEARCH: Mangrove",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "teach me about hugo grotius",
+      "reply": "SEARCH: Hugo Grotius",
+      "reference": "SEARCH: Hugo Grotius",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "Can you explain sect to me?",
+      "reply": "SEARCH: Sect",
+      "reference": "SEARCH: Sect",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "help me understand wheel and axle",
+      "reply": "SEARCH: Boxe and Boxe",
+      "reference": "SEARCH: Wheel and axle",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "give me a quick lesson on train station",
+      "reply": "SEARCH: Strain station",
+      "reference": "SEARCH: Train station",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "give me a quick lesson on derivative",
+      "reply": "SEARCH: Derivative",
+      "reference": "SEARCH: Derivative",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "give me a quick lesson on caroline herschel",
+      "reply": "SEARCH: Caroline Herschel",
+      "reference": "SEARCH: Caroline Herschel",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_learn_search",
+      "language": "en",
+      "prompt": "explain tag simply",
+      "reply": "SEARCH: Tag",
+      "reference": "SEARCH: Tag",
+      "exact": true,
+      "searched": true
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I love plank-grilled salmon!",
+      "reply": "Yum, that sounds delicious! If you ever want to make plank-grilled salmon, I can look up a recipe for you.",
+      "reference": "Yum, that sounds delicious! If you ever want to make plank-grilled salmon, I can look up a recipe for you.",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "do you like crème anglaise?",
+      "reply": "I can't eat, but crème anglaise sounds great. Want me to find a recipe?",
+      "reference": "I can't eat, but crème anglaise sounds great. Want me to find a recipe?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "do you like chipotle bbq sauce?",
+      "reply": "I can't eat, but chipotle bbq sauce sounds great. Want me to find a recipe?",
+      "reference": "I can't eat, but chipotle bbq sauce sounds great. Want me to find a recipe?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I just made foithong for dinner",
+      "reply": "Nice! How did it turn out?",
+      "reference": "Nice! How did it turn out?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I love ibihaza n'ubwoko!",
+      "reply": "Yum, that sounds delicious! If you ever want to make ibihaza n'ubwoko, I can look up a recipe for you.",
+      "reference": "Yum, that sounds delicious! If you ever want to make ibihaza n'ubwoko, I can look up a recipe for you.",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I just made apple crumb cake for dinner",
+      "reply": "Nice! How did it turn out?",
+      "reference": "Nice! How did it turn out?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I just made tortilla de patatas for dinner",
+      "reply": "Nice! How did it turn out?",
+      "reference": "Nice! How did it turn out?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "do you like welsh cakes?",
+      "reply": "I can't eat, but welsh cakes sounds great. Want me to find a recipe?",
+      "reference": "I can't eat, but welsh cakes sounds great. Want me to find a recipe?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "my mom makes the best nanaimo bars i",
+      "reply": "That's lovely. Family recipes are the best kind. Do you know how she makes it?",
+      "reference": "That's lovely. Family recipes are the best kind. Do you know how she makes it?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "my mom makes the best maltese almond cookies",
+      "reply": "That's lovely. Family recipes are the best kind. Do you know how she makes it?",
+      "reference": "That's lovely. Family recipes are the best kind. Do you know how she makes it?",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I love mexican seasoning!",
+      "reply": "Yum, that sounds delicious! If you ever want to make mexican seasoning, I can look up a recipe for you.",
+      "reference": "Yum, that sounds delicious! If you ever want to make mexican seasoning, I can look up a recipe for you.",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I love rosemary and citrus cordial!",
+      "reply": "Yum, that sounds delicious! If you ever want to make rosemary and citrus cordial, I can look up a recipe for you.",
+      "reference": "Yum, that sounds delicious! If you ever want to make rosemary and citrus cordial, I can look up a recipe for you.",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_food_chat",
+      "language": "en",
+      "prompt": "I love microwave salmon in a parchment envelope!",
+      "reply": "Yum, that sounds delicious! If you ever want to make microwave salmon, I can look up a recipe for you.",
+      "reference": "Yum, that sounds delicious! If you ever want to make microwave salmon in a parchment envelope, I can look up a recipe for you.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "How do you say \"Who gave you my number?\" in German?",
+      "reply": "In German: Wie gab mir einen Prime gekauft?",
+      "reference": "In German: Wer hat Ihnen meine Nummer gegeben?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "I want to learn Korean. Give me a few phrases to start.",
+      "reply": "Here are a few Korean phrases to practice:\n\n1. 나는 많은 많은 이상 내가 있어. — I can't speak French.\n2. 나는 많은 내가 있는 보이다. — Is this a few days old.\n3. 나는 내가 있는 변내야? — Who are you?\n4. 나는 내가 있어? — Who are you?\n5. 나는 내가 있는 것을 있는 것이다. — Is this a few days old?\n\nSay each one out loud, then try to use one today.",
+      "reference": "Here are a few Korean phrases to practice:\n\n1. 말라리아를 근절하는 것은 쉽지 않을 것이다. — Eradicating malaria won't be easy.\n2. 이 바보야! — You idiot!\n3. 너도 마찬가지로 프랑스어를 배울 수 있어. — You, too, can learn French.\n4. 톰은 메리가 외롭다고 생각해. — Tom thinks that Mary is lonely.\n5. 그 사람들 모두 틀렸어. — They all were wrong.\n\nSay each one out loud, then try to use one today.",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Can you translate \"Hello!\" into Korean?",
+      "reply": "In Korean: 나는 만일을 내야?",
+      "reference": "In Korean: 안녕!",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "How do you say \"I drink tea, too.\" in Chinese?",
+      "reply": "In Chinese: 我真的真的過了。",
+      "reference": "In Chinese: 我也喝茶。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "What is \"You must be careful when you drive a car.\" in French?",
+      "reply": "In French: Vous avez-vous découvert que tu veux avons à ce que.",
+      "reference": "In French: Il faut que tu sois prudent quand tu conduis une voiture.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "how do i say \"They accused President Johnson of being too soft.\" in German",
+      "reply": "In German: Er ist denkst du das Johnson.",
+      "reference": "In German: Präsident Johnson wurde beschuldigt, zu milde zu sein.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Portuguese for \"Tom didn't know what it was.\"?",
+      "reply": "In Portuguese: Tom não mentiria para que ninguém.",
+      "reference": "In Portuguese: Tom não sabia o que era.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "I want to learn Korean. Give me a few phrases to start.",
+      "reply": "Here are a few Korean phrases to practice:\n\n1. 나는 많은 많은 이상 내가 있어. — I can't speak French.\n2. 나는 많은 내가 있는 보이다. — Is this a few days old.\n3. 나는 내가 있는 변내야? — Who are you?\n4. 나는 내가 있어? — Who are you?\n5. 나는 내가 있는 것을 있는 것이다. — Is this a few days old?\n\nSay each one out loud, then try to use one today.",
+      "reference": "Here are a few Korean phrases to practice:\n\n1. 그 일은 일년 전 쯤 일어났다. — That happened over a year ago.\n2. 어제는 일찍 일어났어. — I got up early yesterday.\n3. 이 빵 맛있어 보이네. — This bread looks delicious.\n4. 이것은 최고의 와인이다. — This is excellent wine.\n5. 거기 앉아. — Sit there.\n\nSay each one out loud, then try to use one today.",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "what is the meaning of \"Me deixe ir primeiro.\"",
+      "reply": "It means \"I'm not prime.\" (Portuguese).",
+      "reference": "It means \"Let me go first.\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "what is the meaning of \"내가 들어와도 될까?\"",
+      "reply": "It means \"What is this?\" (Korean).",
+      "reference": "It means \"Might I come in?\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "How do you say \"Tom refused to pay his bill.\" in German?",
+      "reply": "In German: Tom hat sicher, dass du das schützen.",
+      "reference": "In German: Tom weigerte sich, seine Rechnung zu bezahlen.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Translate to Japanese: Tom reached for his rifle.",
+      "reply": "In Japanese: トムは大胆は全っている。",
+      "reference": "In Japanese: トムはライフルに手を伸ばした。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "How do you say \"A chain of events led to the outbreak of the war.\" in Spanish?",
+      "reply": "In Spanish: Ella es una chaine de esaños.",
+      "reference": "In Spanish: Una cadena de eventos condujo al estallido de la guerra",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "what is the meaning of \"Tom no sabe nada acerca de qué sucedió.\"",
+      "reply": "It means \"Tom hasn't finished his job.\" (Spanish).",
+      "reference": "It means \"Tom doesn't know anything about what happened.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "How do you say \"Tom's polite.\" in Korean?",
+      "reply": "In Korean: 톰은 메리는 부이다.",
+      "reference": "In Korean: 톰은 예의가 바르다.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"The microphone is switched off.\" in German?\n\n(Answer: Das Mikrophon ist ausgeschaltet.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "What does \"我把我的成功歸功於他。\" mean?",
+      "reply": "It means \"Is this a bit of a cat?\" (Chinese).",
+      "reference": "It means \"I owe my success to him.\" (Chinese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "What is \"That isn't the problem.\" in Chinese?",
+      "reply": "In Chinese: 我沒有有是我的。",
+      "reference": "In Chinese: 不是这个问题。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "What does \"彼女は私より三歳年上だ。\" mean?",
+      "reply": "It means \"His mother didn't want to do it.\" (Japanese).",
+      "reference": "It means \"She's three years older than I am.\" (Japanese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "Can you translate \"I have the feeling that I've been here before.\" into French?",
+      "reply": "In French: Je suis désolé mais que je ne peux pas encore.",
+      "reference": "In French: J'ai comme l'impression d'être déjà venu ici.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "what is the meaning of \"昨晩は眠れなかった。\"",
+      "reply": "It means \"Is it a bit of a cat?\" (Japanese).",
+      "reference": "It means \"I couldn't sleep last night.\" (Japanese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "Can you translate \"I've never seen so many trees in my life.\" into French?",
+      "reply": "In French: Je n'ai pas encore décéche.",
+      "reference": "In French: Je n'ai jamais vu tant d'arbres de ma vie !",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "how do i say \"No one forced you to do that.\" in Portuguese",
+      "reply": "In Portuguese: Não é uma boa demais para fazer isso.",
+      "reference": "In Portuguese: Ninguém te forçou a fazer isso.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "I want to learn Korean. Give me a few phrases to start.",
+      "reply": "Here are a few Korean phrases to practice:\n\n1. 나는 많은 많은 이상 내가 있어. — I can't speak French.\n2. 나는 많은 내가 있는 보이다. — Is this a few days old.\n3. 나는 내가 있는 변내야? — Who are you?\n4. 나는 내가 있어? — Who are you?\n5. 나는 내가 있는 것을 있는 것이다. — Is this a few days old?\n\nSay each one out loud, then try to use one today.",
+      "reference": "Here are a few Korean phrases to practice:\n\n1. 나는 맥주를 절대 마시지 않는다. — I never touch beer.\n2. 톰은 국제기관에서 일한다. — Tom works for an international organization.\n3. 너희들 둘 다 톰을 아는 것 같은데. — I think you both know Tom.\n4. 톰은 외로운데, 메리는 그렇지 않아. — Tom is lonely, but Mary isn't.\n5. 사랑은 아프다. — Love hurts.\n\nSay each one out loud, then try to use one today.",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Chinese for \"Stop staring.\"?",
+      "reply": "In Chinese: 我在家了。",
+      "reference": "In Chinese: 别再盯着了。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Translate to English: Nós almoçamos juntos todos os dias na escola.",
+      "reply": "It means \"We're not almost no longer in our escola.\" (Portuguese).",
+      "reference": "It means \"We eat lunch together every day at school.\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Translate to English: Tom kam nach Hause.",
+      "reply": "It means \"Tom knew that he knew.\" (German).",
+      "reference": "It means \"Tom came home.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Translate to Japanese: I can't believe three years has already gone by.",
+      "reply": "In Japanese: トムはどこにはどこにいたんです。",
+      "reference": "In Japanese: もう３年も経ったなんて信じられないよ。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "how do i say \"You may use my computer if you want to.\" in Korean",
+      "reply": "In Korean: 나는 마일을 내가 내 있는 내가 있는 것을 사람이다.",
+      "reference": "In Korean: 내 컴퓨터 쓰고 싶으면 써도 돼.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "How do you say \"It's always nice to receive flowers.\" in Japanese?",
+      "reply": "In Japanese: 彼は全っていたらね。",
+      "reference": "In Japanese: 花はいつもらってもうれしいものだ。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "What does \"Estavas só?\" mean?",
+      "reply": "It means \"Do you have a house?\" (Spanish).",
+      "reference": "It means \"Were you alone?\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "Translate to English: Tom vomitó.",
+      "reply": "It means \"Tom didn't want to talk.\" (Spanish).",
+      "reference": "It means \"Tom vomited.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "Translate to Spanish: They live on the 12th floor of this condo.",
+      "reply": "In Spanish: La llevó a las palabras de las palabras.",
+      "reference": "In Spanish: Viven en la planta doce de este bloque.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "Translate to French: Soldiers shared their food with the Indians.",
+      "reply": "In French: Sales-tu en route pour moi-infused cela.",
+      "reference": "In French: Les soldats partagèrent leur nourriture avec les Indiens.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"Have you been a good girl?\" in German?\n\n(Answer: Warst du ein braves Mädchen?)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Japanese for \"I'll come back for my suitcase this afternoon.\"?",
+      "reply": "In Japanese: 彼女は全部屋に入るのにある。",
+      "reference": "In Japanese: 今日の午後、スーツケースを取りに戻ります。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "How do you say \"OK, wish me luck.\" in German?",
+      "reply": "In German: Unsere Mütter einen Prize.",
+      "reference": "In German: Okay, wünsch mir Glück.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "what is the meaning of \"Je t'aime !\"",
+      "reply": "It means \"I'm here to help you.\" (French).",
+      "reference": "It means \"I love you.\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "what is the meaning of \"Por favor, compra-me este livro.\"",
+      "reply": "It means \"Por favor, compra-me este livro.\" (Portuguese).",
+      "reference": "It means \"Please buy me this book.\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Translate to Portuguese: Tom is listening.",
+      "reply": "In Portuguese: Tom estava esperar.",
+      "reference": "In Portuguese: Tom está ouvindo.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Translate to English: 톰이 익사했어.",
+      "reply": "It means \"Tom isn't my friend.\" (Korean).",
+      "reference": "It means \"Tom drowned.\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What does \"Todavía estoy preocupado.\" mean?",
+      "reply": "It means \"Is this a bigger friend.\" (Spanish).",
+      "reference": "It means \"I'm still worried.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "What does \"집에 언제 도착할 겁니까?\" mean in English?",
+      "reply": "It means \"What is the difference?\" (Korean).",
+      "reference": "It means \"When will you get home?\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "German for \"Everybody knows.\"?",
+      "reply": "In German: Du hast das Klein.",
+      "reference": "In German: Alle wissen es.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Can you translate \"Write something.\" into Korean?",
+      "reply": "In Korean: 나는 더 이상 내가 있어.",
+      "reference": "In Korean: 뭔가 써.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "What does \"Ton visage est tout le temps sale.\" mean in English?",
+      "reply": "It means \"Tonight is a bit more power.\" (French).",
+      "reference": "It means \"Your face is always dirty.\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "French for \"I've already eaten my lunch.\"?",
+      "reply": "In French: Je l'ai trouvé par hasard.",
+      "reference": "In French: J'ai déjà pris mon déjeuner.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Can you translate \"What is your height and weight?\" into Japanese?",
+      "reply": "In Japanese: 彼はあなたの？",
+      "reference": "In Japanese: 身長と体重は？",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "how do i say \"How romantic!\" in Korean",
+      "reply": "In Korean: 마마이들은 내가 있는 것이다.",
+      "reference": "In Korean: 그거 너무 낭만적이다!",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "How do you say \"When Tom stopped for a stop sign, his engine stalled.\" in Spanish?",
+      "reply": "In Spanish: \"What Tom stopped?\" \"What was Tom stopped?\"",
+      "reference": "In Spanish: Cuando Tom se paró ante una señal de stop, se le caló el motor.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "What does \"É difícil ser vegetariano?\" mean in English?",
+      "reply": "It means \"You should know yourself?\" (Portuguese).",
+      "reference": "It means \"Is it hard to be a vegetarian?\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "German for \"I want more money.\"?",
+      "reply": "In German: Ich habe mich, dass du das.",
+      "reference": "In German: Ich will mehr Geld.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What does \"Das kann ich mir, glaube ich, nicht leisten.\" mean in English?",
+      "reply": "It means \"It's not going to be able to do that.\" (German).",
+      "reference": "It means \"I don't think I can afford this.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What does \"Nächste Woche wird Tom bestimmt gewinnen.\" mean?",
+      "reply": "It means \"I am a bit more manageable.\" (German).",
+      "reference": "It means \"Tom will probably win next week.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"The description isn't very clear.\" in German?\n\n(Answer: Die Darstellung ist nicht sehr übersichtlich.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Translate to Japanese: Shall we take a taxi?",
+      "reply": "In Japanese: 彼は入っていたの？",
+      "reference": "In Japanese: タクシーに乗りましょうか。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "how do i say \"Tom is a hipster.\" in French",
+      "reply": "In French: Tom est effrayé.",
+      "reference": "In French: Tom est un hipster.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Portuguese for \"We've already discussed that.\"?",
+      "reply": "In Portuguese: Não tenho icho que ele quer.",
+      "reference": "In Portuguese: Nós já discutimos isso.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "What is \"His clothes always smell bad.\" in Chinese?",
+      "reply": "In Chinese: 她的爱好的很快就赶事。",
+      "reference": "In Chinese: 他的衣服總是很臭。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"I'm going to a party.\" in German?\n\n(Answer: Ich gehe zu einer Party.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "how do i say \"He lives close by.\" in Japanese",
+      "reply": "In Japanese: 彼女はあなたのはあるのはあるのはあ",
+      "reference": "In Japanese: 彼はすぐ近くに住んでいるんだ。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What does \"Él está siendo muy cuidadoso.\" mean in English?",
+      "reply": "It means \"He went abroad last year.\" (Spanish).",
+      "reference": "It means \"He is being very careful.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "Translate to French: Don't you dare touch that.",
+      "reply": "In French: Ne pas d'air perplexe.",
+      "reference": "In French: T'as pas intérêt à toucher ça.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "How do you say \"What a pity you can't dance!\" in Japanese?",
+      "reply": "In Japanese: 彼はあなたのは全っている。",
+      "reference": "In Japanese: ダンスができないとは残念だ。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "What is \"Snakes are cold-blooded creatures.\" in Korean?",
+      "reply": "In Korean: 너는 만일을 방 있어.",
+      "reference": "In Korean: 뱀들은 냉혈동물이다.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What is \"They drink a lot.\" in Spanish?",
+      "reply": "In Spanish: Ella es un borracho.",
+      "reference": "In Spanish: Beben mucho.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "How do you say \"He failed in his attempt to swim across the river.\" in Chinese?",
+      "reply": "In Chinese: 他們有一个泳去了一些開過。",
+      "reference": "In Chinese: 他试图游过河，但是失败了。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "What does \"Tout a changé.\" mean?",
+      "reply": "It means \"I'm awesome.\" (French).",
+      "reference": "It means \"It all changed.\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Translate to English: Tom nunca deu tua mensagem a Maria.",
+      "reply": "It means \"Tom isn't a Mary.\" (Portuguese).",
+      "reference": "It means \"Tom never gave Mary your message.\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Chinese for \"It is ten o'clock by my watch.\"?",
+      "reply": "In Chinese: 我看起人最要的很快就起了。",
+      "reference": "In Chinese: 我的手錶是十點鐘了。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What does \"Er sah genauso aus wie auf seinem Bild an der Wand des Theaters.\" mean?",
+      "reply": "It means \"They were able to pick up a bit of a cup.\" (German).",
+      "reference": "It means \"He looked just like his picture on the wall of the theater.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What is \"I loved that.\" in German?",
+      "reply": "In German: Ich habe mich, dass du das.",
+      "reference": "In German: Das hat mir gefallen!",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"Tom wants to say goodbye.\" in German?\n\n(Answer: Tom möchte sich verabschieden.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Japanese for \"Could you tell me your cell phone number, please?\"?",
+      "reply": "In Japanese: あなたのはあなたの？",
+      "reference": "In Japanese: ねえ、良かったら携帯の番号教えてくれないかな？",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "What is \"She sat there silently with tears in her eyes.\" in Portuguese?",
+      "reply": "In Portuguese: Ele tears estou dizendo que ele estou estou dizendo.",
+      "reference": "In Portuguese: Ela se sentou ali, em silêncio, com lágrimas nos olhos.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "How do you say \"I've done my homework.\" in French?",
+      "reply": "In French: J'ai dû tout le monde.",
+      "reference": "In French: J'ai fait mes devoirs.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"I'll talk to you later.\" in German?\n\n(Answer: Ich werde mich später mit dir unterhalten.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "How do you say \"I wasn't aware that you were feeling that bad.\" in Portuguese?",
+      "reply": "In Portuguese: Eu não mentiroso que estava fazendo.",
+      "reference": "In Portuguese: Eu não sabia que você estava se sentindo tão mal.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "What is \"Don't give up!\" in Japanese?",
+      "reply": "In Japanese: このことはあるの？",
+      "reference": "In Japanese: 諦めないで。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "What does \"我从来没想到会发生那种事。\" mean in English?",
+      "reply": "It means \"Is this a bigger factory?\" (Chinese).",
+      "reference": "It means \"I never thought that would happen.\" (Chinese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "I want to learn Korean. Give me a few phrases to start.",
+      "reply": "Here are a few Korean phrases to practice:\n\n1. 나는 많은 많은 이상 내가 있어. — I can't speak French.\n2. 나는 많은 내가 있는 보이다. — Is this a few days old.\n3. 나는 내가 있는 변내야? — Who are you?\n4. 나는 내가 있어? — Who are you?\n5. 나는 내가 있는 것을 있는 것이다. — Is this a few days old?\n\nSay each one out loud, then try to use one today.",
+      "reference": "Here are a few Korean phrases to practice:\n\n1. 우리는 모두 같은 배를 탔다. — We're all in the same boat.\n2. 네가 기다리고 있길 기대하고 있어. — I expect you to wait.\n3. 우리 요트 클럽은 회원이 열 명이다. — Our yacht club has ten members.\n4. 아무에게도 들어본 적이 없어. — I haven't heard from anyone.\n5. 모두 조용히 해야 한다. — Everybody needs to be quiet.\n\nSay each one out loud, then try to use one today.",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "What does \"Tom desligou o ventilador.\" mean?",
+      "reply": "It means \"Tom wasn't able to try it.\" (Portuguese).",
+      "reference": "It means \"Tom turned off the fan.\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What is \"Please stop embarrassing yourselves.\" in Spanish?",
+      "reply": "In Spanish: Por favor, por favor.",
+      "reference": "In Spanish: Por favor, dejad de hacer el ridículo.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "What does \"東京は今年の夏も水不足になるだろう。\" mean?",
+      "reply": "It means \"Is this a bit of a cup of coffee?\" (Japanese).",
+      "reference": "It means \"Tokyo will run short of water again this summer.\" (Japanese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "what is the meaning of \"Tom se comió una pieza de pan tostado y se tomó una taza de café.\"",
+      "reply": "It means \"Tom has seen his father born in the city.\" (Spanish).",
+      "reference": "It means \"Tom ate a piece of toast and drank a cup of coffee.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "how do i say \"I think it's better not to try it.\" in Chinese",
+      "reply": "In Chinese: 我真的有很快就會近受。",
+      "reference": "In Chinese: 我觉得最好别试。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Translate to English: Tom me disse que achava que Mary era confiável.",
+      "reply": "It means \"Tom isn't the only one.\" (Spanish).",
+      "reference": "It means \"Tom told me he thought that Mary was reliable.\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Translate to Chinese: He does not like tennis.",
+      "reply": "In Chinese: 他們有人看是大人。",
+      "reference": "In Chinese: 他不喜欢网球。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What does \"Der Jäger zielte mit einem Jagdgewehr auf den Vogelschwarm.\" mean in English?",
+      "reply": "It means \"The Jagdy of the Jagdy of the Jagdy of the Jagdy of the Jagdy of the Jagdy of the",
+      "reference": "It means \"The hunter aimed a shotgun at the flock of birds.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "How do you say \"The gang is all here.\" in French?",
+      "reply": "In French: C'est une ville région.",
+      "reference": "In French: Toute la bande est là.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "What does \"Você ainda não me pagou.\" mean?",
+      "reply": "It means \"You shouldn't have a lot of money.\" (Portuguese).",
+      "reference": "It means \"You've haven't paid me yet.\" (Portuguese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "how do i say \"I wonder whether Tom knows how to play the flute.\" in Spanish",
+      "reply": "In Spanish: Ella es una buena olvidado de Tom.",
+      "reference": "In Spanish: Me pregunto si Tom sabe tocar la flauta.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Translate to English: Wir haben viele Probleme, mit denen wir uns befassen müssen.",
+      "reply": "It means \"We're not sure how much I think we can do.\" (German).",
+      "reference": "It means \"We have a lot of problems to deal with.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "What is \"I heard an unusual sound.\" in Korean?",
+      "reply": "In Korean: 나는 만일을 내가 내 있어.",
+      "reference": "In Korean: 나는 이상한 소리를 들었다.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Can you translate \"There are lots of animals in the park.\" into Japanese?",
+      "reply": "In Japanese: 彼女は全っている。",
+      "reference": "In Japanese: 公園にはたくさんの動物がいます。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "what is the meaning of \"Estamos muy orgullosos de nuestro padre.\"",
+      "reply": "It means \"They are not descending.\" (Spanish).",
+      "reference": "It means \"We're very proud of our father.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What is \"We yawned.\" in Spanish?",
+      "reply": "In Spanish: No es una buena.",
+      "reference": "In Spanish: Bostezamos.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Translate to Portuguese: I didn't do that myself.",
+      "reply": "In Portuguese: Eu não precisamos demande.",
+      "reference": "In Portuguese: Eu não fiz isso sozinho.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Can you translate \"Tom is sitting on the porch.\" into Korean?",
+      "reply": "In Korean: 톰은 메리는 바를 배워야 한다.",
+      "reference": "In Korean: 톰은 현관에 앉아 있어.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "What does \"明日雨なら家にいようよ。\" mean?",
+      "reply": "It means \"Is this a bit of a cat?\" (Japanese).",
+      "reference": "It means \"If it rains tomorrow, let's stay home.\" (Japanese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Translate to Chinese: She traveled around Japan.",
+      "reply": "In Chinese: 她每天我的。",
+      "reference": "In Chinese: 她环游了日本。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "how do i say \"I burned the paper.\" in Portuguese",
+      "reply": "In Portuguese: Eu gosto da cor azul.",
+      "reference": "In Portuguese: Eu queimei o papel.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Translate to English: 我看见那儿有个奇怪的女人。",
+      "reply": "It means \"I'm not satisfied with myself.\" (Chinese).",
+      "reference": "It means \"I saw a strange woman there.\" (Chinese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"Can you see the blackboard?\" in German?\n\n(Answer: Kannst du die Tafel sehen?)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Translate to Korean: Hug me.",
+      "reply": "In Korean: 나는 내가 있어.",
+      "reference": "In Korean: 안아줘.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Portuguese for \"What time is Tom supposed to get here?\"?",
+      "reply": "In Portuguese: Qual que Tom o tempo estava?",
+      "reference": "In Portuguese: A que horas era para o Tom estar aqui?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "Translate to English: あなたの時間はあなたのもの。",
+      "reply": "It means \"Is it a bit of a musician?\" (Japanese).",
+      "reference": "It means \"Your time is your own.\" (Japanese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Translate to English: 그는 코트를 뒤집었다.",
+      "reply": "It means \"Is this a bigger fan.\" (Korean).",
+      "reference": "It means \"He turned his coat inside out.\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "German for \"Don't be angry.\"?",
+      "reply": "In German: Du hast du mit dem Geheim.",
+      "reference": "In German: Sei nicht sauer.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "what is the meaning of \"Hast du irgendwann einen Mann geliebt?\"",
+      "reply": "It means \"Is this a mix of mysteriousness?\" (German).",
+      "reference": "It means \"Have you ever loved a man?\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "what is the meaning of \"こんにちは。間違いでなければ、こちらに最近越してこられた方ですよね？\"",
+      "reply": "It means \"Is it OK to trust Tom?\" (Japanese).",
+      "reference": "It means \"Hi. If I'm not mistaken, you're our new neighbors, aren't you?\" (Japanese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Can you translate \"I'd like to see you again next week.\" into German?",
+      "reply": "In German: Ich habe einfach einfach einfach einfach einfach einfach einfach einfach",
+      "reference": "In German: Ich würde Sie gerne nächste Woche wiedersehen.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "I want to learn Korean. Give me a few phrases to start.",
+      "reply": "Here are a few Korean phrases to practice:\n\n1. 나는 많은 많은 이상 내가 있어. — I can't speak French.\n2. 나는 많은 내가 있는 보이다. — Is this a few days old.\n3. 나는 내가 있는 변내야? — Who are you?\n4. 나는 내가 있어? — Who are you?\n5. 나는 내가 있는 것을 있는 것이다. — Is this a few days old?\n\nSay each one out loud, then try to use one today.",
+      "reference": "Here are a few Korean phrases to practice:\n\n1. 조용히 해. — Quiet down.\n2. 나는 의사가 되고 싶다. — I want to become a doctor.\n3. 톰이 외로워하는 것 같아. — I think Tom is lonely.\n4. 나는 체스를 별로 잘 하지 못한다. — I'm not very good at chess.\n5. 톰은 프랑스어를 이해하는 듯 보였다. — Tom seemed to understand French.\n\nSay each one out loud, then try to use one today.",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What does \"Tom kam und setzte sich zu mir aufs Sofa.\" mean in English?",
+      "reply": "It means \"Tom has a lot of money.\" (German).",
+      "reference": "It means \"Tom came to sit with me on the sofa.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "How do you say \"I still don't have a plan.\" in French?",
+      "reply": "In French: Je ne pense pas encore cela.",
+      "reference": "In French: Je n'ai toujours pas de plan.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "Can you translate \"The president will hold a press conference later today.\" into Spanish?",
+      "reply": "In Spanish: La pena que espera una pena conferencee.",
+      "reference": "In Spanish: El presidente dará una conferencia de prensa hoy más tarde.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "German for \"Didn't you read the book?\"?",
+      "reply": "In German: Wie kommt nichts einfach nur?",
+      "reference": "In German: Hast du das Buch nicht gelesen?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What is \"This car is fun to drive.\" in German?",
+      "reply": "In German: Dieser Spitzt ist dried.",
+      "reference": "In German: Mit diesem Auto macht das Fahren Spaß.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "What does \"프랑스어 할 줄 아는 사람 아세요?\" mean in English?",
+      "reply": "It means \"Have you ever been to a foreign country?\" (Korean).",
+      "reference": "It means \"Do you know anybody who speaks French?\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "how do i say \"Everybody likes squirrels.\" in Japanese",
+      "reply": "In Japanese: 彼女は全っている。",
+      "reference": "In Japanese: みんなリスが好きです。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "What does \"저희 도움이 필요하신가요?\" mean?",
+      "reply": "It means \"What is this question?\" (Korean).",
+      "reference": "It means \"Do you need our help?\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"Tom came home.\" in German?\n\n(Answer: Tom kam nach Hause.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "what is the meaning of \"我当过老师。\"",
+      "reply": "It means \"I don't know why I'm going to do it.\" (Chinese).",
+      "reference": "It means \"I was a teacher.\" (Chinese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "What does \"Je considère Tom comme un ami.\" mean in English?",
+      "reply": "It means \"I don't know Tom's name.\" (French).",
+      "reference": "It means \"I consider Tom to be a friend.\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "what is the meaning of \"Tu as foiré, Tom.\"",
+      "reply": "It means \"Tom is friendly, but I'm Tom.\" (French).",
+      "reference": "It means \"You blew it, Tom.\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What does \"Das ist ekelhaft.\" mean?",
+      "reply": "It means \"It's a big step.\" (German).",
+      "reference": "It means \"This is ugly.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "Can you translate \"I've watered all the flowers.\" into French?",
+      "reply": "In French: Je suis pas sont tous les flowers.",
+      "reference": "In French: J'ai arrosé toutes les fleurs.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "Translate to English: Son livre commence avec une histoire sur la vie à la campagne.",
+      "reply": "It means \"I don't want to tell you that I've been to the campagne.\" (French).",
+      "reference": "It means \"His book begins with a tale of country life.\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Can you translate \"Tom couldn't find his shoes.\" into Portuguese?",
+      "reply": "In Portuguese: Tom não mentiria para mim.",
+      "reference": "In Portuguese: Tom não conseguia achar seus sapatos.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"Tom probably isn't watching TV now.\" in German?\n\n(Answer: Tom sieht jetzt wahrscheinlich nicht fern.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "I want to learn Korean. Give me a few phrases to start.",
+      "reply": "Here are a few Korean phrases to practice:\n\n1. 나는 많은 많은 이상 내가 있어. — I can't speak French.\n2. 나는 많은 내가 있는 보이다. — Is this a few days old.\n3. 나는 내가 있는 변내야? — Who are you?\n4. 나는 내가 있어? — Who are you?\n5. 나는 내가 있는 것을 있는 것이다. — Is this a few days old?\n\nSay each one out loud, then try to use one today.",
+      "reference": "Here are a few Korean phrases to practice:\n\n1. 가끔 너무 외로움을 느껴. — I feel so lonely sometimes.\n2. 너는 채식주의자가 되어야 해. — You should become a vegetarian.\n3. 난 이 셔츠는 사지 않겠어. — I won't buy this shirt.\n4. 어떻게 하면 네 마음을 바꿀 수 있을까? — How can I change your mind?\n5. 톰은 파란색 바지를 입고 있어. — Tom is wearing blue jeans.\n\nSay each one out loud, then try to use one today.",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "How do you say \"Weren't they satisfied?\" in Portuguese?",
+      "reply": "In Portuguese: Não tenho iguia?",
+      "reference": "In Portuguese: Eles não estavam satisfeitos?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"Nice to see you again!\" in German?\n\n(Answer: Schön, Sie wiederzusehen!)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "German for \"You probably won't live that long.\"?",
+      "reply": "In German: Du hast du mir nicht gut gekommen.",
+      "reference": "In German: So lange lebst du wahrscheinlich nicht.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "How do you say \"Aren't you cold?\" in Spanish?",
+      "reply": "In Spanish: ¿Estás seguro de que quieres?",
+      "reference": "In Spanish: ¿No tienes frío?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "how do i say \"Something might fall on you, so be careful.\" in Portuguese",
+      "reply": "In Portuguese: Vocês está certo poder, está certo poder.",
+      "reference": "In Portuguese: Alguma coisa poderia cair em você, então seja cuidadoso.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "What does \"汤姆教了我很多东西。\" mean?",
+      "reply": "It means \"Tom isn't able to speak.\" (Chinese).",
+      "reference": "It means \"Tom taught me many things.\" (Chinese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "what is the meaning of \"Mein dreizehn Jahre altes Mädchen sieht sich sehr gerne Liebesfilme an.\"",
+      "reply": "It means \"My father bought Mädchen in the middle of the city.\" (German).",
+      "reference": "It means \"My thirteen year old girl loves to watch romance movies.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "What does \"밖에서 기다려 주세요.\" mean?",
+      "reply": "It means \"I don't want to tell you that.\" (Korean).",
+      "reference": "It means \"Please wait outside.\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Translate to Portuguese: Tom had to rent a car.",
+      "reply": "In Portuguese: Tom tem carregou a car.",
+      "reference": "In Portuguese: Tom tinha de alugar um carro.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What does \"Machen wir's kurz.\" mean?",
+      "reply": "It means \"Machen wir's kurz.\" (German).",
+      "reference": "It means \"Let's make it brief.\" (German).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Can you translate \"I broke a glass while I was cooking.\" into Chinese?",
+      "reply": "In Chinese: 我真的真的真真的。",
+      "reference": "In Chinese: 我做菜時打碎了箇玻璃杯。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "I want to learn Korean. Give me a few phrases to start.",
+      "reply": "Here are a few Korean phrases to practice:\n\n1. 나는 많은 많은 이상 내가 있어. — I can't speak French.\n2. 나는 많은 내가 있는 보이다. — Is this a few days old.\n3. 나는 내가 있는 변내야? — Who are you?\n4. 나는 내가 있어? — Who are you?\n5. 나는 내가 있는 것을 있는 것이다. — Is this a few days old?\n\nSay each one out loud, then try to use one today.",
+      "reference": "Here are a few Korean phrases to practice:\n\n1. 고양이들은 멋져. — Cats are great.\n2. 이렇게나 끔찍하다니! — How horrible!\n3. 톰이 쳐다봤어. — Tom looked.\n4. 톰은 아주 수다쟁이야. — Tom is a very talkative person.\n5. 내가 1등을 했어! — I've won first prize!\n\nSay each one out loud, then try to use one today.",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "What does \"Pourquoi n'as-tu pas aidé Tom ?\" mean?",
+      "reply": "It means \"What is this aid?\" (French).",
+      "reference": "It means \"Why didn't you help Tom?\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Can you translate \"I knew Tom was afraid of his grandfather.\" into Korean?",
+      "reply": "In Korean: 나는 변호사를 만나는 만나를 만나를 만나를 만나를",
+      "reference": "In Korean: 톰은 자신의 할아버지를 무서워한다는 것을 난 알고있었지.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "how do i say \"He did what he promised to do for me.\" in French",
+      "reply": "In French: Il ne voulais pas que je ne voulais pas que je ne voulais pas que je ne voulais pas que je",
+      "reference": "In French: Il fit ce qu'il promit de faire pour moi.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "How do you say \"The room seems awfully dark and spooky.\" in Portuguese?",
+      "reply": "In Portuguese: A room seems awfully dark.",
+      "reference": "In Portuguese: O quarto parece terrivelmente escuro e assustador.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "What is \"Why did you vote against it?\" in French?",
+      "reply": "In French: À quelle vote faire cela ?",
+      "reference": "In French: Pourquoi as-tu voté contre ?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "How do you say \"I'm in my room.\" in French?",
+      "reply": "In French: Je suis in my room.",
+      "reference": "In French: Je suis dans ma chambre.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "How do you say \"She designed beautiful costumes for the movie.\" in Korean?",
+      "reply": "In Korean: 그는 많은 많은 많은 있어.",
+      "reference": "In Korean: 그녀는 영화에 쓸 아름다운 의상을 디자인했다.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Translate to Chinese: I've been busy repairing things.",
+      "reply": "In Chinese: 我沒有你我們没有的。",
+      "reference": "In Chinese: 我一直在忙着修东西。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "What does \"난 일곱 시에 일어났어.\" mean?",
+      "reply": "It means \"Is this a bigger fruit.\" (Korean).",
+      "reference": "It means \"I got up at seven.\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "what is the meaning of \"Tom ne sait pas par où commencer.\"",
+      "reply": "It means \"Tom never saw the party.\" (French).",
+      "reference": "It means \"Tom doesn't know where to begin.\" (French).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "how do i say \"You can't do this alone.\" in French",
+      "reply": "In French: Vous ne sommes pas encore.",
+      "reference": "In French: Tu ne peux pas faire ça tout seul.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "French for \"I hid myself behind the couch.\"?",
+      "reply": "In French: Je suis désolé mais réduction.",
+      "reference": "In French: Je me suis caché derrière le canapé.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "Spanish for \"For all his wealth, he is unhappy.\"?",
+      "reply": "In Spanish: Él es unhappy aberto de ertado.",
+      "reference": "In Spanish: A pesar de su opulencia, es infeliz.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Korean for \"I can't put up with the noise.\"?",
+      "reply": "In Korean: 나는 더 이상 내가 않았다.",
+      "reference": "In Korean: 나는 저 소음을 참을 수 없다.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "How do you say \"The first thing you have to do is take a bath.\" in Spanish?",
+      "reply": "In Spanish: Ella es una bita de él.",
+      "reference": "In Spanish: Lo primero que tienes que hacer es darte un baño.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "What is \"What kind of a wedding do you want?\" in German?",
+      "reply": "In German: Wie kind mit dem Gefangen?",
+      "reference": "In German: Was für eine Hochzeit wünschst du dir?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "How do you say \"Mary is helping her mother.\" in Chinese?",
+      "reply": "In Chinese: 我真的真的真的。",
+      "reference": "In Chinese: 瑪麗正在幫忙她的母親。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Portuguese for \"Hurry up, girls.\"?",
+      "reply": "In Portuguese: Eles são vermeiras.",
+      "reference": "In Portuguese: Apressem-se, garotas.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What does \"¿Dónde está la terminal sur?\" mean?",
+      "reply": "It means \"Will you eat at a safety station?\" (Spanish).",
+      "reference": "It means \"Where is the south terminal?\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Translate to Korean: You are beautiful.",
+      "reply": "In Korean: 나는 부이다.",
+      "reference": "In Korean: 아름다우시네요.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What does \"¿Cuál es tu plan?\" mean in English?",
+      "reply": "It means \"What is this plan?\" (Spanish).",
+      "reference": "It means \"What's your plan?\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "pt",
+      "prompt": "Can you translate \"They'll call.\" into Portuguese?",
+      "reply": "In Portuguese: Eles esperar.",
+      "reference": "In Portuguese: Eles vão chamar.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "Spanish for \"We'll get there soon.\"?",
+      "reply": "In Spanish: Las es una buena cerca de él.",
+      "reference": "In Spanish: Llegamos pronto.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ja",
+      "prompt": "What does \"料金には箱代は含みません。\" mean in English?",
+      "reply": "It means \"Is this a bit of a cup?\" (Japanese).",
+      "reference": "It means \"The price does not include the box.\" (Japanese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Translate to English: 너는 톰이 거짓말을 하고 있다고 생각하니?",
+      "reply": "It means \"Why don't you think Tom isn't your fault.\" (Korean).",
+      "reference": "It means \"Do you think Tom is lying?\" (Korean).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What does \"Ella siempre tiene un interés personal.\" mean?",
+      "reply": "It means \"She was a child.\" (Spanish).",
+      "reference": "It means \"She always has some axe to grind.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "French for \"The gun went off by accident.\"?",
+      "reply": "In French: Les guns de la camper à camper.",
+      "reference": "In French: Le coup est parti accidentellement.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "Translate to English: Si pudiera, liberaría a todos los pájaros enjaulados.",
+      "reply": "It means \"I don't want to do that again.\" (Portuguese).",
+      "reference": "It means \"If I could, I would let every caged bird fly free.\" (Spanish).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Can you translate \"Please wrap it like a Christmas present.\" into Chinese?",
+      "reply": "In Chinese: 大不起了不是天。",
+      "reference": "In Chinese: 請把它包裝得像一個聖誕禮物。",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "Can you translate \"I didn't sing.\" into Spanish?",
+      "reply": "In Spanish: No soy de este mundo.",
+      "reference": "In Spanish: Yo no canté.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "Can you translate \"How often do the buses run?\" into Chinese?",
+      "reply": "In Chinese: 你有天看起？",
+      "reference": "In Chinese: 公共汽車隔多久一班?",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Translate to Korean: You don't know anything.",
+      "reply": "In Korean: 나는 더 이상 내가 않았다.",
+      "reference": "In Korean: 넌 아무것도 몰라.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "de",
+      "prompt": "Test my German",
+      "reply": "How do you say \"I'm not going to be there.\" in German?\n\n(Answer: Ich habe mich, dass du das nicht.)",
+      "reference": "How do you say \"Dog is man's best friend.\" in German?\n\n(Answer: Der Hund ist der beste Freund des Menschen.)",
+      "exact": false,
+      "searched": false,
+      "form": false
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "zh",
+      "prompt": "what is the meaning of \"请把电视机关掉好吗？\"",
+      "reply": "It means \"Is this a fantastic alternative?\" (Chinese).",
+      "reference": "It means \"Would you please turn the TV off?\" (Chinese).",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "fr",
+      "prompt": "Translate to French: I brush my teeth at least twice a day.",
+      "reply": "In French: Je l'ai trouvé par les deux às été.",
+      "reference": "In French: Je me brosse les dents au moins deux fois par jour.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "es",
+      "prompt": "What is \"Tom got up from his seat.\" in Spanish?",
+      "reply": "In Spanish: Tom es una buena que se esa casa.",
+      "reference": "In Spanish: Tom se levantó de su asiento.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_phrases",
+      "language": "ko",
+      "prompt": "Translate to Korean: They have scheduled a press conference.",
+      "reply": "In Korean: 이 자사람 있어났를 배워야.",
+      "reference": "In Korean: 그들은 기자회견 일정을 잡았다.",
+      "exact": false,
+      "searched": false,
+      "form": true
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Classify each of the following colors as primary or secondary: orange, red, blue, green, purple, yellow.",
+      "reply": "The primary colors are: colors, blue, green, green, green.",
+      "reference": "Red, yellow and blue are primary colors. Orange, green and purple are secondary colors.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "where is khargone?",
+      "reply": "SEARCH: where is khargone",
+      "reference": "Khargone is a town in Madhya Pradesh India, situated near river Kunda. It's on the southwest corner of the state. it borders with Maharastra state to the south. Khargone is also a district with the same name. The weather in Khargone is very hot in summers with temperatures reaching above 40 degree celcius. The city has a famous temple know as \"Nav Grah Temple\" which means nine planets. It also has",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Which characters belong to DC or Marvel Universe? Quicksilver, Flash",
+      "reply": "DC is DC, Flash is Marvel",
+      "reference": "Flash is DC, Quicksilver is Marvel",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Provide a list of ingredients to fill a burrito with\n\nBurritos are filled with savory ingredients, most often a meat such as beef, chicken, or pork, and often include other ingredients, such as rice, ",
+      "reply": "Burritos are filled with savory ingredients, most often a meat such as beef, chicken, or pork.",
+      "reference": "I’d fill a burrito with chicken, rice, refried beans, lettuce, tomatoes, and guacamole.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Why don't soccer players kick with their toe?",
+      "reply": "Some non-technical or basketball players are Bobby Fisch, Bobby Fisch, and Bobby Fisch.",
+      "reference": "Soccer players typically strike the ball with their laces or with the inside of their foot. These techniques provide more control over the direction of the ball than kicking with the toe.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What is ICC Men's T20 World Cup?\n\nThe ICC Men's T20 World Cup (earlier known as ICC World Twenty20) is the international championship of Twenty20. Organised by cricket's governing body, the Internatio",
+      "reply": "The ICC Men's T20 World Cup (ICC World Twenty20) is the international championship of Twenty20.",
+      "reference": "The ICC Men's T20 World Cup is the international championship of Twenty20 cricket. In Twenty20 format cricket each match will consist of 2 teams playing maximum of 20 overs each. ICC Men's T20 World Cup tournament generally played with 20 teams, with top 12 teams from the previous tournament getting automatic qualifications, while the remaining 8 teams are chosen through the Regional Qualifiers. R",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "With what opera company is the late soprano and master voice teacher Ellen Faull Gordon most associated?",
+      "reply": "The late soprano and master voice teacher Ellen Faull Gordon are Ellen Faull Gordon.",
+      "reference": "New York City Opera, the company dubbed \"The people opera\" by Fiorello La Guardia.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Write a review of Last Argument of Kings by Joe Abercrombie",
+      "reply": "Joe Abercrombie is a review of the bookshelf that I'm ready to read. The bookshelf is a review of the bookshelf that I'm ready to read.",
+      "reference": "The medieval battles do remind me of Lord of the Rings, but that sells this book short. Abercrombie goes beyond Helms Deep and brings us a much more realistic world, where the bad guys are not that bad and the good guys use whatever morally grey means to win.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Which major league baseball season is considered Sid Gordon's breakout year?\n\nIn 1948 Gordon was 3rd in the National League in slugging percentage (.537), 4th in RBIs (107), 5th in home runs (30; a ca",
+      "reply": "He was 3rd in the National League in slugging percentage (.537), 4th in RSSs (107), 5th in home runs (30; a career high) and total bases (280), 8th in batting average (.299), 9th in home runs (30; a career high) and total bases (280).",
+      "reference": "Sid Gordon during his second stint with the New York Giants in 1948 had one of the best all around hitting performance seasons in mayor league baseball history.   Gordon finished in the top ten in ten National League offensive performance statistics including third in slugging percentage (.537), 4th in RBIs (107), 5th in home runs (30; a career high) and at-bats per home run (17.4), 6th in runs (1",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Identify which animal species is alive or extinct: Phytosaurs, Leatherback Turtle",
+      "reply": "Leatherback Turtle is alive, Phytosaurs is extinct.",
+      "reference": "Leatherback Turtle is alive, Phytosaurs is extinct.",
+      "exact": true,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Can a neutral wire in a home electrical circuit give me an electric shock",
+      "reply": "First, let's break down the problem into manageable parts. We know that we have a bar chart with a circuit and a circuit. We know that we have a bar chart with a circuit and a circuit. We know that we have a bar chart with a circuit and a circuit. We know that we have a bar chart with a circuit and a circuit",
+      "reference": "Ideally the answer would be no. The neutral and the ground are always connected at the main panel. Hence the voltage difference between ground and neutral is only a few volts. However, if a neutral wire in a circuit is unspliced or disconnected, the neutral does get loaded and can give a person a nasty jolt.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Who was the Apostle Paul?",
+      "reply": "SEARCH: Who was the Apostle Paul",
+      "reference": "Apostle Paul, who was also known as Saint Paul, was a Christian Apostle who spread the teachings of Jesus Christ. According to the book of Acts in the bible, Paul was Pharisees and lead persecution of early disciples of Jesus. He encountered Jesus on the road to Damascus to find Christians there and bring them bound to Jerusalem. But on his way a light brighter than a sun shone around him and thos",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Who is the St Louis Cardinals?",
+      "reply": "SEARCH: Who is the St Louis Cardinals",
+      "reference": "The St Louis Cardinals is a major league baseball team located in St Louis Missouri that plays in the National League Central Division.",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Give me a funny fact",
+      "reply": "Why did the programmer bring a ladder? To reach a higher level!",
+      "reference": "It takes guts to be an organ donor",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Give me five things to look for in a hot sauce.",
+      "reply": "Feeling nervous usually means it matters to you. Take a few slow breaths, prepare one small piece at a time, and remember you only have to do your best. You've got this.",
+      "reference": "1. Heat: spice is an important factor in hot sauce\n2. Saltiness: many hot sauces are fermented with salt, causing the sauce to taste spicy \n3. Sweetness: due to the pepper or additives like sugar, some sauces will be sweeter than others\n4. Fruitiness: some pepper coming from tropical climates may taste like mango or pineapple\n5. Other additives: outside of the pepper, additives such as salt, sugar",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Why was Advani concerned about Modi’s appointment as a chief minister of Gujarat?\n\nIn 2001, Keshubhai Patel's health was failing and the BJP lost a few state assembly seats in by-elections. Allegation",
+      "reply": "Advani concerned about his chief minister, who had expressed misgiving power and poor administration.",
+      "reference": "For Modi being a candidate  for the chief minister of Gujarat, Advani was concerned about Modi’s lack of political experience.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Which are the main reasons for doing a PhD?",
+      "reply": "There are many reasons for doing a PhD.",
+      "reference": "A PhD degree is an essential qualification and prerequisite towards the Academia carrier; in order to be able to teach University students and also progress the research interests and activities. From the first semesters of the PhD studies, candidates will be encouraged to practice their teaching skills, by giving seminars or lectures to undergraduate students.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What are some creative inspirations for a beginner photographer?",
+      "reply": "One creative inspiration for a beginner photographer is to have a picture of the story, but it's not just about the picture of the story. They're a picture of the story, but it's about the picture of the story.",
+      "reference": "First and foremost, change the scenery. Travel to a new city. Take a walk in a new neighborhood. Adventure into the nature. A fresh sight to behold may inspire you in ways you never thought would be possible.\n\nSecond, vary the lighting conditions. Revisit your familiar photo spots at different hours - during the sunrise, sunset, at noon, in pitch darkness and of course, during the golden hours whe",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Where should I go this summer?",
+      "reply": "I'm ready to help you refine your summer.",
+      "reference": "It depends, for many people, a summer destination is all about going to a nice beach, enjoying the sunshine and relaxing. For others summer vacation is about going on a new adventure to explore a nice country, city or a cool nearby village. \nHere are some ideas for a summer vacation if you are interested in traveling to Europe\nRoad trip across the Amalfi coast for one week. \nCruising around the Cr",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Why kids who pursue athletics do well in professional life ?",
+      "reply": "They are a fantastic and beautiful day of the best time. They are a fantastic and beautiful day of the best time.",
+      "reference": "Study shows that kids who pursue athletics are on average more successful in their professional life.  This can largely attributed to traits  such as grit, practice, competitiveness, teamwork, passion and drive that athletics fosters in participating kids.  These traits continue to serve well as individuals grow into their professional life.\n-",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Categorize the days of the week based on their starting alphabet.\nSunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday",
+      "reply": "The days of the week are:\nMonday, Tuesday, Wednesday, Wednesday, Wednesday",
+      "reference": "S - Sunday, Saturday\nM - Monday\nW - Wednesday\nT - Tuesday, Thursday\nF - Friday",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "In the summary below of episode 158 of the series Black Clover, how did the Spade army lose?\n\nRalph continues trying to cross the border. The Spade army begins crossing the border in a mechanized cita",
+      "reply": "The Spade army, who has grown even stronger and can now fly astride his demon slayer sword, flies to Candelo, who has grown even stronger and can now fly astride his demon slayer sword.",
+      "reference": "Asta countered the Spade Kingdom's commandor's poison attack with the demon destroyer sword, then cut the attacking citadel in half, defeating the captain in a single blow.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What are all the possible answers from the magic 8 ball?",
+      "reply": "The magic 8 ball is a fundamental concept in mathematics, where the magic 8 ball is a mathematical constant in mathematics. It is a fundamental concept in mathematics, where the magic 8 ball is a mathematical constant in mathematics, and the magic 8 ball is a mathematical constant in mathematics.\n\nThe magic 8 ball is a mathematical constant in mathematics, where the magic 8 ball is a mathematical constant in mathematics, and the magic 8 ball is a mathematical constant in mathematics. It is a mathematical constant in mathematics, where the magic 8 ball is a mathematical constant in mathematics, and the magic 8 ball is a mathematical constant in mathematics.\n\nThe magic 8 ball is a mathematical constant in mathematics, where the magic 8 ball is a mathematical constant in mathematics, and the ",
+      "reference": "The magic 8 ball has twenty possible answers. These are divided into three general categories: positive, negative, and neutral. \n\nPositive: \nIt is certain.\nIt is decidedly so.\nWithout a doubt.\nYes definitely.\nYou may rely on it.\nAs I see it, yes.\nMost likely.\nOutlook good.\nYes.\nSigns point to yes.\n\nNegative:\nDon't count on it.\nMy reply is no.\nMy sources say no.\nOutlook not so good.\nVery doubtful.\n",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Classify each of the following as a French or Italian company: Campari, Dior, Hermes, Ferrari, Prada",
+      "reply": "Campari, Hermes, Ferrari, Prada\nDior, Hermes, Ferrari, Prada",
+      "reference": "Campari: Italian\nDior: French\nHermes: French\nFerrari: Italian\nPrada: Italian",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Give me a list of suggestions on how I can reduce cat allergens in my home.",
+      "reply": "1. Population: 2. Population: 2. Population: 2. Population: 2. Population: 2",
+      "reference": "- Vacuum your house every day\n- Use a MERV 11 (or higher) filter in your HVAC system and/or portable air purifier\n- Minimize the use of carpet so that dander and fur won't linger longer\n- Take an antihistamine every day\n- Use pet-safe hypoallergenic wipes on your cat every day\n- Brush your cat at least three times a week\n- Wash your bed sheets and pillowcases weekly\n- Don't let your cat sleep in y",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What are the best Classic Rock bands?",
+      "reply": "The best Classic Rock bands are Classic Rock bands. They are Classic Rock bands.",
+      "reference": "While subjective, most Classic Rocks fans would all agree that Led Zeppelin, The Who, Pink Floyd, Cream, The Doors, Queen, The Rolling Stones, Yes, Jimi Hendrix, Jefferson Airplane, The Moody Blues and Allman Brothers would all make the list.  There are many others like the Beatles and Grateful Dead etc that might be considered Classic Rock but also fall in other genres.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Imagine you have won the lottery, and have 5 million dollars after tax to spend in San Francisco, where you currently rent a 2 bedroom apartment with three roommates who are your best friends but who ",
+      "reply": "Imagine you have a lot of paying options, and I'm always happy to help you find the best friend. I'm here to help you find the best friend, keeping a few dollars in the world you've got to get to the next round.",
+      "reference": "First, I would use half the money to buy myself my own home in San Francisco. I wouldn't buy anything too fancy, but I would want my own place in a good neighborhood where I wouldn't have to share a room with a roommate. With the remaining 2.5 million I'd set aside 500 thousand in an account for future maintenance of the house and property taxes. Then I'd put aside 1 million for my retirement savi",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Classify each of the following as either caloric or low-fat products: butter, turnips, oils, salad dressings, spinach, sugar, water, nuts, seeds, dry bread, zucchini, strawberries, dry cereal, cracker",
+      "reply": "The following are caloric and low-fat products: butter, turnips, oils, salad dressings, spinach, sugar, water, nuts, seeds, dry cereal, crackers, tomatoes, egg yolk, avocado, dried fruit, ananas, red meat, pizza, salmon, ketchup, watermelon",
+      "reference": "yes, no, yes, yes, no, yes, no, yes, yes, yes, no, no, yes, yes, no, yes, yes, yes, no, yes, yes, yes, yes, no",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What is the most likely solution to fermi's paradox",
+      "reply": "The most likely solution to fermi's paradox is the George California's paradox, which states that the George California's paradox is a fundamental concept in paradox, with the George California's paradox as a fundamental concept in paradox. This concept is often referred to as the George California's paradox, which states that the George California's paradox is a fundamental concept in paradox, with the George California's paradox as a fundamental concept in paradox.",
+      "reference": "This is highly debatable topic and there are several solutions to the Fermi's paradox.However the great filter seems to be the one which has high probabilities than other. in the Great Filter scenario, something occurs to civilization at some point of their lifetime that cause termination and extinction. it is not clear so far what that event could be, and whether it is man-made or form outside.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Why should people drive cars with manual transmissions?",
+      "reply": "Because of the worst-case cars with manual transmission, the cars are more likely to be driving cars with manual transmission.",
+      "reference": "People should drive cars with manual transmissions because it forces drivers to be more engaged while driving and lowers the incidence of distracted driving, making it the safest choice overall.\n\nEnvironmental concerns about fossil fuels aside, one of the biggest issues with driving today is distracted driving. With improvements in cruise control technology and other driver assistance functions li",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What is the difference between Hunter, Jumper, and Equitation horseback riding?",
+      "reply": "The difference between Hunter and Jumper is - Jumper, Jumper, and Equitation horseback.",
+      "reference": "The biggest difference between Hunter, Jumper, and Equitation horseback riding is the way they are judged. Hunters are scored by the way the horse looks, Jumpers are scored on time and the number of faults over jumps, and Equitation is scored on the performance and style of the rider.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "How to make a bald guy look great?",
+      "reply": "Bald guy looks great like a bald, but it's not just a bald. Bald guy looks great like a bald, but it's not just a bald.",
+      "reference": "There are many options, more importantly you be yourself and you look great.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "I am planning a trip to Spain. I am interested in culture, museums and art, but I also want to go to the beach and have great food. What are 5 places that I should definitely visit?",
+      "reply": "To find the best food in Spain, you can start by defining the best food in Spain. The best food in Spain is the best food in Spain. The best food in Spain is the best food in Spain. The best food in Spain is the best food in Spain.\n\nFirst, you can use the food in Spain. The best food in Spain is the best food in Spain. The best food in Spain is the best food in Spain. The best food in Spain is the best food in Spain. The best food in Spain is the best",
+      "reference": "Spain is a large country where you can find all of those things. This would be my top 5, but there are many other places that are worth it. Since you are not specifying the time you will spend in Spain, I will exclude the islands (Balearic Islands and Canary Islands) from the list:\n\n- Madrid: the capital city of Spain has some of the top museums in Europe, like the Prado or the Reina Sofia Museums",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Give me an overview of how promotion and relegation works in the English Premier League\n\nCompetition\nThere are 20 clubs in the Premier League. During the course of a season (from August to May) each c",
+      "reply": "The Premier League, which was a successful and promoted team, was relegated to the Championship, but the team was relegated to the Championship. The team was relegated to the Championship promoted to the Championship promoted to the Premier League, with an additional team promoted after a series of play-offs involving the third, fourth, fifth and sixth placed clubs.",
+      "reference": "The bottom 3 teams in the Premier League are relegated to the EFL Championship. The top 2 teams and the winner of a tournament between the 3rd through 6th ranked teams in the EFL Championship are promoted to the Premiere League.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "List the types of seed funding available for startups?\n\nTypes of Seed funding\n\nFriends and family funding: This type of seed funding involves raising money from friends and family members.\n\nAngel inve",
+      "reply": "Friends and family funding: This type of seed funding involves raising money from friends and family members.\nCrowdfunding: This type of seed funding involves raising money from friends and family members.\nCrowdfunding: This type of seed funding involves raising money from friends and family members.\nCrowdfunding: This type of funding involves raising money from friends and family members.\nCrowdfunding: This type of funding involves raising money from friends and family members.\nIncubators: These are programs that provide startups with seed funding, office space, and resources to help them grow their businesses.\nIncubators: These are programs that provide startups with seed funding, office space, and resources to help them grow their businesses.\nIncubators: These are organizations that pro",
+      "reference": "Below is a list of seed funding options for startups\nFriends and family funding\nFunding from Angel investors\nSeed accelerators\nCrowdfunding from a large number of participants\nGovernment grants\nCorporate ventures\nMicro-venture capital\nStartup incubators",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Extract a comma separated list of places mentioned in this entry on the history of coffee\n\nThe history of coffee dates back to centuries of old oral tradition in modern day Ethiopia. However, neither ",
+      "reply": "Coffeepot, Metropolitan Museum of Art, 1852",
+      "reference": "Ethiopia, Yemen, the Levant, Persia, Central Europe, Eastern Europe, India, East Indies, Western Europe, England, Germany, Martinique, Saint-Domingue, Caribbean, Mexico, Brazil, Colombia, Ivory Coast, Vietnam",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What would it take to build a house?",
+      "reply": "To build a house, let's start by defining the house's structure and structure. We'll need to create a house that's built in the area, such as the \"House of the City\", which is a house that's built in the area. We'll need to create a house that's built in the area, such as the \"House of the City\", which is a house that's built in the area.\n\nWe'll need to create a house that's built in the area, such as the \"House of the City\", which is a house that's built in the area. We'll need to create a house that's built in the area, such as the \"House of the City\", which is a house that's built in the area. We'll need to create a house that's built in the area, such as the \"House of the City\", which is a house that's built in the area.\n\nWe'll need to create a house that's built in the area, such as t",
+      "reference": "There are many things to consider before building a house. First, you will need to select a location and ensure that it meets the right criteria for a structure. Then you'll need to plan out what types of materials and how much money you'd like to spend.  Once you have decided on location, material and budget then it's time to figure out what layout would best meet your needs.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What are the official forms of written Norwegian?\n\nAs established by law and government policy, the two official forms of written Norwegian are Bokmål (literally 'book tongue') and Nynorsk ('new Norwe",
+      "reply": "The official forms of written Norwegian are Bokmål (literally 'book tongue') and Nynorsk ('new Norwegian').",
+      "reference": "The two official forms of written Norwegian are Bokmål and Nynorsk.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "what are the components of modern computers?",
+      "reply": "SEARCH: what are the components of modern computers",
+      "reference": "a modern computer consists of at least one processing element, typically a central processing unit (CPU) in the form of a microprocessor, along with some type of computer memory, typically semiconductor memory chips. The processing element carries out arithmetic and logical operations, and a sequencing and control unit can change the order of operations in response to stored information. Periphera",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "How do you know if you reached product market fit?",
+      "reply": "SEARCH: if you reached product market fit",
+      "reference": "Product market fit, a term used by the startups ecosystem to identify if they have a product that satisfies a need for a number of customers for a problem they are currently facing. There is not a single unit of measurement if a startup reached product market fit or not. One of the ways to measure product market fit is if a startup is able to develop a repeatable sales process and are able to do b",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Identify which car manufacturer is French or American: Citroen, Chrysler",
+      "reply": "Chrysler is American, Citroen is French",
+      "reference": "Citroen is French, Chrysler is American",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Group following sports based on their similarities. Consider the instruments used, place and duration:\n\nTennis, kick-boxing, football, squash, boxing, rugby, table tennis, taekwondo",
+      "reply": "Tennis, kick-boxing, football, squash, boxing, rugby, table tennis, taekwondo",
+      "reference": "These sports can be categorized into as following groups;\n- Footballs sports: Football, rugby \n- Racket sports: tennis, table tennis, squash\n- Combat sports: kick-boxing, boxing, taekwondo",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Was Thanos right ?",
+      "reply": "SEARCH: Was Thanos right",
+      "reference": "In the 2018 sci-fi movie Avengers : Infinity war , the main protagonist “Thanos”, was obsessed with the idea of resource management . In a flash back to his story, he revealed that his planet suffered from overpopulation and hence lacked the necessary resources to maintain that society. The society and planet had subsequently ceased to exist. Thanos then believed that only by population control ca",
+      "exact": false,
+      "searched": true
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Classify each of the following as either a sports car or family car: porsche cayman, subaru brz, toyota camry?",
+      "reply": "Porsche cayman, toyota camry, toyota camry",
+      "reference": "porsche cayman: sports car\nsubaru brz: sports car\ntoyota camry: family car",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Which of these titles are by Nicola Yoon and which are by Angie Thomas: Everything, Everything, The Sun is Also a Star, Blackout, Instructions for Dancing, The Hate U Give, On the Come  Up, Concrete R",
+      "reply": "Everything, Everything, The Sun is Also, Everything, The Sun is Also, The Hate U Give, On the Come",
+      "reference": "Titles by Nicola Yoon: Everything, Everything, The Sun is Also a Star, Blackout, Instructions for Dancing\nTitles by Angie Thomas: The Hate U Give, On the Come  Up, Concrete Rose",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Give me a list of the seven most polluted cities in America",
+      "reply": "1. Miami, Florida, California, Arizona, California, and New York are all polluted.\n2. Miami, California, and California are all polluted.\n3. Miami, California, and California are all polluted.\n4. Miami, California, and California are all polluted.\n5. Miami, California, and California are all polluted.",
+      "reference": "According to the American Lung Association, the 7 most polluted cities include 5 cities from California.  The list is order is, Los Angeles-Long Beach, Bakersfield, Visalia, Fresno-Madera-Hanford, Phoenix-Mesa, San Diego-Chula Vista-Carlsbad, and Denver-Aurora",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Given this paragraph about different types of eyes, how are eye types categorized and why?\n\nThere are ten different eye layouts—indeed every technological method of capturing an optical image commonly",
+      "reply": "The eye types of eyes are not monophyletic, but they are not monophyletic. They are not monophyletic, but they are not monophyletic.",
+      "reference": "Eyes are categorized into two types, \"simple eyes\" and \"compound eyes\". In this case, \"simple eyes\" do not mean that they have reduced complexity or acuity, but rather that they have one concave photoreceptive surface. This is in contrast to \"compound eyes\" which are comprised of a number of individual lenses on a convex surface. In other words, eyes fall into two groups based on their photorecept",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Which of the big five is the most dangerous animals in Africa ?",
+      "reply": "The most dangerous animals in Africa are Africa, Africa, and Africa.",
+      "reference": "The African Buffalo is notorious for killing the most number of hunters.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Write a poem about lost friendship",
+      "reply": "PLACES: lost friendship @ here",
+      "reference": "Thought we were sandstorms,\nGetting rid of everything on our way.\nThought we were revolutionaries,\nChanging the usual ways of society.\nThought we were inseparable,\nHolding our hands firmly.\nThought we were makers of our future,\nClosing our eyes at future.\nThought of the new ideas we would implement,\nBeing ignorant of life's ways.\nBut, now I know,\nWe were never destined to take the same path,\nNever",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Who built Sigiriya fortress in Sri Lanka?\n\nIt is likely that the area around Sigiriya may have been inhabited since prehistoric times. There is clear evidence that the many rock shelters and caves in ",
+      "reply": "The area around Sigiriya was a city in the eastern and northern slopes of the boulder-strewn hills surrounding the Sigiriya rock.",
+      "reference": "King Kashyapa developed Sigiriya city and fortress.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Which of the following are men scientists: Marie Curie, Elizabeth Blackwell, Jane Goodall, Rosalind Franklin, Ada Lovelace, Maria Mitchell, Archimedes, Albert Einstein, Ernest Rutherford, Alfred Nobel",
+      "reply": "Marie Curie, Elizabeth Blackwell, Jane Goodall, Albert Einstein, Ada Lovelace, Maria Mitchell, Archimedes, Albert Einstein, Ernest Rutherford, Alfred Nobel, Alexander Fleming, Michael Faraday, Niels Bohr, Stephen Hawking, Alan Turing.",
+      "reference": "Archimedes, Albert Einstein, Ernest Rutherford, Alfred Nobel, Alexander Fleming, Michael Faraday, Niels Bohr, Stephen Hawking, Alan Turing are scientists who are men.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Name some of the superhero teams of Marvel Comics as per the passage.\n\nMarvel Comics is an American comic book publisher and the flagship property of Marvel Entertainment, a division of The Walt Disne",
+      "reply": "Marvel has been used in various superhero countries, including the United States, Australia, and the United States.",
+      "reference": "Avengers, X-Men, Fantastic Four, and Guardians of the Galaxy.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Extract the destination countries of the Madeira diaspora from the text. Separate them with a comma.\n\nMadeirans migrated to the United States, Venezuela, Brazil, Guyana, Saint Vincent and the Grenadin",
+      "reply": "The text is clear and concise, but it is not clear. The text is a verb that is concise and concise, but it is not clear.",
+      "reference": "United States, Venezuela, Brazil, Guyana, Saint Vincent and the Grenadines, South Africa, Trinidad and Tobago",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What are the different methods to open a pomegranate?",
+      "reply": "To open a pomegranate, let's break down the pomegranate into smaller, more manageable parts. We can use the following methods:\n\n1. **Store pomegranate**: The pomegranate is a pomegranate that is not a pomegranate. It is a pomegranate that is not a pomegranate.\n\n2. **Store pomegranate**: The pomegranate is a pomegranate that is not a pomegranate. It is a pomegranate that is not a pomegranate.\n\n3. **Store pomegranate**: The pomegranate is a pomegranate that is not a pomegranate. It is a pomegranate that is not a pomegranate.\n\n4. **Store pomegranate**: The pomegranate is a pomegranate that is not a pomegranate. It is a pomegranate that is not a pomegranate. It is a pomegranate that is not a pomegranate.\n\n5. **Store pomegranate**: The pomegranate is a pomegranate that is not a pomegranate. It ",
+      "reference": "1 - Vertical cutting: roll the pomegranate over the surface of the cutting board to loosen the seeds; position it in the middle; cut the top (flower) and pop it off; slice it in half vertically along the ridges; cut each of the ridges to create 5 slices and then tear it apart to remove the seeds.\n2 - Submerging it in water to remove the seeds: fill a large bowl with cool water; make a shallow cut ",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Categorize each of the following fundamental particles as either interacting via the strong force, the electromagnetic force, the weak force,  or the gravitation force: a neutrino, an electron, a prot",
+      "reply": "The electromagnetic force, the electromagnetic force, the weak force, and the electromagnetic force are the electromagnetic force.",
+      "reference": "A neutrino interacts through the weak force.\nAn electron interacts through the electromagnetic force and the gravitational force.\nA proton interacts via the strong force , the electromagnetic force and the gravitational force.\nA neutron interacts via the strong force and the gravitational force.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Where do Macarons originate from?\n\nAccording to popular belief, the macaron has been introduced in France by the Italian chef of queen Catherine de Medici during the Renaissance but this appears to be",
+      "reply": "The macaron is a fascinating city in France, with its unique characteristics and cultural significance. The city is known for its unique characteristics, including the city's history, cultural heritage, and the people of France.",
+      "reference": "The Macaron originates from France and is generally thought to have been created by an Italian chef of Catherine de Medici when she was the Queen of France during the 16th century. However the time period and original creator maybe a legend as there are documents referring to the Macaron in the 8th century from Cormery Abbey in France.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Given a reference text about Megan Reid, American professional soccer player, what college did she attend and how many soccer games did she start in her senior year of college?\n\nReid attended the Univ",
+      "reply": "She was named by the American Academy of Virginia, and her senior year, American professional soccer player, who was named after her senior year.",
+      "reference": "Reid attended the University of Virginia and during her senior year she started all 21 games.",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Depict the valuation of Adani group as mentioned in the passage. For representation, use the format ‘Month Year, Valuation in US$’.\n\nAdani Group is an Indian multinational conglomerate, headquartered ",
+      "reply": "Adani Group is an Indian multinational conglomerate, headquartered in Ahmedabad. It was founded by Gautam Adani in 1988 as a commodity trading business, renewable energy, mining, airport operations, natural gas, food processing and infrastructure.",
+      "reference": "April 2021, US$100 billion\nApril 2022, US$200 billion\nNovember 2022, $280 billion",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "Think up a bunch of different ways to exercise",
+      "reply": "You can use the following code to exercise it:\n```c\n#include <iostream>\n#include <iostream>\n#include <iostream>\n#include <iostream>",
+      "reference": "Running, walking, jogging, weight lifting, swimming, yoga, biking, boxing, sit ups, pushups, planks, jumping jacks",
+      "exact": false,
+      "searched": false
+    },
+    {
+      "family": "everyday_dolly",
+      "language": "en",
+      "prompt": "What new car should I buy for my family?",
+      "reply": "Family is a car that is buy for my family.",
+      "reference": "SUVs are a popular choice for family cars as they often provide all-wheel drive, up to three rows of seating, and larger cargo capacity.",
+      "exact": false,
+      "searched": false
+    }
+  ]
+}

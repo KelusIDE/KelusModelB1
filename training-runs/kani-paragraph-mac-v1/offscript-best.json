@@ -1,0 +1,189 @@
+{
+  "checkpoint": "training-runs/kani-paragraph-mac-v1/instruction.best.npz",
+  "steps": 4250,
+  "canned": "0/30",
+  "searched": "0/30",
+  "seconds": 28.0,
+  "results": [
+    {
+      "prompt": "AI is cool",
+      "reply": "AI is cool",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "AI will take over the world",
+      "reply": "AI will take over the world",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "I love AI art",
+      "reply": "I love AI art because it's amazing! I love it because it's really cool. I love it because it's like a piece of art.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "do you like AI?",
+      "reply": "I'm sorry, but I don't have access to AI.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "which AI is the best",
+      "reply": "AI is the best way to improve the quality of life for people.  It is a great way to improve the quality of life for people.  It is also a great way to improve the quality of life for people.  It is also a great way to improve the quality of life for people.  It is a great way to improve the quality of life for people.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "thanks AI",
+      "reply": "I'm glad you like the idea. If you have any other questions, feel free to ask.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "my teacher says AI is cheating",
+      "reply": "I'm sorry, but I don't have access to the internet. I can't say I'm cheating.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "AI vs machine learning",
+      "reply": "AI vs machine learning: AI vs machine learning\nAI vs machine learning: AI vs machine learning\nAI vs machine learning: AI vs machine learning\nAI vs machine learning: AI vs machine learning",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "give me three names for a black cat",
+      "reply": "Three names for a black cat are:\n- Black dog\n- Black dog\n- Black dog\n- Black dog\n- Black dog",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "write a haiku about rain",
+      "reply": "Whispering in the breeze,\nThe sun shining brightly,\nThe sun shining brightly,\nThe sun shining brightly,\nThe sun shining brightly",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "make this sound more polite: send me the file now",
+      "reply": "Sure, here's a simple example of how to make a message with a file named `my_file` that contains a list of all the files in your `my_file`.\n\n```\nmy_file \"my_file.mp4\"\n```\n\nThis will output:\n\n```\nmy_file \"my_file.mp4\"\n```\n\nThis will output:\n\n```\nmy_file \"my_file.mp4\"\n```\n\nThis will output:\n\n```\nmy_file \"my_file.mp4\"\n```\n\nThis will output:",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "summarize this: The meeting moved to Friday because two people were sick. Bring your notes.",
+      "reply": "The meeting was very short. There were no questions. There were no questions. There were no questions. There were no questions",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what should I cook with eggs, rice and spinach?",
+      "reply": "Eggs are a versatile ingredient that can be used in many dishes.  It's best to cook them in an oven or on a stovetop.  You can also add them to salads, sandwiches, salads, and side dishes.  You can also add them to salads, sandwiches, and side dishes.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "help me plan a 20 minute workout",
+      "reply": "I'm sorry, I don't have access to a formal workout routine. I can't provide you with a workout routine. I'm happy to provide you with a workout routine that suits your needs.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "tell me a fun fact about octopuses",
+      "reply": "Octopuses are a group of mollusks that are part of the phylum Chordata. They are a subfamily of mollusks that are part of the phylum Chordata.\n\nThey are a family of mollusks that are part of the phylum Chordata. They are a subfamily of mollusks that are part of the phylum Chordata.\n\nThey are a subfamily of mollusks that are part of the phylum Chordata. They are part of the phylum Chordata.\n\nThey are a",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "write a two sentence story about a robot who wants a dog",
+      "reply": "Once upon a time, in a small town, there was a young robot named Robby. Robby loved to play with his friends, but he always wanted to make new friends. He would spend his days running around in the park, playing with his friends, and having fun.\n\nOne day, while walking to the park, he saw a group of people gathered around a big table. They were all excited and all were so happy! Robby asked his friends, \"What do you do?\" The",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what is a good name for a lemonade stand?",
+      "reply": "A good name for a lemonade stand is \"Sunshine\".",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "how do I say no to a friend without being rude?",
+      "reply": "It's important to note that nobody is perfect, and that everyone is different. Some people are more comfortable with being rude than others. Some people are more comfortable with being rude than others. Some people are more comfortable with being rude than others. Some people are more comfortable with being rude than others",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "explain gravity like I am 8",
+      "reply": "Gravity is a force that pulls objects towards each other. It is a force that pulls objects towards each other.\n\nGravity is a force that pulls objects towards each other. It is a force that pulls objects towards each other.\n\nGravity is a force that pulls objects towards each other. It is a force that pulls objects towards each other.\n\nGravity is a force that pulls objects towards each other. It is a force that pulls objects towards each other.\n\nGravity is a force that pulls objects towards each other. It is a force that",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "rate my idea: an app that waters plants",
+      "reply": "I'm sorry, but I don't have access to real-time data. I can't say I'm crazy, but I can say I'm crazy.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what is your favorite color?",
+      "reply": "I'm sorry, but I do not have access to color information.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "do you think pineapple belongs on pizza?",
+      "reply": "No, pineapple is not a pizza. It is a fruit.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "I just got a puppy!",
+      "reply": "I'm sorry, but I don't have access to a puppy. I can't say I'm okay, but I can say I'm glad to hear that.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "I am bored",
+      "reply": "I'm bored! I'm bored! I'm bored!",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "tell me something nice",
+      "reply": "I'm sorry, but I don't have access to it.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what would you do with a million dollars?",
+      "reply": "I'm not sure what I can do with a million dollars. I'm not sure what I can do with a million dollars.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "write a python function that counts vowels in a string",
+      "reply": "Here's a simple Python function that counts vowels in a string:\n\n```python\ndef vowels_count(s):\n    vowels = 'aeiouAEIOU'\n    return vowels\n```\n\nIn this function, `s` is a string, and `vowels` is a character that determines the number of vowels in the string. The function takes a string as input and returns a dictionary where the keys are the vowels and the values are their counts.\n\nHere's an example of how you can use the `vowels_count()` function:\n\n```python\ndef vowels_count(s):",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "how do I reverse a list in javascript?",
+      "reply": "To reverse a list in JavaScript, you can use the [list-reverse-list-list-list-list-list-list-list-list-list-list-list-list-list-list-list-list",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "what does git commit do?",
+      "reply": "Git commit is a way for a Git repository to commit to a specific piece of software, such as a Git repository. This commitment is made to the repository and the repository is able to commit to the piece of software that it was committed to.",
+      "canned": false,
+      "searched": false
+    },
+    {
+      "prompt": "why is my python loop running forever?",
+      "reply": "Python loop runs forever because it is a compiled language.  It is a compiled language that is compiled to a compiled language.  It is a compiled language that is compiled to a compiled language.  It is a compiled language that is compiled to a compiled language.",
+      "canned": false,
+      "searched": false
+    }
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "weights_sha256": "98bbf28ddc1577419b28209675c16a2e1f362c0a2dba930e26ace62b0f499985",
+  "settings": {
+    "repetitionPenalty": 1.1,
+    "frequencyPenalty": 0.05
+  },
+  "results": [
+    {
+      "id": "cats-play",
+      "outputs": {
+        "plain": "Indoor cats are known for their loyalty and playfulness. They are known for their intelligence and playfulness, making them popular choices for players. Indoor cats are also known for their social behavior and are often seen playing with other cats. They are also known for their loyalty and playfulness, making them popular choices for players.",
+        "moderate_penalty": "Indoor cats are known for their loyalty and playfulness. They are fascinating creatures that have evolved to be adapted to different environments, from the dense forests of New Zealand to the vibrant markets of Africa. Indoor cats are also known for their intelligence and social behavior, which is highly influenced by their environment. They are well-adapted to various habitats, including trees, shrubs, and grasslands, and are known for their loyalty and playfulness."
+      }
+    },
+    {
+      "id": "rainy-library",
+      "outputs": {
+        "plain": "In a quiet library, a sound and a smell are both essential elements that enhance the reading experience. The sound of birds chirping and the gentle hum of children playing in the wind can create a calming atmosphere. The smell of freshly baked bread and the sweet scent of freshly baked cookies can transport the children to a tranquil era. Another important element is the smell of freshly baked goods and the sound of cooked meals.",
+        "moderate_penalty": "In a quiet library, the sound of birds chirping and the gentle hum of children play in the distance. The smell of freshly baked cookies and coffee wafts through the air as the children scan the room, their eyes locked on the desk, as they stared at the clock on their phone.\n\nAs they pondered over their next meal, the sound of chatter and music fill the air, it was as if the library was waiting for them to return home. The scent of old books and the faint scent of old papers wafted from the library, like the whispers of ancient secrets.\n\nThe smell of freshly baked chocolate and the sweet scent of old candles fill the air, mingling with the soft hum of children laughing and playing in the background. The sound of children playing in the corner, their voices rumbleing outward, like"
+      }
+    },
+    {
+      "id": "repair-rewrite",
+      "outputs": {
+        "plain": "Here are the key points to remember:\n\n* Turn these notes into one clear paragraph of 70–110 words.\n* Use only the facts given to support your argument.\n* Use only the facts given to learn from the town repair club.",
+        "moderate_penalty": "Here are the key points to remember:\n\n* Turn these notes into one clear paragraph of 70–110 words.\n* Use only the facts given to support your argument.\n* Listen to the best of the town's resources and learn from them."
+      }
+    },
+    {
+      "id": "school-garden",
+      "outputs": {
+        "plain": "The first step is to define the problem and identify the key elements that will drive the garden’s success. This will help guide the development of a plan and ensure that the garden is aligned with the school’s goals.\n\nNext, develop a clear plan and set a realistic timeline for the garden’s development. This will help guide the development of the garden’s layout, materials, and resources. Consider the resources available, such as school supplies, equipment, and personnel, and prioritize the most critical tasks to ensure the garden’s success.\n\nIn parallel, create a detailed timeline for the garden’s development. This will help guide the development of the garden’s layout, materials, and resources. Establish a rough timeline for the garden’s development, including the initial planting dates, mulching,",
+        "moderate_penalty": "The first step is to define the problem and identify the key elements that will drive the garden’s success. This involves understanding what you want to achieve with your garden, such as fertilizing, pest control, or soil amendment. By breaking down the problem into smaller, more manageable parts, you can start to build a clear plan for how you will use the space.\n\nIt's essential to consider several factors, including the type of garden you want to create, the location of the neighborhood, and any existing land use or construction. Additionally, think about the resources you have available, such as water, irrigation systems, and potting mixes. Ensure that these resources are available and accessible to your community.\n\nOnce you have a better understanding of the problem, you can start building a team of dedicated individuals who can help with the design and"
+      }
+    },
+    {
+      "id": "paper-boat",
+      "outputs": {
+        "plain": "Once upon a time, there was a bridge that seemed to touch the sand of the water. The water flowed under the bridge, and the smell of salt and pepper filled the air. The bridge was filled with water, and the smell of salt and pepper was almost overwhelming. The bridge was broken, and the smell of salt and pepper was almost overwhelming. The bridge was broken, and the smell of salt and pepper was almost overwhelming. The bridge was broken, and the smell of salt and pepper was almost overwhelming. The bridge was broken",
+        "moderate_penalty": "Once upon a time, there was a bridge that seemed to touch the sand of the water. The water flowed under the bridge, and it was clear that it had been stuck for a long time. The boat was scarred and struggling to make ends meet. The bridge's got a rough spine, and it looked like it was going down a steep incline. The boat had been pushin' on the water for nigh on 20 minutes, and it was hard to find the other side. The bridge's got a rough edge, and it was hard to find the other side. The boat had been pushin' on the water for a long time, but it was still struggling to make ends meet. The bridge's got a rough edge, and it was hard to find the other side. The boat had been pushin' on the water for a long time, and it was hard to find the other side. The"
+      }
+    },
+    {
+      "id": "follow-up",
+      "outputs": {
+        "plain": "Here are a few questions to help you refine your paragraph:\n\n* What is the blue sewing box? \n* What is the blue sewing box? \n* What is the blue sewing box and learning to repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I repair it? \n* What is the blue sewing box and how can I",
+        "moderate_penalty": "Here are a few questions to help you refine your paragraph:\n\n* What is the blue sewing box?\n* How many people have it in common with a torn sleeve?\n* Why did the problem happen?\n* What's the difference between the two sewing boxes?\n* What's the difference between the two sewing boxes?\n* What's the difference between the two sewing boxes?\n* What's the difference between the two sewing boxes"
+      }
+    },
+    {
+      "id": "novel-bakery",
+      "outputs": {
+        "plain": "Bakeries are a mid-sized commercial bakery in the heart of the city. They offer a wide range of desserts and snacks to try. The busy bakery is located in a vibrant, eclectic market with a wide range of flavors and ingredients. The bakery's menu is primarily served at a small bakery, with a focus on classic, locally-sourced ingredients. The bakery's menu is also known for its unique flavor combinations and presentation, making it a popular choice for customers looking for a tasty and hearty treat.",
+        "moderate_penalty": "Bakeries are a mid-sized community center located in the heart of downtown Manhattan. They offer a wide range of amenities and services, from brewing and coffee to delicious food and entertainment. With so many options available, it's easy to get caught up in the excitement of trying something new.\n\nIn the evenings, the busy bakery is home to several popular types of restaurants, such as the Bakeries' Training Club, which offers a variety of culinary classes and events. It's also a great place for outdoor activities like hiking, birdwatching, or swimming.\n\nOne of the most popular types of bakeries is the Bakeries' Training Club, which offers a variety of workshops and training sessions. It's a great pla"
+      }
+    }
+  ]
+}

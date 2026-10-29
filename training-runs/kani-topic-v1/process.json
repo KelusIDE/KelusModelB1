@@ -1,0 +1,24 @@
+{
+  "pid": 69370,
+  "command": [
+    "/usr/bin/caffeinate",
+    "-i",
+    "/Users/hashtagpro/Downloads/KelusModelB1/.venv/bin/python",
+    "-u",
+    "-m",
+    "kelus.local_chat_train",
+    "--run",
+    "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-topic-v1",
+    "--parent",
+    "/Users/hashtagpro/Downloads/KelusModelB1/checkpoints/kani-big-v2-chat.best.npz",
+    "--data",
+    "/Users/hashtagpro/Downloads/KelusModelB1/training-runs/kani-topic-v1/data/instructions.jsonl",
+    "--steps",
+    "1500",
+    "--cases",
+    "/Users/hashtagpro/Downloads/KelusModelB1/evaluation/topic_v1.json",
+    "--last-reply-only"
+  ],
+  "started_at": 1793158706.078223,
+  "auto_deploy": false
+}

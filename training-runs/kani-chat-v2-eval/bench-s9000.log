@@ -1,0 +1,1 @@
+{"checkpoint": "training-runs/kani-chat-v2-eval/s9000.npz", "steps": 9000, "overall": {"passed": 168, "total": 199, "accuracy": 0.8442}, "groups": {"chat": {"passed": 85, "total": 115}, "concept": {"passed": 43, "total": 43}, "code": {"passed": 31, "total": 31}, "multi_turn": {"passed": 9, "total": 10}}, "seconds": 103.7, "context_regression": {"passed": 181, "total": 184}}

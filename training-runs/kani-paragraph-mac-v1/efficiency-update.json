@@ -1,0 +1,7 @@
+{
+  "checkpoint_interval": 250,
+  "compression_level": 1,
+  "resumed_checkpoint_step": 200,
+  "lossless": true,
+  "updated_at": 1793137690.189775
+}

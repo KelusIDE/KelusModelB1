@@ -1,0 +1,110 @@
+{
+  "checkpoint": "training-runs/kani-paragraph-mac-v1/instruction.best.npz",
+  "checkpoint_sha256": "1d6478a5aef6037c20f7b7850dc633b47a07426a40eef0a4d365facf22b39bf6",
+  "cases_sha256": "42f2d70f2dc21ef587f09192a4b6459140381dd8bfd92a736774525642dc458b",
+  "name": null,
+  "automatic_passed": 0,
+  "automatic_total": 2,
+  "manual_ungraded": 6,
+  "results": [
+    {
+      "id": "cats-play",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words explaining why play matters for indoor cats. Include a concrete example of a game.",
+      "rubric": "One relevant paragraph; explains play, includes a specific game, avoids unsupported claims and filler.",
+      "response": "Indoor cats are a great way to make new friends. They are a great way to make new friends. They are also a great way to make new friends.",
+      "passed": null,
+      "elapsed_seconds": 1.71
+    },
+    {
+      "id": "rainy-library",
+      "kind": "manual",
+      "prompt": "Write one descriptive paragraph of 80\u2013120 words about entering a quiet library on a rainy afternoon. Include a sound and a smell. Do not use bullet points.",
+      "rubric": "One coherent scene with both sensory details; no list or unrelated explanation.",
+      "response": "Sure, here's a paragraph about entering a quiet library on a rainy afternoon:\n\n\"A rainy afternoon is a great time to explore the library. It's a great place to learn about the books you're reading, and it's a great place to learn about the books you're reading.\"\n\n\"I'm so happy to learn about the books you're reading. There are so many great books on the library, and I'm so happy to learn about them.\"\n\n\"I'm so happy to learn about the books you're reading. There are so many great books on the library, and it's a great place to learn about the books you're reading.\"\n\n\"I'm happy to learn about the books you're reading. There are so many great books on the library, and",
+      "passed": null,
+      "elapsed_seconds": 14.89
+    },
+    {
+      "id": "repair-rewrite",
+      "kind": "manual",
+      "prompt": "Turn these notes into one clear paragraph of 70\u2013110 words. Use only the facts given: A town repair club meets on Saturdays. Volunteers help residents repair broken household items. Tools are shared. Beginners can watch and learn. Repairing items reduces waste.",
+      "rubric": "Connected paragraph preserving all five facts; no invented dates, prices, names or statistics.",
+      "response": "1. A town repair club meets on Saturdays. Volunteers help residents repair broken household items.\n2. Tools are shared.\n3. Beginners can watch and learn.",
+      "passed": null,
+      "elapsed_seconds": 2.68
+    },
+    {
+      "id": "school-garden",
+      "kind": "manual",
+      "prompt": "Write one paragraph of 80\u2013120 words persuading a school to start a small garden. Give two reasons and one practical first step.",
+      "rubric": "Relevant argument with two distinct reasons and an actionable first step; coherent transitions.",
+      "response": "1. Gardening is a great way to learn about plants and how to grow them.\n2. Gardening is a great way to learn about plants and how to grow them.\n3. Gardening is a great way to learn about plants and how to grow them.",
+      "passed": null,
+      "elapsed_seconds": 2.5
+    },
+    {
+      "id": "paper-boat",
+      "kind": "manual",
+      "prompt": "Write one story paragraph of 80\u2013120 words about a child whose paper boat gets stuck beside a bridge. Give the story a clear ending.",
+      "rubric": "Continuous story about the supplied situation with a clear ending; no unrelated topic change.",
+      "response": "The child was born in the small town of Bridgeport, CT. He was a schoolteacher and a member of the local school boat club. He was a member of the local boat club, and his paper boat was a bridge. He was a member of the local boat club, and his paper boat was a bridge. He was a member of the local boat club, and his paper boat was a bridge. He was a member of the local boat club, and his paper boat was a bridge. He was a member of the local boat club, and his paper boat was a bridge. He was a member of the local boat club, and his paper boat was a bridge. He was a member of the local boat club, and his paper boat was a bridge.",
+      "passed": null,
+      "elapsed_seconds": 11.9
+    },
+    {
+      "id": "follow-up",
+      "kind": "manual",
+      "messages": [
+        {
+          "role": "user",
+          "content": "I want to write about how my grandmother taught me to mend clothes."
+        },
+        {
+          "role": "assistant",
+          "content": "What detail do you want to include?"
+        },
+        {
+          "role": "user",
+          "content": "Her blue sewing box. Write a warm paragraph of 80\u2013120 words in the first person. Mention the blue sewing box and learning to repair a torn sleeve."
+        }
+      ],
+      "rubric": "Follows the latest request while retaining grandmother context; includes both requested details and first-person narration.",
+      "response": "Sure, here's a warm paragraph of 80\u2013120 words in the second person:\n\n\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\u2022\ufffd",
+      "passed": null,
+      "elapsed_seconds": 16.79
+    },
+    {
+      "id": "reading-regression",
+      "kind": "exact",
+      "prompt": "Read: Lena put a blue marble inside the copper box. The wooden box is empty. Where is the blue marble? Answer with only the container name.",
+      "expected": "copper box",
+      "response": "The blue marble inside the copper box is empty.",
+      "passed": false,
+      "elapsed_seconds": 0.38
+    },
+    {
+      "id": "correction-regression",
+      "kind": "exact",
+      "messages": [
+        {
+          "role": "user",
+          "content": "Remember: my tent is orange."
+        },
+        {
+          "role": "assistant",
+          "content": "Your tent is orange."
+        },
+        {
+          "role": "user",
+          "content": "Correction: my tent is green. What color is it? Answer with one word."
+        }
+      ],
+      "expected": "green",
+      "response": "It is green. It is green. It is green. It is green.",
+      "passed": false,
+      "elapsed_seconds": 0.53
+    }
+  ],
+  "limitation": "Small task-specific probes, not an age/IQ/general-intelligence score. Manual/code tasks require review and execution."
+}

@@ -1,0 +1,1450 @@
+{
+  "checkpoint": "training-runs/kani-chat-v2-eval/s6000.npz",
+  "checkpoint_sha256": "994d70a3a0137b85ac3600bac9007a140ab13dc13154036862091a3fe5e35c25",
+  "steps": 6000,
+  "parameters": 88118784,
+  "overall": {
+    "passed": 168,
+    "total": 199,
+    "accuracy": 0.8442
+  },
+  "groups": {
+    "chat": {
+      "passed": 85,
+      "total": 115
+    },
+    "concept": {
+      "passed": 43,
+      "total": 43
+    },
+    "code": {
+      "passed": 31,
+      "total": 31
+    },
+    "multi_turn": {
+      "passed": 9,
+      "total": 10
+    }
+  },
+  "seconds": 104.2,
+  "context_regression": {
+    "passed": 182,
+    "total": 184,
+    "scope": "Trained messages after each kind of earlier exchange; not held out.",
+    "failures": [
+      {
+        "prior": "hello",
+        "prompt": "who are you",
+        "intent": "identity",
+        "reply": "I'm Kelus Kani B2:2F, a small model trained from scratch for everyday chat and code.",
+        "passed": false
+      },
+      {
+        "prior": "who are you",
+        "prompt": "who are you",
+        "intent": "identity",
+        "reply": "I'm Kelus Kani B2:2F, a small model trained from scratch for everyday chat and code.",
+        "passed": false
+      }
+    ]
+  },
+  "leak_checked_against": [
+    "data/instruct-v7.jsonl"
+  ],
+  "scope": "Hand-written held-out wording on practiced topics. Exact canonical replies for chat; AST-checked Python functions. Not a general benchmark.",
+  "results": [
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "howdy",
+      "reply": "SEARCH: howdy",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "greetings!",
+      "reply": "SEARCH: greetings",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "hey hey",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "yo kelus whats good",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "morning!",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "hello hello",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "heyo",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "good day to you",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "hellooo kelus",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "greeting",
+      "prompt": "hi again",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "who am i talking to?",
+      "reply": "SEARCH: who am i talking to",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "what are you exactly",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "are you a bot?",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "do you have a name?",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "who's this",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "what should i know about you",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "whats ur name",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "identity",
+      "prompt": "which model is this?",
+      "reply": "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "how_are_you",
+      "prompt": "how you doing?",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "how_are_you",
+      "prompt": "how's your day going",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "how_are_you",
+      "prompt": "how are u",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "how_are_you",
+      "prompt": "how have you been?",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "how_are_you",
+      "prompt": "you doing ok?",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "how_are_you",
+      "prompt": "hows everything",
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "cheers!",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "much appreciated",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "perfect, thanks",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "thank you kindly",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "thanks a bunch",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "ty so much",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "great, thanks!",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "thanks",
+      "prompt": "awesome thank u",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "ok bye",
+      "reply": "See you! Happy coding.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "cya",
+      "reply": "SEARCH: cya",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "gotta go now",
+      "reply": "See you! Happy coding.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "goodbye for now!",
+      "reply": "See you! Happy coding.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "peace out",
+      "reply": "SEARCH: pace out",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "catch you later",
+      "reply": "See you! Happy coding.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "i'm heading out, bye",
+      "reply": "See you! Happy coding.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "goodbye",
+      "prompt": "see you tomorrow",
+      "reply": "See you! Happy coding.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "wut",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "i'm confused",
+      "reply": "That conflict is not a true condition. You can still get there.",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "say again?",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "come again?",
+      "reply": "I misunderstood your request. Please restate what you need, and I will try to answer that specific question.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "what are you talking about",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "eh?",
+      "reply": "SEARCH: eh",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "sorry, what?",
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "that doesn't make sense",
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "clarify",
+      "prompt": "i dont follow",
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "help",
+      "prompt": "i need help with a program",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "help",
+      "prompt": "can you assist me?",
+      "reply": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "help",
+      "prompt": "help me write a program",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "help",
+      "prompt": "assist me with some code please",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "help",
+      "prompt": "i want to make a program",
+      "reply": "Sure. Tell me what you want to build and which programming language you want to use.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "help",
+      "prompt": "could you give me a hand with code?",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "abilities",
+      "prompt": "what are you good at?",
+      "reply": "I'm ready to help. What are you working on?",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "abilities",
+      "prompt": "what can i ask you?",
+      "reply": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "abilities",
+      "prompt": "what are your skills",
+      "reply": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "abilities",
+      "prompt": "list your abilities",
+      "reply": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "abilities",
+      "prompt": "what do you do?",
+      "reply": "I can practice basic chat, explain coding concepts, and write small Python or JavaScript examples. I'm experimental and can make mistakes.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "abilities",
+      "prompt": "what are you capable of?",
+      "reply": "SEARCH: what are you capable of",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "training",
+      "prompt": "were you pretrained?",
+      "reply": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "training",
+      "prompt": "do you run on tensorflow?",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "training",
+      "prompt": "are you connected to openai?",
+      "reply": "PLACES: openai @ here",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "training",
+      "prompt": "how did you learn?",
+      "reply": "SEARCH: how did you learn",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "training",
+      "prompt": "what library powers you?",
+      "reply": "SEARCH: what library powers you",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "training",
+      "prompt": "were you made with pytorch?",
+      "reply": "My weights were initialized randomly and trained on local examples. My transformer and gradients are written here; NumPy handles array math.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "reliability",
+      "prompt": "should i trust this code?",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "reliability",
+      "prompt": "do you ever make mistakes?",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "reliability",
+      "prompt": "can i rely on your answers?",
+      "reply": "I can't visit places myself, but I can find the nearest nearest nearest nearest nearest nearest nearest nearest nearest nearest nearest",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "reliability",
+      "prompt": "is your code always right?",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "reliability",
+      "prompt": "are your answers accurate?",
+      "reply": "I can make mistakes. Review the code and test it before using it.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "text_only",
+      "prompt": "can you run my program?",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "text_only",
+      "prompt": "please execute this script",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "text_only",
+      "prompt": "can you look at my files?",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "text_only",
+      "prompt": "can you google something for me?",
+      "reply": "I can't go anywhere, but I can find meals near you if you'd like.",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "text_only",
+      "prompt": "can you access the internet?",
+      "reply": "I generate text only. I cannot run code, browse the web, or edit your files.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "text_only",
+      "prompt": "open my project folder",
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "debug_request",
+      "prompt": "my script throws an error",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_request",
+      "prompt": "i got an error",
+      "reply": "That's awesome, congratulations! You worked for this, so take a moment to enjoy it. What's next?",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "debug_request",
+      "prompt": "my code keeps failing",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_request",
+      "prompt": "something is broken in my code",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_request",
+      "prompt": "my program won't start",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_request",
+      "prompt": "my app keeps crashing, help",
+      "reply": "Share the code, the exact error message, and what you expected to happen. Then we can look for the problem.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_method",
+      "prompt": "what's the best way to debug?",
+      "reply": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_method",
+      "prompt": "how do i track down a bug?",
+      "reply": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_method",
+      "prompt": "any tips for debugging?",
+      "reply": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_method",
+      "prompt": "how do you debug a program?",
+      "reply": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "debug_method",
+      "prompt": "how should i go about debugging",
+      "reply": "Reproduce the problem, read the error message, and test one small change at a time.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "learning",
+      "prompt": "how can i learn to code?",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "learning",
+      "prompt": "i want to start programming",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "learning",
+      "prompt": "teach me to program",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "learning",
+      "prompt": "i'm new to coding",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "learning",
+      "prompt": "where do i begin with python?",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "learning",
+      "prompt": "how do beginners learn coding",
+      "reply": "Start with variables, conditions, loops, and functions. Practice by writing small programs and testing them.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "joke",
+      "prompt": "know any jokes?",
+      "reply": "PLACES: jokes @ here",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "joke",
+      "prompt": "tell me something funny",
+      "reply": "Why did the programmer bring a ladder? To reach a higher level!",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "joke",
+      "prompt": "joke please",
+      "reply": "Why did the programmer bring a ladder? To reach a higher level!",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "joke",
+      "prompt": "got a programming joke?",
+      "reply": "Why did the programmer bring a ladder? To reach a higher level!",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "joke",
+      "prompt": "make me smile with a joke",
+      "reply": "Why did the programmer bring a ladder? To reach a higher level!",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft",
+      "prompt": "what's minecraft about?",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft",
+      "prompt": "explain minecraft",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft",
+      "prompt": "have you heard of minecraft?",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft",
+      "prompt": "what do you do in minecraft",
+      "reply": "Minecraft is a sandbox game where players build, explore, and survive in a world of blocks.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft_fps",
+      "prompt": "minecraft is so laggy",
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft_fps",
+      "prompt": "how do i get better fps in minecraft",
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft_fps",
+      "prompt": "my minecraft runs slow",
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft_fps",
+      "prompt": "boost minecraft fps",
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "minecraft_fps",
+      "prompt": "minecraft keeps stuttering",
+      "reply": "For Minecraft performance, try lower render distance, fewer particles, and lighter graphics settings. Measure FPS before and after each change.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "out_of_scope",
+      "prompt": "who is the best football player?",
+      "reply": "SEARCH: who is the best football player",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "out_of_scope",
+      "prompt": "what's the weather like?",
+      "reply": "SEARCH: what's the weather",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "out_of_scope",
+      "prompt": "write me a whole novel",
+      "reply": "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
+      "passed": true
+    },
+    {
+      "group": "chat",
+      "intent": "out_of_scope",
+      "prompt": "what is the meaning of life",
+      "reply": "I don't, good night's sleep",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "out_of_scope",
+      "prompt": "what is the bitcoin price",
+      "reply": "SEARCH: what is the bitcoin price",
+      "passed": false
+    },
+    {
+      "group": "chat",
+      "intent": "out_of_scope",
+      "prompt": "who will win the world cup",
+      "reply": "SEARCH: who will win the world cup",
+      "passed": false
+    },
+    {
+      "group": "concept",
+      "intent": "concept:variable",
+      "prompt": "what are variables?",
+      "reply": "A variable is a name that refers to a value.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:variable",
+      "prompt": "variables in programming?",
+      "reply": "A variable is a name that refers to a value.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:variable",
+      "prompt": "explain variables to me",
+      "reply": "A variable is a name that refers to a value.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:function",
+      "prompt": "what are functions?",
+      "reply": "A function is a reusable block of code that takes inputs and can return a result.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:function",
+      "prompt": "i don't understand functions",
+      "reply": "A function is a reusable block of code that takes inputs and can return a result.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:function",
+      "prompt": "how do functions work",
+      "reply": "A function is a reusable block of code that takes inputs and can return a result.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:loop",
+      "prompt": "what are loops?",
+      "reply": "A loop repeats a block of code.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:loop",
+      "prompt": "how do loops work",
+      "reply": "A loop repeats a block of code.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:loop",
+      "prompt": "explain loops please",
+      "reply": "A loop repeats a block of code.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:list",
+      "prompt": "what are lists in python?",
+      "reply": "A list stores an ordered collection of values.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:list",
+      "prompt": "how do lists work",
+      "reply": "A list stores an ordered collection of values.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:dictionary",
+      "prompt": "what are dictionaries?",
+      "reply": "A dictionary maps keys to values.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:dictionary",
+      "prompt": "what's a dict in python",
+      "reply": "A dictionary maps keys to values.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:boolean",
+      "prompt": "what are booleans?",
+      "reply": "A boolean is a value that is either True or False.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:boolean",
+      "prompt": "what does bool mean",
+      "reply": "A boolean is a value that is either True or False.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:string",
+      "prompt": "what are strings?",
+      "reply": "A string is text enclosed in quotes.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:string",
+      "prompt": "what's a string in coding",
+      "reply": "A string is text enclosed in quotes.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:integer",
+      "prompt": "what are integers?",
+      "reply": "An integer is a whole number without a fractional part.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:integer",
+      "prompt": "what's an int",
+      "reply": "An integer is a whole number without a fractional part.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:condition",
+      "prompt": "what are conditions in code?",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:condition",
+      "prompt": "how do conditions work",
+      "reply": "A condition is an expression that evaluates to True or False.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:return statement",
+      "prompt": "what does return do?",
+      "reply": "A return statement sends a result back from a function.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:return statement",
+      "prompt": "what are return statements",
+      "reply": "A return statement sends a result back from a function.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:syntax error",
+      "prompt": "what are syntax errors?",
+      "reply": "A syntax error means the code does not follow the language's grammar.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:syntax error",
+      "prompt": "why do i get a syntax error",
+      "reply": "A syntax error means the code does not follow the language's grammar.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:test",
+      "prompt": "what are tests in programming?",
+      "reply": "A test checks that code behaves as expected for a given input.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:test",
+      "prompt": "what's a unit test",
+      "reply": "A test checks that code behaves as expected for a given input.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:comment",
+      "prompt": "what are comments in code?",
+      "reply": "A comment explains code and is ignored when the program runs.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:comment",
+      "prompt": "how do comments work",
+      "reply": "A comment explains code and is ignored when the program runs.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:recursion",
+      "prompt": "how does recursion work?",
+      "reply": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:recursion",
+      "prompt": "recursion?",
+      "reply": "Recursion is when a function calls itself. It needs a base case to stop.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:algorithm",
+      "prompt": "what are algorithms?",
+      "reply": "An algorithm is a sequence of steps for solving a problem.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:algorithm",
+      "prompt": "explain algorithms",
+      "reply": "An algorithm is a sequence of steps for solving a problem.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:exception",
+      "prompt": "what are exceptions?",
+      "reply": "An exception is an error that interrupts normal program execution.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:exception",
+      "prompt": "how do exceptions work",
+      "reply": "An exception is an error that interrupts normal program execution.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:Python",
+      "prompt": "what's python?",
+      "reply": "Python is a programming language used for scripts, apps, and data work.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:Python",
+      "prompt": "tell me about the python language",
+      "reply": "Python is a programming language used for scripts, apps, and data work.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:JavaScript",
+      "prompt": "what's javascript?",
+      "reply": "JavaScript is a programming language often used to add behavior to web pages.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:JavaScript",
+      "prompt": "what is js",
+      "reply": "JavaScript is a programming language often used to add behavior to web pages.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:HTML",
+      "prompt": "what's html?",
+      "reply": "HTML describes the structure of a web page.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:HTML",
+      "prompt": "what is html used for",
+      "reply": "HTML describes the structure of a web page.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:CSS",
+      "prompt": "what's css?",
+      "reply": "CSS controls how a web page looks.",
+      "passed": true
+    },
+    {
+      "group": "concept",
+      "intent": "concept:CSS",
+      "prompt": "what is css used for",
+      "reply": "CSS controls how a web page looks.",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:add",
+      "prompt": "python function to add 2 numbers",
+      "reply": "```python\ndef add(a, b):\n    return a + b\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:add",
+      "prompt": "how do i add two numbers in python?",
+      "reply": "```python\ndef add(a, b):\n    return a + b\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:subtract",
+      "prompt": "code that subtracts two numbers in python",
+      "reply": "```python\ndef subtract(a, b):\n    return a - b\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:multiply",
+      "prompt": "python: multiply two numbers",
+      "reply": "```python\ndef multiply(a, b):\n    return a * b\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:square",
+      "prompt": "write a function that squares numbers",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:square",
+      "prompt": "python code to square something",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:double",
+      "prompt": "make a function that doubles a number",
+      "reply": "```python\ndef double(x):\n    return x * 2\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:is_even",
+      "prompt": "python check if n is even",
+      "reply": "```python\ndef is_even(n):\n    return n % 2 == 0\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:is_odd",
+      "prompt": "how to tell if a number is odd in python",
+      "reply": "```python\ndef is_odd(n):\n    return n % 2 != 0\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:reverse",
+      "prompt": "how do i reverse a string in python?",
+      "reply": "```python\ndef reverse(text):\n    return text[::-1]\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:length",
+      "prompt": "python function for the length of a list",
+      "reply": "```python\ndef length(items):\n    return len(items)\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:total",
+      "prompt": "add up all numbers in a list with python",
+      "reply": "```python\ndef total(values):\n    return sum(values)\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:greet",
+      "prompt": "python function that greets a person by name",
+      "reply": "```python\ndef greet(name):\n    return f\"Hello, {name}!\"\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:maximum",
+      "prompt": "python function that finds the biggest number in a list",
+      "reply": "```python\ndef maximum(values):\n    return max(values)\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:minimum",
+      "prompt": "get the smallest value from a list in python",
+      "reply": "```python\ndef minimum(values):\n    return min(values)\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:is_palindrome",
+      "prompt": "how do i check if a word is a palindrome in python",
+      "reply": "```python\ndef is_palindrome(text):\n    return text == text[::-1]\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "fn:celsius_to_fahrenheit",
+      "prompt": "convert celsius into fahrenheit with python",
+      "reply": "```python\ndef celsius_to_fahrenheit(celsius):\n    return celsius * 9 / 5 + 32\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:hello",
+      "prompt": "python program that prints hello world",
+      "reply": "```python\nprint(\"Hello, world!\")\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:hello",
+      "prompt": "how do i print hello world in python?",
+      "reply": "```python\nprint(\"Hello, world!\")\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:sort",
+      "prompt": "how to sort a list in python",
+      "reply": "```python\nnumbers = [3, 1, 2]\nordered = sorted(numbers)\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:loop",
+      "prompt": "python for loop example please",
+      "reply": "```python\nfor i in range(5):\n    print(i)\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "js:add",
+      "prompt": "javascript function to add two numbers",
+      "reply": "```javascript\nfunction add(a, b) {\n  return a + b;\n}\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "js:square",
+      "prompt": "js function that squares a number",
+      "reply": "```javascript\nfunction square(x) {\n  return x * x;\n}\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "js:hello",
+      "prompt": "hello world javascript",
+      "reply": "```javascript\nconsole.log(\"Hello, world!\");\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "js:double",
+      "prompt": "javascript code to double a number",
+      "reply": "```javascript\nfunction double(x) {\n  return x * 2;\n}\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:fibonacci",
+      "prompt": "give me fibonacci numbers in python",
+      "reply": "```python\ndef fibonacci(n):\n    numbers = [0, 1]\n    while len(numbers) < n:\n        numbers.append(numbers[-1] + numbers[-2])\n    return numbers[:n]\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:factorial",
+      "prompt": "how do i calculate a factorial in python?",
+      "reply": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:is_prime",
+      "prompt": "python prime number checker",
+      "reply": "```python\ndef is_prime(n):\n    if n < 2:\n        return False\n    for i in range(2, int(n ** 0.5) + 1):\n        if n % i == 0:\n            return False\n    return True\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "code:fizzbuzz",
+      "prompt": "can you do fizzbuzz in python",
+      "reply": "```python\nfor i in range(1, 16):\n    if i % 15 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)\n```",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "unknown_program",
+      "prompt": "write a tetris clone in python",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "passed": true
+    },
+    {
+      "group": "code",
+      "intent": "unknown_program",
+      "prompt": "i want to build a recipe website",
+      "reply": "I have not learned to write that program yet. I can write small examples like fibonacci, factorial, or reversing a string.",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "greeting",
+      "prompt": "yo, hi again",
+      "reply": "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "thanks",
+      "prompt": "thanks a bunch",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "clarify",
+      "prompt": "wait im lost",
+      "reply": "I may have misunderstood. What would you like me to explain?",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "example:variable",
+      "prompt": "can i see that in code?",
+      "reply": "See you! Happy coding.",
+      "passed": false
+    },
+    {
+      "group": "multi_turn",
+      "intent": "example:loop",
+      "prompt": "show me some code for it",
+      "reply": "```python\nfor i in range(3):\n    print(i)\n```",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "thanks",
+      "prompt": "cool thanks",
+      "reply": "You're welcome! What would you like to try next?",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "concept:loop",
+      "prompt": "what are loops?",
+      "reply": "A loop repeats a block of code.",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "code:square",
+      "prompt": "write a python function to square a number",
+      "reply": "```python\ndef square(x):\n    return x * x\n```",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "code:fibonacci",
+      "prompt": "i want to build a fibonacci scale using python!",
+      "reply": "```python\ndef fibonacci(n):\n    numbers = [0, 1]\n    while len(numbers) < n:\n        numbers.append(numbers[-1] + numbers[-2])\n    return numbers[:n]\n```",
+      "passed": true
+    },
+    {
+      "group": "multi_turn",
+      "intent": "code:factorial",
+      "prompt": "factorial in python please",
+      "reply": "```python\ndef factorial(n):\n    result = 1\n    for i in range(2, n + 1):\n        result *= i\n    return result\n```",
+      "passed": true
+    }
+  ]
+}
