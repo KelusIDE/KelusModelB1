@@ -1,0 +1,4 @@
+source 'https://rubygems.org'
+
+# Keep Capacitor's CocoaPods toolchain reproducible across Macs.
+gem 'cocoapods', '1.17.0'
