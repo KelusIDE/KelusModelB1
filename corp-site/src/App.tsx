@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MotionConfig, motion } from "motion/react";
 import { Background } from "./components/Background";
+import { LusPlayground } from "./components/LusPlayground";
 import { Hero } from "./components/Hero";
 import { Marquee } from "./components/Marquee";
 import { Models } from "./components/Models";
@@ -22,8 +23,8 @@ const principles = [
   ],
   [
     "03",
-    "Stay a little curious.",
-    "From a language model to a programming language, every project starts with a question. We keep trying, learning, and improving.",
+    "Make the next version better.",
+    "Test the idea, see what works, and improve it. We make room for new experiments while being clear about what each tool can do today.",
   ],
 ];
 
@@ -93,6 +94,7 @@ export default function App() {
             </a>
           </div>
         </section>
+        <LusPlayground />
         <section
           id="models"
           className="model-section"
@@ -100,7 +102,7 @@ export default function App() {
         >
           <div className="wrap model-layout">
             <div className="model-intro">
-              <p className="eyebrow">02 / UNDER THE HOOD</p>
+              <p className="eyebrow">03 / UNDER THE HOOD</p>
               <h2 id="models-title">
                 Small models.
                 <br />
@@ -131,7 +133,7 @@ export default function App() {
         >
           <div className="section-heading">
             <div>
-              <p className="eyebrow">03 / HOW WE THINK</p>
+              <p className="eyebrow">04 / HOW WE THINK</p>
               <h2 id="approach-title">
                 A few things
                 <br />
@@ -192,8 +194,9 @@ export default function App() {
             </span>
           </a>
           <p>
-            A little curiosity.
-            <br />A lot of possibility.
+            Tools for the next thing.
+            <br />
+            Built by Kelus.
           </p>
           <nav aria-label="Elsewhere">
             <a href="https://kelus-ide.pages.dev">
@@ -209,7 +212,7 @@ export default function App() {
         </div>
         <div className="footer-bottom">
           <span>© {new Date().getFullYear()} Kelus Corp.</span>
-          <span>MADE TO KEEP YOU CURIOUS</span>
+          <span>THINK. BUILD. MAKE IT YOURS.</span>
           <a href="#top">Back to top ↑</a>
         </div>
       </footer>

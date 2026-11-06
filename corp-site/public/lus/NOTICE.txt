@@ -1,0 +1,11 @@
+Lus compiler
+Source: https://github.com/KelusIDE/Lus
+
+The compiler/ directory contains the unmodified compiler development snapshot
+from the local Lus project (formerly named Kel). SHA-256 file hashes and
+provenance are in SOURCE.json. The complete corresponding source is served
+in compiler/ alongside this notice. Licensed under GNU GPL version 3;
+see LICENSE.txt. The runner.js playground adapter is also GPL-3.0.
+
+The playground displays the current Lus name. Internal compiler symbols
+and diagnostics retain their original names in these source files.

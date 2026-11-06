@@ -1,0 +1,14 @@
+{
+  "project": "Lus",
+  "upstream": "https://github.com/KelusIDE/Lus",
+  "upstreamBaseCommit": "2242f5d38ccb4b1c2bb43d76f3ee0407db1788cc",
+  "snapshot": "Local compiler development snapshot, version 0.2.0; includes local updates beyond upstream base commit.",
+  "license": "GPL-3.0",
+  "files": {
+    "index.js": "2e5d8218f50b548a069843783e334ee089e4e5d881d49ef956dffbaae67131a8",
+    "lexer.js": "c645986d3788910589876ef842b60c0265b479994f1bdf5f01ad4d39ebdb0dae",
+    "parser.js": "a7d25414987c7f70969c42f7ea643a8074abaced29cf59f25030c7c5e559041a",
+    "checker.js": "5365e8cbefc9e508864959f97b1252a01d1de30328966cf212353f59355636d5",
+    "codegen.js": "01342e071a13c536cdfd7bbbeb52f95f97d0ebe0cdad00f3df141e1179405b95"
+  }
+}
