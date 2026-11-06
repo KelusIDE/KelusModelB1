@@ -2,7 +2,7 @@ name: Kani iOS sideload build
 
 on:
   push:
-    branches: ['codex/ios-0.5.10-sideload-*']
+    branches: ['codex/ios-0.5.11-sideload-*']
   workflow_dispatch:
 
 permissions:
@@ -33,10 +33,10 @@ jobs:
       - name: Download and verify published Android release
         run: |
           mkdir -p artifacts
-          curl --fail --location --retry 3 --output artifacts/kani-0.5.10.apk https://github.com/KelusIDE/KelusModelB1/releases/download/v0.5.10/kani-0.5.10.apk
-          echo '7074b36a4e06695fb65d37f4a99b922e9b0b67b5f27d056474137153ddfc5b4c  artifacts/kani-0.5.10.apk' | shasum -a 256 --check
+          curl --fail --location --retry 3 --output artifacts/kani-0.5.11.apk https://github.com/KelusIDE/KelusModelB1/releases/download/v0.5.11/kani-0.5.11.apk
+          echo '720de6605f63ed30f40040cf3133a2051b3fa8168c0ed19538292fb18ffe3632  artifacts/kani-0.5.11.apk' | shasum -a 256 --check
       - name: Build matching unsigned device IPA
-        run: npm run ios:build -- --ipa --apk artifacts/kani-0.5.10.apk
+        run: npm run ios:build -- --ipa --apk artifacts/kani-0.5.11.apk
       - name: Verify device binary and archive
         run: |
           file artifacts/ios-derived/Build/Products/Release-iphoneos/App.app/App
@@ -44,12 +44,12 @@ jobs:
           python3 - <<'PY'
           import hashlib, json, plistlib, zipfile
           from pathlib import Path
-          ipa = Path('artifacts/kani-0.5.10-unsigned.ipa')
+          ipa = Path('artifacts/kani-0.5.11-unsigned.ipa')
           with zipfile.ZipFile(ipa) as z:
               assert z.testzip() is None
               info = plistlib.loads(z.read('Payload/Kani.app/Info.plist'))
               assert info['CFBundleIdentifier'] == 'com.kelus.kani'
-              assert info['CFBundleShortVersionString'] == '0.5.10'
+              assert info['CFBundleShortVersionString'] == '0.5.11'
               assert info['CFBundleSupportedPlatforms'] == ['iPhoneOS']
               assert z.read('Payload/Kani.app/' + info['CFBundleExecutable'])[:4] in [bytes.fromhex('cffaedfe'), bytes.fromhex('cafebabe')]
               source = json.loads(next(Path('artifacts').glob('ios-apk-*.receipt.json')).read_text())
@@ -57,15 +57,15 @@ jobs:
                   if name in ['cordova.js', 'cordova_plugins.js']:
                       continue  # Capacitor regenerates these native bridge placeholders.
                   assert hashlib.sha256(z.read('Payload/Kani.app/public/' + name)).hexdigest() == digest, name
-          receipt = dict(version='0.5.10', build=info['CFBundleVersion'], bundle_id=info['CFBundleIdentifier'], signing='unsigned; requires sideload-tool re-signing', ipa_sha256=hashlib.sha256(ipa.read_bytes()).hexdigest(), source_apk_sha256=source['apk_sha256'], apk_web_assets_match=True)
+          receipt = dict(version='0.5.11', build=info['CFBundleVersion'], bundle_id=info['CFBundleIdentifier'], signing='unsigned; requires sideload-tool re-signing', ipa_sha256=hashlib.sha256(ipa.read_bytes()).hexdigest(), source_apk_sha256=source['apk_sha256'], apk_web_assets_match=True)
           Path('artifacts/ios-build-receipt.json').write_text(json.dumps(receipt, indent=2) + '\n')
           print(json.dumps(receipt, indent=2))
           PY
       - uses: actions/upload-artifact@v4
         with:
-          name: kani-0.5.10-ios-unsigned
+          name: kani-0.5.11-ios-unsigned
           path: |
-            mobile/artifacts/kani-0.5.10-unsigned.ipa
+            mobile/artifacts/kani-0.5.11-unsigned.ipa
             mobile/artifacts/ios-build-receipt.json
           if-no-files-found: error
           compression-level: 0
