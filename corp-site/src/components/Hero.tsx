@@ -32,8 +32,8 @@ export function Hero() {
           animate={{ opacity: 1 }}
           transition={{ delay: reduce ? 0 : 0.15 }}
         >
-          Tools to think, code, and make something of your own. A little
-          curiosity. A lot of possibility.
+          An editor for your next project. AI that runs on your device. A
+          language you can learn by doing.
         </motion.p>
         <div className="hero-actions">
           <a className="button primary" href="#products">
@@ -44,7 +44,7 @@ export function Hero() {
           </a>
         </div>
         <p className="hero-footnote">
-          <span>Made with curiosity.</span> Shared with everyone.
+          <span>Start with an idea.</span> Make it your own.
         </p>
       </div>
       <motion.div
@@ -138,7 +138,7 @@ export function Hero() {
                 <p className="preview-greeting">
                   Where will your
                   <br />
-                  <em>curiosity take you?</em>
+                  <em>idea take you?</em>
                 </p>
                 <div className="preview-prompts">
                   <a href="https://kelus-b1.pages.dev">
@@ -225,7 +225,7 @@ export function Hero() {
             ✳
           </span>
           <div>
-            Curiosity, included.<small>That’s where it starts.</small>
+            Ready when you are.<small>Make the first move.</small>
           </div>
         </div>
       </motion.div>

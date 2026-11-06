@@ -1,0 +1,592 @@
+.lus-section {
+  padding-bottom: 100px;
+  scroll-margin-top: 30px;
+}
+.lus-section .section-heading > div {
+  max-width: 720px;
+}
+.lus-section h2 {
+  font-size: 48px;
+}
+.lus-section h2 em {
+  color: var(--blue);
+}
+.lus-workbench {
+  border: 1px solid #cfd7cb;
+  border-radius: 12px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 16px 35px -25px #26371a38;
+}
+.lus-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+  flex-wrap: wrap;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--line);
+  background: #f3f5ee;
+}
+.lus-identity {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 750;
+}
+.lus-identity small {
+  display: block;
+  font:
+    10px ui-monospace,
+    monospace;
+  font-weight: 400;
+  color: #738167;
+  margin-top: 3px;
+}
+.lus-example-label {
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  font-weight: 700;
+  color: #67735c;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+.lus-example-label select {
+  font:
+    12px "Manrope",
+    sans-serif;
+  letter-spacing: 0;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid #d0d9c8;
+  border-radius: 6px;
+  padding: 9px 28px 9px 10px;
+  max-width: 190px;
+}
+.lus-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.lus-actions .button {
+  min-height: 40px;
+  padding: 10px 14px;
+  gap: 16px;
+  font-size: 11px;
+}
+.lus-reset {
+  border: 0;
+  background: transparent;
+  font-size: 11px;
+  color: #647059;
+  padding: 10px 4px;
+}
+.lus-reset:hover {
+  text-decoration: underline;
+}
+.lus-panels {
+  display: grid;
+  grid-template-columns: 1.15fr 1fr;
+  min-height: 415px;
+}
+.lus-editor-panel {
+  background: #202723;
+  color: #e1e9df;
+  min-width: 0;
+}
+.lus-panel-label {
+  height: 42px;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  border-bottom: 1px solid #354135;
+}
+.lus-editor-panel .lus-panel-label {
+  color: #a9b89f;
+}
+.lus-panel-label > span:last-child {
+  font-size: 8px;
+  letter-spacing: 0;
+}
+.lus-editor {
+  display: flex;
+  height: 336px;
+  position: relative;
+}
+.lus-gutter {
+  width: 45px;
+  padding: 18px 10px 18px 0;
+  text-align: right;
+  flex-shrink: 0;
+  overflow: hidden;
+  color: #778e70;
+  font:
+    12px/1.85 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  user-select: none;
+}
+.lus-gutter > span {
+  display: block;
+}
+.lus-editor textarea {
+  display: block;
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  padding: 18px 20px 18px 6px;
+  border: 0;
+  resize: none;
+  background: transparent;
+  color: #e5eedf;
+  font:
+    12px/1.85 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  white-space: pre;
+  tab-size: 4;
+  caret-color: #c4dfae;
+  border-radius: 0;
+  outline-offset: -3px;
+}
+.lus-editor textarea:focus-visible {
+  outline: 2px solid #a9c797;
+}
+.lus-editor textarea:disabled {
+  opacity: 0.7;
+}
+.lus-editor-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  align-items: center;
+  padding: 12px 18px;
+  border-top: 1px solid #354135;
+  color: #9eaf95;
+  font-size: 8px;
+}
+.lus-editor-footer button {
+  font-size: 9px;
+  color: #cadabc;
+  border: 0;
+  background: none;
+  padding: 2px;
+}
+.lus-editor-footer button:hover {
+  text-decoration: underline;
+}
+.lus-output-panel {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #d5decd;
+  background: #fcfdf9;
+}
+.lus-output-panel .lus-panel-label {
+  color: #707c66;
+  border-bottom-color: var(--line);
+}
+.lus-status {
+  border-radius: 4px;
+  font-size: 8px;
+  padding: 4px 7px;
+  background: #eef1e7;
+  color: #6b775f;
+}
+.lus-status.running {
+  color: #3754bf;
+  background: #e7ecff;
+}
+.lus-status.success {
+  color: #4d742f;
+  background: #e9f1df;
+}
+.lus-status.error {
+  color: #a13737;
+  background: #fae9e5;
+}
+.lus-output {
+  flex: 1;
+  min-height: 235px;
+  max-height: 330px;
+  overflow: auto;
+  padding: 23px;
+  font:
+    12px/1.8 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  outline-offset: -3px;
+}
+.lus-output pre {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  font: inherit;
+  margin: 0;
+}
+.lus-output .lus-error {
+  color: #a03d31;
+  margin-top: 12px;
+}
+.lus-output .lus-stopped-message {
+  color: #6c785f;
+}
+.lus-empty > span {
+  font-size: 30px;
+  color: #9baa8d;
+}
+.lus-empty p {
+  font:
+    500 24px/1.2 "Manrope",
+    sans-serif;
+  letter-spacing: -1px;
+  margin-top: 10px;
+  color: #738465;
+}
+.lus-empty small {
+  display: block;
+  font:
+    10px/1.8 "Manrope",
+    sans-serif;
+  color: #849076;
+  max-width: 240px;
+  margin-top: 12px;
+}
+.lus-output .lus-run-meta {
+  font:
+    9px/1.8 "Manrope",
+    sans-serif;
+  color: #718361;
+  border-top: 1px solid #dfe7d8;
+  margin-top: 20px;
+  padding-top: 12px;
+}
+.lus-running {
+  color: #6a785f;
+  font-size: 11px;
+}
+.lus-input {
+  border-top: 1px solid var(--line);
+  padding: 14px 20px;
+  margin-top: auto;
+}
+.lus-input label {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 8px;
+  letter-spacing: 0.1em;
+  color: #65745a;
+  margin-bottom: 9px;
+}
+.lus-input label span {
+  letter-spacing: 0;
+  color: #7f8c75;
+}
+.lus-input textarea {
+  font:
+    11px/1.6 ui-monospace,
+    SFMono-Regular,
+    Consolas,
+    monospace;
+  width: 100%;
+  height: 65px;
+  resize: vertical;
+  min-height: 55px;
+  max-height: 140px;
+  border: 1px solid #dbe3d2;
+  border-radius: 5px;
+  padding: 8px 10px;
+  background: #fff;
+  color: #46533e;
+}
+.lus-input textarea::placeholder {
+  color: #99a38f;
+}
+.lus-input textarea:focus-visible,
+.lus-example-label select:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 2px;
+}
+.lus-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  gap: 15px;
+  border-top: 1px solid var(--line);
+  background: #f3f5ee;
+  color: #69795c;
+  font-size: 9px;
+}
+.lus-bottom p {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.lus-bottom .live-dot {
+  width: 5px;
+  height: 5px;
+}
+.lus-bottom > span {
+  font-size: 8px;
+}
+.lus-under {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 0;
+  color: #737e68;
+  font-size: 11px;
+}
+.lus-under .text-link {
+  font-size: 11px;
+  color: var(--ink);
+}
+.lus-reference {
+  border-block: 1px solid var(--line);
+  padding: 19px 0;
+}
+.lus-reference summary {
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.lus-reference summary::-webkit-details-marker {
+  display: none;
+}
+.lus-reference summary > span {
+  font-size: 18px;
+  line-height: 1;
+}
+.lus-reference[open] summary > span {
+  transform: rotate(45deg);
+}
+.lus-syntax {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+  margin-top: 25px;
+}
+.lus-syntax p {
+  font-size: 10px;
+  line-height: 1.8;
+  color: #69765d;
+}
+.lus-syntax code {
+  display: block;
+  font:
+    11px/1.9 ui-monospace,
+    monospace;
+  color: #3450ab;
+  margin-bottom: 5px;
+  overflow-wrap: anywhere;
+}
+.lus-source-notice {
+  font-size: 9px;
+  color: #7c8772;
+  line-height: 1.8;
+  margin-top: 22px;
+}
+.lus-source-notice a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.lus-actions button:disabled,
+.lus-example-label select:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+.lus-stop {
+  background: #f9e6e0;
+  color: #9b3e2b;
+  border-color: #e6bfb3;
+}
+@media (max-width: 1100px) {
+  .lus-toolbar {
+    gap: 16px;
+  }
+  .lus-identity {
+    font-size: 12px;
+  }
+  .lus-example-label {
+    font-size: 7px;
+    gap: 8px;
+  }
+  .lus-example-label select {
+    max-width: 160px;
+    font-size: 11px;
+  }
+  .lus-toolbar .lus-actions {
+    gap: 12px;
+  }
+  .lus-syntax {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .nav nav {
+    gap: 20px;
+  }
+}
+@media (max-width: 800px) {
+  .lus-panels {
+    grid-template-columns: 1fr;
+  }
+  .lus-output-panel {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+  }
+  .lus-output {
+    min-height: 215px;
+    max-height: 300px;
+  }
+  .lus-output-panel .lus-panel-label {
+    height: 40px;
+  }
+  .lus-section {
+    padding-bottom: 75px;
+  }
+  .lus-toolbar {
+    padding: 16px;
+  }
+  .lus-identity {
+    font-size: 11px;
+  }
+  .lus-example-label {
+    margin-left: auto;
+  }
+  .lus-example-label select {
+    max-width: 150px;
+  }
+  .lus-toolbar {
+    gap: 15px;
+  }
+  .lus-actions .button {
+    gap: 10px;
+  }
+  .lus-section h2 {
+    font-size: 43px;
+  }
+  .nav nav {
+    gap: 16px;
+  }
+}
+@media (max-width: 560px) {
+  .lus-section {
+    padding-bottom: 62px;
+  }
+  .lus-section h2 {
+    font-size: 39px;
+  }
+  .lus-identity {
+    font-size: 12px;
+  }
+  .lus-example-label {
+    order: 3;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .lus-example-label select {
+    max-width: none;
+    width: calc(100% - 65px);
+    font-size: 12px;
+  }
+  .lus-actions {
+    margin-left: auto;
+    gap: 12px;
+  }
+  .lus-actions .button {
+    min-height: 38px;
+    padding: 9px 12px;
+    font-size: 10px;
+  }
+  .lus-actions .button svg {
+    width: 15px;
+  }
+  .lus-reset {
+    font-size: 10px;
+  }
+  .lus-toolbar {
+    gap: 16px 12px;
+  }
+  .lus-editor {
+    height: 315px;
+  }
+  .lus-editor textarea {
+    font-size: 11px;
+    padding-right: 13px;
+  }
+  .lus-gutter {
+    font-size: 11px;
+    width: 36px;
+  }
+  .lus-editor-footer {
+    font-size: 6px;
+    padding-inline: 12px;
+    gap: 8px;
+  }
+  .lus-editor-footer button {
+    font-size: 8px;
+  }
+  .lus-output {
+    font-size: 11px;
+    padding: 20px;
+  }
+  .lus-panel-label {
+    padding-inline: 15px;
+  }
+  .lus-input {
+    padding-inline: 15px;
+  }
+  .lus-input label {
+    font-size: 7px;
+  }
+  .lus-input label span {
+    font-size: 7px;
+  }
+  .lus-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 7px;
+    font-size: 8px;
+    padding: 13px 15px;
+  }
+  .lus-bottom > span {
+    font-size: 7px;
+  }
+  .lus-under {
+    font-size: 10px;
+    align-items: flex-start;
+  }
+  .lus-under > p {
+    max-width: 210px;
+    line-height: 1.7;
+  }
+  .lus-under .text-link {
+    font-size: 9px;
+    white-space: nowrap;
+    gap: 5px;
+  }
+  .lus-syntax {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  .lus-reference summary {
+    font-size: 11px;
+  }
+  .nav nav {
+    gap: 24px;
+  }
+}

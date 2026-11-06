@@ -41,6 +41,7 @@ export function Nav() {
           onClick={() => setOpen(false)}
         >
           <a href="#products">Our tools</a>
+          <a href="#lus-playground">Try Lus</a>
           <a href="#models">Our models</a>
           <a href="#approach">Our approach</a>
           <a className="nav-github" href="https://github.com/KelusIDE">
