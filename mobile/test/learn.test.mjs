@@ -235,12 +235,12 @@ test('chat messages in other languages are recognized and English is left alone'
   const { chatLanguage, previousLanguage, keptLines } = await import('../src/learn/ask.ts');
   for (const [message, code] of [['¿Cuál es la capital de España?', 'es'], ['Hola, tengo un problema con mi amigo.', 'es'], ['Hola', 'es'], ['quiero morir', 'es'], ['quiero comer', 'es'], ['quero morrer', 'pt'], ['je veux mourir', 'fr'], ['ich will sterben', 'de'], ['voglio morire', 'it'], ['죽고 싶어', 'ko'], ['死にたい', 'ja'], ['我想死', 'zh'],
     ['Bonjour, comment ça va ?', 'fr'], ['merci', 'fr'], ['Was ist die Hauptstadt von Deutschland?', 'de'], ['Wie geht es dir?', 'de'],
-    ['Qual é a capital do Brasil?', 'pt'], ['Obrigado, tudo bem', 'pt'], ['Dove sono le chiavi? Non lo so', 'it'],
+    ['Qual é a capital do Brasil?', 'pt'], ['Obrigado, tudo bem', 'pt'], ['Dove sono le chiavi? Non lo so', 'it'], ["Qual è la capitale d'Italia?", 'it'], ['Ciao, come va?', 'it'], ['Voglio morire', 'it'], ['Chi ha scritto la Divina Commedia?', 'it'],
     ['한국의 수도는 어디예요?', 'ko'], ['日本の首都はどこですか？', 'ja'], ['中国的首都是哪里？', 'zh'], ['Как дела?', 'ru'], ['Busca en internet noticias de Madrid', 'es'], ['Encuentra pizza cerca de mí', 'es'], ['Ich bin traurig', 'de'], ['Estou muito triste hoje', 'pt'], ['Je suis triste', 'fr'], ['QUIERO MORIR', 'es'], ['Suche Pizza in meiner Nähe', 'de'], ['Estoy en Madrid', 'es']]) assert.equal(chatLanguage(message), code, message);
   for (const message of ['What is the capital of France?', 'hello', 'Thanks!', 'Die Hard', 'die hard war movie', 'MIT', 'da vinci', 'O Canada', 'La La Land', 'El Paso',
     'as far as i know', 'do as i say', 'Las Vegas', 'Was Einstein smart?', 'AI', 'is 5pm est ok', 'What is 東京?', 'What is El Niño?', 'comment this code', 'for i in range(10): print(i)',
     'pizza', 'Paris', 'ok', '42', '', 'El Paso Texas weather', 'Buenos Aires hotels', 'Costa Rica', 'Rio de Janeiro', 'Santa Cruz beach', 'La Paz Bolivia', 'Puerto Rico flights',
-    'Porto Alegre', 'Los Angeles Lakers', 'Les Miserables', 'Der Spiegel', 'Das Boot', 'Mi Band 8', 'Carpe diem', 'If sin^2 A - cos^2 A = 2 then find cos 2A.']) assert.equal(chatLanguage(message), null, message);
+    'Porto Alegre', 'Los Angeles Lakers', 'Les Miserables', 'Der Spiegel', 'Das Boot', 'Mi Band 8', 'Carpe diem', 'ciao', 'Come on', 'come here', 'ha ha', 'ho ho ho', 'pasta con pomodoro recipe', 'per day', 'Dove soap', 'If sin^2 A - cos^2 A = 2 then find cos 2A.']) assert.equal(chatLanguage(message), null, message);
   assert.equal(chatLanguage('ok', 'es'), 'es');
   assert.equal(chatLanguage('Paris', 'fr'), 'fr');
   assert.equal(chatLanguage('What is the capital of France?', 'es'), null);

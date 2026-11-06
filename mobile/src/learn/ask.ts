@@ -45,7 +45,7 @@ const WORDS: Record<string, string[]> = {
   pt: 'o os as que não você é obrigado obrigada olá bom dia muito um uma do da em com favor eu sou tudo bem tchau'.split(' '),
   it: 'il lo gli che è non sono grazie ciao buongiorno come dove molto per di io sei prego arrivederci'.split(' '),
 };
-const LETTERS: [RegExp, string[]][] = [[/[ñ¿¡]/, ['es']], [/[èêëîœ]/, ['fr']], [/[ßäöü]/, ['de']], [/[ãõ]/, ['pt']], [/ç/, ['fr', 'pt']],
+const LETTERS: [RegExp, string[]][] = [[/[ñ¿¡]/, ['es']], [/[êëîœ]/, ['fr']], [/è/, ['fr', 'it']], [/[ßäöü]/, ['de']], [/[ãõ]/, ['pt']], [/ç/, ['fr', 'pt']],
   [/[áíóú]/, ['es', 'pt']], [/[àù]/, ['fr', 'it']], [/[âô]/, ['fr', 'pt']]];
 
 
@@ -95,13 +95,13 @@ const CHAT_WORDS: Record<string, Set<string>> = Object.fromEntries(Object.entrie
   fr: "le la les des est et je ne pas vous nous il elle merci bonjour très oui une du au avec suis ça bonsoir comment quelle quel quels pourquoi où qui que dans pour sur mais sont être mon ma c'est s'il plaît j'ai veux voudrais peux mourir vivre en cherche raconte aide dis écris moi",
   de: 'der die das und ist nicht ich du sie wir ein eine danke bitte guten morgen wie wo sehr ja nein mit auf zu habe tschüss geht von warum wer wann wieso kann können mir dir mich dich für sind möchte sterben leben umbringen suche erzähl hilf schreib bin',
   pt: 'que não você é obrigado obrigada olá muito uma da em eu sou tudo bem tchau qual quem onde quando como porque está estão tenho quero preciso ajuda sobre fica morrer viver matar procure perto conte ajude escreva estou',
-  it: 'il lo gli che è non sono grazie buongiorno dove molto di io sei prego arrivederci cosa perché chi quando mi ho hai una del della voglio morire vivere',
+  it: 'il lo la le gli che è non sono grazie buongiorno buonasera dove molto di io sei prego arrivederci cosa perché chi quando mi ho hai una del della voglio morire vivere ammazzarmi uccidermi qual quale quali quanto quanta quanti quante stai sto stiamo stanno siamo siete hanno fare dire andare venire vedere sapere puoi posso può possono vorrei devo deve dello delle degli dei dal dalla dalle dagli nel nella nello nelle negli sul sulla sulle alla alle allo agli questo questa questi queste quello quella quelli quelle anche ancora sempre tutto tutti tutte aiuto aiutami aiutarmi spiegami spiegare scrivi cerca trova vicino oggi domani ieri adesso qui più meno però oppure mio mia miei mie tuo tua tuoi tue suo sua noi voi lui lei per con senza tra fra capitale bisogno persone vivono città scritto funziona imparare cucinare triste compiti',
 }).map(([code, list]) => [code, new Set(`${list} ${COMMON_WORDS[code] ?? ''}`.split(' '))]));
 // Plain "I want", "I have": alone these are enough, so that a short message like "quiero morir" is not missed.
-const CHAT_STRONG = new Set("quiero tengo necesito puedo tienes puedes veux voudrais peux suis j'ai ich möchte habe quero tenho preciso voglio".split(' '));
-const CHAT_LETTERS: [RegExp, string[]][] = [[/[ñ¿¡]/, ['es']], [/[èêëîœ]/, ['fr']], [/[ßäöü]/, ['de']], [/[ãõ]/, ['pt']], [/ç/, ['fr', 'pt']], [/[áíóú]/, ['es', 'pt']]];
+const CHAT_STRONG = new Set("quiero tengo necesito puedo tienes puedes veux voudrais peux suis j'ai ich möchte habe quero tenho preciso voglio vorrei è".split(' '));
+const CHAT_LETTERS: [RegExp, string[]][] = [[/[ñ¿¡]/, ['es']], [/[êëîœ]/, ['fr']], [/è/, ['fr', 'it']], [/[ßäöü]/, ['de']], [/[ãõ]/, ['pt']], [/ç/, ['fr', 'pt']], [/[áíóú]/, ['es', 'pt']]];
 const GREETINGS: Record<string, string> = { hola: 'es', gracias: 'es', adiós: 'es', 'buenos días': 'es', bonjour: 'fr', salut: 'fr', merci: 'fr', bonsoir: 'fr',
-  hallo: 'de', danke: 'de', 'guten tag': 'de', tschüss: 'de', olá: 'pt', obrigado: 'pt', obrigada: 'pt', tchau: 'pt', 'bom dia': 'pt', grazie: 'it', buongiorno: 'it' };
+  hallo: 'de', danke: 'de', 'guten tag': 'de', tschüss: 'de', olá: 'pt', obrigado: 'pt', obrigada: 'pt', tchau: 'pt', 'bom dia': 'pt', grazie: 'it', buongiorno: 'it', buonasera: 'it', 'grazie mille': 'it', 'come stai': 'it', 'come va': 'it', 'ciao come stai': 'it', 'ciao come va': 'it' };
 
 /** The language to answer a chat message in, or null for English. `previous` keeps short replies like "ok" in the same language. */
 export function chatLanguage(message: string, previous: string | null = null): string | null {
@@ -113,7 +113,8 @@ export function chatLanguage(message: string, previous: string | null = null): s
   const english = words.filter(word => ENGLISH.has(word) || USUAL_ENGLISH.has(word)).length;
   // A capitalized word after the first is likely a name, so "El Paso Texas" says nothing about the language.
   const shouting = message === message.toUpperCase();
-  const counted = words.filter((_, i) => !i || shouting || !/^\p{Lu}/u.test(typed[i]));
+  // Each word counts once, so "ha ha" and "ho ho ho" are laughing, not Spanish or Italian.
+  const counted = [...new Set(words.filter((_, i) => !i || shouting || !/^\p{Lu}/u.test(typed[i])))];
   const scores = Object.entries(CHAT_WORDS).map(([code, list]): [string, number] => [code,
     counted.reduce((sum, word) => sum + (list.has(word) ? (CHAT_STRONG.has(word) ? 2 : 1) : 0), 0) + CHAT_LETTERS.reduce((sum, [found, codes]) => sum + (found.test(text) && codes.includes(code) ? 1 / codes.length : 0), 0)]);
   const [best, second] = scores.sort((a, b) => b[1] - a[1]);
