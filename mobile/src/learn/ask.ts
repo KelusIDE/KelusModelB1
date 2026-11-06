@@ -1,6 +1,8 @@
 
 
 
+import { COMMON_ENGLISH, COMMON_WORDS } from './chat-words.ts';
+
 const CODES: Record<string, string> = {
   afrikaans: 'af', arabic: 'ar', belarusian: 'be', bulgarian: 'bg', bengali: 'bn', catalan: 'ca', czech: 'cs', welsh: 'cy', danish: 'da',
   german: 'de', greek: 'el', english: 'en', esperanto: 'eo', spanish: 'es', estonian: 'et', persian: 'fa', farsi: 'fa', finnish: 'fi',
@@ -80,4 +82,60 @@ export function translationAsk(message: string): Ask | null {
 
 export function translationReply(ask: Ask, translated: string): string {
   return ask.to === 'en' ? `It means "${translated}" (${languageName(ask.from)}).` : `In ${languageName(ask.to)}: ${translated}`;
+}
+
+
+// For chat, wrongly translating an English message is worse than missing a foreign one, so these lists leave out words
+// that are common in English ("as", "war", "ai"), and two hits are needed. guessLanguage is looser: it only has a phrase to go on.
+// COMMON_WORDS comes from web text, so the lists here add what people type in a chat.
+const ENGLISH = new Set(`the is are was were am what who whom whose how why when where which this that these those you your my we our they their his she and or of not with for from have has had would can could should does did about tell write make give explain please thanks thank hello hi hey yes good i'm it's what's sin cos tan`.split(' '));
+const USUAL_ENGLISH = new Set(COMMON_ENGLISH.split(' '));
+const CHAT_WORDS: Record<string, Set<string>> = Object.fromEntries(Object.entries({
+  es: 'el la los las que es por para está están estoy qué cómo cuál cuáles cuándo dónde quién porque muy gracias hola tengo tienes quiero puedes puedo hay necesito ayuda sobre pero también como cuando donde cual quien mis tus su sus este esta esto eso adiós buenos buenas días soy eres una un del al con mi mucho usted morir matarme vivir busca buscar encuentra cerca dime cuéntame ayúdame escribe siento',
+  fr: "le la les des est et je ne pas vous nous il elle merci bonjour très oui une du au avec suis ça bonsoir comment quelle quel quels pourquoi où qui que dans pour sur mais sont être mon ma c'est s'il plaît j'ai veux voudrais peux mourir vivre en cherche raconte aide dis écris moi",
+  de: 'der die das und ist nicht ich du sie wir ein eine danke bitte guten morgen wie wo sehr ja nein mit auf zu habe tschüss geht von warum wer wann wieso kann können mir dir mich dich für sind möchte sterben leben umbringen suche erzähl hilf schreib bin',
+  pt: 'que não você é obrigado obrigada olá muito uma da em eu sou tudo bem tchau qual quem onde quando como porque está estão tenho quero preciso ajuda sobre fica morrer viver matar procure perto conte ajude escreva estou',
+  it: 'il lo gli che è non sono grazie buongiorno dove molto di io sei prego arrivederci cosa perché chi quando mi ho hai una del della voglio morire vivere',
+}).map(([code, list]) => [code, new Set(`${list} ${COMMON_WORDS[code] ?? ''}`.split(' '))]));
+// Plain "I want", "I have": alone these are enough, so that a short message like "quiero morir" is not missed.
+const CHAT_STRONG = new Set("quiero tengo necesito puedo tienes puedes veux voudrais peux suis j'ai ich möchte habe quero tenho preciso voglio".split(' '));
+const CHAT_LETTERS: [RegExp, string[]][] = [[/[ñ¿¡]/, ['es']], [/[èêëîœ]/, ['fr']], [/[ßäöü]/, ['de']], [/[ãõ]/, ['pt']], [/ç/, ['fr', 'pt']], [/[áíóú]/, ['es', 'pt']]];
+const GREETINGS: Record<string, string> = { hola: 'es', gracias: 'es', adiós: 'es', 'buenos días': 'es', bonjour: 'fr', salut: 'fr', merci: 'fr', bonsoir: 'fr',
+  hallo: 'de', danke: 'de', 'guten tag': 'de', tschüss: 'de', olá: 'pt', obrigado: 'pt', obrigada: 'pt', tchau: 'pt', 'bom dia': 'pt', grazie: 'it', buongiorno: 'it' };
+
+/** The language to answer a chat message in, or null for English. `previous` keeps short replies like "ok" in the same language. */
+export function chatLanguage(message: string, previous: string | null = null): string | null {
+  const text = message.toLowerCase(), letters = text.match(/\p{L}/gu) ?? [];
+  const other = letters.filter(letter => !/\p{Script=Latin}/u.test(letter)).length;
+  if (other && other * 2 >= letters.length) for (const [script, code] of SCRIPTS) if (script.test(text)) return code;
+  const typed = message.replaceAll('’', "'").match(/[\p{L}']+/gu) ?? [], words = typed.map(word => word.toLowerCase());
+  if (GREETINGS[words.join(' ')]) return GREETINGS[words.join(' ')];
+  const english = words.filter(word => ENGLISH.has(word) || USUAL_ENGLISH.has(word)).length;
+  // A capitalized word after the first is likely a name, so "El Paso Texas" says nothing about the language.
+  const shouting = message === message.toUpperCase();
+  const counted = words.filter((_, i) => !i || shouting || !/^\p{Lu}/u.test(typed[i]));
+  const scores = Object.entries(CHAT_WORDS).map(([code, list]): [string, number] => [code,
+    counted.reduce((sum, word) => sum + (list.has(word) ? (CHAT_STRONG.has(word) ? 2 : 1) : 0), 0) + CHAT_LETTERS.reduce((sum, [found, codes]) => sum + (found.test(text) && codes.includes(code) ? 1 / codes.length : 0), 0)]);
+  const [best, second] = scores.sort((a, b) => b[1] - a[1]);
+  if (best[1] >= 2 && best[1] > second[1] && best[1] >= english + 2) return best[0];
+  // Only a plainly English word ends a translated chat: "ok" and "Paris" are in every language.
+  return previous && !words.some(word => ENGLISH.has(word)) ? previous : null;
+}
+
+/** The language of the latest translated turn in a chat. */
+export function previousLanguage(messages: { role: string; content: string; english?: string }[]): string | null {
+  for (const message of [...messages].reverse()) {
+    const language = message.role === 'user' && message.english ? chatLanguage(message.content) : null;
+    if (language) return language;
+  }
+  return null;
+}
+
+/** For each line of an English reply, whether it stays untranslated: code, source links, and place names and addresses. */
+export function keptLines(reply: string, source?: string): boolean[] {
+  let code = false;
+  return reply.split('\n').map(line => {
+    if (line.startsWith('```')) { code = !code; return true; }
+    return code || !/\p{L}/u.test(line) || /https?:\/\//.test(line) || (source === 'places' && /^\s|^\d+\. /.test(line));
+  });
 }

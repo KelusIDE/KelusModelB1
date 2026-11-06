@@ -12,10 +12,13 @@ export function restoreChats(value) {
   return chats.slice(0, MAX_CHATS);
 }
 
+// The model reads a translated turn in English; the person keeps reading it in their own language.
+const inEnglish = message => message.english ? { ...message, content: message.english } : message;
+
 export function completedContext(messages) {
   const context = [];
   for (let i = 0; i + 1 < messages.length; i += 2) {
-    const user = messages[i], assistant = messages[i + 1];
+    const user = inEnglish(messages[i]), assistant = inEnglish(messages[i + 1]);
     if (user.role === 'user' && assistant.role === 'assistant' && assistant.status === 'complete' &&
         assistant.source !== 'search_unavailable' && assistant.content) {
       // A searched answer goes back to the model as the answer alone, without the search line and the sources.

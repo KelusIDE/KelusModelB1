@@ -7,8 +7,8 @@ import type { Chat, Message, ModelInfo, WorkerReply } from './types';
 import InferenceWorker from './inference.worker?worker&inline';
 import { loadWeights } from './load-weights.mjs';
 import { id as newId } from './id';
-import { translationAsk, translationReply } from './learn/ask';
-import { canTranslate, translate } from './learn/translate';
+import { chatLanguage, languageName, previousLanguage, translationAsk, translationReply, type Ask } from './learn/ask';
+import { canTranslate, translate, translateReply } from './learn/translate';
 import { mergeChats } from './sync.mjs';
 import type { Person, RemoteChat } from './account';
 type AccountModule = typeof import('./account');
@@ -37,7 +37,7 @@ export function useChat() {
 
   const [gpu, setGpuState] = useState(true);
   const state = useRef({ chat, history, ready: false, model: null as ModelInfo | null, worker: null as Worker | null,
-    request: '', writes: Promise.resolve(), disposed: false, loadAbort: null as AbortController | null, search: true, modelId: 'otter-4-12',
+    request: '', wrap: '', writes: Promise.resolve(), disposed: false, loadAbort: null as AbortController | null, search: true, modelId: 'otter-4-12',
     gpu: true, gpuFailed: false,
 
     account: null as AccountModule | null, person: null as Person | null, stopChats: null as (() => void) | null,
@@ -102,7 +102,7 @@ export function useChat() {
     const r = state.current, id = r.request;
     if (!id) return;
     show({ ...r.chat, updated: Date.now(), messages: r.chat.messages.map(m => m.id === id ? { ...m, status, source, ...(saved && { saved }) } : m) });
-    r.request = ''; setBusy(false); persist();
+    r.request = ''; r.wrap = ''; setBusy(false); persist();
   }, [show, persist]);
   const load = useCallback(() => {
     const r = state.current;
@@ -118,7 +118,19 @@ export function useChat() {
       if (data.type === 'token' && data.id === r.request) {
         show({ ...r.chat, messages: r.chat.messages.map(m => m.id === data.id ? { ...m, content: data.text } : m) });
       }
-      if (data.type === 'done' && data.id === r.request) finish(data.stopped ? 'stopped' : 'complete', data.source, data.saved);
+      if (data.type === 'done' && data.id === r.request) {
+        const status = data.stopped ? 'stopped' : 'complete', english = r.chat.messages.find(m => m.id === data.id)?.content;
+        if (!r.wrap || data.stopped || !english) finish(status, data.source, data.saved);
+        else void translateReply(english, r.wrap, data.source).then(content => {
+          if (r.request !== data.id) return;
+          show({ ...r.chat, messages: r.chat.messages.map(m => m.id === data.id ? { ...m, content, english } : m) });
+          finish(status, data.source, data.saved);
+        }, () => {
+          if (r.request !== data.id) return;
+          setError('Kani could not translate this reply, so it is in English.');
+          finish(status, data.source, data.saved);
+        });
+      }
 
       if (data.type === 'locate' && data.id === r.request) void browserLocation().then(near => { if (r.worker === worker) worker.postMessage({ type: 'location', near }); });
       if (data.type === 'error' && (!data.id || data.id === r.request)) {
@@ -202,7 +214,8 @@ export function useChat() {
     return () => { live = false; unwatch?.(); state.current.stopChats?.(); };
   }, [follow]);
   // The new user message's id, or false when nothing was sent.
-  const send = (text: string): string | false => {
+  // `wrap`: answer a message in another language through the phone's translator, since Kani only understands English.
+  const send = (text: string, wrap = false): string | false => {
     const r = state.current;
     if (!text.trim() || !r.ready || !r.model || r.request || !r.worker) return false;
     if (text.length > 6000) { setError('Please keep each message under 6,000 characters.'); return false; }
@@ -213,12 +226,33 @@ export function useChat() {
       updated: Date.now(), messages: [...r.chat.messages, user, { id, role: 'assistant', content: '' }] });
     r.request = id; setBusy(true); setError('');
 
+    const say = (content: string) => show({ ...r.chat, messages: r.chat.messages.map(m => m.id === id ? { ...m, content } : m) });
+    const answer = (ask: Ask) => void translate(ask.text, ask.from, ask.to).then(out => translationReply(ask, out), (error: Error) => error.message).then(content => {
+      if (r.request !== id) return;
+      say(content);
+      finish('complete', 'local_translator');
+    });
     const ask = canTranslate() ? translationAsk(text) : null;
-    if (ask) {
-      void translate(ask.text, ask.from, ask.to).then(out => translationReply(ask, out), (error: Error) => error.message).then(content => {
+    if (ask) { answer(ask); return user.id; }
+    const language = wrap && canTranslate() ? chatLanguage(text, previousLanguage(r.chat.messages)) : null;
+    if (language) {
+      // The first message in a language downloads its pack, which takes a while, so say so instead of showing dots.
+      const slow = setTimeout(() => { if (r.request === id) say(`Getting the ${languageName(language)} translation pack (about 30 MB, over Wi-Fi). This only happens once.`); }, 2000);
+      void translate(text, language, 'en').then(english => {
+        clearTimeout(slow);
         if (r.request !== id) return;
-        show({ ...r.chat, messages: r.chat.messages.map(m => m.id === id ? { ...m, content } : m) });
-        finish('complete', 'local_translator');
+        show({ ...r.chat, messages: r.chat.messages.map(m => m.id === id ? { ...m, content: '' } : m.id === user.id ? { ...m, english } : m) });
+        // The answer to "how do you say cat in French" must not be translated back into the person's language.
+        const inner = translationAsk(english);
+        if (inner) { answer(inner); return; }
+        r.wrap = language;
+        r.worker?.postMessage({ type: 'generate', id, messages: [...messages.slice(0, -1), { ...user, content: english }], search: r.search });
+      }, (error: Error) => {
+        clearTimeout(slow);
+        if (r.request !== id) return;
+        // This message never reached the crisis filter, so it may be from someone in danger.
+        say(`${error.message} If you need urgent help, call your local emergency number.`);
+        finish('failed');
       });
       return user.id;
     }

@@ -54,7 +54,7 @@ export default function App() {
   const coach = (feedback: string) => { if (feedback) void voice.ensure('speak').then(() => speak(feedback)).catch(() => {}); };
   const sendText = (text: string, heard?: SpokenWord[]) => {
     const note = english && words && text.trim() ? tutor(text.trim(), words, turn.current++) : undefined;
-    const id = kani.send(text);
+    const id = kani.send(text, !english);
     if (!id) return null;
     if (note || heard) setNotes(all => ({ ...all, [id]: { note, heard } }));
     if (mode === 'speak') sayReplyTo.current = id;
@@ -180,7 +180,7 @@ export default function App() {
             <div className="message-body">{item.role === 'user' ? notes[item.id]?.heard ? <SpokenText heard={notes[item.id].heard!} words={words} voice={voice} /> : <p>{item.content}</p> : item.content ? <Reply text={item.content} /> : item.status ? <p className="muted">{item.status === 'failed' ? 'No reply generated.' : 'Reply stopped.'}</p> : <div className="thinking" role="status"><span /><span /><span /><span className="sr-only">Kani is thinking</span></div>}</div>
             {item.role === 'user' && notes[item.id]?.note && <TutorCard note={notes[item.id].note!} voice={voice} />}
             {item.role === 'assistant' && item.status && <div className="message-footer">{item.content && <Copy text={item.content} />}
-              <span>{item.status === 'stopped' ? 'Stopped' : item.status === 'failed' ? 'Reply failed' : item.source === 'local_calculator' ? 'Local calculator' : item.source === 'local_clock' ? 'Local clock' : item.source === 'search_unavailable' ? 'Web search is off' : item.source === 'cide_unavailable' ? 'Coding model is on the web' : item.source === 'model_web' ? 'Searched the web' : item.source === 'web' ? 'Wikipedia' : item.source === 'web_search' ? 'Web results' : item.source === 'places' ? 'Places search' : item.source === 'local_translator' ? 'Translated on this phone' : ''}</span></div>}
+              <span>{item.status === 'stopped' ? 'Stopped' : item.status === 'failed' ? 'Reply failed' : item.source === 'local_calculator' ? 'Local calculator' : item.source === 'local_clock' ? 'Local clock' : item.source === 'search_unavailable' ? 'Web search is off' : item.source === 'cide_unavailable' ? 'Coding model is on the web' : item.source === 'model_web' ? 'Searched the web' : item.source === 'web' ? 'Wikipedia' : item.source === 'web_search' ? 'Web results' : item.source === 'places' ? 'Places search' : item.source === 'local_translator' ? 'Translated on this phone' : ''}</span>{item.english && <span>Translated on this phone</span>}</div>}
           </article>)}
         </div>}
       </main>

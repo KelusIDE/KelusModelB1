@@ -10,7 +10,7 @@ const WEB_MODEL = { 'b1-v3': 'Kani Seal 3 · web' };
 
 export function toRemote(chat) {
   const messages = chat.messages.filter(m => m.content || m.saved).slice(-MAX_SAVED_MESSAGES)
-    .map(({ role, content, source, saved }) => ({ role, content: saved || content, ...(source && source !== 'model' ? { source } : {}) }));
+    .map(({ role, content, source, saved, english }) => ({ role, content: saved || content, ...(source && source !== 'model' ? { source } : {}), ...(english ? { english } : {}) }));
   return { title: (chat.title || 'New conversation').slice(0, 120), messages, model: (chat.model || 'Kani').slice(0, 40) };
 }
 
@@ -19,7 +19,7 @@ export function fromRemote(remote) {
   return {
     id: remote.id, title: remote.title || 'Saved chat', updated: remote.updated, model: WEB_MODEL[remote.model] || remote.model || 'Kani',
     messages: (remote.messages || []).filter(m => (m.role === 'user' || m.role === 'assistant') && typeof m.content === 'string')
-      .map(m => ({ id: newId(), role: m.role, content: m.content, status: 'complete', ...(m.role === 'assistant' ? { source: m.source || 'model' } : {}) })),
+      .map(m => ({ id: newId(), role: m.role, content: m.content, status: 'complete', ...(m.role === 'assistant' ? { source: m.source || 'model' } : {}), ...(typeof m.english === 'string' ? { english: m.english } : {}) })),
   };
 }
 

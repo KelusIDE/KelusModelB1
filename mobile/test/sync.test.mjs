@@ -47,3 +47,11 @@ test('a full page of account chats leaves older ones out without deleting them o
   assert.deepEqual(upload.map(c => c.id), ['old']);
   assert.equal(merged.length, MAX_SYNCED_CHATS);
 });
+
+test('the English of a translated turn survives a sync', () => {
+  const chat = { id: 'a', title: 'Hola', updated: 1, model: 'Kani', messages: [{ id: 'x', role: 'user', content: 'Hola', english: 'Hello', status: 'complete' },
+    { id: 'y', role: 'assistant', content: 'Hello', source: 'model', status: 'complete' }] };
+  const remote = toRemote(chat);
+  assert.deepEqual(remote.messages, [{ role: 'user', content: 'Hola', english: 'Hello' }, { role: 'assistant', content: 'Hello' }]);
+  assert.equal(fromRemote({ id: 'a', updated: 1, ...remote }).messages[0].english, 'Hello');
+});

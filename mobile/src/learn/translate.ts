@@ -1,6 +1,7 @@
 import { Capacitor } from '@capacitor/core';
 import { Language, Translation } from '@capacitor-mlkit/translation';
 import type { LanguageId } from './content.ts';
+import { keptLines } from './ask.ts';
 
 
 
@@ -24,4 +25,12 @@ export async function translate(text: string, from: LanguageId | string, to: Lan
   } finally {
     clearTimeout(timer);
   }
+}
+
+/** Kani's English reply in the person's language. Code, links and place listings stay as they are. */
+export async function translateReply(reply: string, to: string, source?: string): Promise<string> {
+  const lines = reply.split('\n'), kept = keptLines(reply, source);
+  for (let i = 0; i < lines.length; i++) if (!kept[i]) lines[i] = await translate(lines[i], 'en', to);
+  // Numbers to call must survive a bad translation, so the fixed safety replies stay readable in English too.
+  return source === 'crisis_support' ? `${lines.join('\n')}\n\n${reply}` : lines.join('\n');
 }

@@ -2,6 +2,8 @@ export interface Message {
   id: string; role: 'user' | 'assistant'; content: string;
   status?: 'complete' | 'stopped' | 'failed'; source?: string;
   saved?: string;
+  // This message in English, when it was typed or answered in another language. The model only reads English.
+  english?: string;
 }
 export interface Chat { id: string; title: string; updated: number; messages: Message[]; model: string }
 export interface ModelInfo {

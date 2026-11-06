@@ -67,7 +67,7 @@ export async function signOutEverywhere() {
   if (canUseGoogle()) await FirebaseAuthentication.signOut().catch(() => {});
 }
 
-export interface RemoteChat { id: string; title: string; updated: number; model: string; messages: { role: string; content: string; source?: string }[]; pending: boolean }
+export interface RemoteChat { id: string; title: string; updated: number; model: string; messages: { role: string; content: string; source?: string; english?: string }[]; pending: boolean }
 const chats = (uid: string) => collection(db, 'users', uid, 'b1Chats');
 
 

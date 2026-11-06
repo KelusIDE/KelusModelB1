@@ -19,6 +19,14 @@ test('stopped, failed, and unavailable-search turns never pollute the next promp
   const successful = pair('good');
   assert.deepEqual(completedContext([...pair('bad', 'failed'), ...successful, ...pair('partial', 'stopped'), ...pair('search', 'complete', 'search_unavailable')]), successful);
 });
+test('translated turns reach the model in English', () => {
+  const context = completedContext([
+    { id: 'a', role: 'user', content: 'Hola', english: 'Hello' },
+    { id: 'b', role: 'assistant', content: 'Hola, ¿qué tal?', english: 'Hi, how are you?', status: 'complete', source: 'model' },
+    { id: 'c', role: 'user', content: 'Hi' },
+    { id: 'd', role: 'assistant', content: 'Hello!', status: 'complete', source: 'model' }]);
+  assert.deepEqual(context.map(m => m.content), ['Hello', 'Hi, how are you?', 'Hi', 'Hello!']);
+});
 test('context trimming preserves user/assistant pairs', () => {
   const result = completedContext(Array.from({ length: 12 }, (_, i) => pair(String(i))).flat());
   assert.equal(result.length, 14); assert.equal(result[0].role, 'user'); assert.equal(result.at(-1).role, 'assistant');
