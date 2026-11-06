@@ -21,7 +21,7 @@ TRAIN = ['Percentage','Fraction','Ratio','Proportion (mathematics)','Arithmetic'
          'Computer science','Recursion (computer science)','Software testing','Database','World Wide Web',
          'Photosynthesis','Water cycle','Gravity','Solar System','Nutrition','Cooking','Pancake','Language','Scientific method']
 VALIDATION = ['Decimal','Prime number','Binary search','Ecosystem','Atmosphere of Earth','Bread']
-# Level-4 vital article lists (~10,000 core topics), sampled evenly so no one area dominates.
+
 VITAL = ['People','History','Geography','Arts','Philosophy and religion','Everyday life','Society and social sciences',
          'Biology and health sciences','Physical sciences','Technology','Mathematics']
 
@@ -33,7 +33,7 @@ def request(attempts=4, **params):
             capture_output=True,timeout=35)
         if result.returncode==0 and b'"code":"maxlag"' not in result.stdout[:300]:break
         if attempt==attempts-1:raise ValueError('Wikipedia request failed: '+result.stderr.decode(errors='replace').strip()[:200])
-        time.sleep(5*3**attempt)  # serial requests only; back off on 429, 5xx and maxlag
+        time.sleep(5*3**attempt)
     if len(result.stdout)>4_000_000:raise ValueError('Article response exceeded budget')
     data=json.loads(result.stdout)
     if 'error' in data:raise ValueError(data['error']['info'])
@@ -97,7 +97,7 @@ def collect(root, tokenizer_path, replay_root=None, vital=0, replay=(80,8)):
                 'attribution':'Wikipedia contributors','license':rights,'split':split,'text':text})
             print(json.dumps({'article':page['title'],'split':split,'characters':len(text)}),flush=True)
     if replay_root:
-        # Preserve source notices and original whole-document split for rehearsal.
+
         source=Path(replay_root)/'documents.jsonl'
         for split,limit in zip(('train','validation'),replay):
             chosen=sorted((r for r in rows(source) if r['split']==split),key=lambda r:r['id'])[:limit if limit>=0 else None]

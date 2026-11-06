@@ -1,11 +1,11 @@
-/**
- * /do: a checked edit loop around a small model.
- *
- * The control flow is ordinary code, not model reasoning: find the target, gather
- * evidence, ask the model for one function, check it, insert it, optionally run
- * the user's test command in a sandbox, and resample until something passes.
- * The result is a normal proposal for /diff and /apply; nothing is written directly.
- */
+
+
+
+
+
+
+
+
 import { spawn } from 'node:child_process';
 import fs from 'node:fs/promises';
 import os from 'node:os';
@@ -17,7 +17,7 @@ const LANGUAGES = { '.py': 'Python', '.js': 'JavaScript', '.mjs': 'JavaScript', 
 const TEST_TIMEOUT = 60_000;
 const COPY_LIMIT = 16 * 1024 * 1024;
 
-/** `/do PATH TASK [--test "CMD"] [--tries N]` */
+
 export function parseTask(args) {
   let text = args.trim();
   const options = { test: null, tries: 4 };
@@ -39,17 +39,17 @@ export function parseTask(args) {
   return { file, language, task, name: named ? named[1] : null, ...options };
 }
 
-/** The phrasing the model was trained on: "Write a Python function name(args) that ...". */
+
 export function promptFor({ language, task }) {
   const body = task.replace(/^(?:please\s+)?(?:add|write|create|make|implement)\s+(?:a\s+|an\s+)?(?:python\s+|javascript\s+|js\s+)?(?:function\s+)?/i, '');
   return `Write a ${language} function ${body.replace(/[.\s]+$/, '')}. Return only the function.`;
 }
 
-/**
- * The signature stated in the request, used as a decoding prefix so the model cannot
- * garble the function name or parameters. Parameters come from `name(a, b)` or from
- * "takes a and b and ..."; otherwise only the name is fixed.
- */
+
+
+
+
+
 export function signaturePrefix({ language, task, name }) {
   if (!name) return '';
   const stated = task.match(new RegExp(`\\b${name.replace(/\$/g, '\\$')}\\s*\\(([^)]*)\\)`));
@@ -59,7 +59,7 @@ export function signaturePrefix({ language, task, name }) {
   return params === null ? `\`\`\`javascript\nfunction ${name}(` : `\`\`\`javascript\nfunction ${name}(${params}) {`;
 }
 
-/** Preserve required source and feedback; omit only whole optional reference lines. */
+
 export function editPrompt(model, task, source, references, failure, maxTokens) {
   let prompt = promptFor(task);
   if (source !== null) prompt += `\nCurrent ${task.language} function:\n${source}`;
@@ -99,7 +99,7 @@ print(json.dumps([[n.name, n.lineno, n.end_lineno] for n in tree.body
                   if isinstance(n, (ast.FunctionDef, ast.AsyncFunctionDef))]))
 `;
 
-/** Top-level functions as [name, firstLine, lastLine]; parsed, never executed. */
+
 async function outline(language, source, python) {
   if (language === 'Python') {
     const result = await run(python, ['-I', '-c', PY_OUTLINE], { input: source });
@@ -109,7 +109,7 @@ async function outline(language, source, python) {
   return javascriptOutline(source);
 }
 
-/** Function declarations found by a small scanner that skips strings and comments. */
+
 export function javascriptOutline(source) {
   const lines = source.split('\n');
   const found = [];
@@ -137,7 +137,7 @@ export function javascriptOutline(source) {
   return found;
 }
 
-/** Extract exactly one code block (or bare code) from a reply. */
+
 export function candidateCode(reply) {
   const blocks = [...reply.matchAll(/```[\w+#.-]*[^\n]*\n([\s\S]*?)(?:```|$)/g)].map(m => m[1]);
   const code = (blocks.length ? blocks[0] : reply).replace(/\s+$/, '');
@@ -145,7 +145,7 @@ export function candidateCode(reply) {
   return code + '\n';
 }
 
-/** Insert the function, or replace the existing one of the same name. */
+
 export function merge(original, code, existing) {
   if (original === null) return code;
   const lines = original.replace(/\n*$/, '').split('\n');
@@ -162,10 +162,10 @@ const SANDBOX = root => `(version 1)
 (deny file-write*)
 (allow file-write* (subpath ${JSON.stringify(root)}) (literal "/dev/null") (literal "/dev/tty") (regex #"^/dev/fd/"))`;
 
-/**
- * Run the user's test command against a copy of the project that contains the change.
- * macOS sandbox: no network, and writes only inside the temporary copy.
- */
+
+
+
+
 export async function sandboxTest(workspace, relativePath, content, command) {
   if (process.platform !== 'darwin') return { ran: false, passed: false, out: 'Sandboxed tests need macOS sandbox-exec; tests were not run.' };
   const root = await fs.realpath(await fs.mkdtemp(path.join(os.tmpdir(), 'kani-test-')));
@@ -191,7 +191,7 @@ export async function sandboxTest(workspace, relativePath, content, command) {
 
 const tail = (text, lines = 8) => clean(text).trim().split('\n').slice(-lines).map(line => '      ' + line.slice(0, 200)).join('\n');
 
-/** Yields text for the chat view; stages a proposal only when a candidate passes every check. */
+
 export async function* doTask(workspace, model, args, options, cancel) {
   const task = parseTask(args);
   const target = await workspace.resolve(task.file, true);
@@ -229,7 +229,7 @@ export async function* doTask(workspace, model, args, options, cancel) {
     yield `  Model input: ${source === null ? 'new function' : 'complete current function'}, ${request.included}/${references.length} reference lines${failure ? ', previous code and check failure' : ''}.\n`;
     yield `● Attempt ${attempt}/${task.tries} · temperature ${temperature}\n`;
     let reply = '';
-    for (const text of model.generate([{ role: 'user', content: request.prompt }], { maxTokens: options.maxTokens, temperature, prefix })) {
+    for (const text of model.generate([{ role: 'user', content: request.prompt }], { maxTokens: options.maxTokens, temperature, prefix, repeats: false })) {
       if (cancel.cancelled) break;
       reply += text;
       await new Promise(resolve => setImmediate(resolve));
@@ -258,7 +258,7 @@ export async function* doTask(workspace, model, args, options, cancel) {
     }
 
     if (cancel.cancelled) { yield 'Cancelled; no proposal saved.\n'; return; }
-    // Recheck the file after generation, then stage like /draft does.
+
     let now = null;
     try { now = await workspace.read(target.rel); } catch (error) { if (error.code !== 'ENOENT') throw error; }
     if ((now?.hash ?? null) !== (file?.hash ?? null)) throw new Error('The file changed while /do was running. Nothing was staged.');

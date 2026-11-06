@@ -17,10 +17,17 @@ TEXTS = ["hello!", "Write a Python square function.", "```python\ndef f(x):\n   
          "  leading and trailing  ", "x" * 40, "what's 2+2?", " line　sep", "123abc 4.5"]
 HELPERS = ["1+1?", "what is 7*(3+2)?", "calculate 10 / 4", "-7 // 2", "-7 % 3", "7.5 % -2", "2**8", "2(3)", "1/0", "5 % 0", "(1+2", "1..2",
            "01 + 1", "00 + 1", "1/3", "0.1+0.2", "1000000 * 1000000", "999999999999 + 1", "1/7*1e3", ".5 + 5.", "2 3",
-           "Please compute 6 × 7 =", "what is 8 ÷ 2", "+-+3*2", "1+" * 30 + "1", "hello", "12", "what time is it?"]
+           "Please compute 6 × 7 =", "what is 8 ÷ 2", "+-+3*2", "1+" * 30 + "1", "hello", "12", "what time is it?",
+           "i wanna die", "my friend told me she wants to kill herself", "i took too many pills", "my brother killed himself",
+           "whats the point of living", "i cut myself shaving", "what is suicide squad about", "my feet are killing me"]
 
 
 HELPERS += ["30% tip of 100 is?", "30% of 100", "What is a 30 percent tip on a $100 bill?", "20% off $1,000", "8.25% tax on $80", "0% of 100", "120% discount of 100", "2% of 9999999999999999999999", "Tell me a story about 30% tips"]
+HELPERS += ['whats 1+1 heh', 'what is fourty five plus five', 'what is forty-five plus 5?',
+            'how much is one hundred and five minus six', 'could you please calculate negative five times three',
+            'calculate nine divided by zero', '6 × 7 lol', 'write a story about forty five plus five',
+            'what is twenty eleven plus one', 'what is five plus a puppy', 'I scored 45+5 today heh']
+HELPERS += ["hi!! i want to kill myself", "I don’t want to live anymore", "life isn't worth living", "kms", "how do I kill a process?", "this bug is killing me"]
 
 @unittest.skipUnless(shutil.which("node"), "Node.js runs the browser engine")
 class WebEngineTests(unittest.TestCase):

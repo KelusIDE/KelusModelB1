@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Live preview</title>
+<!-- Live preview of an HTML reply. The chat embeds this page in a sandboxed frame (scripts only, no same-origin), so
+     the page it shows can't reach the site, its storage or the signed-in account. Its own CSP (firebase.json) blocks
+     every network request and form submission; the two inner frames below inherit both the sandbox and that CSP. -->
+<style>
+  html, body { margin: 0; height: 100%; background: #fff; }
+  iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; background: #fff; }
+  iframe.back { visibility: hidden; }
+</style>
+</head>
+<body>
+<iframe class="front" title="Preview" sandbox="allow-scripts allow-forms"></iframe>
+<iframe class="back" title="Preview" sandbox="allow-scripts allow-forms"></iframe>
+<script>
+// Pages from opaque origins can't use localStorage; generated pages often do ("remember me"), so they get a
+// throwaway in-memory copy instead of an exception.
+const STORAGE = '<script>try { localStorage.length } catch { const m = new Map(), s = { getItem: k => m.has(String(k)) ? m.get(String(k)) : null, '
+  + 'setItem: (k, v) => void m.set(String(k), String(v)), removeItem: k => void m.delete(String(k)), clear: () => m.clear(), '
+  + 'key: i => [...m.keys()][i] ?? null, get length() { return m.size } }; '
+  + 'for (const name of ["localStorage", "sessionStorage"]) Object.defineProperty(window, name, { value: s, configurable: true }) }<\/script>';
+// While the reply is still being written: no scripts (half a script only throws), and follow the newest part.
+const FOLLOW = '<script>addEventListener("load", () => scrollTo(0, document.documentElement.scrollHeight))<\/script>';
+
+let [front, back] = document.querySelectorAll('iframe');
+let latest = 0;
+
+// After <head> (or the doctype), so a snippet never pushes the page into quirks mode.
+function inject(html, snippet) {
+  const at = /<head\b[^>]*>/i.exec(html) || /<!doctype[^>]*>/i.exec(html);
+  return at ? html.slice(0, at.index + at[0].length) + snippet + html.slice(at.index + at[0].length) : snippet + html;
+}
+
+addEventListener('message', event => {
+  if (event.source !== parent || event.origin !== location.origin || typeof event.data?.html !== 'string') return;
+  const { html, run } = event.data;
+  const id = ++latest;
+  // a half-written tag at the end ("</h") would swallow what follows it, so it waits for the next redraw
+  const page = run ? inject(html, STORAGE) : inject(html.replace(/<script\b[\s\S]*?(?:<\/script\s*>|$)/gi, '').replace(/<[^>]*$/, ''), FOLLOW);
+  back.onload = () => {
+    if (id !== latest) return;
+    back.className = 'front'; front.className = 'back';
+    [front, back] = [back, front];
+    back.onload = null;
+  };
+  back.srcdoc = page;
+});
+</script>
+</body>
+</html>

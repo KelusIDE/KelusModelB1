@@ -1,0 +1,35 @@
+
+
+{
+  "name": "kani-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-21",
+  "compatibility_flags": ["nodejs_compat"],
+  "upload_source_maps": true,
+  "workers_dev": true,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true,
+    "logs": { "head_sampling_rate": 1 },
+    "traces": { "enabled": false }
+  },
+  "vars": {
+
+    "BACKEND_URL": "https://kelus-corp-kani-api.hf.space",
+    "FIREBASE_PROJECT": "kelus-ide",
+    "DAILY_REQUESTS": "300",
+    "KEYS_PER_ACCOUNT": "3",
+    "EMAIL_ENABLED": "false",
+    "EMAIL_FROM_ADDRESS": "",
+    "EMAIL_FROM_NAME": "Kani by Kelus",
+    "EMAIL_ACTION_URL": "https://kelus-b1.pages.dev/"
+  },
+  "d1_databases": [
+    { "binding": "DB", "database_name": "kani-api", "database_id": "80b98999-2e7e-4a03-b8e4-c03963dc2d45" }
+  ],
+
+  "ratelimits": [
+    { "name": "PER_KEY", "namespace_id": "4201", "simple": { "limit": 10, "period": 60 } },
+    { "name": "PER_ACCOUNT", "namespace_id": "4202", "simple": { "limit": 20, "period": 60 } }
+  ]
+}

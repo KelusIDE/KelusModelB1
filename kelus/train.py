@@ -151,7 +151,7 @@ def main(argv=None):
                 if not math.isfinite(value):
                     raise FloatingPointError("Nonfinite loss; the last valid checkpoint is preserved")
                 loss.backward()
-                # Warmup then cosine decay for this invocation's training budget.
+
                 warmup = min(50, max(1, args.steps // 10))
                 progress = max(0, local_step - warmup) / max(1, args.steps - warmup)
                 optimizer.learning_rate = base_lr * min(1, (local_step + 1) / warmup) * (0.1 + 0.9 * 0.5 * (1 + math.cos(math.pi * progress)))
@@ -177,8 +177,8 @@ def main(argv=None):
                         break
     except KeyboardInterrupt:
         interrupted = True
-        # Do not save an update interrupted inside an optimizer step. Periodic
-        # atomic checkpoints remain resumable and mathematically consistent.
+
+
         print("Interrupted. The most recent completed checkpoint is preserved.", flush=True)
     if not interrupted:
         print(f"Saved {args.out} · {optimizer.step_count - first_step} new training steps", flush=True)

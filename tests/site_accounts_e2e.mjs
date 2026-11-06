@@ -1,5 +1,5 @@
-// Account end-to-end test for site/: two Chrome tabs against the Firebase emulators.
-// Run with tests/run_site_e2e.sh, which serves site/ on :8791 and starts the emulators.
+
+
 import { spawn } from 'node:child_process';
 import { mkdtempSync } from 'node:fs';
 import { tmpdir } from 'node:os';

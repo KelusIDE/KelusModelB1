@@ -1,4 +1,4 @@
-/* Native VS Code theme tokens for structure; Kani's mint-to-coral palette for accents. */
+
 :root {
   --mint: #5cc99a;
   --teal: #3fb6c9;
@@ -10,7 +10,7 @@
   --border: var(--vscode-widget-border, rgba(128, 128, 128, 0.35));
   --muted: var(--vscode-descriptionForeground);
   --radius: 10px;
-  /* Dark+ token colors */
+
   --tok-keyword: #c586c0; --tok-string: #ce9178; --tok-number: #b5cea8;
   --tok-constant: #569cd6; --tok-function: #dcdcaa; --tok-comment: #6a9955;
 }
@@ -31,7 +31,7 @@ svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width:
 
 #app { display: flex; flex-direction: column; height: 100vh; }
 
-/* Header */
+
 .bar {
   position: relative; display: flex; align-items: center; gap: 6px;
   min-height: 38px; padding: 6px 6px 6px 12px;
@@ -50,7 +50,7 @@ svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width:
 }
 .icon-button:hover { background: var(--vscode-toolbar-hoverBackground, rgba(90, 93, 94, 0.31)); }
 
-/* Conversation */
+
 #log { flex: 1; overflow-y: auto; padding: 16px 14px 8px; }
 .turn { margin: 0 0 18px; line-height: 1.55; overflow-wrap: anywhere; }
 .turn.user { display: flex; justify-content: flex-end; }
@@ -111,7 +111,7 @@ svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width:
   animation: shimmer 1.8s linear infinite;
 }
 
-/* Empty state */
+
 .empty { display: flex; flex-direction: column; align-items: center; gap: 10px; padding: 20px 4px 12px; text-align: center; }
 .empty pre { margin: 0; font-family: var(--vscode-editor-font-family, monospace); line-height: 1.05; text-align: left; }
 .crab { font-size: 11px; color: var(--coral); animation: scuttle 3s ease-in-out infinite; }
@@ -135,9 +135,9 @@ svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width:
 .tag-chat { --c: var(--mint); }
 .tag-concept { --c: var(--blue); }
 .tag-code { --c: var(--coral); }
-.tag-math { --c: var(--gold); }
+.tag-math, .tag-draw { --c: var(--gold); }
 
-/* Errors */
+
 .banner {
   margin: 0 14px 8px; padding: 9px 11px; border-radius: var(--radius); font-size: 12px; line-height: 1.45;
   border: 1px solid var(--vscode-inputValidation-errorBorder, #be1100);
@@ -150,7 +150,7 @@ svg { width: 16px; height: 16px; fill: none; stroke: currentColor; stroke-width:
 .button:hover { background: var(--vscode-button-hoverBackground); }
 .button.secondary { background: var(--vscode-button-secondaryBackground); color: var(--vscode-button-secondaryForeground); }
 
-/* Composer */
+
 .composer { padding: 6px 12px 10px; }
 .box {
   padding: 10px 8px 8px 12px; border-radius: 14px;
@@ -191,7 +191,7 @@ kbd { font-family: var(--vscode-editor-font-family); font-size: 10px; padding: 0
 @keyframes scuttle { 0%, 100% { transform: translateX(0); } 25% { transform: translateX(-4px); } 75% { transform: translateX(4px); } }
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
 
-/* Attachment data is rendered as text, with raster previews only. */
+
 .attach-button { margin: 8px 0 0; padding: 6px 11px; border: 1px solid #41434c; border-radius: 7px; background: transparent; color: inherit; cursor: pointer; font: inherit; }
 .attach-button:disabled { opacity: .5; cursor: wait; }
 .attachment-list { display: grid; gap: 7px; max-height: 200px; overflow: auto; }
@@ -206,3 +206,8 @@ kbd { font-family: var(--vscode-editor-font-family); font-size: 10px; padding: 0
 .attachment-error { padding: 8px; color: #ffb9a9; font-size: 12px; }
 .brand-icon { width: 38px; height: 38px; border-radius: 9px; object-fit: cover; }
 .empty-logo { width: 96px; height: 96px; border-radius: 20px; margin: 10px auto; }
+.picture { display: block; max-width: 100%; height: auto; margin: 0 0 8px; border-radius: 6px; }
+
+
+.toolbar { flex-wrap: wrap; }
+.build-picker { max-width: 100%; cursor: pointer; background: var(--vscode-input-background); color: var(--vscode-input-foreground); }

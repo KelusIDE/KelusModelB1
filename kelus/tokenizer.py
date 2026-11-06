@@ -1,11 +1,18 @@
 """Local byte and BPE tokenizers, learned from scratch without tokenizer libraries."""
-from collections import Counter
+from collections import Counter, defaultdict
 from functools import lru_cache
+from heapq import heapify, heappop, heappush
 import re
 
 PAD, BOS, EOS, USER, ASSISTANT = range(256, 261)
 VOCAB_SIZE = 261
+MAX_VOCAB = 65536
 SPECIAL_IDS = (PAD, BOS, EOS, USER, ASSISTANT)
+
+LATIN = "A-Za-z\u00c0-\u00d6\u00d8-\u00f6\u00f8-\u024f\u1e00-\u1eff"
+HANGUL = "\uac00-\ud7a3\u1100-\u11ff\u3130-\u318f"
+KANA = "\u3040-\u309f\u30a0-\u30ff\u31f0-\u31ff"
+HAN = "\u3400-\u4dbf\u4e00-\u9fff\uf900-\ufaff"
 
 
 def encode(text):
@@ -41,9 +48,12 @@ class BPETokenizer(ByteTokenizer):
     kind = "bpe"
     patterns = {
         1: re.compile(r" ?[A-Za-z]+| ?[0-9]+|\s+|[^A-Za-z0-9\s]"),
-        # Version 2 keeps a code fence and its language tag in one piece, so an
-        # opening ```python differs from a closing ``` in the learned vocabulary.
+
+
         2: re.compile(r"```[A-Za-z]*| ?[A-Za-z]+| ?[0-9]+|\s+|[^A-Za-z0-9\s]"),
+
+
+        3: re.compile(f"```[A-Za-z]*| ?[{LATIN}]+| ?[{HANGUL}]+|[{KANA}]+|[{HAN}]+| ?[0-9]+|\\s+|[^\\s]"),
     }
 
     def __init__(self, merges, version=1):
@@ -74,25 +84,49 @@ class BPETokenizer(ByteTokenizer):
 
     @classmethod
     def train(cls, texts, vocab_size=1024, version=2):
-        if not VOCAB_SIZE <= vocab_size <= 8192:
-            raise ValueError("BPE vocabulary must contain 261–8192 tokens")
-        words = Counter(tuple(piece.encode("utf-8")) for text in texts for piece in cls.patterns[version].findall(text))
+        """Merge the most frequent pair (ties: the lowest token IDs) until the vocabulary is full.
+
+        Pair counts are kept up to date word by word instead of recounted for every merge, so tens of
+        thousands of merges over a large corpus stay practical; the merges are the same either way.
+        """
+        if not VOCAB_SIZE <= vocab_size <= MAX_VOCAB:
+            raise ValueError(f"BPE vocabulary must contain {VOCAB_SIZE}–{MAX_VOCAB} tokens")
+        counted = Counter(tuple(piece.encode("utf-8")) for text in texts for piece in cls.patterns[version].findall(text))
+        words, frequency = list(counted), list(counted.values())
+        pairs, where = Counter(), defaultdict(set)
+        for i, word in enumerate(words):
+            for pair in zip(word, word[1:]):
+                pairs[pair] += frequency[i]
+                where[pair].add(i)
+        heap = [(-count, pair) for pair, count in pairs.items()]
+        heapify(heap)
         merges = []
         for token in range(VOCAB_SIZE, vocab_size):
-            counts = Counter()
-            for word, count in words.items():
-                for pair in zip(word, word[1:]):
-                    counts[pair] += count
-            if not counts:
+            while heap and pairs.get(heap[0][1], 0) != -heap[0][0]:
+                heappop(heap)
+            if not heap or -heap[0][0] < 2:
                 break
-            pair, count = max(counts.items(), key=lambda item: (item[1], tuple(-i for i in item[0])))
-            if count < 2:
-                break
+            pair = heappop(heap)[1]
             merges.append(pair)
-            updated = Counter()
-            for word, count in words.items():
-                updated[cls.merge(word, pair, token)] += count
-            words = updated
+            changed = set()
+            for i in where.pop(pair):
+                old = words[i]
+                new = cls.merge(old, pair, token)
+                if new == old:
+                    continue
+                for p in zip(old, old[1:]):
+                    pairs[p] -= frequency[i]
+                    changed.add(p)
+                for p in zip(new, new[1:]):
+                    pairs[p] += frequency[i]
+                    where[p].add(i)
+                    changed.add(p)
+                words[i] = new
+            for p in changed:
+                if pairs[p] > 0:
+                    heappush(heap, (-pairs[p], p))
+                else:
+                    pairs.pop(p, None)
         return cls(merges, version)
 
     @lru_cache(maxsize=16384)
@@ -127,6 +161,9 @@ class BPETokenizer(ByteTokenizer):
 
 
 def from_dict(value):
+    if value.get("kind") == "sketch":
+        from .sketch import SketchTokenizer
+        return SketchTokenizer.from_dict(value)
     if value.get("kind") == "bpe":
         return BPETokenizer(value["merges"], value.get("version", 1))
     if value.get("kind", "bytes") == "bytes":
@@ -145,8 +182,8 @@ def conversation(messages, generation=False, tokenizer=None):
             raise ValueError("Messages must alternate user and assistant, beginning with user")
         role = message["role"]
         content = tokenizer.encode(message.get("content"))
-        # "supervise": false keeps an assistant turn as context only, e.g. a
-        # deliberately wrong earlier reply that the user then corrects.
+
+
         target = role == "assistant" and message.get("supervise", True) is not False
         tokens.extend([USER if role == "user" else ASSISTANT] + content)
         supervised.extend([False] + [target] * len(content))

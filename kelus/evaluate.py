@@ -55,7 +55,7 @@ def code_result(text, function, trials):
         if isinstance(node, ast.Call) and isinstance(node.func, ast.Name) and node.func.id in allowed_calls and len(node.args) == 1 and not node.keywords:
             return allowed_calls[node.func.id](value(node.args[0], scope))
         if isinstance(node, ast.JoinedStr):
-            # Plain f-string fields only: no conversions or format specifications.
+
             parts = []
             for part in node.values:
                 if isinstance(part, ast.FormattedValue):
@@ -164,7 +164,7 @@ def run(checkpoint, temperature=0, data="data/conversations.jsonl"):
         if "function" in case:
             passed = code_result(reply, case["function"], case["trials"])
         elif "words" in case:
-            # This is a narrow keyword check, not a measure of general fluency.
+
             passed = (len(reply.split()) >= 3 and "```" not in reply and "\ufffd" not in reply and any(re.search(r"\b" + re.escape(word) + r"\b", reply.lower()) for word in case["words"]))
         else:
             passed = None

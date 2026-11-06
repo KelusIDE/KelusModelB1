@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>335934652437-qi078k8bs90r47flcv4knr8eon480g6u.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.335934652437-qi078k8bs90r47flcv4knr8eon480g6u</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>335934652437-o1en21qel273jel35h2o6fta6o04s4aa.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCSsFmgdydNMFf2E2f1FlsVxVbvRGiZxZs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>335934652437</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.kelus.kani</string>
+	<key>PROJECT_ID</key>
+	<string>kelus-ide</string>
+	<key>STORAGE_BUCKET</key>
+	<string>kelus-ide.firebasestorage.app</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:335934652437:ios:7817f37fe811917e690e1c</string>
+</dict>
+</plist>

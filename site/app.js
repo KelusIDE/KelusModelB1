@@ -2,12 +2,23 @@ import { loadModel, prepareReply } from './b1.js';
 import { attachSvgPreview, svgPrompt, svgRequest } from './svg.js';
 import { webAnswer, webRequest } from './web.js';
 import { mountAttachments, prepareAttachments } from './attachments.js';
+import { SEARCH_CALL, maybeSearch, searchedAnswer } from './reading.js';
+import { CIDE_CALL, maybeCide, cideAnswer } from './cide.js';
 
 const $ = selector => document.querySelector(selector);
-const LABELS = { local_clock: 'LOCAL CLOCK', local_calculator: 'LOCAL CALCULATOR', web:'WEB · WIKIPEDIA', file_analysis:'LOCAL FILE INSPECTION', model: 'KANI SEAL 3' };
+const LABELS = { cide: 'CIDE · CODING SPECIALIST', local_clock: 'LOCAL CLOCK', local_calculator: 'LOCAL CALCULATOR', web:'WEB · WIKIPEDIA', web_search:'WEB SEARCH', file_analysis:'LOCAL FILE INSPECTION', crisis_support:'SUPPORT · FIXED SAFETY MESSAGE', model: 'KANI SEAL 3', model_web: 'KANI SEAL 3 · SEARCHED THE WEB' };
+let cideModel;
+async function loadCide() {
+  if (!cideModel) {
+    const loaded = await loadModel('cide/');
+    if (loaded.manifest.specialist !== 'coding') throw new Error('Cide coding weights are not installed on this site.');
+    cideModel = loaded;
+  }
+  return cideModel;
+}
 let webAborter;
 let model, generating = false, stopped = false;
-// The full conversation; the model only ever sees its last 15 messages.
+
 let transcript = [], chatId = crypto.randomUUID(), savedChat = false;
 let account = null, user = null, stopWatchingChats = null, savedChats = [];
 let previews = [];
@@ -26,8 +37,8 @@ function message(role, text, source = 'model') {
   article.append(label, body); $('#messages').append(article); return body;
 }
 const scrollLatest = () => window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
-// Let the page paint between tokens. Background tabs never run animation frames,
-// so yield through a message task there instead of pausing the reply.
+
+
 const yieldChannel = new MessageChannel();
 const nextFrame = () => new Promise(resolve => {
   if (!document.hidden) { requestAnimationFrame(() => resolve()); return; }
@@ -64,7 +75,7 @@ function startChat(messages = [], id = crypto.randomUUID(), saved = false) {
 
 async function persist() {
   if (privateChat || !account || !user || !transcript.length) return;
-  // Firestore applies writes in order, so a later save can safely assume this one created the chat.
+
   const created = savedChat; savedChat = true;
   try {
     await account.saveChat(user.uid, chatId, transcript, { created });
@@ -101,18 +112,39 @@ async function send(prompt) {
     const { retained, omitted, tool } = online || fileTurn?.helper ? {retained:[],omitted:0,tool:null} : prepareReply(model, context, maxTokens);
     if(fileTurn?.helper) { reply=fileTurn.text; source='file_analysis'; output.parentElement.classList.add('helper'); } else if(online) {
       webAborter=new AbortController();
-      output.textContent='Searching Wikipedia…';
-      reply=(await webAnswer(online,fetch,webAborter.signal)).text;source='web';
+      output.textContent=online.mode==='read'?'Reading Wikipedia…':'Searching the web…';
+      const found=await webAnswer(online,fetch,webAborter.signal);
+      reply=found.text;source=found.engine==='wikipedia'?'web':'web_search';
       output.parentElement.classList.add('helper');
     } else if (tool) {
       [reply, source] = tool;
       output.parentElement.classList.add('helper');
     } else {
-      let count = 0;
+
+      let count = 0, held = !drawing && !attached;
       for (const text of model.generate(retained, { maxTokens, temperature })) {
-        reply += text; output.textContent = reply;
+        reply += text;
+        held = held && (maybeSearch(reply) || maybeCide(reply));
+        output.textContent = held ? 'Thinking…' : reply;
         if (++count % 4 === 0) await nextFrame();
         if (stopped) break;
+      }
+      const call = held && !stopped && reply.trim().match(SEARCH_CALL);
+      if (held && !stopped && reply.trim() === CIDE_CALL) {
+        reply = ''; source = 'cide'; output.textContent = 'Kani is handing this to Cide…';
+        output.previousElementSibling.textContent = LABELS.cide;
+        for await (const piece of cideAnswer(context, { load: loadCide, temperature,
+          cancelled: () => stopped, pause: nextFrame })) {
+          reply += piece; output.textContent = reply;
+        }
+      } else if (call) {
+        reply = ''; source = 'model_web'; webAborter = new AbortController();
+        const generate = messages => model.generate(messages, { maxTokens: 200, temperature: 0 });
+        for await (const piece of searchedAnswer(call[1], prompt, { generate, webAnswer, signal: webAborter.signal })) {
+          reply += piece; output.textContent = reply;
+          await nextFrame();
+          if (stopped) break;
+        }
       }
     }
     output.previousElementSibling.textContent = LABELS[source];
@@ -120,7 +152,7 @@ async function send(prompt) {
     if (fileTurn && !fileTurn.helper) { const note=document.createElement('div'); note.className='attachment-receipt'; note.textContent=fileTurn.receipt; output.parentElement.append(note); }
     const rendered = source === 'model' && preview(output, reply);
     if (drawing && !rendered && !stopped) showError('The model did not produce a complete, supported SVG. Its response is shown above.');
-    $('#generation-info').textContent = `${source==='web'?'Retrieved online':'Generated on this device'} in ${((performance.now() - started) / 1000).toFixed(2)}s`
+    $('#generation-info').textContent = `${source.startsWith('web')?'Retrieved online':source==='model_web'?'Searched the web, then answered on this device':'Generated on this device'} in ${((performance.now() - started) / 1000).toFixed(2)}s`
       + (omitted ? ' · Older turns omitted to fit this model' : '') + (privateChat ? ' · Attachment chat stays local; not saved to your account.' : ' · Review and test generated code.');
     transcript.push({ role:'assistant', content:reply, source, excludeFromContext:attached });
     void persist();
@@ -134,7 +166,7 @@ async function send(prompt) {
   }
 }
 
-// ---- Saved chats
+
 
 function relativeTime(timestamp) {
   if (!timestamp?.toDate) return 'saving…';
@@ -179,7 +211,7 @@ function renderChatList() {
 function onChats(chats) {
   savedChats = chats;
   const current = chats.find(chat => chat.id === chatId);
-  // Another device or tab changed the open chat: show its latest version.
+
   if (current && !current.pending && !generating && !privateChat && JSON.stringify(plain(current.messages || [])) !== JSON.stringify(transcript)) {
     transcript = plain(current.messages || []); savedChat = true; renderTranscript();
   }
@@ -197,12 +229,12 @@ function onUser(next) {
     stopWatchingChats = account.watchChats(user.uid, onChats, error => showError('Saved chats are unavailable: ' + account.friendlyError(error)));
     if (transcript.length && !savedChat) void persist();
   } else if (wasSignedIn) {
-    startChat(); // Do not leave an account's chat on screen after signing out.
+    startChat();
   }
   renderChatList();
 }
 
-// ---- Account dialog
+
 
 const dialog = $('#account-dialog');
 function authStatus(text, error = false) { $('#auth-status').textContent = text; $('#auth-status').classList.toggle('error', error); }
@@ -234,7 +266,7 @@ document.querySelectorAll('[data-provider]').forEach(button => button.addEventLi
 $('#sign-out').addEventListener('click', () => void authAction(() => account.signOutUser()));
 $('#dialog-new-chat').addEventListener('click', () => { startChat(); dialog.close(); $('#prompt').focus(); });
 
-// ---- Chat controls
+
 
 $('#chat-form').addEventListener('submit', event => { event.preventDefault(); void send($('#prompt').value); });
 $('#prompt').addEventListener('keydown', event => {
@@ -245,13 +277,13 @@ $('#stop').addEventListener('click', () => { stopped = true; webAborter?.abort()
 for (const button of [$('#new-chat'), $('#new-chat-mobile')]) button.addEventListener('click', () => { startChat(); $('#prompt').focus(); });
 $('#reload').addEventListener('click', () => location.reload());
 
-// A redeploy with new weights shows a banner instead of silently changing a running chat.
+
 async function checkForUpdate() {
   if (!model) return;
   try {
     const latest = await (await fetch('model/b1.json', { cache: 'no-store' })).json();
     if (latest.weights_sha256 !== model.manifest.weights_sha256) $('#update-banner').hidden = false;
-  } catch { /* Offline: check again later. */ }
+  } catch {  }
 }
 setInterval(checkForUpdate, 10 * 60 * 1000);
 document.addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible') void checkForUpdate(); });
@@ -269,7 +301,7 @@ loadModel('model/').then(loaded => {
   showError(error.message);
 });
 
-// Accounts load separately, so chatting works even if Firebase is unreachable.
+
 import('./account.js').then(module => {
   account = module;
   module.watchUser(onUser);

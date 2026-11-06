@@ -1,4 +1,4 @@
-// Parse generated source without importing it or executing its statements.
+
 import { spawn } from 'node:child_process';
 import path from 'node:path';
 export async function checkSyntax(filename, content, python = 'python3') {

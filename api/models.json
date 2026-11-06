@@ -1,0 +1,21 @@
+[
+  {
+    "id": "kani-otter-4.3",
+    "name": "Kani Otter 4.3",
+    "directory": "models/otter-4-3",
+    "about": "General chat and writing. Looks things up on the web and on maps, and hands code requests to Cide 2. 88M parameters."
+  },
+  {
+    "id": "cide-2",
+    "name": "Cide 2",
+    "directory": "models/cide-2",
+    "coding": true,
+    "about": "Code: single-page websites and 19 programming languages. 88M parameters, 2,048-token context."
+  },
+  {
+    "id": "kani-seal-3",
+    "name": "Kani Seal 3",
+    "directory": "model",
+    "about": "Smaller and quicker. 8.7M parameters."
+  }
+]

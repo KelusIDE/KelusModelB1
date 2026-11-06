@@ -142,7 +142,7 @@ def message(core, rng, ending=True):
     return noisy(rng.choice(OPENERS) + fill(core, rng) + (rng.choice(ENDINGS) if ending else ''), rng)
 
 
-# Further crisis wordings, trained whenever crisis phrasings are not held out.
+
 MORE_CRISIS = ["i don't want to be here anymore", "i'm going to kill myself", 'everyone would be better off without me',
                'i want to stop existing', "i can't go on living like this", "i'm planning to end my life",
                'i want to overdose', 'i keep thinking about killing myself', 'there is no point in living']
@@ -178,7 +178,7 @@ def build(seed=2029, per_situation=1100, crisis=2400, validation=40, train_all=(
                 rows.append({'split': name, 'family': 'feelings', 'situation': key, 'accept': replies, 'messages': [
                     {'role': 'user', 'content': message(rng.choice(split[key][part]), rng)},
                     {'role': 'assistant', 'content': rng.choice(replies)}]})
-        # Conversations: a feeling, then a follow-up such as wanting cheering up, feeling better, or a crisis.
+
         for _ in range(4000 if name == 'train' else 100):
             first = rng.choice([k for k in SITUATIONS if k not in ('crisis', 'better', 'cheer_up', 'good_news', 'birthday', 'bored')])
             second = rng.choice(['cheer_up', 'cheer_up', 'better', 'better', 'crisis', 'sad'])
@@ -188,7 +188,7 @@ def build(seed=2029, per_situation=1100, crisis=2400, validation=40, train_all=(
                 turns += [{'role': 'user', 'content': message(rng.choice(split[key][part]), rng)},
                           {'role': 'assistant', 'content': rng.choice(replies)}]
             rows.append({'split': name, 'family': 'feelings', 'situation': second, 'accept': SITUATIONS[second][0], 'messages': turns})
-        # A crisis mixed into another feeling in one message still gets the crisis reply.
+
         for _ in range(800 if name == 'train' else 40):
             other = rng.choice(['breakup', 'sad', 'lonely', 'disappointed', 'conflict', 'stressed'])
             text = fill(rng.choice(split[other][part]), rng) + rng.choice([' and ', '. ', ', ', ' and now ']) + fill(rng.choice(split['crisis'][part]), rng)

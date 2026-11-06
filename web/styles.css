@@ -4,7 +4,7 @@
 
 .svg-preview{margin:0 0 20px;padding:18px;border:1px solid #bce5d133;border-radius:10px;background:#181c1b;max-width:440px}.svg-preview img{display:block;width:min(100%,320px);height:auto;margin:0 auto 14px;border-radius:6px;background:repeating-conic-gradient(#f2f4f3 0% 25%,#e2e8e4 0% 50%) 50%/24px 24px}.svg-preview figcaption{font:11px/1.6 ui-monospace,monospace;color:#96ada0}.svg-preview a{display:inline-block;margin-top:10px;color:#bce5d1;font-size:12px}
 
-/* Attachment data is rendered as text, with raster previews only. */
+
 .attach-button { margin: 8px 0 0; padding: 6px 11px; border: 1px solid #41434c; border-radius: 7px; background: transparent; color: inherit; cursor: pointer; font: inherit; }
 .attach-button:disabled { opacity: .5; cursor: wait; }
 .attachment-list { display: grid; gap: 7px; max-height: 200px; overflow: auto; }

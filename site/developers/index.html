@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kani API</title>
+    <meta name="description" content="Use Kani, Kelus Corp.'s from-scratch AI, in your own apps: API keys and docs.">
+    <link rel="icon" href="/seal-favicon.svg" type="image/svg+xml" sizes="any">
+    <link rel="icon" href="/seal-favicon-32.png" sizes="32x32" type="image/png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Google+Sans:opsz,wght@17..18,400..700&family=JetBrains+Mono:wght@400..700&display=swap">
+    <link rel="stylesheet" href="/developers/developers.css">
+    <script type="module" src="/developers/developers.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href="/"><img src="/seal-favicon.svg" alt="" width="24" height="24"> Kani</a>
+      <nav><a href="#keys">Keys</a><a href="#quickstart">Quickstart</a><a href="#reference">Reference</a><a href="/">Chat</a></nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <p class="eyebrow">Kani API · by Kelus Corp.</p>
+        <h1>Put Kani in your own app.</h1>
+        <p class="lead">Chat completions in the same format as OpenAI's API, so existing code and SDKs work by changing the
+          base URL and key. Kani models are small and trained from scratch; they can be wrong, so check what matters.</p>
+        <ul class="facts">
+          <li><strong>Free</strong> 300 requests a day per account</li>
+          <li><strong>10</strong> requests a minute per key</li>
+          <li><strong>3</strong> models: chat, code, and quick</li>
+        </ul>
+      </section>
+
+      <section id="keys" class="card">
+        <h2>Your API keys</h2>
+        <div id="signed-out" hidden>
+          <p>Sign in with your Kelus account (the same one as Kani chat and the Kelus IDE) to make a key.</p>
+          <div class="row">
+            <button id="google" class="button">Continue with Google</button>
+            <button id="github" class="button">Continue with GitHub</button>
+          </div>
+          <form id="email-form" class="email">
+            <input id="email" type="email" autocomplete="email" placeholder="Email" required>
+            <input id="password" type="password" autocomplete="current-password" placeholder="Password" required>
+            <button class="button primary">Sign in</button>
+          </form>
+          <p class="hint">No account yet? Create one in <a href="/">Kani chat</a> (Sign in, then Create account), then come back.</p>
+        </div>
+        <div id="signed-in" hidden>
+          <p class="who"><span id="who"></span> <button id="sign-out" class="link">Sign out</button></p>
+          <p id="usage" class="hint"></p>
+          <div id="new-key" class="new-key" hidden>
+            <p><strong>Your new key.</strong> Copy it now: it is shown only once. Keep it on your server, never in a web page or app.</p>
+            <div class="row"><code id="new-key-value"></code><button id="copy-key" class="button">Copy</button></div>
+          </div>
+          <table class="keys">
+            <thead><tr><th>Name</th><th>Key</th><th>Made</th><th>Last used</th><th>Requests</th><th></th></tr></thead>
+            <tbody id="key-rows"></tbody>
+          </table>
+          <form id="create-form" class="row">
+            <input id="key-name" maxlength="40" placeholder="Key name, like “my bot”">
+            <button class="button primary">Create key</button>
+          </form>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <section id="quickstart">
+        <h2>Quickstart</h2>
+        <p>Base URL <code>https://kani-api.chatgpt-ai-5-2o2.workers.dev/v1</code>. Send your key as
+          <code>Authorization: Bearer hpk-...</code>.</p>
+        <div class="tabs" role="tablist">
+          <button role="tab" aria-selected="true" data-tab="curl">curl</button>
+          <button role="tab" aria-selected="false" data-tab="python">Python</button>
+          <button role="tab" aria-selected="false" data-tab="javascript">JavaScript</button>
+        </div>
+        <pre data-panel="curl"><code>curl https://kani-api.chatgpt-ai-5-2o2.workers.dev/v1/chat/completions \
+  -H "Authorization: Bearer $KANI_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{"model": "kani-otter-4.3", "messages": [{"role": "user", "content": "Write a haiku about otters."}]}'</code></pre>
+        <pre data-panel="python" hidden><code># pip install openai
+import os
+from openai import OpenAI
+
+client = OpenAI(base_url="https://kani-api.chatgpt-ai-5-2o2.workers.dev/v1", api_key=os.environ["KANI_API_KEY"])
+reply = client.chat.completions.create(
+    model="kani-otter-4.3",
+    messages=[{"role": "user", "content": "Write a haiku about otters."}],
+)
+print(reply.choices[0].message.content)</code></pre>
+        <pre data-panel="javascript" hidden><code>// Node 18+, on your server: never put the key in a web page.
+const response = await fetch('https://kani-api.chatgpt-ai-5-2o2.workers.dev/v1/chat/completions', {
+  method: 'POST',
+  headers: { Authorization: `Bearer ${process.env.KANI_API_KEY}`, 'Content-Type': 'application/json' },
+  body: JSON.stringify({ model: 'kani-otter-4.3', messages: [{ role: 'user', content: 'Write a haiku about otters.' }] }),
+});
+const reply = await response.json();
+console.log(reply.choices[0].message.content);</code></pre>
+      </section>
+
+      <section id="reference">
+        <h2>Models</h2>
+        <table class="models">
+          <thead><tr><th>Model</th><th>Good for</th></tr></thead>
+          <tbody>
+            <tr><td><code>kani-otter-4.3</code> <span class="tag">default</span></td><td>General chat and writing. Looks things up on the web and on maps, and hands code requests to Cide 2. 88M parameters.</td></tr>
+            <tr><td><code>cide-2</code></td><td>Code: single-page websites and 19 programming languages. 88M parameters, 2,048-token context.</td></tr>
+            <tr><td><code>kani-seal-3</code></td><td>Smaller and quicker. 8.7M parameters.</td></tr>
+          </tbody>
+        </table>
+
+        <h2>POST /v1/chat/completions</h2>
+        <table class="params">
+          <tbody>
+            <tr><td><code>messages</code></td><td>Required. <code>user</code> and <code>assistant</code> turns, last one from the user, up to 64 messages and 8,000 characters each. <code>system</code> messages are accepted and ignored: Kani has no system prompt.</td></tr>
+            <tr><td><code>model</code></td><td>One of the models above. Default <code>kani-otter-4.3</code>.</td></tr>
+            <tr><td><code>max_tokens</code></td><td>Longest reply, 1 to 2,048 tokens, within the model's context. Default 512; 2,048 for <code>cide-2</code>. <code>max_completion_tokens</code> works too.</td></tr>
+            <tr><td><code>temperature</code></td><td>0 to 2. Default 0: the same question gets the same answer. Above 0, Kani samples and the settings below apply.</td></tr>
+            <tr><td><code>top_p</code></td><td>Above 0, up to 1. Samples only from the likeliest tokens that together hold this share of the probability. Default 1.</td></tr>
+            <tr><td><code>top_k</code></td><td>1 to 200. Samples only from this many likeliest tokens. Default 30.</td></tr>
+            <tr><td><code>seed</code></td><td>A whole number. The same seed and settings give the same sampled reply.</td></tr>
+            <tr><td><code>presence_penalty</code></td><td>-2 to 2. Above 0 makes Kani less likely to reuse any token it has already written in this reply. Default 0.</td></tr>
+            <tr><td><code>frequency_penalty</code></td><td>-2 to 2. Like <code>presence_penalty</code>, but stronger for each time a token was used. Default 0.</td></tr>
+            <tr><td><code>repetition_penalty</code></td><td>1 to 2. Divides the score of tokens already in the reply (the style of Hugging Face and vLLM). Default 1, off.</td></tr>
+            <tr><td><code>stream</code></td><td><code>true</code> sends the reply as server-sent events, like OpenAI's, ending with <code>data: [DONE]</code>.</td></tr>
+            <tr><td><code>stream_options</code></td><td><code>{"include_usage": true}</code> sends token counts in one last chunk with no choices, as OpenAI does. Otherwise they come with the finish reason.</td></tr>
+            <tr><td><code>stop</code></td><td>Up to 4 strings; the reply ends before the first one.</td></tr>
+            <tr><td><code>kani_tools</code></td><td>Default <code>true</code>: Kani searches the web, looks up places and does arithmetic itself. <code>false</code> returns its lookups as text instead (<code>SEARCH: …</code>, <code>PLACES: … @ …</code>) for you to run.</td></tr>
+          </tbody>
+        </table>
+        <p>Replies also carry <code>kani.source</code>: <code>model</code>, <code>cide</code>, <code>web</code>, <code>places</code>,
+          <code>local_calculator</code>, <code>local_clock</code> or <code>crisis_support</code>, so you can label answers that came from a helper rather than the model.
+          Penalties and sampling apply to Kani's own replies; summaries of web results stay at temperature 0.
+          <code>user</code> and <code>response_format: {"type": "text"}</code> are accepted and change nothing.
+          Function calling, images, JSON mode, <code>logprobs</code>, <code>logit_bias</code> and <code>n</code> above 1 are not supported.</p>
+
+        <h2>Errors and limits</h2>
+        <table class="params">
+          <tbody>
+            <tr><td><code>401</code></td><td>Missing, wrong or deleted key.</td></tr>
+            <tr><td><code>400</code> / <code>404</code></td><td>A request Kani can't take, or an unknown model. The message says which.</td></tr>
+            <tr><td><code>429</code></td><td>Over 10 requests a minute per key, or 300 a day per account (resets 00:00 UTC). Wait for <code>Retry-After</code>.</td></tr>
+            <tr><td><code>502</code> / <code>503</code></td><td>Kani is waking up or busy. Retry after a few seconds.</td></tr>
+          </tbody>
+        </table>
+        <p class="hint">Privacy: messages are not stored or logged, only request counts. Keys are stored only as a SHA-256 hash.
+          Web and place lookups send the search words to the search service. Delete a key here to stop it at once.</p>
+      </section>
+    </main>
+    <footer>© Kelus Corp. · <a href="/">Kani chat</a></footer>
+  </body>
+</html>

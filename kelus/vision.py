@@ -75,7 +75,7 @@ class VisionModel:
         if images.ndim != 4 or images.shape[1:] != (c.image_size, c.image_size, 3) or not np.isfinite(images).all() or np.min(images) < 0 or np.max(images) > 1:
             raise ValueError('Expected finite RGB images [batch, size, size, 3] in [0, 1]')
         batch, p, g, d = images.shape[0], c.patch_size, c.image_size // c.patch_size, c.width
-        # Each row is one flattened RGB patch, ordered left-to-right, top-to-bottom.
+
         patches = (images * 2 - 1).reshape(batch,g,p,g,p,3).transpose(0,1,3,2,4,5).reshape(batch,g*g,p*p*3)
         x = Tensor(patches) @ self.parameters['patch'] + self.parameters['position']
         h, head_width = c.heads, d // c.heads
@@ -85,7 +85,7 @@ class VisionModel:
             def project(name):
                 return (normalized @ self.parameters[prefix + name]).reshape(batch,g*g,h,head_width).transpose(0,2,1,3)
             q, k, v = project('q'), project('k'), project('v')
-            # Bidirectional attention: every image patch can see every other patch.
+
             attention = ((q @ k.transpose(0,1,3,2)) * head_width ** -0.5).softmax()
             mixed = (attention @ v).transpose(0,2,1,3).reshape(batch,g*g,d)
             x = x + mixed @ self.parameters[prefix + 'projection']
@@ -146,7 +146,7 @@ def synthetic(config, count, seed):
             grid[y:min(y+2,g), x:min(x+3,g)] = 5
         dark = rng.random() < .6
         base = float(rng.uniform(.04,.2) if dark else rng.uniform(.7,.87))
-        # Color offsets are randomized per image; no single fixed label palette.
+
         palette = np.clip(base + rng.uniform(-.06,.10,(len(LABELS),3)),0,1)
         image = images[index]
         for y in range(g):
@@ -185,7 +185,7 @@ def load_image(filename, config):
     with Image.open(filename) as image:
         if image.width * image.height > 40_000_000: raise ValueError('Image exceeds 40 megapixels')
         original = image.size
-        # Letterbox without stretching; return geometry so the report is interpretable.
+
         ratio = min(config.image_size / image.width, config.image_size / image.height)
         size = tuple(max(1,round(value*ratio)) for value in image.size)
         resized = image.convert('RGB').resize(size,Image.Resampling.BILINEAR)

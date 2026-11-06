@@ -22,7 +22,7 @@ def build_v2():
         target=rng.choice(chat)
         prior=rng.choice(singles)
         records.append({'split':'train','messages':prior['messages']+target['messages']})
-    # Keep only one preceding exchange, matching the deployed runtime.
+
     for row in records: row['messages']=row['messages'][-4:]
     unique={json.dumps(r['messages'],sort_keys=True):r for r in records}
     return list(unique.values())

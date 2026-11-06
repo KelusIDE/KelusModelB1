@@ -10,7 +10,7 @@ capabilities. Older checkpoints may still generate their original B1 identity.
 
 | Property | Selected checkpoint |
 |---|---|
-| File | `checkpoints/b1-v3.best.npz` (browser copy: `site/model/`, https://kelus-b1.web.app) |
+| File | `checkpoints/b1-v3.best.npz` (browser copy: `site/model/`, https://kelus-b1.pages.dev) |
 | Weights | Random initialization, seed 42; trained locally |
 | License | Apache-2.0 for the project's rights in released B1 weights and original code; preserve applicable notices. See [LICENSE](LICENSE), [NOTICE](NOTICE), and [LICENSING.md](LICENSING.md) for scope and third-party exceptions. |
 | Pretrained weights / external model API | None |
@@ -89,3 +89,9 @@ Earlier reports (`reports/b1-before.json`, `reports/b1-after.json`, `reports/b1-
 ## Intended use
 
 Study and extend a complete local pipeline: tokenizer → transformer → loss → custom gradients → optimizer → checkpoint → chat, in Python and in the browser. Use the practiced topics and inspect the reported failures. Generated code is shown as text and never executed; review and test it before use.
+
+## Credits for later releases
+
+Kani Otter 4.12 was trained in part on SODA by Hyunwoo Kim et al. (2023), https://huggingface.co/datasets/allenai/soda, licensed under CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. The dialogues were filtered and reformatted for training.
+
+Cide 4.5 was trained in part on the StarCoder2 Self-Alignment Dataset by BigCode (https://huggingface.co/datasets/bigcode/self-oss-instruct-sc2-exec-filter-50k) and OpenCoder's algorithmic corpus (https://huggingface.co/datasets/OpenCoder-LLM/opc-annealing-corpus), both under the Open Data Commons Attribution License (https://opendatacommons.org/licenses/by/1-0/), and on Magicoder OSS-Instruct (https://huggingface.co/datasets/ise-uiuc/Magicoder-OSS-Instruct-75K, MIT) and Magicoder Evol-Instruct (https://huggingface.co/datasets/ise-uiuc/Magicoder-Evol-Instruct-110K, Apache-2.0). The rows were filtered and reformatted for training.

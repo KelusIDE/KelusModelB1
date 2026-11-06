@@ -37,7 +37,7 @@ def cases(data, limit, seed=7, family='python_spec'):
     random.Random(seed).shuffle(picked)
     out = []
     for row in picked[:limit]:
-        if 'accept' in row:  # chat families: exact reply after the conversation so far
+        if 'accept' in row:
             out.append((row['messages'][:-1], row.get('situation'), row['accept']))
             continue
         prompt, answer = row['messages'][0]['content'], row['messages'][1]['content']
@@ -48,7 +48,7 @@ def cases(data, limit, seed=7, family='python_spec'):
         while len(trials) < 3:
             inputs = tuple(rng.randint(-9, 12) for _ in params)
             try:
-                trials.append((inputs, eval(expression, {}, dict(zip(params, inputs)))))  # reference answer from our own generator
+                trials.append((inputs, eval(expression, {}, dict(zip(params, inputs)))))
             except ZeroDivisionError:
                 continue
         out.append(([row['messages'][0]], function.name, trials))

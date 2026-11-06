@@ -1,0 +1,18 @@
+[package]
+name = "kani_tokenize"
+version = "0.1.0"
+edition = "2021"
+description = "Kani's BPE tokenizer (kelus/tokenizer.py, pattern versions 2 and 3) in Rust, for kaggle/kani_advanced.py"
+
+[lib]
+name = "kani_tokenize"
+crate-type = ["cdylib"]
+
+[dependencies]
+pyo3 = { version = "0.23", features = ["extension-module", "abi3-py38"] }
+regex = "1"
+rustc-hash = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1

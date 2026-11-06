@@ -1,5 +1,5 @@
-// Terminal rendering for the kani CLI: colors, ASCII art, boxes, and streaming markdown.
-// Pure string functions, so tests can check them without a terminal.
+
+
 
 const ESC = '\x1b[';
 const ANSI = /\x1b\[[0-9;?]*[A-Za-z]/g;
@@ -40,7 +40,7 @@ const KEYWORDS = {
 const CONSTANTS = new Set('True False None true false null undefined NaN Infinity self'.split(' '));
 const ALIASES = { py: 'python', js: 'javascript', ts: 'javascript', typescript: 'javascript', jsx: 'javascript' };
 
-/** 0 = no color, 2 = 256 colors, 3 = truecolor. */
+
 export function colorMode(env = process.env, stream = process.stdout) {
   if ('NO_COLOR' in env) return 0;
   if (env.FORCE_COLOR) return 3;
@@ -49,7 +49,7 @@ export function colorMode(env = process.env, stream = process.stdout) {
   return 2;
 }
 
-/** COLORFGBG ("15;0") is set by several terminals; background 7 or 15 means a light theme. */
+
 export function lightBackground(env = process.env) {
   const parts = (env.COLORFGBG || '').split(';');
   return parts.length > 1 && ['7', '15'].includes(parts[parts.length - 1]);
@@ -68,7 +68,7 @@ export function theme({ mode = colorMode(), light = lightBackground() } = {}) {
     mode,
     color: (name, text) => (mode && text ? fg(palette[name]) + text + `${ESC}39m` : text),
     bold: text => (mode && text ? `${ESC}1m${text}${ESC}22m` : text),
-    /** Color each character by its column, blending through the named stops. */
+
     gradient(text, stops = ['mint', 'teal', 'coral'], span = width(text)) {
       if (!mode) return text;
       const colors = stops.map(name => palette[name]);
@@ -94,7 +94,7 @@ export function banner(t, columns) {
   return '  ' + t.gradient('KANI');
 }
 
-/** A rounded box whose border blends mint to coral. Lines must already fit. */
+
 export function box(t, lines, size, title = '') {
   const inner = size - 4;
   const head = title ? `─ ${title} ` : '';
@@ -116,10 +116,10 @@ export function highlight(t, code, language) {
   });
 }
 
-/**
- * Streams model text as indented, word-wrapped prose and boxed, highlighted code.
- * Lines that start with a backtick are held until complete, so a fence is never shown raw.
- */
+
+
+
+
 export class Renderer {
   constructor(t, columns, indent = 2) {
     Object.assign(this, { t, columns: Math.max(24, columns), pad: ' '.repeat(indent), indent });
@@ -214,7 +214,7 @@ export class Renderer {
     return this.pad + this.t.color('muted', '│ ') + highlight(this.t, line, this.language);
   }
 
-  /** Flush whatever is left; the cursor stays at the end of the last line. */
+
   end() {
     const line = this.line;
     this.line = '';
@@ -231,10 +231,10 @@ export class Renderer {
   }
 }
 
-/**
- * The input box, footer, and command suggestions.
- * Returns the lines plus the caret's row and column inside them.
- */
+
+
+
+
 export function inputArea(t, { text, cursor, size, placeholder, status, suggestions = [] }) {
   const room = size - 6;
   const chars = [...text];

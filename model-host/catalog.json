@@ -1,0 +1,97 @@
+{
+  "repository": "KelusIDE/KelusModelB1",
+  "tag": "models-2026-11-05",
+  "models": {
+    "seal-3": {
+      "name": "Kani Seal 3",
+      "directory": "model",
+      "asset": "seal-3.0044d71d7b4ad8a5.bin",
+      "bytes": 34767360,
+      "sha256": "0044d71d7b4ad8a536d172c368a8d99539ccb59d2b6c5de72b24f38f73e72cc2"
+    },
+    "big-v2": {
+      "name": "Big Kani v2 (experimental)",
+      "directory": "models/big-v2",
+      "asset": "big-v2.98bbf28ddc157741.bin",
+      "bytes": 206397440,
+      "sha256": "98bbf28ddc1577419b28209675c16a2e1f362c0a2dba930e26ace62b0f499985"
+    },
+    "cide-2": {
+      "name": "Cide 2",
+      "directory": "models/cide-2",
+      "asset": "cide-2.5e436cbd009c2fc0.bin",
+      "bytes": 88582144,
+      "sha256": "5e436cbd009c2fc028a1b570e40c23aaae74e599b1aa03a551917fe90fe2e0b3"
+    },
+    "cide-3": {
+      "name": "Cide 3",
+      "directory": "models/cide-3",
+      "asset": "cide-3.f2680024d5c15ae3.bin",
+      "bytes": 206397440,
+      "sha256": "f2680024d5c15ae3f3365ed09a80df6a52b2db412bfcab46143426cb89d12fef"
+    },
+    "cide-4-1": {
+      "name": "Cide 4.1",
+      "directory": "models/cide-4-1",
+      "asset": "cide-4-1.d99e30ab3260d6b6.bin",
+      "bytes": 206397440,
+      "sha256": "d99e30ab3260d6b6a55a5d2b443de462748902d08bfe8c29d375990dc7a6f4de"
+    },
+    "cide-4-2": {
+      "name": "Cide 4.2",
+      "directory": "models/cide-4-2",
+      "asset": "cide-4-2.1f4960aae6154d6d.bin",
+      "bytes": 206397440,
+      "sha256": "1f4960aae6154d6dce8e48b1debcb13ae5338e837e558fb47c82ebaf58b45d92"
+    },
+    "cide-4-3": {
+      "name": "Cide 4.3",
+      "directory": "models/cide-4-3",
+      "asset": "cide-4-3.26fcbf115a29398d.bin",
+      "bytes": 206397440,
+      "sha256": "26fcbf115a29398d64b534062dec5f31fd1e1aaae0a0a9127b2200523928d79b"
+    },
+    "cide-4-5": {
+      "name": "Cide 4.5",
+      "directory": "models/cide-4-5",
+      "asset": "cide-4-5.7e3082c77f82881f.bin",
+      "bytes": 206397440,
+      "sha256": "7e3082c77f82881f76955605217caaaee4cdd951073e573b6e678dc1764b1b51"
+    },
+    "otter-4-11": {
+      "name": "Kani Otter 4.11",
+      "directory": "models/otter-4-11",
+      "asset": "otter-4-11.2e79f58bc0f9007f.bin",
+      "bytes": 206397440,
+      "sha256": "2e79f58bc0f9007ffe57e8052e5ae84f83693741e896ad10494e78ec98369c08"
+    },
+    "otter-4-12": {
+      "name": "Kani Otter 4.12",
+      "directory": "models/otter-4-12",
+      "asset": "otter-4-12.ba2554b41c8504f8.bin",
+      "bytes": 206397440,
+      "sha256": "ba2554b41c8504f8a58c5af46b9d1631d53a2e15f41b15a32ed2e167b0283dd9"
+    },
+    "otter-4-3": {
+      "name": "Kani Otter 4.3",
+      "directory": "models/otter-4-3",
+      "asset": "otter-4-3.0e73cd82c0085387.bin",
+      "bytes": 88582144,
+      "sha256": "0e73cd82c008538789abb773bb8ec3bb16986c70a6527257ca2a3d250fd65169"
+    },
+    "otter-4-8": {
+      "name": "Kani Otter 4.8",
+      "directory": "models/otter-4-8",
+      "asset": "otter-4-8.91308500717ada57.bin",
+      "bytes": 206397440,
+      "sha256": "91308500717ada57e8c8aff1a1d258491e5ef03e02951d102e5675ce7e454d8d"
+    },
+    "otter-4-9": {
+      "name": "Kani Otter 4.9",
+      "directory": "models/otter-4-9",
+      "asset": "otter-4-9.80237a9dc6d0ba35.bin",
+      "bytes": 206397440,
+      "sha256": "80237a9dc6d0ba3565f782f67ae9281b4e94ba6bbffd76a8414f0ee0fb47afb9"
+    }
+  }
+}

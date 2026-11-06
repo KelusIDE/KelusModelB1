@@ -85,6 +85,8 @@ In particular:
   [FOUNDATION_TRAINING.md](FOUNDATION_TRAINING.md) for provenance. The root
   Apache license does not replace the Python license stack or MDN's content
   and code licenses.
+- **SODA:** Kani Otter 4.12 was trained in part on SODA by Hyunwoo Kim et al. (2023), https://huggingface.co/datasets/allenai/soda, licensed under CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. The dialogues were filtered and reformatted for training. It keeps its own license; this project's grant does not cover it.
+- **Cide 4.5 training data:** Cide 4.5 was trained in part on the StarCoder2 Self-Alignment Dataset by BigCode (https://huggingface.co/datasets/bigcode/self-oss-instruct-sc2-exec-filter-50k) and OpenCoder's algorithmic corpus (https://huggingface.co/datasets/OpenCoder-LLM/opc-annealing-corpus), both under the Open Data Commons Attribution License (https://opendatacommons.org/licenses/by/1-0/), and on Magicoder OSS-Instruct (https://huggingface.co/datasets/ise-uiuc/Magicoder-OSS-Instruct-75K, MIT) and Magicoder Evol-Instruct (https://huggingface.co/datasets/ise-uiuc/Magicoder-Evol-Instruct-110K, Apache-2.0). The rows were filtered and reformatted for training. They keep their own licenses; this project's grant does not cover them.
 - **External tokenizer:** the standalone root `tokenizer.json`, if present,
   is the Google Gemma tokenizer supplied for inspection. It is not B1's own
   tokenizer, is not used by the current training run, and is excluded from

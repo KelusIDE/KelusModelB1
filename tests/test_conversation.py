@@ -95,12 +95,32 @@ class ConversationTests(unittest.TestCase):
                 {"role": "user", "content": "hi"}, {"role": "assistant", "content": "new"}]} for i in range(5)]
             file.write_text("".join(json.dumps(row) + "\n" for row in records))
             dataset = Dataset(file, last_reply_only=True)
-            expected = 2 * 4  # two validation replies: 'new' and EOS each
+            expected = 2 * 4
             self.assertEqual(sum(int((y >= 0).sum()) for _, y in dataset.validation_batches(2, 64)), expected)
             x, y = dataset.batch("train", 2, 64, np.random.default_rng(1))
             for inputs, targets in zip(x, y):
                 self.assertIn(ord('o'), inputs)
                 self.assertEqual(list(targets[targets >= 0]), [ord('n'), ord('e'), ord('w'), EOS])
+
+    def test_grouped_batches_pair_examples_of_similar_length(self):
+        with tempfile.TemporaryDirectory() as root:
+            file = Path(root) / "data.jsonl"
+
+            records = [{"split": "train" if i < 40 else "validation", "messages": [
+                {"role": "user", "content": f"q{i}"}, {"role": "assistant", "content": "x" * (10 if i % 2 else 90)}]} for i in range(48)]
+            file.write_text("".join(json.dumps(row) + "\n" for row in records))
+            dataset = Dataset(file)
+            rng = np.random.default_rng(3)
+            widths = {False: [], True: []}
+            for grouped in (False, True):
+                for _ in range(200):
+                    x, _ = dataset.batch("train", 4, 128, rng, trim=True, group_width=32 if grouped else 0)
+                    lengths = (x != 256).sum(axis=1)
+                    if grouped:
+                        self.assertEqual(len(set(-(-lengths // 32))), 1, lengths)
+                    widths[grouped].append(x.shape[1])
+
+            self.assertLess(np.mean(widths[True]), np.mean(widths[False]) * 0.75)
 
     def test_new_curriculum_preserves_source_and_resets_optimizer(self):
         import hashlib

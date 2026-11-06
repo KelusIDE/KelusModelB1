@@ -1,0 +1,66 @@
+/* English practice: the mode switch, the coach's notes, spoken words, read-aloud practice and the microphone. */
+.composer-modes { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 14px; margin: 0 2px 10px; }
+.mode-switch { display: inline-flex; gap: 2px; padding: 3px; border: 1px solid var(--line-strong); border-radius: 100px; background: var(--surface); }
+.mode-switch button { border: 0; background: transparent; color: var(--muted); border-radius: 100px; padding: 6px 12px; font: 500 11px/1.3 var(--sans); white-space: nowrap; transition: background .18s, color .18s; }
+.mode-switch button:hover:not(:disabled) { color: var(--ink); }
+.mode-switch button.active { background: var(--accent); color: var(--accent-ink); }
+.voice-status { margin: 0; font-size: 11px; color: var(--muted); }
+.voice-status.problem { color: var(--danger); }
+
+.mic-button { display: inline-flex; align-items: center; gap: 6px; height: 35px; padding: 0 13px; border: 1px solid var(--accent-line); border-radius: 100px; background: var(--accent-soft);
+  color: var(--accent-text); font: 600 11px/1 var(--sans); white-space: nowrap; transition: box-shadow .08s linear, background .18s; }
+.mic-button:hover:not(:disabled) { background: var(--surface); }
+.mic-button.live { background: var(--accent); color: var(--accent-ink); box-shadow: 0 0 0 calc(var(--level, 0) * 9px) var(--accent-line); }
+.mic-button.small { height: 32px; }
+
+.tutor-card { margin: 10px 0 0 auto; max-width: 560px; padding: 12px 15px; border: 1px solid var(--warn-line); background: var(--warn-soft); border-radius: 12px; font-size: 13px; line-height: 1.6; color: var(--ink-2); }
+.tutor-card.good { border-color: var(--accent-line); background: var(--accent-soft); }
+.tutor-title { font: 600 10px/1.4 var(--mono); letter-spacing: .3px; color: var(--warn-ink); margin-bottom: 6px; }
+.tutor-card.good .tutor-title { color: var(--accent-text); }
+.tutor-card ul { margin: 0 0 8px; padding-left: 18px; }
+.tutor-card li { margin: 3px 0; }
+.tutor-card li span { display: block; color: var(--muted); font-size: 12px; }
+.tutor-card s { color: var(--danger); }
+.tutor-card p { margin: 4px 0 0; }
+.tutor-tip { color: var(--muted); }
+.tutor-better { display: flex; align-items: center; flex-wrap: wrap; gap: 6px 10px; }
+.listen-button { border: 1px solid var(--line-strong); background: var(--surface); color: var(--accent-text); border-radius: 100px; padding: 3px 10px; font: 500 11px/1.5 var(--sans); }
+.listen-button:hover:not(:disabled) { border-color: var(--accent-line); }
+
+.spoken pre { background: var(--surface-2); border: 1px solid var(--line); border-radius: 16px 16px 3px 16px; padding: 13px 19px; }
+.spoken-word { border: 0; background: none; padding: 0; font: inherit; color: inherit; cursor: pointer; }
+.spoken-word:hover { color: var(--accent-text); }
+.spoken-word.unclear { text-decoration: underline wavy var(--warn-ink); text-underline-offset: 4px; }
+.spoken-hint { margin: 6px 2px 0; text-align: right; font-size: 11px; color: var(--muted); }
+
+.word-help { margin: 10px 0 0; padding: 12px 15px; border: 1px solid var(--line-strong); border-radius: 12px; background: var(--surface); font-size: 13px; line-height: 1.6; color: var(--ink-2); max-width: 560px; }
+.word-help-head { display: flex; align-items: baseline; gap: 10px; font-size: 15px; }
+.word-help-head .link { margin-left: auto; text-decoration: none; font-size: 18px; color: var(--muted); }
+.word-help .ipa { font-family: var(--mono); font-size: 13px; color: var(--accent-text); }
+.word-help p { margin: 6px 0 0; }
+.word-help-actions { display: flex; gap: 8px; margin-top: 10px; }
+
+#english-welcome { max-width: 760px; }
+#english-welcome h1 { font: 500 30px/1.25 var(--sans); letter-spacing: -.6px; margin: 0 0 14px; }
+#english-welcome h1 em { font-weight: 400; color: var(--brand-blue); }
+.english-note { margin: 22px 0 0; font-size: 11px; line-height: 1.6; color: var(--faint); max-width: 620px; }
+
+.read-aloud { margin-top: 24px; padding: 16px 18px; border: 1px solid var(--line-strong); border-radius: 16px; background: var(--surface); }
+.read-aloud-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+.read-aloud-head .eyebrow { font: 9px/1.4 var(--mono); letter-spacing: 1px; color: var(--muted); text-transform: uppercase; }
+.read-aloud-head .link { font-size: 11px; text-decoration: none; }
+.read-aloud-sentence { margin: 12px 0; font: 400 26px/1.35 var(--display); color: var(--ink); }
+.read-word { border: 0; background: none; padding: 0 1px; font: inherit; color: inherit; border-radius: 4px; cursor: pointer; }
+.read-word.good { color: var(--ink); }
+.read-word.unclear { background: var(--warn-soft); color: var(--warn-ink); }
+.read-word.wrong, .read-word.missed { background: color-mix(in srgb, var(--danger) 12%, transparent); color: var(--danger); text-decoration: underline; text-underline-offset: 4px; }
+.read-aloud-score { margin: 0 0 10px; font-size: 13px; color: var(--ink-2); }
+.read-aloud-problem { margin: 0 0 10px; font-size: 12px; color: var(--danger); }
+.read-aloud-actions { display: flex; align-items: center; gap: 10px; }
+
+@media (max-width: 640px) {
+  .mode-switch button { padding: 6px 9px; font-size: 10.5px; }
+  .read-aloud-sentence { font-size: 21px; }
+  #english-welcome h1 { font-size: 24px; }
+}
+@media (prefers-reduced-motion: reduce) { .mic-button.live { box-shadow: none; } }

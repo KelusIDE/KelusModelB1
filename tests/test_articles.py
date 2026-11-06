@@ -51,6 +51,6 @@ class ArticleTests(unittest.TestCase):
             records={r['title']:r for r in map(json.loads,(root/'articles/documents.jsonl').read_text().splitlines())}
             sources=json.loads((root/'articles/sources.json').read_text())
         vital=[t for t in records if t.startswith('Topic')]
-        self.assertEqual(len(vital),119)  # every listed page requested; the missing one is skipped
+        self.assertEqual(len(vital),119)
         self.assertEqual(sources['vital_articles']['skipped'],['Missing article: Topic 7'])
         self.assertTrue(all(records[t]['split']==('validation' if held_out(t) else 'train') for t in vital))

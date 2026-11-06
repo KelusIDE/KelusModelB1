@@ -1,4 +1,4 @@
-/** Bounded local workspace tools. These inspect files; they are not model reasoning. */
+
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
@@ -25,7 +25,7 @@ export class Workspace {
     const full = path.resolve(this.root, name), rel = path.relative(this.root, full);
     if (!rel || rel === '..' || rel.startsWith('..' + path.sep) || path.isAbsolute(rel)) throw new Error('Path must be inside the workspace.');
     if (!internal && privatePath(rel)) throw new Error('Private or generated paths are excluded.');
-    // Reject symlinks at every component, including dangling links and parent directories.
+
     let current = this.root;
     for (const part of rel.split(path.sep)) {
       current = path.join(current, part);
@@ -72,7 +72,7 @@ export class Workspace {
     if (names.length > MAX_FILES) truncated = true;
     const files = [];
     for (const name of names.slice(0, MAX_FILES)) {
-      try { await this.resolve(name); files.push(name); } catch { /* missing, symlink or excluded */ }
+      try { await this.resolve(name); files.push(name); } catch {  }
     }
     return { files, truncated, source };
   }
@@ -112,7 +112,7 @@ export class Workspace {
         const f = await this.read(name), pkg = JSON.parse(f.text);
         if (pkg.scripts) summary.push(`${name}: scripts ${Object.keys(pkg.scripts).join(', ')}`);
         if (pkg.bin) summary.push(`${name}: CLI ${JSON.stringify(pkg.bin)}`);
-      } catch { /* malformed manifests do not stop inspection */ }
+      } catch {  }
     }
     summary.push('', 'Use /read PATH, /analyze PATH or /search TEXT for source evidence.', 'This is a local file inventory; semantic reasoning depends on the loaded model.');
     return summary.join('\n');
@@ -166,7 +166,7 @@ export class Workspace {
   }
 }
 
-/** A simple complete-file diff: no generated code is run to produce it. */
+
 export function proposalDiff(p) {
   const before = (p.before || '').split('\n'), after = p.content.split('\n');
   let start = 0, end = 0;

@@ -76,7 +76,7 @@ class CurriculumTests(unittest.TestCase):
                 return int(np.count_nonzero(np.any(labels == ord('Y'), axis=1)))
             self.assertTrue(420 < sampled_y(balanced) < 580)
             self.assertLess(sampled_y(plain), 40)
-            # Restoring RNG state reproduces both bucket choice and window choice.
+
             first = np.random.default_rng(9); second = np.random.default_rng()
             second.bit_generator.state = first.bit_generator.state
             for a,b in zip(balanced.batch('train',4,32,first), balanced.batch('train',4,32,second)):
@@ -90,7 +90,7 @@ class CurriculumTests(unittest.TestCase):
         tokenizer = BPETokenizer.train(['ordinary English training text'] * 5, vocab_size=280, version=2)
         for text in texts:
             self.assertEqual(tokenizer.decode(tokenizer.encode(text)), text)
-        # Round-trip is a representation test, not a claim of model fluency.
+
 
     def test_balanced_training_resume_and_export_preserve_coverage(self):
         rows = [record('train-a'), record('train-b', code='ps1', language='ko', answer='안녕하세요'),

@@ -4,7 +4,12 @@
     "public": "site",
     "ignore": [
       "firebase.json",
-      "**/.*"
+      "**/.*",
+      "developers/**",
+      "**/*.ipa",
+      "_headers",
+      "_redirects",
+      "**/b1.bin"
     ],
     "headers": [
       {
@@ -12,7 +17,7 @@
         "headers": [
           {
             "key": "Content-Security-Policy",
-            "value": "default-src 'none'; script-src 'self' https://apis.google.com; style-src 'self'; connect-src 'self' https://en.wikipedia.org https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://www.googleapis.com; frame-src https://kelus-ide.firebaseapp.com https://apis.google.com; img-src 'self' blob:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+            "value": "default-src 'none'; script-src 'self' 'wasm-unsafe-eval' https://apis.google.com; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://kani-models.chatgpt-ai-5-2o2.workers.dev https://huggingface.co https://*.hf.co https://somewhat.chatgpt-ai-5-2o2.workers.dev https://kani-api.chatgpt-ai-5-2o2.workers.dev https://en.wikipedia.org https://identitytoolkit.googleapis.com https://securetoken.googleapis.com https://firestore.googleapis.com https://www.googleapis.com; frame-src 'self' https://kelus-ide.firebaseapp.com https://apis.google.com; img-src 'self' blob: https://upload.wikimedia.org https://thumb.wikimedia.org https://somewhat.chatgpt-ai-5-2o2.workers.dev; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
           },
           {
             "key": "X-Content-Type-Options",
@@ -29,6 +34,15 @@
         ]
       },
       {
+        "source": "/preview.html",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'none'; script-src 'unsafe-inline'; style-src 'unsafe-inline' https://fonts.googleapis.com; font-src data: https://fonts.gstatic.com; img-src data: blob:; media-src data: blob:; connect-src 'none'; frame-src 'none'; form-action 'none'; base-uri 'none'; frame-ancestors 'self'"
+          }
+        ]
+      },
+      {
         "source": "**/*.@(js|css|html|json|bin)",
         "headers": [
           {
@@ -36,6 +50,73 @@
             "value": "no-cache"
           }
         ]
+      }
+    ],
+    "redirects": [
+      {
+        "source": "/model/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/seal-3/0044d71d7b4ad8a536d172c368a8d99539ccb59d2b6c5de72b24f38f73e72cc2/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/big-v2/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/big-v2/98bbf28ddc1577419b28209675c16a2e1f362c0a2dba930e26ace62b0f499985/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/cide-2/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/cide-2/5e436cbd009c2fc028a1b570e40c23aaae74e599b1aa03a551917fe90fe2e0b3/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/cide-3/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/cide-3/f2680024d5c15ae3f3365ed09a80df6a52b2db412bfcab46143426cb89d12fef/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/cide-4-1/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/cide-4-1/d99e30ab3260d6b6a55a5d2b443de462748902d08bfe8c29d375990dc7a6f4de/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/cide-4-2/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/cide-4-2/1f4960aae6154d6dce8e48b1debcb13ae5338e837e558fb47c82ebaf58b45d92/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/cide-4-3/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/cide-4-3/26fcbf115a29398d64b534062dec5f31fd1e1aaae0a0a9127b2200523928d79b/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/cide-4-5/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/cide-4-5/7e3082c77f82881f76955605217caaaee4cdd951073e573b6e678dc1764b1b51/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/otter-4-11/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/otter-4-11/2e79f58bc0f9007ffe57e8052e5ae84f83693741e896ad10494e78ec98369c08/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/otter-4-12/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/otter-4-12/ba2554b41c8504f8a58c5af46b9d1631d53a2e15f41b15a32ed2e167b0283dd9/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/otter-4-3/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/otter-4-3/0e73cd82c008538789abb773bb8ec3bb16986c70a6527257ca2a3d250fd65169/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/otter-4-8/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/otter-4-8/91308500717ada57e8c8aff1a1d258491e5ef03e02951d102e5675ce7e454d8d/b1.bin",
+        "type": 302
+      },
+      {
+        "source": "/models/otter-4-9/b1.bin",
+        "destination": "https://kani-models.chatgpt-ai-5-2o2.workers.dev/v1/otter-4-9/80237a9dc6d0ba3565f782f67ae9281b4e94ba6bbffd76a8414f0ee0fb47afb9/b1.bin",
+        "type": 302
       }
     ]
   }

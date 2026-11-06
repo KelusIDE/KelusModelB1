@@ -1,6 +1,6 @@
 'use strict';
-// Runs `python -m kelus.cli stdio` and speaks its JSON-lines protocol.
-// No VS Code dependency, so tests can drive it with plain Node.
+
+
 const { spawn } = require('child_process');
 const { EventEmitter } = require('events');
 const readline = require('readline');
@@ -72,7 +72,7 @@ class Bridge extends EventEmitter {
   chat(id, messages, options = {}) {
     if (!this.child || this.state !== 'ready') return false;
     this.inflight.add(id);
-    this.write({ type: 'chat', id, messages, max_tokens: options.maxTokens ?? 240, temperature: options.temperature ?? 0 });
+    this.write({ type: 'chat', id, messages, image_model: options.imageModel ?? 'painter', max_tokens: options.maxTokens ?? 240, cide_max_tokens: options.cideMaxTokens ?? 4096, temperature: options.temperature ?? 0, ...(options.reading ? { reading: true } : {}), ...(options.expert ? { expert: options.expert } : {}) });
     return true;
   }
 

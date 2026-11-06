@@ -18,7 +18,7 @@ async function project(files) {
   return Workspace.open(root);
 }
 
-/** A stand-in model that returns scripted replies, one per generate call. */
+
 function scripted(...replies) {
   return { config: {context:4096}, tokenizer: {encode:s=>Array.from(s)}, calls: [], *generate(messages, options) { this.calls.push({ prompt: messages[0].content, ...options }); yield replies.shift() ?? ''; } };
 }
@@ -69,7 +69,7 @@ test('rejects bad candidates, then stages one that passes sandboxed tests', asyn
   const id = out.match(/Proposal ([a-f0-9-]{36})/)[1];
   const proposal = await workspace.proposal(id);
   assert.strictEqual(proposal.content, 'def keep():\n    return 1\n\n\ndef scale(x):\n    return x * 4\n');
-  assert.strictEqual((await workspace.read('utils.py')).text.includes('x * 4'), false); // not applied yet
+  assert.strictEqual((await workspace.read('utils.py')).text.includes('x * 4'), false);
 });
 
 test('stages nothing when no candidate passes', async () => {

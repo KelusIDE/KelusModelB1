@@ -1,7 +1,7 @@
 name: README
 
-# Regenerates README.md's hero, badges, scores, and training status
-# whenever their inputs change. See kelus/readme.py.
+
+
 on:
   push:
     branches: [main]
@@ -26,7 +26,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - name: Regenerate README and figures
-        run: python3 -m kelus.readme
+        run: python3 -m kelus.readme --allow-missing-reports
       - name: Commit changes
         run: |
           git add README.md assets/readme

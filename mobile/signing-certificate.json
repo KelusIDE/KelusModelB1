@@ -1,0 +1,6 @@
+{
+  "packageName": "com.kelus.kani",
+  "sha256": "bb1b70b79ad686d1af08d9c841d68cc35d265a856a2a33f298ae5d2891d3043b",
+  "baseline": "kani-0.5.0.apk",
+  "description": "Public certificate fingerprint of the existing Android installation. The private key is not stored in this repository."
+}

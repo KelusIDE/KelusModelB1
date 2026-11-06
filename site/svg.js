@@ -1,4 +1,4 @@
-// Portable, deliberately restricted SVG profile for model output. No DOM injection.
+
 const TAGS = new Set(['svg','g','rect','circle','ellipse','line','polyline','polygon','path','text','title','desc']);
 const COMMON = ['fill','stroke','stroke-width','opacity','fill-opacity','stroke-opacity','stroke-linecap','stroke-linejoin','transform'];
 const ATTRS = {
@@ -52,7 +52,7 @@ export function validateSvg(source) {
     if(!token.startsWith('<')){
       if(!token.trim())continue;
       if(!['text','title','desc'].includes(stack.at(-1)))throw new Error('Text is only allowed inside SVG text elements.');
-      // Entity expansion is never performed; only the five predefined XML entities are accepted.
+
       if(/&(?!amp;|lt;|gt;|quot;|apos;)/.test(token))throw new Error('Unsupported SVG entity.');
       output.push(token);continue;
     }
@@ -91,12 +91,12 @@ export function svgRequest(text) {
 }
 export function svgPrompt(description) {
   let text=description.trim().replace(/[.!]+$/,'').replace(/^an? (?:big|huge) /i,'a large ').replace(/^an? (?:little|tiny) /i,'a small ');
-  // Default size for a simple shape request; no output template is substituted.
+
   text=text.replace(/^a (red|blue|green|orange|purple|yellow|pink|black) (circle|square|triangle|heart)$/i,'a medium $1 $2');
   return `Draw ${text} as SVG.`;
 }
 
-/** Attach a non-executable image and explicit download; never set innerHTML. */
+
 export function attachSvgPreview(body,reply) {
   let svg;try{svg=extractSvg(reply);}catch{return null;}
   const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml'}));

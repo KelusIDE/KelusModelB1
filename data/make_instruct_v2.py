@@ -54,7 +54,7 @@ def vocabulary():
         words.update(re.findall(r'\b[a-z]{3,9}\b', path.read_text(errors='replace').lower()))
     words = {w for w in words - RESERVED if not any(held in w for held in HELD_OUT_WORDS)}
     ordered = sorted(words)
-    # A fixed hash split: validation words never appear in a training name or parameter.
+
     validation = {w for w in ordered if int(hashlib.sha256(w.encode()).hexdigest(), 16) % 6 == 0}
     return [w for w in ordered if w not in validation], sorted(validation)
 
@@ -96,13 +96,13 @@ def probe_like(node, params):
         return flat(n[1], op) + flat(n[2], op) if n[0] == op else [n]
     sums, products = flat(node, '+'), flat(node, '*')
     if len(params) == 3 and len(sums) == 3 and all(n[0] == 'var' for n in sums):
-        return True  # add all three arguments
+        return True
     if len(products) == 3 and all(n == ('var', params[0]) for n in products):
-        return True  # cube
+        return True
     if any(n == ('num', 3) for n in products) and len(products) == 2:
-        return True  # times three
+        return True
     if node[0] == '*' and node[2][0] == '+' and ('num', 1) in (node[2][1], node[2][2]):
-        return True  # price * (1 + rate)
+        return True
     return False
 
 
@@ -122,7 +122,7 @@ def spec(rng, words, split):
         attempts += 1
         inputs = tuple(rng.randint(-9, 12) for _ in params)
         try:
-            value = eval(expr, {}, dict(zip(params, inputs)))  # our own generated expression
+            value = eval(expr, {}, dict(zip(params, inputs)))
         except ZeroDivisionError:
             continue
         if abs(value) < 1e6:

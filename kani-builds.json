@@ -1,0 +1,158 @@
+[
+  {
+    "id": "latest",
+    "label": "Kani Otter 4.12 · latest",
+    "checkpoint": "kani-otter-4-12-release",
+    "imageModel": "painter",
+    "export": "site/models/otter-4-12"
+  },
+  {
+    "id": "big-v2",
+    "label": "Big Kani v2 · experimental test build",
+    "checkpoint": "kani-big-v2-chat.best",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/big-v2"
+  },
+  {
+    "id": "pixels",
+    "label": "Kani Otter 4.12 · latest + Pixels (experimental)",
+    "checkpoint": "kani-otter-4-12-release",
+    "imageModel": "pixels",
+    "export": "site/models/otter-4-12"
+  },
+  {
+    "id": "otter-4-11",
+    "label": "Kani Otter 4.11",
+    "checkpoint": "kani-otter-4-11-release",
+    "imageModel": "painter",
+    "export": "site/models/otter-4-11"
+  },
+  {
+    "id": "otter-4-9",
+    "label": "Kani Otter 4.9",
+    "checkpoint": "kani-otter-4-9-release",
+    "imageModel": "painter",
+    "export": "site/models/otter-4-9"
+  },
+  {
+    "id": "otter-4-8",
+    "label": "Kani Otter 4.8",
+    "checkpoint": "kani-otter-4-8-release",
+    "imageModel": "painter",
+    "export": "site/models/otter-4-8"
+  },
+  {
+    "id": "otter-4-2",
+    "label": "Kani Otter 4.2",
+    "checkpoint": "kani-otter-4-2",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/kani-otter-4-2"
+  },
+  {
+    "id": "otter-4-1",
+    "label": "Kani Otter 4.1",
+    "checkpoint": "kani-otter-4-1",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/kani-otter-4-1"
+  },
+  {
+    "id": "otter-4",
+    "label": "Kani Otter 4",
+    "checkpoint": "kani-otter-4",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/kani-otter-4"
+  },
+  {
+    "id": "seal-3",
+    "label": "Kani Seal 3 · v7",
+    "checkpoint": "kani-b2-2f-v7-s10000",
+    "imageModel": "painter",
+    "export": "site/model"
+  },
+  {
+    "id": "kani-cide",
+    "label": "Kani + Cide · experimental handoff",
+    "checkpoint": "kani-cide-v1-release",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/kani-cide-v1",
+    "cide": true
+  },
+  {
+    "id": "cide",
+    "label": "Cide 4.5 · experimental coding specialist",
+    "checkpoint": "cide-4-5-release",
+    "imageModel": "painter",
+    "export": "site/models/cide-4-5",
+    "cide": true
+  },
+  {
+    "id": "cide-4-5",
+    "label": "Cide 4.5 · experimental coding specialist",
+    "checkpoint": "cide-4-5-release",
+    "imageModel": "painter",
+    "export": "site/models/cide-4-5",
+    "cide": true
+  },
+  {
+    "id": "cide-4-3",
+    "label": "Cide 4.3 · experimental coding specialist",
+    "checkpoint": "cide-4-3-release",
+    "imageModel": "painter",
+    "export": "site/models/cide-4-3",
+    "cide": true
+  },
+  {
+    "id": "cide-4-2",
+    "label": "Cide 4.2 · experimental coding specialist",
+    "checkpoint": "cide-4-2-release",
+    "imageModel": "painter",
+    "export": "site/models/cide-4-2",
+    "cide": true
+  },
+  {
+    "id": "cide-4-1",
+    "label": "Cide 4.1 · experimental coding specialist",
+    "checkpoint": "cide-4-1-release",
+    "imageModel": "painter",
+    "export": "site/models/cide-4-1",
+    "cide": true
+  },
+  {
+    "id": "cide-3",
+    "label": "Cide 3 · experimental coding specialist",
+    "checkpoint": "cide-3-release",
+    "imageModel": "painter",
+    "export": "site/models/cide-3",
+    "cide": true
+  },
+  {
+    "id": "cide-2",
+    "label": "Cide 2 · experimental coding specialist",
+    "checkpoint": "cide-2-release",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/cide-2",
+    "cide": true
+  },
+  {
+    "id": "cide-v1",
+    "label": "Cide v1 · legacy coding specialist",
+    "checkpoint": "cide-v1-release",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/cide-v1",
+    "cide": true
+  },
+  {
+    "id": "kani-v3",
+    "label": "Kani B2 · v3",
+    "checkpoint": "kani-b2-2f-v3.best",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/kani-v3"
+  },
+  {
+    "id": "b1-v3",
+    "label": "Kelus B1 · original v3",
+    "checkpoint": "b1-v3.best",
+    "imageModel": "painter",
+    "export": "training-runs/build-exports/b1-v3"
+  }
+]

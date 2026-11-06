@@ -8,7 +8,7 @@ from .runtime import prepare_reply
 from .evaluate import cases, code_result
 
 
-# Fresh probe wording: not in the curriculum or its validation set.
+
 PROBES=[('Can you help me program something?',('Python','code','build')),
     ('nah that is not what I meant',('misunderstood','restate')),
     ('could we write a little code together?',('code','language','build')),

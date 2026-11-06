@@ -165,8 +165,12 @@ class Tensor:
             ordered.append(node)
 
         visit(self)
+
+
+        del visit
         self.grad = np.ones_like(self.data)
-        for node in reversed(ordered):
+        while ordered:
+            node = ordered.pop()
             if node._backward:
                 node._backward()
             node._parents = ()

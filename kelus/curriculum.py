@@ -40,7 +40,7 @@ def normalize(records, assign_splits=False):
             if not isinstance(provenance, dict) or any(not isinstance(provenance.get(k), str) or not provenance[k].strip() for k in ('id', 'license', 'reference')):
                 raise ValueError('Source needs nonempty id, license and reference')
             messages = row['messages']
-            conversation(messages)  # Existing role/UTF-8 validator, no generated-code execution.
+            conversation(messages)
             if len(messages) % 2 or messages[-1]['role'] != 'assistant' or any(not m['content'].strip() for m in messages):
                 raise ValueError('Training conversations must end with a nonempty assistant answer')
             split = row.get('split')

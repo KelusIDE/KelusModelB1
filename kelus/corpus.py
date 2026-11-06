@@ -44,7 +44,7 @@ def identity(text):
     return hashlib.sha256(re.sub(r'\s+',' ',text).strip().encode()).hexdigest()
 
 def split_for(key):
-    # Every copy of the same normalized document gets the same split.
+
     return 'validation' if int(key[:8],16)%32==0 else 'train'
 
 def accepted(source,path):

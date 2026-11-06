@@ -1,12 +1,12 @@
-// Chat webview. Talks to extension.js with postMessage; never runs model output.
+
 (async () => {
   'use strict';
   const vscode = acquireVsCodeApi();
-  const NAME = document.body.dataset.name || 'Kani Seal 3';
-  const BRAND = NAME;
+  const NAME = document.body.dataset.name || 'Kani';
+  let BRAND = NAME;
   const VERSION = document.body.dataset.codename || 'Kani B2:10F';
   let mountAttachments, prepareAttachments, Tokenizer;
-  try { ({mountAttachments,prepareAttachments}=await import(document.body.dataset.attachments)); ({Tokenizer}=await import(document.body.dataset.engine)); } catch { /* The setup banner explains a missing repository. */ }
+  try { ({mountAttachments,prepareAttachments}=await import(document.body.dataset.attachments)); ({Tokenizer}=await import(document.body.dataset.engine)); } catch {  }
   const SVG = 'http://www.w3.org/2000/svg';
   const WORDMARK = [
     '██╗  ██╗ █████╗ ███╗   ██╗██╗',
@@ -20,9 +20,10 @@
     ['chat', 'what can you do?'],
     ['concept', 'explain recursion'],
     ['code', 'write a python function that reverses a string'],
-    ['math', 'what is 2 + 2?'],
+    ['draw', 'draw the ocean at sunset with two sailboats'],
   ];
-  const SOURCES = { local_calculator: 'calculator', local_clock: 'clock', file_analysis:'file inspection' };
+  const SOURCES = { local_calculator: 'calculator', local_clock: 'clock', file_analysis:'file inspection', crisis_support: 'fixed safety message', web: 'web search', web_answer: 'searched the web', places: 'places search' };
+  const pictures = new WeakMap();
   const ICONS = {
     plus: 'M8 3v10M3 8h10',
     send: 'M8 13V3M3.5 7.5 8 3l4.5 4.5',
@@ -43,7 +44,7 @@
   let messages = (vscode.getState() || {}).messages || [];
   let status = { state: 'starting' };
   let busy = null;
-  let live = null; // { message, content } while a reply streams
+  let live = null;
   let pending = false;
 
   for (const message of messages) {
@@ -77,7 +78,7 @@
 
   const iconButton = (name, title, onclick) => el('button', { class: 'icon-button', title, 'aria-label': title, onclick }, icon(name));
 
-  // Layout
+
   const header = el('header', { class: 'bar' },
     el('img', { class: 'logo', src: document.body.dataset.icon, alt: '' }),
     el('span', { class: 'brand' }, BRAND),
@@ -96,15 +97,18 @@
   const input = el('textarea', { rows: 2, placeholder: `Ask ${BRAND} anything…`, 'aria-label': `Message ${BRAND}` });
   const sendButton = el('button', { class: 'send', onclick: () => (busy ? stop() : submit()) }, icon('send'));
   const where = el('span', { class: 'chip status' }, el('span', { class: 'dot starting' }), 'Local');
+  const buildPicker = el('select', { class: 'chip build-picker', title: 'Switch Kani builds', 'aria-label': 'Kani build' },
+    el('option', { value: 'latest' }, 'Kani · latest'));
+  buildPicker.addEventListener('change', () => vscode.postMessage({ type: 'selectBuild', build: buildPicker.value }));
   const model = el('button', { class: 'chip model', title: 'Change the model in Settings', onclick: () => vscode.postMessage({ type: 'settings' }) }, 'starting…');
   const composer = el('footer', { class: 'composer' },
-    el('div', { class: 'box' }, input, el('div', { class: 'toolbar' }, where, model, el('span', { class: 'spacer' }), sendButton)),
+    el('div', { class: 'box' }, input, el('div', { class: 'toolbar' }, where, model, buildPicker, el('span', { class: 'spacer' }), sendButton)),
     el('div', { class: 'hint' }, el('kbd', {}, '⏎'), ' send  ', el('kbd', {}, '⇧⏎'), ' new line  ', el('kbd', {}, 'esc'), ' stop'));
   document.body.append(el('div', { id: 'app' }, header, log, banner, composer));
   const fileError=el('div',{class:'attachment-error',role:'alert',hidden:true}); composer.prepend(fileError);
   const attachments=mountAttachments?.({form:composer.querySelector('.box'),input,onError:text=>{fileError.textContent=text;fileError.hidden=false;},onChange:()=>controls()});
 
-  // Rendering
+
   function inline(text) {
     const fragment = document.createDocumentFragment();
     text.split(/(`[^`\n]+`)/).forEach((part, i) => {
@@ -169,8 +173,22 @@
     const content = el('div', { class: 'content' });
     renderContent(content, message.content, message.streaming);
     const helper = message.source && message.source !== 'model';
+    const pill = message.source === 'cide' ? 'Cide · coding specialist' : message.source === 'sketch' ? 'Kani Sketch · from-scratch doodle model (345 subjects)' : message.source === 'pixels' ? 'Kani Pixels v2 · experimental 64×64 diffusion model (174 subjects)'
+      : message.source === 'painter' ? 'Kani Painter · separate from-scratch drawing model'
+      : message.source === 'web' ? 'web search · retrieved online, not the model'
+      : message.source === 'web_answer' ? 'searched the web · Kani answered from the results'
+      : message.source === 'places' ? 'places search · retrieved online, not the model'
+      : `${SOURCES[message.source] || message.source} · local helper, not the model`;
     const head = el('div', { class: 'speaker' }, el('span', { class: 'mark' }), el('span', { class: 'name' }, BRAND),
-      helper ? el('span', { class: 'pill helper' }, `${SOURCES[message.source] || message.source} · local helper, not the model`) : null);
+      helper ? el('span', { class: 'pill helper' }, pill) : null);
+    if (message.image) {
+      if (!pictures.has(message)) {
+        const bytes = Uint8Array.from(atob(message.image), c => c.charCodeAt(0));
+        pictures.set(message, URL.createObjectURL(new Blob([bytes], { type: 'image/png' })));
+      }
+
+      content.prepend(el('img', { class: 'picture', src: pictures.get(message), alt: 'Drawing by Kani Painter' }));
+    }
     const notes = [message.omitted ? `Earlier turns were left out to fit the loaded model’s context.` : null, message.note]
       .filter(Boolean).map(text => el('div', { class: 'note' }, text));
     const error = message.error ? el('div', { class: 'note error' }, message.error) : null;
@@ -181,10 +199,10 @@
 
   function empty() {
     return el('div', { class: 'empty' },
-      el('img', {class:'empty-logo', src:document.body.dataset.icon, alt:'Kani Seal 3 logo'}),
+      el('img', {class:'empty-logo', src:document.body.dataset.icon, alt:'Kani logo'}),
       el('pre', { class: 'wordmark', 'aria-label': BRAND }, WORDMARK),
       VERSION ? el('div', { class: 'tagline' }, el('span', { class: 'version' }, VERSION), 'trained from scratch · runs on this computer') : null,
-      el('p', {}, 'Knows practiced chat replies, 20 coding concepts, and short Python and JavaScript snippets.'),
+      el('p', {}, 'Chats, cheers you up, explains coding concepts, writes short Python and JavaScript snippets, and generates images with the selected Kani build.'),
       el('div', { class: 'suggestions' }, ...SUGGESTIONS.map(([kind, text]) =>
         el('button', { class: 'suggestion', onclick: () => submit(text) }, el('span', { class: `tag tag-${kind}` }, kind), el('span', {}, text)))));
   }
@@ -216,6 +234,7 @@
     sendButton.replaceChildren(icon(busy ? 'stop' : 'send'));
     sendButton.classList.toggle('stop', Boolean(busy));
     sendButton.title = busy ? 'Stop (Escape)' : 'Send (Enter)';
+    buildPicker.disabled = Boolean(busy);
     sendButton.setAttribute('aria-label', busy ? 'Stop' : 'Send');
     sendButton.disabled = !busy && (!ready || attachments?.reading || (!input.value.trim() && !attachments?.files.length));
     input.placeholder = ready ? `Ask ${BRAND} anything…` : status.state === 'error' ? `${BRAND} is not running` : `Starting ${BRAND}…`;
@@ -227,8 +246,15 @@
     where.title = { ready: 'Running on this computer', starting: 'Starting the local model', error: 'Not running' }[status.state] || '';
     if (status.state === 'ready' && status.info) {
       const info = status.info;
-      model.textContent = `${info.checkpoint} · ${Math.round(info.parameters / 1000)}K`;
+      model.textContent = `${info.checkpoint} · ${info.parameters >= 1e6 ? `${Math.round(info.parameters / 1e6)}M` : `${Math.round(info.parameters / 1000)}K`}`;
       model.title = `${info.name} · ${info.parameters.toLocaleString()} parameters · ${info.steps.toLocaleString()} training steps. Change the model in Settings.`;
+
+      if (info.codename) for (const version of document.querySelectorAll('.version')) version.textContent = info.codename;
+      if (info.name && info.name !== BRAND) {
+        BRAND = info.name;
+        for (const name of document.querySelectorAll('.brand, .speaker .name')) name.textContent = BRAND;
+        controls();
+      }
     } else {
       model.textContent = status.state === 'error' ? 'not running' : 'starting…';
     }
@@ -238,13 +264,13 @@
     controls();
   }
 
-  // Conversation
+
   function history() {
     const turns = [];
     for (const message of messages) {
       if (message.excludeFromContext) continue;
       if (message.role === 'user') {
-        if (turns.length && turns[turns.length - 1].role === 'user') turns.pop(); // its reply failed
+        if (turns.length && turns[turns.length - 1].role === 'user') turns.pop();
         turns.push({ role: 'user', content: message.content });
       } else if (message.content && turns.length && turns[turns.length - 1].role === 'user') {
         turns.push({ role: 'assistant', content: message.content });
@@ -301,6 +327,11 @@
   }
 
   window.addEventListener('message', ({ data }) => {
+    if (data.type === 'builds') {
+      buildPicker.replaceChildren(...data.builds.map(b => el('option', { value: b.id }, b.label)));
+      buildPicker.value = data.selected;
+      return;
+    }
     if (data.type === 'status') {
       status = data;
       showStatus();
@@ -316,6 +347,9 @@
     } else if (data.type === 'token') {
       message.content += data.text;
       update();
+    } else if (data.type === 'image') {
+      message.image = data.png;
+      render();
     } else if (data.type === 'done') {
       finish(message, data.cancelled ? { note: 'Stopped.' } : {});
     } else if (data.type === 'error') {
@@ -323,7 +357,7 @@
     }
   });
 
-  // Composer
+
   function resize() {
     input.style.height = 'auto';
     input.style.height = Math.min(input.scrollHeight, 200) + 'px';

@@ -1,4 +1,4 @@
-/** Score actual model output. Generated Python executes only in the existing OS sandbox. */
+
 import fs from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';

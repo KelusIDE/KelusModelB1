@@ -51,8 +51,8 @@ class ReadmeTests(unittest.TestCase):
             ElementTree.fromstring(path.read_text())
         hero = (self.root / 'assets/readme/hero-light.svg').read_text()
         self.assertIn('Hello &amp; &quot;welcome&quot;', hero)
-        self.assertNotIn('Second greeting', hero)  # one sample per intent
-        self.assertNotIn('wrong', hero)  # failed probes are never replayed
+        self.assertNotIn('Second greeting', hero)
+        self.assertNotIn('wrong', hero)
 
     def test_reports_for_another_checkpoint_are_refused(self):
         self.write('site/model/b1.json', {'parameters': 1, 'source_checkpoint_sha256': 'b' * 64})
@@ -86,7 +86,7 @@ class ReadmeTests(unittest.TestCase):
         (run / 'metrics.jsonl').write_text('\n'.join([json.dumps(row(0, 8.0, 1)), json.dumps(row(50, 2.5, 20)), '{"step": 6']))
         self.assertTrue(snapshot_foundation(self.root))
         snapshot = json.loads((self.root / 'reports/foundation-progress.json').read_text())
-        self.assertEqual(snapshot['step'], 50)  # newest row wins, even over status.json
+        self.assertEqual(snapshot['step'], 50)
         self.assertEqual(snapshot['validation_history'], [[0, 8.0], [50, 2.5]])
         self.assertNotIn('pid', snapshot)
         self.assertNotIn('/Users/', json.dumps(snapshot))

@@ -74,7 +74,7 @@ def prepare(checkpoint, data, state=STATE):
         raise ValueError('Candidate is not the trained 8.69M B1 model.')
     del model
     shutil.copyfile(data, release / 'instruction.jsonl')
-    # The instruction trainer fingerprints the raw JSONL bytes.
+
     if digest(release / 'instruction.jsonl') != metadata.get('data_sha256'):
         raise ValueError('Instruction data does not match the checkpoint.')
     parents = {digest(p) for p in (foundation / 'best.npz', foundation / 'latest.npz') if p.exists()}
@@ -102,7 +102,7 @@ def prepare(checkpoint, data, state=STATE):
         if module != 'code_readiness':
             args += ['--data', str(release / 'instruction.jsonl')]
         command(args, ROOT, log)
-    # Check the actual export with the frozen browser engine (not just a tiny test model).
+
     script = (ROOT / 'tests' / 'web_parity.mjs').read_text().replace("'../site/b1.js'", "'./site/b1.js'")
     (release / 'parity.mjs').write_text(script)
     conversations = [[{'role': 'user', 'content': p}] for p in ['hello!', 'Write a Python square function.']]
@@ -119,7 +119,7 @@ def prepare(checkpoint, data, state=STATE):
     if json.loads(result.stdout)['replies'] != expected:
         raise ValueError('Exported browser engine differs from Python.')
     report = read(release / 'readiness.json')
-    # Keep the exact generated text for browser inspection; no generated code is executed here.
+
     (release / 'website-reply.txt').write_text(report['website']['reply'])
     manifest = {'checkpoint_sha256': identity, 'training_complete': True,
                 'stage': 'instruction', 'prepared_at': time.time(),
@@ -191,7 +191,7 @@ def fetch_verified(url):
     except URLError as error:
         if not isinstance(error.reason, ssl.SSLCertVerificationError):
             raise
-        # curl verifies TLS against its normal trust store. Never use --insecure.
+
         return subprocess.run(['/usr/bin/curl', '--fail', '--silent', '--show-error',
                                '--proto', '=https', '--max-time', '60', url],
                               capture_output=True, check=True, timeout=65).stdout
@@ -245,7 +245,7 @@ def tick(state=STATE, foundation=None, publisher=publish, verifier=verify_live):
                 return status(previous['state'], previous['detail'])
             if not (state / 'enabled').exists():
                 return status('disabled', 'Cancelled before publishing.')
-            # At-most-once publish. An uncertain network failure requires inspection, not blind retries.
+
             write(receipt, {'state': 'deployment_started', 'detail': 'Publish started; inspect deploy.log if interrupted.', 'sha256': identity})
             status('deploying', 'Publishing tested model to kelus-b1.web.app.')
             try:
@@ -282,7 +282,7 @@ def watch():
 def start():
     STATE.mkdir(parents=True, exist_ok=True)
     (STATE / 'enabled').touch()
-    # Existing watcher owns this lock; duplicate starters exit harmlessly.
+
     with (STATE / 'watcher.log').open('a') as log:
         child = subprocess.Popen(['/usr/bin/nice', '-n', '10', sys.executable, '-u', '-m', 'kelus.auto_deploy', '--watch'],
                                  cwd=ROOT, stdin=subprocess.DEVNULL, stdout=log, stderr=log, start_new_session=True)

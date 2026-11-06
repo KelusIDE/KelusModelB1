@@ -1,8 +1,8 @@
 {
   "name": "kani",
-  "displayName": "Kani Seal 3",
-  "description": "Chat with Kani Seal 3, a small language model trained from scratch by the Kelus project, running on your computer.",
-  "version": "0.2.0",
+  "displayName": "Kani",
+  "description": "Chat with Kani Otter 4.12 and draw with Kani Painter, models trained from scratch by Kelus Corp., running on your computer.",
+  "version": "0.17.0",
   "publisher": "kelus",
   "license": "Apache-2.0",
   "icon": "media/icon.png",
@@ -28,7 +28,7 @@
       "activitybar": [
         {
           "id": "kani",
-          "title": "Kani Seal 3",
+          "title": "Kani",
           "icon": "media/activity.svg"
         }
       ]
@@ -91,7 +91,7 @@
         },
         "kani.model": {
           "type": "string",
-          "default": "b1-v3",
+          "default": "kani-b2-2f-v7-s10000",
           "markdownDescription": "Checkpoint name in the repository's `checkpoints` folder. List them with `kelus models`."
         },
         "kani.maxTokens": {
@@ -101,12 +101,35 @@
           "maximum": 512,
           "description": "Maximum tokens per reply."
         },
+        "kani.cideMaxTokens": {
+          "type": "integer",
+          "default": 4096,
+          "minimum": 1,
+          "maximum": 4096,
+          "description": "Maximum coding specialist output tokens, bounded by the model context."
+        },
         "kani.temperature": {
           "type": "number",
           "default": 0,
           "minimum": 0,
           "maximum": 2,
           "description": "Sampling temperature. 0 always picks the most likely token."
+        },
+        "kani.build": {
+          "type": "string",
+          "enum": [
+            "latest",
+            "pixels",
+            "otter-4-2",
+            "big-v2",
+            "seal-3",
+            "kani-cide",
+            "cide",
+            "kani-v3",
+            "b1-v3"
+          ],
+          "default": "latest",
+          "description": "Kani build. Latest draws with Kani Painter; pixels adds the experimental 64×64 Kani Pixels v2 for photo subjects Painter does not know."
         }
       }
     }

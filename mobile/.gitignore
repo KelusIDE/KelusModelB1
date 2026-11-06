@@ -1,0 +1,7 @@
+node_modules/
+dist/
+public/models/
+artifacts/
+.bundle/
+vendor/bundle/
+.DS_Store

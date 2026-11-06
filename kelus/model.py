@@ -8,7 +8,22 @@ from pathlib import Path
 import tempfile
 import numpy as np
 from .tensor import Tensor, embedding
-from .tokenizer import VOCAB_SIZE, PAD, BOS, USER, ASSISTANT, EOS, ByteTokenizer, from_dict, conversation
+from .tokenizer import MAX_VOCAB, VOCAB_SIZE, PAD, BOS, USER, ASSISTANT, EOS, ByteTokenizer, from_dict, conversation
+
+
+def looping(generated, repeats=4, least=32, longest=32):
+    """True when the reply ends in one block of at most `longest` tokens said over and over: at least `repeats`
+    times and `least` tokens in all. Greedy decoding never leaves such a loop, so the reply ends there.
+    Matches looping() in site/b1.js."""
+    for period in range(1, longest + 1):
+        span = period * max(repeats, -(-least // period))
+        if span > len(generated):
+            break
+        tail = generated[-span:]
+        if all(tail[i] == tail[i - period] for i in range(period, span)):
+            return True
+    return False
+
 
 
 @dataclass(frozen=True)
@@ -19,16 +34,16 @@ class Config:
     layers: int = 2
     seed: int = 42
     vocab_size: int = VOCAB_SIZE
-    # The defaults reproduce the original B1 architecture, so older
-    # checkpoints (whose headers lack these fields) load unchanged.
+
+
     positions: str = "learned"
     tie_embeddings: bool = False
     dropout: float = 0.0
 
     def validate(self):
-        if not (16 <= self.context <= 2048 and 8 <= self.width <= 1024 and 1 <= self.layers <= 24
+        if not (16 <= self.context <= 4096 and 8 <= self.width <= 1024 and 1 <= self.layers <= 24
                 and 1 <= self.heads <= self.width and self.width % self.heads == 0
-                and VOCAB_SIZE <= self.vocab_size <= 8192):
+                and VOCAB_SIZE <= self.vocab_size <= MAX_VOCAB):
             raise ValueError("Invalid model size: width must divide evenly into attention heads")
         if self.positions not in ("learned", "rope") or (self.positions == "rope" and (self.width // self.heads) % 2):
             raise ValueError("Positions must be learned, or rope with an even attention head width")
@@ -59,13 +74,13 @@ class Model:
         if config.positions == "learned":
             weight("position", (config.context, d))
         else:
-            # Rotary positions: each query/key pair is rotated by its absolute
-            # position, so attention scores depend on relative distance.
+
+
             half = d // config.heads // 2
             angles = np.arange(config.context)[:, None] * 10000.0 ** (-np.arange(half) / half)
             self.rope_cos = np.concatenate([np.cos(angles)] * 2, axis=1).astype(np.float32)
             self.rope_sin = np.concatenate([np.sin(angles)] * 2, axis=1).astype(np.float32)
-            # x @ rotate_half == concat(-second_half, first_half)
+
             self.rotate_half = np.zeros((2 * half, 2 * half), dtype=np.float32)
             self.rotate_half[np.arange(half) + half, np.arange(half)] = -1
             self.rotate_half[np.arange(half), np.arange(half) + half] = 1
@@ -204,7 +219,7 @@ class Model:
     def generate(self, messages, max_tokens=180, temperature=0.6, top_k=30, seed=42, prefix=''):
         """Yield reply text. `prefix` starts the reply with known text; its last token is left
         for the model to regenerate so a merge across the boundary is never forced."""
-        if not (1 <= max_tokens <= 2048 and 0 <= temperature <= 2 and 1 <= top_k <= self.config.vocab_size):
+        if not (1 <= max_tokens <= 4096 and 0 <= temperature <= 2 and 1 <= top_k <= self.config.vocab_size):
             raise ValueError("Invalid generation settings")
         tokens, _ = self.prepare_prompt(messages, reserve=max_tokens)
         rng = np.random.default_rng(seed)
@@ -216,10 +231,10 @@ class Model:
             text = decoder.decode(self.tokenizer.token_bytes(token), final=False)
             if text:
                 yield text
-        cache = {}
+        cache, generated = {}, []
         for _ in range(min(max_tokens, self.config.context - len(tokens))):
             logits = np.array(self.next_logits(tokens, cache), dtype=np.float32)
-            # Only text bytes and the assistant's end marker may be generated.
+
             logits[[PAD, BOS, USER, ASSISTANT]] = -np.inf
             if temperature == 0:
                 token = int(np.argmax(logits))
@@ -232,14 +247,19 @@ class Model:
             if token == EOS:
                 break
             tokens.append(token)
+            generated.append(token)
             text = decoder.decode(self.tokenizer.token_bytes(token), final=False)
             if text:
                 yield text
+            if looping(generated):
+                break
         tail = decoder.decode(b'', final=True)
         if tail:
             yield tail
 
-    def save(self, filename, metadata=None, optimizer=None):
+    def save(self, filename, metadata=None, optimizer=None, *, compression_level=6):
+        if not isinstance(compression_level, int) or not 0 <= compression_level <= 9:
+            raise ValueError('Checkpoint compression level must be an integer from 0 to 9')
         destination = Path(filename)
         destination.parent.mkdir(parents=True, exist_ok=True)
         header = {"format": "kelus-b1", "version": 1, "name": self.name, "config": asdict(self.config), "tokenizer": self.tokenizer.to_dict(), "metadata": metadata or {}}
@@ -252,7 +272,15 @@ class Model:
         try:
             with tempfile.NamedTemporaryFile(dir=destination.parent, suffix=".npz", delete=False) as file:
                 temporary = file.name
-                np.savez_compressed(file, **values)
+                if compression_level == 6:
+                    np.savez_compressed(file, **values)
+                else:
+                    import zipfile
+                    with zipfile.ZipFile(file, mode='w', compression=zipfile.ZIP_DEFLATED,
+                                         compresslevel=compression_level, allowZip64=True) as archive:
+                        for name, value in values.items():
+                            with archive.open(name + '.npy', mode='w', force_zip64=True) as member:
+                                np.lib.format.write_array(member, np.asanyarray(value), allow_pickle=False)
                 file.flush()
                 os.fsync(file.fileno())
             os.replace(temporary, destination)

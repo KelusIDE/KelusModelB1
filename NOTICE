@@ -10,4 +10,8 @@ https://www.apache.org/licenses/LICENSE-2.0
 Third-party components and source materials retain their original ownership
 and licensing terms. See LICENSING.md and their accompanying notices.
 
+Kani Otter 4.12 was trained in part on SODA by Hyunwoo Kim et al. (2023), https://huggingface.co/datasets/allenai/soda, licensed under CC BY 4.0, https://creativecommons.org/licenses/by/4.0/. The dialogues were filtered and reformatted for training.
+
+Cide 4.5 was trained in part on the StarCoder2 Self-Alignment Dataset by BigCode (https://huggingface.co/datasets/bigcode/self-oss-instruct-sc2-exec-filter-50k) and OpenCoder's algorithmic corpus (https://huggingface.co/datasets/OpenCoder-LLM/opc-annealing-corpus), both under the Open Data Commons Attribution License (https://opendatacommons.org/licenses/by/1-0/), and on Magicoder OSS-Instruct (https://huggingface.co/datasets/ise-uiuc/Magicoder-OSS-Instruct-75K, MIT) and Magicoder Evol-Instruct (https://huggingface.co/datasets/ise-uiuc/Magicoder-Evol-Instruct-110K, Apache-2.0). The rows were filtered and reformatted for training.
+
 This NOTICE supplies attribution information and does not modify the license.

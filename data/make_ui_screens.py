@@ -27,7 +27,7 @@ CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 CLASSES = {'background': 0, 'toolbar': 1, 'sidebar': 2, 'editor': 3, 'terminal': 4, 'dialog': 5}
 SIZES = [(1280, 800), (1440, 900), (1024, 768), (1366, 768), (1600, 1000)]
 THEMES = [
-    # desktop, title, activity, sidebar, editor, tabs, panel, status, fg, muted, accent, keyword, string, comment, dialog, border
+
     ('dark modern', '#3a3f4b', '#1f1f1f', '#181818', '#181818', '#1f1f1f', '#181818', '#181818', '#0078d4', '#cccccc', '#9d9d9d', '#0078d4', '#c586c0', '#ce9178', '#6a9955', '#252526', '#2b2b2b'),
     ('light modern', '#9bb0c7', '#f8f8f8', '#f8f8f8', '#f8f8f8', '#ffffff', '#f8f8f8', '#ffffff', '#f8f8f8', '#3b3b3b', '#767676', '#005fb8', '#af00db', '#a31515', '#008000', '#ffffff', '#e5e5e5'),
     ('monokai', '#2d2a2e', '#221f22', '#19181a', '#221f22', '#2d2a2e', '#221f22', '#19181a', '#ff6188', '#fcfcfa', '#939293', '#ffd866', '#ff6188', '#ffd866', '#727072', '#363337', '#403e41'),
@@ -164,14 +164,14 @@ class Screen:
             buttons = ''.join(f'<span style="display:inline-block;padding:6px 14px;margin-left:8px;border-radius:4px;background:{t["accent"] if i == 0 else t["border"]};color:#fff">{b}</span>'
                               for i, b in enumerate(rng.choice([['Save', 'Don\'t Save', 'Cancel'], ['Delete', 'Cancel'], ['Reload', 'Later']])))
             inner = f'<div style="font-weight:600;font-size:15px;margin-bottom:10px">{title}</div><div style="color:{t["muted"]}">{message}</div><div style="position:absolute;right:16px;bottom:16px">{buttons}</div>'
-        else:  # a command palette
+        else:
             w, h = rng.randint(420, 600), rng.randint(180, 300)
             x, y = (self.w - w) // 2, rng.randint(40, 90)
             items = ''.join(f'<div style="padding:5px 4px">{html.escape(Path(p).name)}</div>' for p in rng.sample(self.corpus.paths, min(len(self.corpus.paths), h // 28)))
             inner = f'<div style="border:1px solid {t["accent"]};padding:6px;margin-bottom:6px">&gt; </div>{items}'
         self.add('dialog', x, y, w, h, f'background:{t["dialog"]};color:{t["fg"]};font:13px {self.ui};padding:16px;border:1px solid {t["border"]};border-radius:8px;box-shadow:0 8px 30px rgba(0,0,0,.45)', inner)
 
-    # Layout families --------------------------------------------------------
+
     def build(self):
         rng = self.rng
         margin = 0 if rng.random() < 0.6 else rng.randint(16, 90)

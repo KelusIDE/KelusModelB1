@@ -20,14 +20,14 @@ import sys
 from urllib.parse import quote, urlencode
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = 'https://kelus-b1.web.app'
+SITE = 'https://kelus-b1.pages.dev'
 ASSETS = 'assets/readme'
 SNAPSHOT = 'reports/foundation-progress.json'
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
 MONO = "ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace"
-MONO_WIDTH = 0.61  # advance per character, in em; slightly generous so reveals never clip
+MONO_WIDTH = 0.61
 TILE, TILE_INK, BADGE_LABEL = '#bce5d1', '#1a3025', '151b18'
-# Series greens validated against each surface (lightness band, chroma, 3:1 contrast).
+
 THEMES = {
     'light': {'surface': '#fbfcfb', 'border': '#dfe7e2', 'ink': '#0f1a14', 'secondary': '#46564d',
               'muted': '#66726c', 'grid': '#e3e9e5', 'axis': '#c3cdc7', 'series': '#1f8a5b'},
@@ -74,7 +74,7 @@ def snapshot_foundation(root=ROOT):
             try:
                 rows.append(json.loads(line))
             except json.JSONDecodeError:
-                continue  # blank, or a line the trainer is still appending
+                continue
     latest = max(rows, key=lambda row: row.get('updated_at') or 0)
     history = {row['step']: round(row['validation_loss'], 4) for row in sorted(rows[1:], key=lambda row: row.get('updated_at') or 0)
                if row.get('validation_loss') is not None}
@@ -259,7 +259,7 @@ def results_svg(data, theme):
         y += 26
         body.append(f'<text class="muted" x="{left}" y="{y}" font-size="12" letter-spacing="1">{esc(title.upper())}</text>')
         y += 10
-        top = top or y  # gridlines start below the first group header
+        top = top or y
         for label, score in items:
             mid = y + row / 2
             width = (x1 - x0) * score['passed'] / score['total'] if score['total'] else 0
@@ -356,7 +356,7 @@ def badge_color(score):
 
 def badges(data):
     live = {'style': 'flat-square', 'labelColor': BADGE_LABEL}
-    status = 'https://img.shields.io/website?' + urlencode({'url': SITE, 'label': 'kelus-b1.web.app', 'up_message': 'online',
+    status = 'https://img.shields.io/website?' + urlencode({'url': SITE, 'label': 'kelus-b1.pages.dev', 'up_message': 'online',
                                                             'down_message': 'offline', 'up_color': '2fa874'} | live)
     deployed = 'https://img.shields.io/badge/dynamic/json?' + urlencode({'url': SITE + '/model/b1.json', 'query': '$.parameters',
                                                                          'label': 'deployed model', 'suffix': ' parameters', 'color': 'bce5d1'} | live)
@@ -385,7 +385,7 @@ def stage(f):
 def pipeline(f):
     current = stage(f)
     nodes = [('F', 'Foundation pretraining'), ('I', 'Instruction training'),
-             ('G', 'Release gates and<br/>human verification'), ('D', 'Auto-deploy to<br/>kelus-b1.web.app')]
+             ('G', 'Release gates and<br/>human verification'), ('D', 'Auto-deploy to<br/>kelus-b1.pages.dev')]
     lines = ['flowchart LR']
     for i, (key, label) in enumerate(nodes):
         status = 'done' if i < current else 'now' if i == current else 'waiting'
@@ -393,8 +393,8 @@ def pipeline(f):
         if i == 0 and status == 'now':
             note += f' · step {fmt(f["step"])} / {fmt(f["total_steps"])}' if f else ''
         elif i == 1 and status == 'now':
-            # A finished base model does not establish that instruction
-            # training has started; the watcher only knows a candidate is due.
+
+
             note = 'next · awaiting completed candidate'
         lines.append(f'    {key}["{label}<br/>{note}"]:::{status}')
     lines += ['    F --> I --> G --> D',
@@ -487,10 +487,17 @@ def refresh(root=ROOT, write=True):
 def main():
     parser = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     parser.add_argument('--check', action='store_true', help='exit 1 if anything is stale; write nothing')
+    parser.add_argument('--allow-missing-reports', action='store_true', help='leave generated sections unchanged when this checkpoint has no matching reports')
     args = parser.parse_args()
     if not args.check and snapshot_foundation():
         print('updated:', SNAPSHOT)
-    stale = refresh(write=not args.check)
+    try:
+        stale = refresh(write=not args.check)
+    except ValueError as error:
+        if args.allow_missing_reports and str(error).startswith('No reports/'):
+            print('README generation skipped:', error)
+            return
+        raise
     for name in stale:
         print('stale:' if args.check else 'updated:', name)
     if args.check and stale:

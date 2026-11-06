@@ -11,7 +11,7 @@ import io
 import hashlib
 import numpy as np
 from kelus.tensor import Tensor, cross_entropy, embedding, no_grad
-from kelus.model import Config, Model
+from kelus.model import Config, Model, looping
 from kelus.optim import AdamW
 from kelus.data import Dataset
 from kelus.tokenizer import encode, decode, conversation, ASSISTANT, EOS
@@ -19,6 +19,24 @@ from kelus.server import validate_chat, make_handler
 
 
 class TensorTests(unittest.TestCase):
+    def test_backward_releases_intermediates_without_cyclic_gc(self):
+        import gc
+        import weakref
+        x = Tensor(np.array([1., 2.]), True)
+        intermediate = x * x
+        reference = weakref.ref(intermediate)
+        loss = intermediate.sum()
+        del intermediate
+        was_enabled = gc.isenabled()
+        gc.disable()
+        try:
+            loss.backward()
+            np.testing.assert_array_equal(x.grad, [2., 4.])
+            self.assertIsNone(reference(), 'Consumed graph retained until cyclic GC')
+        finally:
+            if was_enabled:
+                gc.enable()
+
     def check_gradient(self, value, function, tolerance=1e-5):
         tensor = Tensor(np.array(value, dtype=np.float64), True)
         loss = function(tensor)
@@ -143,6 +161,20 @@ class ModelTests(unittest.TestCase):
         with patch.object(Model, "next_logits", return_value=scores[0, 0]):
             self.assertEqual("".join(model.generate([{"role": "user", "content": "hi"}], max_tokens=3, temperature=0)), "")
 
+    def test_a_greedy_loop_ends_the_reply(self):
+        date = [32, 74, 117, 108, 121, 32, 50, 54, 44]
+        self.assertTrue(looping([5, 6] + date * 4))
+        self.assertFalse(looping([5, 6] + date * 3))
+        self.assertTrue(looping([65] * 32))
+        self.assertFalse(looping([65] * 31))
+        self.assertFalse(looping(list(range(200))))
+        self.assertFalse(looping([1, 2, 3, 4] * 8 + [7]))
+        model = Model(Config(context=128, width=8, heads=2, layers=1, seed=7))
+        scores = np.full(261, -20, dtype=np.float32)
+        scores[ord('A')] = -2
+        with patch.object(Model, "next_logits", return_value=scores):
+            self.assertEqual("".join(model.generate([{"role": "user", "content": "hi"}], max_tokens=90, temperature=0)), "A" * 32)
+
     def test_local_http_chat_stream_and_origin_checks(self):
         model = self.model()
         server = ThreadingHTTPServer(("127.0.0.1", 0), make_handler(model, {"config": {"context": 16}, "metadata": {"steps": 0}}, "test.npz"))
@@ -158,6 +190,11 @@ class ModelTests(unittest.TestCase):
             self.assertEqual(response.status, 200)
             self.assertIn("img-src 'self' blob:", response.getheader("Content-Security-Policy"))
             self.assertIn(b"export function validateSvg", response.read())
+            connection.request("GET", "/arithmetic.js")
+            response = connection.getresponse()
+            self.assertEqual(response.status, 200)
+            self.assertIn("text/javascript", response.getheader("Content-Type"))
+            self.assertIn(b"export function arithmeticExpression", response.read())
             payload = json.dumps({"messages": [{"role": "user", "content": "hi"}], "max_tokens": 3, "temperature": 0})
             connection.request("POST", "/api/chat", body=payload, headers={"Content-Type": "application/json"})
             response = connection.getresponse(); self.assertEqual(response.status, 200)
@@ -217,6 +254,7 @@ class DataTests(unittest.TestCase):
     def test_server_rejects_malformed_and_oversized_generation_requests(self):
         valid = {"messages": [{"role": "user", "content": "hi"}]}
         self.assertEqual(validate_chat(valid)[1], 240)
+        self.assertEqual(validate_chat({**valid, 'max_tokens': 2048})[1], 2048)
         for payload in ([], {"messages": []}, {**valid, "max_tokens": 9999}, {**valid, "temperature": float('nan')}, {**valid, "max_tokens": True}):
             with self.assertRaises(ValueError):
                 validate_chat(payload)

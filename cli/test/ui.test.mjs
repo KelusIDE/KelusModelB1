@@ -18,7 +18,7 @@ test('code fences become a box and never stream as raw backticks', () => {
     '  │     return text[::-1]',
     '  ╰─',
   ].join('\n'));
-  assert.strictEqual(render(CODE, { pieces: [CODE] }), render(CODE)); // chunking does not matter
+  assert.strictEqual(render(CODE, { pieces: [CODE] }), render(CODE));
   assert.ok(!render(CODE).includes('```'));
 });
 
@@ -47,7 +47,7 @@ test('boxes keep every line the same width', () => {
 
 test('the input box wraps long text and tracks the caret', () => {
   const area = inputArea(plain, { text: 'x'.repeat(30), cursor: 27, size: 30, placeholder: 'Ask', status: '' });
-  assert.strictEqual(area.lines.filter(line => line.startsWith('│')).length, 2); // 24 characters per row
+  assert.strictEqual(area.lines.filter(line => line.startsWith('│')).length, 2);
   assert.deepStrictEqual([area.row, area.column], [2, 7]);
   const empty = inputArea(plain, { text: '/n', cursor: 2, size: 60, placeholder: 'Ask', status: '', suggestions: [['/new', 'start a new chat']] });
   assert.match(empty.lines[empty.lines.length - 1], /\/new\s+start a new chat/);

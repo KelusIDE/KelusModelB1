@@ -1,5 +1,5 @@
-// Runs the browser engine in Node for tests/test_web.py.
-// Usage: node tests/web_parity.mjs <model directory> <cases.json>
+
+
 import { readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { Model, prepareReply, localAnswer } from '../site/b1.js';

@@ -2,6 +2,7 @@
 const crypto = require('crypto');
 const fs = require('fs');
 const path = require('path');
+const { pathToFileURL } = require('url');
 const vscode = require('vscode');
 const { Bridge } = require('./bridge');
 
@@ -27,10 +28,23 @@ class Host {
     this.context = context;
     this.name = context.extension.packageJSON.displayName;
     this.views = new Set();
-    this.owners = new Map(); // request id -> webview that asked
+    this.owners = new Map();
+    this.searches = new Map();
+    this.holds = new Map();
     this.bridge = null;
     this.lastEditor = vscode.window.activeTextEditor;
     context.subscriptions.push(vscode.window.onDidChangeActiveTextEditor(editor => { if (editor) this.lastEditor = editor; }));
+  }
+
+  builds() {
+    const cwd = repository();
+    if (!cwd) return [];
+    const builds = JSON.parse(fs.readFileSync(path.join(cwd, 'kani-builds.json'), 'utf8'));
+    return builds.filter(b => fs.existsSync(path.join(cwd, 'checkpoints', b.checkpoint + '.npz')));
+  }
+
+  selectedBuild() {
+    return this.builds().find(b => b.id === settings().get('build', 'latest'));
   }
 
   ensureBridge() {
@@ -40,14 +54,15 @@ class Host {
       this.status = { state: 'error', error: 'Open the KelusModelB1 folder, or set "Kani: Repository Path" in Settings.', setup: true };
       return this.broadcast({ type: 'status', ...this.status });
     }
-    this.bridge = new Bridge({ python: python(), cwd, model: settings().get('model') });
+    const build = this.selectedBuild();
+    this.bridge = new Bridge({ python: python(), cwd, model: build ? build.checkpoint : settings().get('model') });
     this.bridge.on('status', status => {
       this.status = status;
       this.broadcast({ type: 'status', ...status, setup: status.state === 'error' });
     });
     this.bridge.on('event', event => {
       const view = this.owners.get(event.id);
-      if (!view) return;
+      if (!view || this.hold(view, event)) return;
       if (event.type === 'done' || event.type === 'error') this.owners.delete(event.id);
       view.postMessage(event);
     });
@@ -79,13 +94,20 @@ class Host {
 
   receive(webview, message) {
     if (message.type === 'ready') {
+      webview.postMessage({ type: 'builds', builds: this.builds(), selected: settings().get('build', 'latest') });
       if (this.status) webview.postMessage({ type: 'status', ...this.status, setup: this.status.state === 'error' });
+    } else if (message.type === 'selectBuild') {
+      if (this.builds().some(b => b.id === message.build)) {
+        settings().update('build', message.build, vscode.ConfigurationTarget.Global).then(() => {
+          this.broadcast({ type: 'reset' });
+          this.broadcast({ type: 'builds', builds: this.builds(), selected: message.build });
+        }, error => vscode.window.showErrorMessage(error.message));
+      }
     } else if (message.type === 'send') {
-      const options = { maxTokens: settings().get('maxTokens'), temperature: settings().get('temperature') };
-      if (this.bridge && this.bridge.chat(message.id, message.messages.slice(-15), options)) this.owners.set(message.id, webview);
-      else webview.postMessage({ type: 'error', id: message.id, message: 'Kani is not running. Check the message above, then Restart.' });
+      this.send(webview, message);
     } else if (message.type === 'cancel') {
-      if (this.bridge) this.bridge.cancel(message.id);
+      if (this.searches.has(message.id)) this.searches.get(message.id).abort();
+      else if (this.bridge) this.bridge.cancel(message.id);
     } else if (message.type === 'insert') {
       this.insert(message.code, message.language);
     } else if (message.type === 'copy') {
@@ -100,13 +122,144 @@ class Host {
     }
   }
 
+  async send(webview, message) {
+    const last = message.messages[message.messages.length - 1];
+    const cwd = repository();
+
+    const web = cwd && last && last.role === 'user' ? await import(pathToFileURL(path.join(cwd, 'site', 'web.js')).href).catch(() => null) : null;
+    const request = web && web.webRequest(last.content);
+    if (request) {
+      const controller = new AbortController();
+      this.searches.set(message.id, controller);
+      webview.postMessage({ type: 'start', id: message.id, source: 'web', omitted: 0 });
+      try {
+        const found = await web.webAnswer(request, fetch, controller.signal);
+        webview.postMessage({ type: 'token', id: message.id, text: found.text });
+        webview.postMessage({ type: 'done', id: message.id, cancelled: false });
+      } catch (error) {
+        webview.postMessage({ type: 'error', id: message.id, message: error.message });
+      } finally {
+        this.searches.delete(message.id);
+      }
+      return;
+    }
+    const options = { maxTokens: settings().get('maxTokens'), cideMaxTokens: settings().get('cideMaxTokens'), temperature: settings().get('temperature'), imageModel: this.selectedBuild()?.imageModel || 'painter' };
+    const reading = cwd ? await import(pathToFileURL(path.join(cwd, 'site', 'reading.js')).href).catch(() => null) : null;
+    const places = cwd ? await import(pathToFileURL(path.join(cwd, 'site', 'places.js')).href).catch(() => null) : null;
+    if (this.selectedBuild()?.id !== 'cide' && reading && web && last && last.role === 'user') this.holds.set(message.id, { text: '', question: last.content, reading, web, places });
+    if (this.bridge && this.bridge.chat(message.id, message.messages.slice(-15), options)) this.owners.set(message.id, webview);
+    else webview.postMessage({ type: 'error', id: message.id, message: 'Kani is not running. Check the message above, then Restart.' });
+  }
+
+
+
+
+
+
+  hold(view, event) {
+    const hold = this.holds.get(event.id);
+    if (!hold) return false;
+    if (event.type === 'start' && event.source !== 'model') this.holds.delete(event.id);
+    if (event.type === 'error') this.holds.delete(event.id);
+    if (event.type !== 'token' && event.type !== 'done') return false;
+    if (event.type === 'token') {
+      hold.text += event.text;
+      if (hold.reading.maybeSearch(hold.text) || hold.places?.maybePlaces(hold.text)) return true;
+      this.holds.delete(event.id);
+      view.postMessage({ ...event, text: hold.text });
+      return true;
+    }
+    this.holds.delete(event.id);
+    const place = hold.places && hold.text.trim().match(hold.places.PLACES_CALL);
+    if (place) {
+      this.placed(view, event.id, place, hold.places);
+      return true;
+    }
+    const call = hold.text.trim().match(hold.reading.SEARCH_CALL);
+    if (!call) {
+      if (hold.text) view.postMessage({ type: 'token', id: event.id, text: hold.text });
+      return false;
+    }
+    this.searched(view, event.id, call[1], hold);
+    return true;
+  }
+
+  async searched(view, id, query, { question, reading, web }) {
+    const controller = new AbortController();
+    this.searches.set(id, controller);
+    view.postMessage({ type: 'start', id, source: 'web_answer', omitted: 0 });
+    const generate = messages => this.generate(messages);
+    try {
+      for await (const text of reading.searchedAnswer(query, question, { generate, webAnswer: web.webAnswer, signal: controller.signal })) {
+        if (controller.signal.aborted) break;
+        view.postMessage({ type: 'token', id, text });
+      }
+      view.postMessage({ type: 'done', id, cancelled: controller.signal.aborted });
+    } catch (error) {
+      view.postMessage({ type: 'error', id, message: error.message });
+    } finally {
+      this.searches.delete(id);
+      this.owners.delete(id);
+    }
+  }
+
+
+  async placed(view, id, call, places) {
+    const controller = new AbortController();
+    this.searches.set(id, controller);
+    view.postMessage({ type: 'start', id, source: 'places', omitted: 0 });
+    try {
+      for await (const text of places.placesAnswer(call, { locate: async () => null, signal: controller.signal })) {
+        if (controller.signal.aborted) break;
+        view.postMessage({ type: 'token', id, text });
+      }
+      view.postMessage({ type: 'done', id, cancelled: controller.signal.aborted });
+    } catch (error) {
+      view.postMessage({ type: 'error', id, message: error.message });
+    } finally {
+      this.searches.delete(id);
+      this.owners.delete(id);
+    }
+  }
+
+
+  generate(messages) {
+    const bridge = this.bridge, id = crypto.randomUUID();
+    return {
+      async *[Symbol.asyncIterator]() {
+        const queue = [];
+        let wake = null, finished = false, failure = null;
+        const listener = event => {
+          if (event.id !== id) return;
+          if (event.type === 'token') queue.push(event.text);
+          else if (event.type === 'done') finished = true;
+          else if (event.type === 'error') { failure = new Error(event.message); finished = true; }
+          if (wake) wake();
+        };
+        bridge.on('event', listener);
+        try {
+          if (!bridge.chat(id, messages, { maxTokens: 200, temperature: 0, reading: true })) throw new Error('Kani is not running.');
+          for (;;) {
+            while (queue.length) yield queue.shift();
+            if (finished) break;
+            await new Promise(resolve => { wake = resolve; });
+            wake = null;
+          }
+          if (failure) throw failure;
+        } finally {
+          bridge.off('event', listener);
+        }
+      },
+    };
+  }
+
   async insert(code, language) {
     const editor = this.lastEditor && !this.lastEditor.document.isClosed ? this.lastEditor : null;
     if (!editor) {
       const document = await vscode.workspace.openTextDocument({ content: code, language: LANGUAGES[language] || 'plaintext' });
       return vscode.window.showTextDocument(document);
     }
-    // One edit call is one undo step. Inserted code is never saved or run.
+
     await editor.edit(builder => editor.selections.forEach(selection => builder.replace(selection, code)));
     vscode.window.showTextDocument(editor.document, editor.viewColumn);
   }

@@ -1,0 +1,22 @@
+:root { color-scheme: light; font-family: 'DM Sans', system-ui, -apple-system, sans-serif; color: #222822; background: #f5f3ed; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+main { max-width: 650px; margin: 0 auto; padding: 40px 26px 64px; }
+a { color: #2c4fe6; text-underline-offset: 4px; }
+a:focus-visible { outline: 2px solid #2c4fe6; outline-offset: 5px; }
+.back { display: inline-block; margin-bottom: 50px; font-size: 12px; text-decoration: none; }
+.icon { display: block; border-radius: 16px; margin-bottom: 28px; }
+.eyebrow { color: #73786e; font-size: 9px; font-weight: 500; letter-spacing: .15em; }
+h1 { font: 400 clamp(54px, 12vw, 86px)/.99 'Instrument Serif', Georgia, serif; letter-spacing: -2px; margin: 21px 0 26px; }
+h1 em { color: #2c4fe6; font-weight: 400; }
+.intro { font-size: 15px; line-height: 1.9; color: #73786e; max-width: 440px; }
+.version { color: #7b8178; font-size: 11px; line-height: 1.8; }
+.download { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 18px 22px; margin: 28px 0; border-radius: 12px; background: #2c4fe6; color: #fff; font-size: 14px; font-weight: 500; text-decoration: none; transition: background .2s; }
+.download:hover { background: #2140c5; }
+section { padding: 24px; margin-top: 22px; border: 1px solid #22282224; border-radius: 14px; background: #fdfcf8; }
+section .download { margin: 18px 0; }
+section .version { margin: 0; }
+.fine { color: #7b8178; font-size: 11px; overflow-wrap: anywhere; }
+h2 { font: 400 30px/1.1 'Instrument Serif', Georgia, serif; margin: 0 0 16px; }
+section p { font-size: 13px; line-height: 1.9; color: #73786e; }
+section a { font-size: 12px; }

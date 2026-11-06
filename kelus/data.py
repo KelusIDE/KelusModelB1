@@ -7,7 +7,7 @@ from .tokenizer import PAD, ASSISTANT, ByteTokenizer, conversation
 
 
 class Dataset:
-    def __init__(self, filename, seed=42, validation_fraction=0.15, tokenizer=None, last_reply_only=False, balance_languages=False):
+    def __init__(self, filename, seed=42, validation_fraction=0.15, tokenizer=None, last_reply_only=False, balance_languages=False, rust_tokenizer=False):
         raw = Path(filename).read_bytes()
         self.fingerprint = hashlib.sha256(raw).hexdigest()
         records = [json.loads(line) for line in raw.decode("utf-8").splitlines() if line.strip()]
@@ -24,10 +24,15 @@ class Dataset:
             raise ValueError('Language balancing requires tagged, reviewed instruction data')
         examples, seen, splits, labels = [], set(), [], []
         self.tokenizer = tokenizer or ByteTokenizer()
+        encoder = self.tokenizer
+        if rust_tokenizer:
+            from .rust_tokenizer import accelerated
+            encoder = accelerated(self.tokenizer)
+        self.tokenizer_backend = 'rust' if rust_tokenizer else 'python'
         self.last_reply_only = last_reply_only
         for number, record in enumerate(records, 1):
             try:
-                tokens, supervised = conversation(record["messages"], tokenizer=self.tokenizer)
+                tokens, supervised = conversation(record["messages"], tokenizer=encoder)
                 key = tuple(tokens)
                 if key not in seen:
                     examples.append((np.array(tokens, dtype=np.int64), np.array(supervised, dtype=bool)))
@@ -58,26 +63,51 @@ class Dataset:
             self.language_buckets = [buckets[key] for key in sorted(buckets)]
         self.token_count = sum(len(tokens) for tokens, _ in examples)
 
-    def batch(self, split, batch_size, context, rng, trim=False):
+    def _length_groups(self, pool, context, width):
+        """Indices of `pool` grouped by padded length (multiples of `width`, at most `context`), cached."""
+        cache = self.__dict__.setdefault('_groups', {})
+        key = (id(pool), context, width)
+        if key not in cache:
+            groups = {}
+            for index, (tokens, _) in enumerate(pool):
+                groups.setdefault(-(-min(context, len(tokens) - 1) // width), []).append(index)
+            cache[key] = ([-(-min(context, len(tokens) - 1) // width) for tokens, _ in pool], {g: np.array(i) for g, i in groups.items()})
+        return cache[key]
+
+    def batch(self, split, batch_size, context, rng, trim=False, group_width=0):
+        """Training windows. With `group_width`, the rows after the first come from examples of the same padded
+        length as the first, so a trimmed batch carries little padding. The first row's length group is drawn
+        from the usual distribution, so the mix of examples stays close to random batches (exact only when every
+        language cell has the same length mix); mainly the pairing changes."""
         examples = self.training if split == "train" else self.validation
         if batch_size < 1:
             raise ValueError("Batch size must be positive")
         x = np.full((batch_size, context), PAD, dtype=np.int64)
         y = np.full((batch_size, context), -1, dtype=np.int64)
         longest = 1
+        group = None
         for row in range(batch_size):
-            # Give each populated code-language/reply-language cell equal chance.
-            # A small cell is sampled more often, not mistaken for more diverse data.
+
+
             pool = self.language_buckets[int(rng.integers(len(self.language_buckets)))] if split == 'train' and self.language_buckets else examples
-            tokens, supervised = pool[int(rng.integers(len(pool)))]
+            if group_width:
+                of, members = self._length_groups(pool, context, group_width)
+                if group is not None and group in members:
+                    index = int(rng.choice(members[group]))
+                else:
+                    index = int(rng.integers(len(pool)))
+                    group = of[index] if group is None else group
+            else:
+                index = int(rng.integers(len(pool)))
+            tokens, supervised = pool[index]
             if split == "train" and self.last_reply_only:
-                # Earlier replies supply history. Train the reply we would
-                # actually be generating now, instead of spending most of a
-                # multi-turn batch relearning already-answered older turns.
+
+
+
                 supervised = supervised.copy()
                 last_reply = int(np.flatnonzero(tokens == ASSISTANT)[-1])
                 supervised[:last_reply + 1] = False
-            # Every window retains at least one supervised assistant token.
+
             candidates = np.flatnonzero(supervised[1:])
             anchor = int(rng.choice(candidates))
             low, high = max(0, anchor - context + 1), min(anchor, max(0, len(tokens) - context - 1))

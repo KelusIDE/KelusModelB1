@@ -115,7 +115,7 @@ def build():
         add([f"write a JavaScript {description}", f"{description} in JavaScript", f"make a JavaScript {description}", f"show me a JavaScript {description}", f"I need a JavaScript {description}"],
             "```javascript\n" + code + "\n```", [f"please give me a JavaScript {description} example"])
 
-    # Case/punctuation augmentation is confined to the training split.
+
     base_train = list(train)
     for prompt, answer in base_train:
         for variant in (prompt[0].upper() + prompt[1:], prompt + ".", prompt + "!", prompt.upper()):
@@ -130,12 +130,12 @@ def build():
 
     records = [{"split": "train", "messages": messages([pair])} for pair in train]
     records += [{"split": "validation", "messages": messages([pair])} for pair in validation]
-    # Mix chat and code in the same history, including greeting after code.
+
     for _ in range(2000):
         records.append({"split": "train", "messages": messages(rng.sample(train, rng.choice((2, 2, 3, 4))))})
     for _ in range(50):
         records.append({"split": "validation", "messages": messages(rng.sample(validation, 3))})
-    # Grounded follow-ups: the example depends on the preceding concept.
+
     for topic, explanation, code in concepts:
         language = "javascript" if topic == "JavaScript" else "html" if topic == "HTML" else "css" if topic == "CSS" else "python"
         example = f"```{language}\n{code}\n```"
@@ -143,7 +143,7 @@ def build():
             for follow in ("show me an example", "give me an example", "example please", "can you show an example", "how does that look in code"):
                 records.append({"split": "train", "messages": messages([(first, explanation), (follow, example)])})
         records.append({"split": "validation", "messages": messages([(f"can you explain {topic}?", explanation), ("could you give an example?", example)])})
-    # A few multi-turn chains of the bug reports, not held-out generalization.
+
     for _ in range(150):
         chosen = [rng.choice(code_pairs)[0][0], rng.choice(["hello!", "hi!", "hello", "what", "huh?"])]
         mapping = dict(train)

@@ -1,28 +1,36 @@
 #!/usr/bin/env node
-// kani: terminal chat with the B1 model, using the same JavaScript engine as the web app.
-// No Python, NumPy, or npm dependencies; weights come from an export such as site/model/.
+
+
 import { readFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import { emitKeypressEvents } from 'node:readline';
 import { fileURLToPath } from 'node:url';
-import { Model, prepareReply } from '../site/b1.js';
+import { Model, enableKernels, prepareReply } from '../site/b1.js';
+import { SEARCH_CALL, maybeSearch, searchedAnswer } from '../site/reading.js';
+import { PLACES_CALL, maybePlaces, placesAnswer } from '../site/places.js';
+import { CIDE_CALL, maybeCide, cideAnswer } from '../site/cide.js';
+import { loadCide } from './cide.mjs';
+import { webAnswer } from '../site/web.js';
 import { Workspace, clean } from './workspace.mjs';
 import { WORKSPACE_COMMANDS, isWorkspaceRequest, workspaceReply } from './workspace-chat.mjs';
 import { Renderer, SPINNER, banner, box, fit, inputArea, theme, width } from './ui.mjs';
 
 const HERE = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(HERE, '..');
-const NAME = 'Kani Seal 3 (Kani B2:10F)';
 const BRAND = 'Kani';
 const { version } = JSON.parse(await readFile(path.join(HERE, 'package.json'), 'utf8'));
-const SOURCES = { local_calculator: 'calculator', local_clock: 'clock', workspace: 'workspace tools', web: 'online Wikipedia' };
+const BUILDS = JSON.parse(await readFile(path.join(ROOT, 'kani-builds.json'), 'utf8'));
+const NAME = BUILDS.find(b => b.id === 'latest')?.label.split(' · ')[0] || BRAND;
+const SOURCES = { local_calculator: 'calculator', local_clock: 'clock', crisis_support: 'fixed safety message', sketch: 'Kani Sketch', workspace: 'workspace tools', web: 'online search', painter: 'Kani Painter', pixels: 'Kani Pixels', places: 'places search' };
 const COMMANDS = [
   ...WORKSPACE_COMMANDS,
+  ['/cide', 'ask Cide directly: /cide TASK'],
   ['/help', 'show commands and keys'],
   ['/new', 'start a new chat'],
   ['/clear', 'clear the screen and start over'],
   ['/info', 'show model details'],
+  ['/model', 'list or switch builds, including kani-cide and cide'],
   ['/quit', 'exit'],
 ];
 const SUGGESTIONS = ['analyze files', '/read README.md', '/search TODO', '/help'];
@@ -31,15 +39,18 @@ const HELP = `Usage: kani [options] [prompt]
   kani                        chat in the terminal
   kani "explain recursion"    answer one prompt and exit (also reads stdin)
 
-Workspace commands: /files, /analyze, /read, /search, /ask, /draft, /do, /svg, /diff, /apply, /discard, /vision, /web
+Workspace commands: /files, /analyze, /read, /search, /ask, /draft, /do, /svg, /draw, /diff, /apply, /discard, /vision, /web
+Coding specialist: /cide TASK; or kani --build kani-cide for learned delegation
 Example: kani --cwd ./project "/analyze"
 
 Options:
   --cwd DIR          workspace directory (default: current directory)
   --vision-model FILE  scratch vision checkpoint (default: checkpoints/vision-ui.npz)
+  --build NAME       latest (${NAME}, default), ${BUILDS.filter(b => b.id !== 'latest').map(b => b.id).join(', ')}
+  --painter-dir DIR   exported Kani Painter model (default: training-runs/kani-painter-web)
   --python CMD       Python for optional /vision (default: python3)
-  --model-dir DIR    exported model directory (default: site/model in this repository)
-  --max-tokens N     longest reply, 1-2048 (default 512, capped by model context)
+  --model-dir DIR    exported model directory instead of a --build
+  --max-tokens N     longest reply, 1-4096 (default 512, capped by model context)
   --temperature T    0 always picks the most likely token (default 0)
   -v, --version      print the version
   -h, --help         show this help
@@ -48,7 +59,7 @@ Export another checkpoint with:
   python3 -m kelus.export_web --checkpoint checkpoints/NAME.npz --out DIR`;
 
 function parse(argv) {
-  const options = { modelDir: path.join(ROOT, 'site', 'model'), maxTokens: 512, temperature: 0, cwd: process.cwd(), visionModel: path.join(ROOT, 'checkpoints/vision-ui.npz'), python: 'python3', engineRoot: ROOT, prompt: [] };
+  const options = { modelDir: path.join(ROOT, 'site', 'model'), maxTokens: 512, temperature: 0, cwd: process.cwd(), visionModel: path.join(ROOT, 'checkpoints/vision-ui.npz'), painterDir: path.join(ROOT, 'training-runs/kani-painter-web'), python: 'python3', engineRoot: ROOT, imageModel: 'painter', build: 'latest', prompt: [] };
   for (let i = 0; i < argv.length; i++) {
     const arg = argv[i];
     const value = () => {
@@ -58,15 +69,17 @@ function parse(argv) {
     if (arg === '-h' || arg === '--help') options.help = true;
     else if (arg === '-v' || arg === '--version') options.version = true;
     else if (arg === '--vision-model') options.visionModel = path.resolve(value());
+    else if (arg === '--build') { options.build = value(); if (!BUILDS.some(b => b.id === options.build)) fail('Unknown build. Choose ' + BUILDS.map(b => b.id).join(', ')); }
+    else if (arg === '--painter-dir') options.painterDir = path.resolve(value());
     else if (arg === '--python') options.python = value();
     else if (arg === '--cwd') options.cwd = path.resolve(value());
-    else if (arg === '--model-dir') options.modelDir = path.resolve(value());
-    else if (arg === '--max-tokens') options.maxTokens = Number(value());
+    else if (arg === '--model-dir') { options.modelDir = path.resolve(value()); options.modelDirGiven = true; }
+    else if (arg === '--max-tokens') options.cideMaxTokens = options.maxTokens = Number(value());
     else if (arg === '--temperature') options.temperature = Number(value());
     else if (arg.startsWith('-') && arg !== '-') fail(`Unknown option ${arg}. Try kani --help.`);
     else options.prompt.push(arg);
   }
-  if (!(Number.isInteger(options.maxTokens) && options.maxTokens >= 1 && options.maxTokens <= 2048)) fail('--max-tokens must be a whole number from 1 to 2048.');
+  if (!(Number.isInteger(options.maxTokens) && options.maxTokens >= 1 && options.maxTokens <= 4096)) fail('--max-tokens must be a whole number from 1 to 4096.');
   if (!(options.temperature >= 0 && options.temperature <= 2)) fail('--temperature must be between 0 and 2.');
   return options;
 }
@@ -76,38 +89,106 @@ function fail(message) {
   process.exit(1);
 }
 
+async function selectBuild(id, options) {
+  const build = BUILDS.find(b => b.id === id);
+  if (!build) throw new Error('Unknown build. Choose ' + BUILDS.map(b => b.id).join(', '));
+  const directory = path.join(ROOT, build.export);
+  {
+
+    try { await readFile(path.join(directory, 'b1.json')); }
+    catch {
+      const { execFile } = await import('node:child_process');
+      const { promisify } = await import('node:util');
+      await promisify(execFile)(options.python, ['-m', 'kelus.export_web', '--checkpoint',
+        path.join(ROOT, 'checkpoints', build.checkpoint + '.npz'), '--out', directory],
+        { cwd: ROOT, timeout: 120000, maxBuffer: 1024 * 1024 });
+    }
+  }
+  return { build: id, imageModel: build.imageModel, modelDir: directory, cide: Boolean(build.cide) };
+}
+
 async function load(directory) {
   try {
     const manifest = JSON.parse(await readFile(path.join(directory, 'b1.json'), 'utf8'));
     const weights = await readFile(path.join(directory, 'b1.bin'));
+    await enableKernels();
     return new Model(manifest, weights.buffer.slice(weights.byteOffset, weights.byteOffset + weights.byteLength));
   } catch (error) {
-    if (error.code === 'ENOENT') fail(`No exported model in ${directory}.\nExport one: python3 -m kelus.export_web --checkpoint checkpoints/b1-v3.best.npz --out ${directory}`);
+    if (error.code === 'ENOENT') fail(`No exported model in ${directory}.\nDownload published weights from the repository root: node model-host/download.mjs latest cide seal-3\nOr export your own: python3 -m kelus.export_web --checkpoint checkpoints/b1-v3.best.npz --out ${directory}`);
     fail(`Could not load the model in ${directory}: ${error.message}`);
   }
 }
 
-/** Yields { source, omitted } once, then text pieces; pauses between tokens so keys still register. */
+
 async function* reply(model, messages, options, run) {
   const latest = messages[messages.length - 1].content;
+  if (/^\/cide(?:\s|$)/.test(latest)) {
+    const task = latest.slice(5).trim();
+    if (!task) throw new Error('Usage: /cide TASK');
+    yield { source: 'cide', omitted: 0 };
+    for await (const text of cideAnswer([...messages.slice(0, -1), { role: 'user', content: task }],
+      { load: loadCide, ...options, maxTokens: options.cideMaxTokens ?? 4096, cancelled: () => run.cancelled, pause: () => new Promise(setImmediate) })) yield { text };
+    return;
+  }
   if (isWorkspaceRequest(latest)) {
-    yield* workspaceReply(options.workspace, model, latest, options, run);
+    const coding = options.cide && /^\/(?:do|draft|ask)\s/.test(latest);
+    for await (const event of workspaceReply(options.workspace, coding ? await loadCide() : model, latest, options, run))
+      yield coding && event.source === 'workspace' ? { ...event, source: 'cide' } : event;
+    return;
+  }
+  if (model.manifest.specialist === 'coding') {
+    yield { source: 'cide', omitted: 0 };
+    for await (const text of cideAnswer(messages, { load: async () => model, ...options, maxTokens: options.cideMaxTokens ?? 4096,
+      cancelled: () => run.cancelled, pause: () => new Promise(setImmediate) })) yield { text };
     return;
   }
   const { retained, omitted, tool } = prepareReply(model, messages, options.maxTokens);
-  yield { source: tool ? tool[1] : 'model', omitted };
+  yield { source: tool ? tool[1] : options.build === 'cide' ? 'cide' : 'model', omitted };
   if (tool) {
     yield { text: tool[0] };
     return;
   }
+
+  let reply = '', held = true;
   for (const text of model.generate(retained, { maxTokens: options.maxTokens, temperature: options.temperature })) {
     if (run.cancelled) return;
-    yield { text };
+    reply += text;
+    if (held && !maybeSearch(reply) && !maybePlaces(reply) && !maybeCide(reply)) { held = false; yield { text: reply }; }
+    else if (!held) yield { text };
     await new Promise(resolve => setImmediate(resolve));
+  }
+  if (held && reply.trim() === CIDE_CALL && options.build !== 'cide') {
+    yield { source: 'cide', omitted: 0 };
+    for await (const text of cideAnswer(messages, { load: loadCide, ...options, maxTokens: options.cideMaxTokens ?? 4096,
+      cancelled: () => run.cancelled, pause: () => new Promise(setImmediate) })) yield { text };
+    return;
+  }
+  const place = held && reply.trim().match(PLACES_CALL);
+  if (place) {
+
+    yield { source: 'places', omitted: 0 };
+    for await (const text of placesAnswer(place, { locate: async () => null })) {
+      if (run.cancelled) return;
+      yield { text };
+    }
+    return;
+  }
+  const call = held && reply.trim().match(SEARCH_CALL);
+  if (!call) { if (held && reply) yield { text: reply }; return; }
+  const generate = async function* (messages) {
+    for (const text of model.generate(messages, { maxTokens: 200, temperature: 0 })) {
+      if (run.cancelled) return;
+      yield text;
+      await new Promise(resolve => setImmediate(resolve));
+    }
+  };
+  for await (const text of searchedAnswer(call[1], latest, { generate, webAnswer })) {
+    if (run.cancelled) return;
+    yield { text };
   }
 }
 
-/** Alternating turns for the model; a turn whose reply failed is dropped. */
+
 function conversation(messages) {
   const turns = [];
   for (const message of messages) {
@@ -123,7 +204,9 @@ function conversation(messages) {
 
 function speaker(t, source) {
   const helper = source && source !== 'model'
-    ? '  ' + t.color('gold', `${SOURCES[source] || source} · ${source==='web'?'retrieved sources':'local helper'}, not the model`) : '';
+    ? '  ' + t.color('gold', source === 'cide' ? 'Cide · coding specialist' : source === 'sketch' ? 'Kani Sketch · from-scratch doodle model (345 subjects)' : source === 'pixels' ? 'Kani Pixels v2 · experimental 64×64 diffusion model (174 subjects)'
+      : source === 'painter' ? 'Kani Painter · separate from-scratch drawing model'
+      : `${SOURCES[source] || source} · ${source==='web'?'retrieved sources':source==='places'?'retrieved places':'local helper'}, not the model`) : '';
   return t.gradient('●') + ' ' + t.bold(t.color('coral', BRAND)) + helper;
 }
 
@@ -170,7 +253,7 @@ async function interactive(model, options) {
       row('engine', 'local inference · /web sends only its query to Wikipedia'),
       row('directory', clean(directory)),
       row('context', `${m.config.context} tokens · /ask includes a bounded source excerpt`),
-    ], size(), `>_ ${NAME}  ${t.color('muted', 'v' + version)}`);
+    ], size(), `>_ ${m.name || NAME}${m.codename ? ` (${m.codename})` : ''}  ${t.color('muted', 'v' + version)}`);
   }
 
   function welcome() {
@@ -189,7 +272,7 @@ async function interactive(model, options) {
     return COMMANDS.filter(([name]) => name.startsWith(state.text));
   }
 
-  // The input area is redrawn in place: move up to its first line, clear below, draw again.
+
   function clear() {
     if (state.drawn) write((state.drawn.row ? `\x1b[${state.drawn.row}A` : '') + '\r\x1b[J');
     state.drawn = null;
@@ -209,7 +292,7 @@ async function interactive(model, options) {
     draw();
   }
 
-  function command(input) {
+  async function command(input) {
     const [name] = input.split(/\s+/);
     const match = COMMANDS.find(([command]) => command === name) || (suggestions().length === 1 && suggestions()[0]);
     const chosen = match ? match[0] : name;
@@ -226,6 +309,20 @@ async function interactive(model, options) {
       state.omittedShown = false;
       write('\x1b[2J\x1b[3J\x1b[H');
       welcome();
+    } else if (chosen === '/model') {
+      const selected = input.split(/\s+/)[1];
+      if (!selected) write(BUILDS.map(b => `  ${b.id === options.build ? '●' : ' '} ${b.id}: ${b.label}`).join('\n') + '\n\n');
+      else {
+        try {
+          const next = await selectBuild(selected, options);
+          const loaded = await load(next.modelDir);
+          Object.assign(options, next);
+          model = loaded;
+          state.messages = [];
+          state.omittedShown = false;
+          write(`  Switched to ${selected}. New conversation started.\n\n`);
+        } catch (error) { write(`  Could not switch: ${error.message}\n\n`); }
+      }
     } else if (chosen === '/info') {
       write(info() + '\n\n');
     } else {
@@ -242,8 +339,9 @@ async function interactive(model, options) {
     state.historyIndex = state.history.length;
     clear();
     write(t.color('mint', '›') + ' ' + t.bold(prompt) + '\n\n');
-    if (prompt.startsWith('/') && !isWorkspaceRequest(prompt)) {
-      command(prompt);
+    if (prompt.startsWith('/') && !/^\/cide(?:\s|$)/.test(prompt) && !isWorkspaceRequest(prompt)) {
+      state.run = { cancelled: false };
+      try { await command(prompt); } finally { state.run = null; }
       return draw();
     }
     state.messages.push({ role: 'user', content: prompt });
@@ -276,7 +374,7 @@ async function interactive(model, options) {
       }
       begin();
       write(renderer.end() + '\n');
-      // Report bounded history once per chat.
+
       const explain = omitted && !state.omittedShown;
       if (explain) state.omittedShown = true;
       const notes = [run.cancelled && 'stopped', explain && `Older turns were omitted to fit this model's context`].filter(Boolean);
@@ -310,7 +408,7 @@ async function interactive(model, options) {
     }
     if (state.run) {
       if (info.name === 'escape') state.run.cancelled = true;
-      return; // typing waits until the reply finishes
+      return;
     }
     if (info.ctrl && info.name === 'd' && !state.text) return quit();
     switch (info.ctrl ? 'ctrl+' + info.name : info.name) {
@@ -359,6 +457,8 @@ if (options.help) {
 } else if (options.version) {
   console.log(`kani ${version} (${NAME})`);
 } else {
+
+  if (!options.modelDirGiven) Object.assign(options, await selectBuild(options.build, options));
   try { options.workspace = await Workspace.open(options.cwd); } catch (error) { fail(error.message); }
   if (options.prompt.length || !process.stdin.isTTY || !process.stdout.isTTY) {
     const prompt = (options.prompt.length && options.prompt[0] !== '-' ? options.prompt.join(' ') : await readStdin()).trim();

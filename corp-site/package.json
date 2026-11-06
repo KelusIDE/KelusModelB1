@@ -1,0 +1,26 @@
+{
+  "name": "kelus-corp-site",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "kelus-corp.pages.dev: every Kelus Corp. product (React + TypeScript). Builds into dist/.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "deploy": "npm run build && firebase deploy --only hosting --project kelus-ide"
+  },
+  "dependencies": {
+    "motion": "12.43.0",
+    "react": "19.3.1",
+    "react-dom": "19.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.5"
+  }
+}

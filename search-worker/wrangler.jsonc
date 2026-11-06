@@ -1,0 +1,23 @@
+
+
+
+
+{
+  "name": "somewhat",
+  "main": "src/index.js",
+  "compatibility_date": "2026-10-21",
+  "compatibility_flags": ["nodejs_compat"],
+  "upload_source_maps": true,
+  "preview_urls": false,
+  "observability": {
+    "enabled": true,
+    "logs": { "head_sampling_rate": 1 },
+
+    "traces": { "enabled": false }
+  },
+
+  "ratelimits": [
+    { "name": "PER_VISITOR", "namespace_id": "4101", "simple": { "limit": 10, "period": 60 } },
+    { "name": "OVERALL", "namespace_id": "4102", "simple": { "limit": 60, "period": 60 } }
+  ]
+}

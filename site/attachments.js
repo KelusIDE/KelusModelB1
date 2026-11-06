@@ -1,24 +1,28 @@
-// Local file ingestion shared by browser chat and the VS Code webview.
-// Files are data: HTML/SVG are never inserted into the DOM or executed.
-export const LIMITS = Object.freeze({ count: 4, text: 128 * 1024, image: 8 * 1024 * 1024, total: 20 * 1024 * 1024, pixels: 24_000_000 });
+
+
+
+import { pdfAttachment, prepareDocuments } from './documents.js';
+export const LIMITS = Object.freeze({ count: 4, text: 128 * 1024, image: 8 * 1024 * 1024, pdf: 20 * 1024 * 1024, total: 20 * 1024 * 1024, pixels: 24_000_000 });
+const SIZES = { text: '128 KB', image: '8 MB', pdf: '20 MB' };
 const TEXT = new Set('txt md markdown html htm css scss js jsx mjs cjs ts tsx json jsonl csv tsv xml svg yaml yml toml ini log py java c h cpp cc hpp cs php go rs swift kt kts rb sql r scala pl dart lua cob cobol ps1 sh bash zsh vue svelte'.split(' '));
 const IMAGES = new Set(['png', 'jpg', 'jpeg', 'webp']);
-export const ACCEPT = [...TEXT, ...IMAGES].map(ext => '.' + ext).join(',');
+export const ACCEPT = [...TEXT, ...IMAGES, 'pdf'].map(ext => '.' + ext).join(',');
 export function fileName(name) {
   return String(name || 'attachment').split(/[\\/]/).pop().replace(/[\x00-\x1f\x7f-\x9f\u202a-\u202e\u2066-\u2069]/g, '').slice(0, 160) || 'attachment';
 }
 export function fileKind(name) {
   const ext = fileName(name).split('.').pop().toLowerCase();
   if (IMAGES.has(ext)) return 'image';
+  if (ext === 'pdf') return 'pdf';
   if (TEXT.has(ext) || /^(?:Dockerfile|Makefile|\.gitignore)$/i.test(fileName(name))) return 'text';
-  throw new Error(`${fileName(name)}: unsupported format. Attach text/code, HTML, JSON, CSV, PNG, JPEG or WebP. Export PDF/Office documents as text first.`);
+  throw new Error(`${fileName(name)}: unsupported format. Attach text/code, HTML, JSON, CSV, PDF, PNG, JPEG or WebP. Export Office documents as PDF or text first.`);
 }
 export function validateBatch(files) {
   if (files.length > LIMITS.count) throw new Error('Attach up to 4 files at a time.');
   let total = 0;
   for (const file of files) {
     const kind = fileKind(file.name), limit = LIMITS[kind];
-    if (!Number.isInteger(file.size) || file.size < 1 || file.size > limit) throw new Error(`${fileName(file.name)}: ${kind === 'image' ? '8 MB' : '128 KB'} maximum; empty files are not supported.`);
+    if (!Number.isInteger(file.size) || file.size < 1 || file.size > limit) throw new Error(`${fileName(file.name)}: ${SIZES[kind]} maximum; empty files are not supported.`);
     total += file.size;
   }
   if (total > LIMITS.total) throw new Error('Attachments must total at most 20 MB.');
@@ -82,11 +86,16 @@ export function imageHeader(bytes) {
   if (width * height > LIMITS.pixels || width > 16384 || height > 16384) throw new Error('Image is too large to decode. Use at most 24 megapixels and 16,384 pixels per side.');
   return { width, height, mime };
 }
-export async function readAttachment(file) {
+export async function readAttachment(file, { readPdf } = {}) {
   validateBatch([file]);
   const bytes = new Uint8Array(await file.arrayBuffer());
   if (bytes.length !== file.size) throw new Error('File size changed while reading.');
   if (fileKind(file.name) === 'text') return decodeText(file.name, bytes);
+  if (fileKind(file.name) === 'pdf') {
+    if (!readPdf) throw new Error(`${fileName(file.name)}: PDFs can be read in Kani on the web (kelus-b1.pages.dev). Here, export it as text first.`);
+    if (String.fromCharCode(...bytes.subarray(0, 5)) !== '%PDF-') throw new Error(`${fileName(file.name)} is not a PDF file.`);
+    return pdfAttachment(fileName(file.name), bytes.length, await readPdf(bytes));
+  }
   const header = imageHeader(bytes), blob = new Blob([bytes], { type: header.mime });
   const bitmap = await createImageBitmap(blob);
   try {
@@ -112,9 +121,11 @@ const STOP = new Set('the a an is are in on of to for and this that file files p
 export function prepareAttachments(prompt, files, tokenizer, context, maxTokens = 240) {
   validateBatch(files);
   if (!files.length) throw new Error('Attach a file first.');
-  const report = inspection(files), textFiles = files.filter(f => f.kind === 'text');
-  if (isInspection(prompt) || !textFiles.length) return { helper:true, text:report, receipt:'Local file inspection · no model inference' };
+  const report = inspection(files), textFiles = files.filter(f => f.kind === 'text'), pdfs = files.filter(f => f.kind === 'pdf');
+  if (!pdfs.length && (isInspection(prompt) || !textFiles.length)) return { helper:true, text:report, receipt:'Local file inspection · no model inference' };
   if (/^(?:\/web\b|(?:please\s+)?(?:search (?:the )?web for|look up)\b)/i.test(prompt.trim())) throw new Error('Remove attachments before a web lookup. Attached files stay local.');
+
+  if (pdfs.length) return prepareDocuments(prompt, pdfs);
   if (!tokenizer || !Number.isInteger(context)) throw new Error('The model must load before it can answer questions about file text.');
   const budget = context - Math.min(maxTokens, Math.max(1, Math.floor(context / 3)));
   const words = [...new Set(prompt.toLowerCase().match(/[\p{L}\p{N}_]{2,}/gu) || [])].filter(w => !STOP.has(w));
@@ -124,10 +135,10 @@ export function prepareAttachments(prompt, files, tokenizer, context, maxTokens 
   if (!fits()) throw new Error('Your question and file names exceed this model’s context. Shorten the question or attach fewer files.');
   for (const f of sources) {
     const ranked = f.lines.map((line,i) => ({ i, score:words.reduce((n,w)=>n + Number(line.toLowerCase().includes(w)),0) })).sort((a,b)=>b.score-a.score || a.i-b.i);
-    // Prioritize relevant whole lines, then their immediate neighbors. Never cut a source line silently.
+
     f.candidates = [...new Set(ranked.slice(0,100).flatMap(({i}) => [i, i-1, i+1]).filter(i => i>=0 && i<f.lines.length && f.lines[i].trim()))];
   }
-  // Round-robin allocation prevents the first large file consuming every token.
+
   while (sources.some(f => f.candidates.length)) {
     for (const f of sources) {
       while (f.candidates.length) {

@@ -1,0 +1,29 @@
+{
+  "name": "kani-web",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "The kelus-b1.pages.dev interface (React + TypeScript). Builds into ../site, beside the model engine.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "motion": "^12.43.0",
+    "onnxruntime-web": "1.31.1",
+    "pdfjs-dist": "6.4.299",
+    "prism-react-renderer": "^2.4.1",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5"
+  }
+}

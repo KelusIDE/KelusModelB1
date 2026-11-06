@@ -15,7 +15,9 @@ test('HTML is inspected as source and malicious markup stays literal text',async
 test('rejects binary and unsupported formats, size and count limits',()=>{
  assert.throws(()=>decodeText('x.txt',Uint8Array.of(0,1,2)),/binary/);
  assert.throws(()=>decodeText('x.txt',Uint8Array.of(255,254)),/UTF-8/);
- assert.throws(()=>validateBatch([{name:'report.pdf',size:200}]),/unsupported/);
+ assert.throws(()=>validateBatch([{name:'report.docx',size:200}]),/unsupported/);
+ validateBatch([{name:'report.pdf',size:20*1024*1024}]);
+ assert.throws(()=>validateBatch([{name:'report.pdf',size:20*1024*1024+1}]),/20 MB maximum/);
  assert.throws(()=>validateBatch([{name:'big.py',size:128*1024+1}]),/128 KB/);
  assert.throws(()=>validateBatch(Array(5).fill({name:'x.txt',size:2})),/4 files/);
  assert.throws(()=>validateBatch(Array(3).fill({name:'x.png',size:8*1024*1024})),/20 MB/);

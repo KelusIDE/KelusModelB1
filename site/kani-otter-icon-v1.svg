@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Kani Otter 4">
+  <!-- Kani Otter 4: sibling of the Kani Seal 3 mark (site/seal-favicon.svg) — flat, round, navy tile, mint accent.
+       An otter floats in the water holding its "4" like a pebble. -->
+  <defs>
+    <clipPath id="tile"><rect width="512" height="512" rx="112"/></clipPath>
+  </defs>
+  <g clip-path="url(#tile)">
+    <rect width="512" height="512" fill="#0f2430"/>
+    <path d="M0 392c42-18 86-18 128 0s86 18 128 0 86-18 128 0 86 18 128 0V512H0Z" fill="#153645"/>
+    <path d="M0 448c42-16 86-16 128 0s86 16 128 0 86-16 128 0 86 16 128 0V512H0Z" fill="#1b4556"/>
+  </g>
+  <!-- small ears, low on the sides -->
+  <circle cx="98" cy="212" r="30" fill="#7a4a2d"/>
+  <circle cx="414" cy="212" r="30" fill="#7a4a2d"/>
+  <circle cx="98" cy="212" r="15" fill="#5a331d"/>
+  <circle cx="414" cy="212" r="15" fill="#5a331d"/>
+  <!-- wide, flat head -->
+  <ellipse cx="256" cy="268" rx="182" ry="140" fill="#8b5a3a"/>
+  <!-- puffy whisker pads and chin -->
+  <ellipse cx="206" cy="324" rx="76" ry="58" fill="#f3dfc7"/>
+  <ellipse cx="306" cy="324" rx="76" ry="58" fill="#f3dfc7"/>
+  <ellipse cx="256" cy="366" rx="62" ry="40" fill="#f3dfc7"/>
+  <g fill="#cfae8e">
+    <circle cx="184" cy="322" r="5"/><circle cx="204" cy="340" r="5"/><circle cx="174" cy="346" r="5"/>
+    <circle cx="328" cy="322" r="5"/><circle cx="308" cy="340" r="5"/><circle cx="338" cy="346" r="5"/>
+  </g>
+  <!-- eyes -->
+  <circle cx="180" cy="246" r="21" fill="#1c120c"/>
+  <circle cx="332" cy="246" r="21" fill="#1c120c"/>
+  <circle cx="173" cy="238" r="7" fill="#ffffff"/>
+  <circle cx="325" cy="238" r="7" fill="#ffffff"/>
+  <!-- wide nose and mouth -->
+  <path d="M214 290q42-26 84 0c0 22-22 38-42 38s-42-16-42-38Z" fill="#2a1b14"/>
+  <path d="M256 328v12m0 0q-22 24-44 4m44-4q22 24 44 4" fill="none" stroke="#2a1b14" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- whiskers -->
+  <path d="M130 314 52 292M128 336 46 340M136 356 62 384M382 314l78-22M384 336l82 4M376 356l74 28" fill="none" stroke="#fbeedd" stroke-width="7" stroke-linecap="round"/>
+  <!-- the "4" pebble, held in both paws -->
+  <g transform="translate(0 -10)">
+    <circle cx="256" cy="444" r="56" fill="#bce5d1" stroke="#0f2430" stroke-width="12"/>
+    <path d="M265 412 232 456h50M265 412v62" fill="none" stroke="#0f2430" stroke-width="16" stroke-linecap="round" stroke-linejoin="round"/>
+    <ellipse cx="198" cy="448" rx="30" ry="24" fill="#7a4a2d"/>
+    <ellipse cx="314" cy="448" rx="30" ry="24" fill="#7a4a2d"/>
+    <path d="M184 440v14M198 438v16M212 440v14M300 440v14M314 438v16M328 440v14" stroke="#5a331d" stroke-width="5" stroke-linecap="round"/>
+  </g>
+</svg>

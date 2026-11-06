@@ -33,7 +33,7 @@ RENAMES = {
 HELD_OUT_NAMES = {'add_three', 'cube', 'final_price', 'triple_score'}
 NUMBER_WORDS = {2: 'two', 4: 'four', 5: 'five', 6: 'six', 7: 'seven', 8: 'eight', 9: 'nine', 10: 'ten'}
 
-# (expression, description). {0} {1} {2} are parameters; {k} {c} are constants.
+
 OPS = {
     1: [('{0} + {k}', 'adds {k} to {0}'), ('{0} - {k}', 'subtracts {k} from {0}'),
         ('{0} * {k}', 'multiplies {0} by {k}'), ('{0} / {k}', 'divides {0} by {k}'),
@@ -54,7 +54,7 @@ OPS = {
         ('{0} - {1} - {2}', 'subtracts {1} and {2} from {0}'), ('{0} + {1} * {2}', 'adds {0} to {1} times {2}'),
         ('({0} - {1}) * {2}', 'subtracts {1} from {0}, then multiplies by {2}')],
 }
-# Whole templates kept for validation only: specifications the model never trains on.
+
 VALIDATION_OPS = {'{0} - {k} * {c}', '{0} * {0} + {k}', '({0} + {1}) * ({0} - {1})', '{0} + {1} * {2}', '({0} - {1}) * {2}'}
 PARAMS = {
     1: [('x',), ('n',), ('value',), ('score',), ('points',), ('total',), ('size',), ('length',), ('amount',), ('count',),
@@ -96,7 +96,7 @@ def words(params):
 def spec(rng, arity, op, validation):
     expression_template, description_template = op
     params = rng.choice(PARAMS[arity])
-    k = rng.choice([2, 4, 5, 6, 7, 8, 9, 10])  # 3 is held out with triple_score
+    k = rng.choice([2, 4, 5, 6, 7, 8, 9, 10])
     c = rng.choice([1, 2, 4, 5, 10, 100])
     expr = expression_template.replace('{k}', str(k)).replace('{c}', str(c)).format(*params)
     desc = description_template.replace('{k}', str(k)).replace('{c}', str(c)).format(*params)
@@ -113,7 +113,7 @@ def trials(rng, item):
     while len(cases) < 3:
         inputs = tuple(rng.randint(-9, 12) for _ in params)
         try:
-            expected = eval(item['expr'], {}, dict(zip(params, inputs)))  # our own template, never model output
+            expected = eval(item['expr'], {}, dict(zip(params, inputs)))
         except ZeroDivisionError:
             continue
         cases.append((inputs, expected))
@@ -149,7 +149,7 @@ MESSAGES = ['Hello there!', 'Have a great day!', 'You did it!', 'Welcome back!',
 COLORS = ['lightblue', 'lightgreen', 'lavender', 'peachpuff', 'khaki', 'mistyrose', 'honeydew', 'lightyellow']
 ITEMS = ['Apple', 'Bread', 'Milk', 'Tea', 'Notebook', 'Pencil', 'Banana', 'Rice']
 FONTS = ['sans-serif', 'Arial, sans-serif', 'Georgia, serif', 'system-ui, sans-serif', 'Verdana, sans-serif']
-# (prompt phrase, extra CSS, body elements, script). Counters are deliberately absent.
+
 FEATURES = [
     ('a paragraph and a button that changes the paragraph text to "{msg}"', '',
      '<p id="text">Click the button.</p>\n<button onclick="change()">{label}</button>',
@@ -176,7 +176,7 @@ FEATURES = [
      '<button onclick="say()">{label}</button>',
      "function say() {{\n  alert('{msg}');\n}}"),
 ]
-VALIDATION_FEATURES = {5}  # the heading-color page is only ever validation
+VALIDATION_FEATURES = {5}
 LABELS = [['Change text', 'Click me'], ['Change color', 'Paint'], ['Show message', 'Reveal'], ['Add item', 'Add'],
           ['Greet', 'Say hi'], ['Color heading', 'Change color'], ['Dark mode', 'Toggle theme'], ['Show alert', 'Say it']]
 WEB_TEMPLATES = [
@@ -235,8 +235,8 @@ def build(seed=2026):
         indices = [i for i in range(len(FEATURES)) if (i in VALIDATION_FEATURES) == (split == 'validation')]
         for _ in range(count):
             records.append(website_record(rng, rng.choice(indices), split))
-    # Drop repeated conversations, then keep new-family validation prompts out of training.
-    # (Curriculum v3 was decontaminated by its own generator and is left as it is.)
+
+
     unique = {}
     for record in records:
         unique.setdefault(json.dumps(record['messages'], sort_keys=True), record)

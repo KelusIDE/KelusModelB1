@@ -1,0 +1,12 @@
+{
+  "name": "kani-api",
+  "private": true,
+  "type": "module",
+  "description": "Kani API: gateway (Cloudflare Worker) and backend (Node). See README.md.",
+  "scripts": {
+    "test": "node --test"
+  },
+  "dependencies": {
+    "jose": "^6.2.15"
+  }
+}

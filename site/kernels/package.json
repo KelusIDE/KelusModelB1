@@ -1,0 +1,12 @@
+{
+  "name": "kani-kernels",
+  "private": true,
+  "type": "module",
+  "description": "Builds site/kernels.js (WebAssembly SIMD kernels for site/b1.js) from build.mjs. Needed only to change the kernels.",
+  "scripts": {
+    "build": "node build.mjs"
+  },
+  "devDependencies": {
+    "wabt": "^1.0.39"
+  }
+}

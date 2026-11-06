@@ -23,8 +23,8 @@ def validate_chat(payload):
     conversation(messages, generation=True)
     max_tokens = payload.get("max_tokens", 240)
     temperature = payload.get("temperature", 0)
-    if type(max_tokens) is not int or not (1 <= max_tokens <= 512):
-        raise ValueError("Maximum output must be between 1 and 512 tokens")
+    if type(max_tokens) is not int or not (1 <= max_tokens <= 4096):
+        raise ValueError("Maximum output must be between 1 and 4096 tokens")
     if type(temperature) not in (int, float) or not (0 <= temperature <= 2):
         raise ValueError("Temperature must be between 0 and 2")
     return messages, max_tokens, float(temperature)
@@ -60,10 +60,12 @@ def make_handler(model, header, checkpoint):
                 return
             names = {"/": ("index.html", "text/html"), "/app.js": ("app.js", "text/javascript"), "/styles.css": ("styles.css", "text/css"),
                      "/favicon.svg": ("favicon.svg", "image/svg+xml"), "/svg.js": ("svg.js", "text/javascript"), "/web.js": ("web.js", "text/javascript"), "/attachments.js": ("attachments.js", "text/javascript"), "/b1.js": ("b1.js", "text/javascript"), "/kani-icon.png": ("kani-icon.png", "image/png"), "/seal-favicon.svg": ("seal-favicon.svg", "image/svg+xml"), "/seal-favicon-32.png": ("seal-favicon-32.png", "image/png"), "/seal-apple-touch-icon.png": ("seal-apple-touch-icon.png", "image/png"), "/favicon.ico": ("favicon.ico", "image/x-icon")}
+            names["/arithmetic.js"] = ("arithmetic.js", "text/javascript")
+            names["/support.js"] = ("support.js", "text/javascript")
             if self.path not in names:
                 self.send_json(404, {"error": "Not found"}); return
             filename, content_type = names[self.path]
-            data = ((WEB.parent / "site" if filename in ("svg.js", "web.js", "attachments.js", "b1.js", "kani-icon.png", "seal-favicon.svg", "seal-favicon-32.png", "seal-apple-touch-icon.png", "favicon.ico") else WEB) / filename).read_bytes()
+            data = ((WEB.parent / "site" if filename in ("svg.js", "web.js", "attachments.js", "b1.js", "arithmetic.js", "support.js", "kani-icon.png", "seal-favicon.svg", "seal-favicon-32.png", "seal-apple-touch-icon.png", "favicon.ico") else WEB) / filename).read_bytes()
             self.send_response(200)
             self.send_header("Content-Type", content_type + "; charset=utf-8")
             self.send_header("Content-Length", str(len(data)))
@@ -121,7 +123,7 @@ def make_handler(model, header, checkpoint):
                 generation_lock.release()
 
         def log_message(self, format, *args):
-            # Paths/status only; no user prompts are logged or saved.
+
             print(f"B1 HTTP: {format % args}", flush=True)
 
     return Handler

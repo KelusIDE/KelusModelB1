@@ -48,7 +48,7 @@ def build_repair():
     def record(pairs, split):
         return {'split':split, 'messages':[m for p,a in pairs for m in ({'role':'user','content':p},{'role':'assistant','content':a})]}
     records = [record([pair], 'train') for pair in train] + [record([pair], 'validation') for pair in val]
-    # Balance basic chat against the much larger code-template family.
+
     fresh = list(dict.fromkeys(new_train))
     for i in range(3500):
         target = rng.choice(fresh if i%2 else train)
@@ -59,7 +59,7 @@ def build_repair():
         records.append(record(history+[target], 'train'))
     for i in range(100):
         records.append(record(rng.sample(val, 3), 'validation'))
-    # Preserve context-dependent concept -> example conversations.
+
     records += [r for r in base if len(r['messages'])==4 and r['messages'][2]['content'] in ('show me an example','give me an example','example please','can you show an example','how does that look in code','could you give an example?')]
     unique = {json.dumps(r['messages'],sort_keys=True):r for r in records}
     return list(unique.values())

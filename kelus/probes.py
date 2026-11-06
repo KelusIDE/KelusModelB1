@@ -22,9 +22,13 @@ OUT_OF_SCOPE = ("That is outside what I can reliably answer. Could you ask a sma
                 "I do not have enough training to answer that reliably. I can help with a short coding example or a basic programming concept.",
                 UNKNOWN_PROGRAM)
 
+
+GREETING_OTTER = "Hi! I'm Kani Otter 4.3 by Kelus Corp. What would you like to build?"
+IDENTITY_OTTER = "I'm Kani Otter 4.3 by Kelus Corp., a small model trained from scratch for everyday chat and code."
+
 INTENTS = {
-    "greeting": (GREETING,),
-    "identity": (IDENTITY,),
+    "greeting": (GREETING, GREETING_OTTER),
+    "identity": (IDENTITY, IDENTITY_OTTER),
     "how_are_you": ("I'm ready to help. What are you working on?",),
     "thanks": ("You're welcome! What would you like to try next?",),
     "goodbye": ("See you! Happy coding.",),
@@ -119,7 +123,7 @@ CONCEPT_PROBES = {
     "CSS": ["what's css?", "what is css used for"],
 }
 
-# Python function probes: (prompt, function name, trials).
+
 CODE_PROBES = [
     ("python function to add 2 numbers", "add", [((2, 3), 5), ((-4, 4), 0)]),
     ("how do i add two numbers in python?", "add", [((2, 3), 5), ((0, 9), 9)]),
@@ -136,7 +140,7 @@ CODE_PROBES = [
     ("python function that greets a person by name", "greet", [(("Sam",), "Hello, Sam!")]),
 ]
 
-# Fixed-answer code probes: (prompt, intent).
+
 CODE_EXACT = [
     ("python program that prints hello world", "code:hello"),
     ("how do i print hello world in python?", "code:hello"),
@@ -154,7 +158,7 @@ CODE_EXACT = [
     ("i want to build a recipe website", "unknown_program"),
 ]
 
-# Python function probes added with the expanded snippet set.
+
 CODE_PROBES_V3 = [
     ("python function that finds the biggest number in a list", "maximum", [(([3, 9, 2],), 9), (([-1],), -1)]),
     ("get the smallest value from a list in python", "minimum", [(([3, 9, 2],), 2)]),
@@ -166,7 +170,7 @@ SQUARE = "```python\ndef square(x):\n    return x * x\n```"
 VARIABLE = "A variable is a name that refers to a value."
 LOOP = "A loop repeats a block of code."
 
-# Two-turn probes with one preceding exchange, matching the deployed runtime.
+
 MULTI = [
     ([("python square function please", SQUARE)], "yo, hi again", "greeting"),
     ([("python square function please", SQUARE)], "thanks a bunch", "thanks"),
@@ -176,7 +180,7 @@ MULTI = [
     ([("what are variables?", VARIABLE)], "cool thanks", "thanks"),
     ([("hey", GREETING)], "what are loops?", "concept:loop"),
     ([("hey", GREETING)], "write a python function to square a number", "code:square"),
-    # The reported app sequence: a vague request, then a specific one.
+
     ([("I want to build a scale", HELP[0])], "i want to build a fibonacci scale using python!", "code:fibonacci"),
     ([("hey", GREETING)], "factorial in python please", "code:factorial"),
 ]
@@ -186,9 +190,9 @@ EXAMPLES = {
     "example:loop": ("```python\nfor i in range(3):\n    print(i)\n```",),
 }
 
-# Context regression (reported separately, not held out): simple trained
-# messages after each kind of earlier exchange. The earlier reply must not
-# capture the answer, e.g. "hi!" after "What would you like me to explain?".
+
+
+
 CONTEXT_PRIORS = [("hello", GREETING), ("who are you", IDENTITY), ("how are you", INTENTS["how_are_you"][0]),
                   ("thanks", INTENTS["thanks"][0]), ("bye", INTENTS["goodbye"][0]), ("what", CLARIFY[0]), ("no", CLARIFY[1]),
                   ("help", HELP[0]), ("can you code", HELP[1]), ("what can you do", INTENTS["abilities"][0]),

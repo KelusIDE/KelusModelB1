@@ -1,4 +1,4 @@
-// Reproducible CPU inference benchmark. Fixed tokens measure speed, not answer quality.
+
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { performance } from 'node:perf_hooks';

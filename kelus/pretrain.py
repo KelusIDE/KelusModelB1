@@ -47,7 +47,7 @@ class Corpus:
 
 
 def validation(model,corpus,batches=8,batch=1,seed=2401):
-    # Fixed windows, fixed seed on every check; explicitly a sampled estimate.
+
     rng=np.random.default_rng(seed);total=0.0
     with no_grad():
         for _ in range(batches):

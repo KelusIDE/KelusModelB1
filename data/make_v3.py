@@ -134,7 +134,7 @@ CHAT = {
                    "asdfgh", "qwerty", "zxqv", "lkjhg", "sdfsdf", "what is the weather", "what is the latest news", "explain general relativity"],
 }
 
-# topic, explanation, follow-up example, singular forms, plural forms, mass-noun forms
+
 CONCEPTS = [
     ("variable", "A variable is a name that refers to a value.", "```python\nx = 5\n```", ["variable", "var"], ["variables", "vars"], []),
     ("function", "A function is a reusable block of code that takes inputs and can return a result.", "```python\ndef double(x):\n    return x * 2\n```", ["function", "func"], ["functions"], []),
@@ -174,7 +174,7 @@ FOLLOW_UPS = ["show me an example", "give me an example", "example please", "exa
               "write an example", "i want to see an example", "show me how it looks", "and in code?", "show me one",
               "got an example?", "what would that look like", "example in code please", "demonstrate it"]
 
-# name, code, infinitive, third person ("a function that ..."), noun, gerund
+
 SNIPPETS = [
     ("add", "def add(a, b):\n    return a + b",
      ["add two numbers", "add 2 numbers", "add a and b", "add numbers together", "sum two numbers", "find the sum of two numbers"],
@@ -282,13 +282,13 @@ NOUN = ["write a {L} {v}", "{L} {v}", "{v} in {L}", "give me a {L} {v}", "make a
         "{v} written in {L}", "can you make a {L} {v}", "{L} {v} please", "write me a {L} {v}",
         "i want to build a {v} using {L}", "i want to make a {v} with {L}", "build a {v} in {L}", "let's make a {v} in {L}"]
 GERUND = ["{L} code for {v}", "example of {v} in {L}", "{v} in {L}", "code for {v} in {L}", "show me {v} in {L}", "{L} example of {v}"]
-# Without a language name, code requests default to Python.
+
 NO_LANGUAGE = [("infinitive", ["write code to {v}", "make a function to {v}", "code to {v}", "how do i write code to {v}", "write a function to {v}"]),
                ("third", ["write a function that {v}", "function that {v}", "i need a function that {v}", "create a function that {v}"]),
                ("noun", ["write a {v}", "give me a {v}", "{v} code", "show me a {v}", "i want to build a {v}"])]
-# Specific programs B1 has not learned get an honest decline, not "tell me
-# what you want to build" (the user already did). Generic requests such as
-# "i want to build something" still ask for details.
+
+
+
 UNKNOWN_TARGETS = ["a snake game", "a chess game", "a calculator app", "a todo app", "a discord bot", "a web scraper", "a music player",
                    "a chat app", "a login system", "a password manager", "a weather app", "a tic tac toe game", "an image editor",
                    "a budget tracker", "a quiz game", "a stopwatch app", "an alarm clock", "a minecraft mod", "a blog", "a rest api",
@@ -379,7 +379,7 @@ def forbidden():
     return {normalized(p) for p in held}
 
 
-# Filler and question words; the remaining words carry a prompt's content.
+
 STOPWORDS = set("""a an the to in of for on with using by and or is are was be do does did can could would will should
 you u your ur me my i im it its that this some so ok okay hey hi yo um uh hmm please pls plz kelus just what whats how
 show tell give write make need want explain about there here now again lol quick question btw also alright""".split())
@@ -393,8 +393,8 @@ def build(seed=303):
     rng = random.Random(seed)
     held = forbidden()
     multiword = [f" {h} " for h in held if " " in h]
-    # One-word content ("hello" in "hello hello") would erase a whole basic
-    # intent, so content matching needs at least two content words.
+
+
     held_content = {c for c in (content(h.split()) for h in held) if len(c) >= 2}
     removed = []
 
@@ -413,7 +413,7 @@ def build(seed=303):
             removed.append(prompt)
         return ok
 
-    pools = []  # (prompt variants, answer, weight group)
+    pools = []
     for answer, cores in CHAT.items():
         pools.append((variants(cores, rng, 220), answer, "chat"))
     examples = {}
@@ -436,7 +436,7 @@ def build(seed=303):
         cut = max(2, len(prompts) // 25)
         validation += [(p, answer) for p in prompts[:cut]]
         train += [(p, answer) for p in prompts[cut:]]
-    # A prompt string never appears in both splits, even with different noise.
+
     validation_keys = {normalized(p) for p, _ in validation}
     train = [(p, a) for p, a in train if normalized(p) not in validation_keys]
 
@@ -448,23 +448,23 @@ def build(seed=303):
 
     records = [{"split": "train", "messages": turn(p, a)} for p, a in train]
     records += [{"split": "validation", "messages": turn(p, a)} for p, a in validation]
-    # One earlier exchange, matching the runtime: the new turn must not copy it.
+
     for split, pairs, count in (("train", train, 7000), ("validation", validation, 300)):
         for _ in range(count):
             first, second = rng.choice(train), rng.choice(pairs)
             records.append({"split": split, "messages": turn(*first) + turn(*second)})
-    # Short chat after any earlier exchange: the new message decides the reply,
-    # e.g. "hi!" after "What would you like me to explain?" is still a greeting.
+
+
     chat_answers = {answer for _, answer, group in pools if group == "chat"}
     chat_pairs = [(p, a) for p, a in train if a in chat_answers]
     for _ in range(6000):
         records.append({"split": "train", "messages": turn(*rng.choice(train)) + turn(*rng.choice(chat_pairs))})
-    # A vague request answered with a question, then the specific request.
+
     help_pairs = [(p, a) for p, a in train if a == HELP]
     requests = [(p, a) for p, a in train if a.startswith("```") or a == UNKNOWN_PROGRAM]
     for _ in range(1500):
         records.append({"split": "train", "messages": turn(*rng.choice(help_pairs)) + turn(*rng.choice(requests))})
-    # Concept follow-ups: the example depends on the earlier concept.
+
     concept_pairs = [(p, a) for p, a in train if a in examples]
     follow_train = [f for f in FOLLOW_UPS if allowed(f)]
     follow_train = [noisy(f, rng, wrap=False) for f in follow_train for _ in range(3)] + follow_train
@@ -475,7 +475,7 @@ def build(seed=303):
     for _ in range(60):
         p, a = rng.choice(validation_concepts)
         records.append({"split": "validation", "messages": turn(p, a) + turn(rng.choice(FOLLOW_UPS[:6]), examples[a])})
-    # Corrections: an unrelated earlier reply is context only, never a target.
+
     answers = list(dict.fromkeys(a for _, a in train))
     corrections = [(p, a) for p, a in train if a == CORRECTION]
     for _ in range(1200):

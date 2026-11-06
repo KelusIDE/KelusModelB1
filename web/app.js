@@ -33,7 +33,7 @@ async function send(prompt) {
     if(online) {
       output.previousElementSibling.textContent='WEB · WIKIPEDIA';output.textContent='Searching Wikipedia…';
       reply=(await webAnswer(online,fetch,aborter.signal)).text;output.textContent=reply;
-      history.pop(); // Retrieved pages are not fed back as learned assistant prose.
+      history.pop();
       $('#generation-info').textContent='Retrieved online from Wikipedia · only this lookup was sent';
       return;
     }

@@ -1,0 +1,19 @@
+{
+ "_about": "Kani Big v2 on one rented GPU (RunPod): the English Kani Advanced run (205M, from step 7,700 / 2.02B tokens) continued on 75% English (FineWeb-Edu's 100BT sample, so no text from the 10BT sessions repeats) and 25% code in about 30 programming languages. target_tokens is set once the A6000's speed is measured, to fit the budget. Run with kaggle/big_v2_run.sh.",
+ "run_dir": "run/kani-advanced",
+ "input_root": "none",
+ "data_dir": "data",
+ "tokenizer": "kani_tokenizer.json",
+ "target_tokens": 7500000000,
+ "session_tokens": 2400000000,
+ "hours": 22,
+ "workers": 0,
+ "continue_from_previous": true,
+ "sources": [
+  {"repo": "HuggingFaceFW/fineweb-edu", "prefix": "sample/100BT/", "share": 0.45, "per_session": 2},
+  {"repo": "HuggingFaceTB/smollm-corpus", "prefix": "cosmopedia-v2/", "share": 0.30, "per_session": 6},
+  {"repo": "codeparrot/github-code-clean", "prefix": "data/", "column": "code", "share": 0.15, "per_session": 2},
+  {"repo": "OpenCoder-LLM/opc-annealing-corpus", "revision": "refs/convert/parquet", "prefix": "algorithmic_corpus/train/", "share": 0.06, "per_session": 2},
+  {"repo": "OpenCoder-LLM/opc-annealing-corpus", "revision": "refs/convert/parquet", "prefix": "synthetic_code_snippet/train/", "share": 0.04, "per_session": 2}
+ ]
+}

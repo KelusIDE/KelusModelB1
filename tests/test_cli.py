@@ -35,14 +35,48 @@ class CliTests(unittest.TestCase):
         result = self.kelus('stdio', '--checkpoint', self.checkpoint, stdin=''.join(json.dumps(r) + '\n' for r in requests) + 'not json\n')
         events = [json.loads(line) for line in result.stdout.splitlines()]
         self.assertEqual(events[0], {'type': 'ready', 'name': 'Kani Seal 3', 'checkpoint': 'tiny', 'parameters': events[0]['parameters'], 'steps': 3,
-                                     'codename': 'Kani B2:10F', 'config': events[0]['config'], 'tokenizer_spec': {'kind':'bytes'}})
+                                     'codename': 'Kani B2:10F', 'config': events[0]['config'], 'tokenizer_spec': {'kind':'bytes'},
+                                     'painter': events[0]['painter']})
         self.assertEqual(events[0]['config']['context'], 64)
         by_id = lambda rid: [e for e in events if e.get('id') == rid]
         self.assertEqual([by_id('a')[0]['type'], by_id('a')[-1]['type']], ['start', 'done'])
         self.assertEqual(by_id('b')[0]['type'], 'error')
         self.assertEqual(by_id('c')[-1], {**by_id('c')[-1], 'type': 'done', 'chunks': 0, 'cancelled': True})
         self.assertIn('Unknown request', by_id('d')[0]['message'])
-        self.assertIn({'type': 'error', 'message': 'Invalid JSON request'}, events)  # reported as soon as it is read
+        self.assertIn({'type': 'error', 'message': 'Invalid JSON request'}, events)
+
+    def test_stdio_rejects_unknown_image_engine(self):
+        request = {'type': 'chat', 'id': 'bad-engine', 'image_model': 'missing',
+                   'messages': [{'role': 'user', 'content': 'draw a flower'}]}
+        result = self.kelus('stdio', '--checkpoint', self.checkpoint, stdin=json.dumps(request) + '\n')
+        events = [json.loads(line) for line in result.stdout.splitlines()]
+        self.assertEqual(events[-1]['type'], 'error')
+        self.assertIn('Image model must be', events[-1]['message'])
+
+    def test_stdio_hands_drawing_requests_to_the_painter(self):
+        requests = [{'type': 'chat', 'id': 'a', 'messages': [{'role': 'user', 'content': 'draw a red balloon'}]},
+                    {'type': 'chat', 'id': 'b', 'messages': [{'role': 'user', 'content': 'what is 6 * 7?'}]}]
+        result = self.kelus('stdio', '--checkpoint', self.checkpoint, '--painter', self.checkpoint,
+                            stdin=''.join(json.dumps(r) + '\n' for r in requests))
+        events = [json.loads(line) for line in result.stdout.splitlines()]
+        self.assertTrue(events[0]['painter'])
+        drawing = [e for e in events if e.get('id') == 'a']
+        self.assertEqual([drawing[0]['type'], drawing[0]['source'], drawing[-1]['type']], ['start', 'painter', 'done'])
+        text = ''.join(e['text'] for e in drawing if e['type'] == 'token')
+        self.assertTrue(text.startswith('```python'))
+
+        self.assertIn('The program did not render', text)
+        self.assertFalse([e for e in drawing if e['type'] == 'image'])
+        self.assertEqual([e for e in events if e.get('id') == 'b'][0]['source'], 'local_calculator')
+
+    def test_stdio_reading_prompts_skip_local_helpers(self):
+
+        content = 'Search results:\n[1] Grief: People who want to die need help. 2+2\n\nQuestion: what is grief'
+        requests = [{'type': 'chat', 'id': 'r', 'messages': [{'role': 'user', 'content': content}], 'max_tokens': 4, 'reading': True},
+                    {'type': 'chat', 'id': 'n', 'messages': [{'role': 'user', 'content': content}], 'max_tokens': 4}]
+        result = self.kelus('stdio', '--checkpoint', self.checkpoint, stdin=''.join(json.dumps(r) + '\n' for r in requests))
+        events = [json.loads(line) for line in result.stdout.splitlines()]
+        self.assertEqual([e['source'] for e in events if e['type'] == 'start'], ['model', 'crisis_support'])
 
     def test_stdio_reports_a_missing_checkpoint(self):
         result = self.kelus('stdio', '--model', 'no-such-model')

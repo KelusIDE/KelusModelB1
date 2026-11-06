@@ -1,6 +1,6 @@
 #!/bin/zsh
-# Account end-to-end test: Firebase Auth + Firestore emulators with the Kelus IDE's firestore.rules,
-# site/ served on 127.0.0.1:8791, two headless Chrome tabs. No real accounts or data are touched.
+
+
 set -euo pipefail
 root="${0:A:h:h}"
 rules="${KELUS_RULES:-$root/../Kelus/firestore.rules}"

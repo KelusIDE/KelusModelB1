@@ -5,16 +5,82 @@ checkpoints/
 training-runs/
 .DS_Store
 
-# Reproducible downloaded/tokenized foundation corpus
+
 data/foundation/
 data/foundation-copy/
 data/articles-*/
 
-# VS Code extension packages
+
 vscode-extension/*.vsix
 
-# Local reviewed code proposals and backups
+
 .kani/
 
-# Rendered UI screenshots (python3 data/make_ui_screens.py)
+
 data/ui-render/
+
+
+data/quickdraw/
+data/vision/
+
+
+data/pixels-v1/
+
+
+data/sketch-*/
+
+
+data/openimages/
+data/pixels-*/
+
+
+data/simplewiki/
+data/big-v*/
+
+data/cide-saas-v*/
+data/cide-crud-v*/
+worldlink-mod/
+
+
+web/node_modules/
+
+
+mobile/android/app/google-services.json
+
+
+data/smol-smoltalk/
+
+
+data/cide-v6-sources/
+data/cide-v13-sources/
+data/cide-v15-sources/
+data/feelings-sources/
+kaggle/kani_tokenize/target/
+node_modules
+
+.env
+.env.*
+!.env.example
+.dev.vars
+.dev.vars.*
+.firebase/
+.wrangler/
+*.log
+*.pem
+*.key
+*.p8
+*.p12
+*.jks
+*.keystore
+*.mobileprovision
+*.apk
+*.ipa
+mobile/ow
+TURN.txt
+/site/**/b1.bin
+/data/*.jsonl
+/data/cide-continuation-v4/
+/data/cide-contracts-v5/
+/data/cide-v8/
+/data/everyday-sources/
+/data/multilingual-v1/

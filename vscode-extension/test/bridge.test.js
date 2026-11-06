@@ -1,5 +1,5 @@
 'use strict';
-// Drives the real `kelus stdio` process with a tiny untrained checkpoint.
+
 const assert = require('node:assert');
 const { execFileSync } = require('node:child_process');
 const fs = require('node:fs');
@@ -77,4 +77,29 @@ test('explains a missing interpreter or checkpoint', async () => {
   const absent = started({ checkpoint: path.join(temp, 'absent.npz') });
   assert.strictEqual((await absent.status).state, 'error');
   assert.match(explain("ModuleNotFoundError: No module named 'numpy'", 'python3'), /pip install numpy/);
+});
+
+test('build-selected image engine is forwarded to the backend', () => {
+  const bridge = new Bridge({ python: PYTHON, cwd: ROOT });
+  bridge.child = {};
+  bridge.state = 'ready';
+  let sent;
+  bridge.write = request => { sent = request; };
+  assert.ok(bridge.chat('latest', [{ role: 'user', content: 'draw a flower' }], { imageModel: 'pixels' }));
+  assert.equal(sent.image_model, 'pixels');
+  bridge.chat('old', [{ role: 'user', content: 'draw a flower' }], { imageModel: 'painter' });
+  assert.equal(sent.image_model, 'painter');
+});
+
+test('explicit Cide requests are forwarded without replacing search reading mode', () => {
+  const bridge = new Bridge({ python: PYTHON, cwd: ROOT });
+  bridge.child = {}; bridge.state = 'ready';
+  let sent;
+  bridge.write = request => { sent = request; };
+  bridge.chat('expert', [{ role: 'user', content: 'fix add' }], { expert: 'cide' });
+  assert.equal(sent.expert, 'cide');
+  assert.equal(sent.cide_max_tokens, 4096);
+  bridge.chat('search', [{ role: 'user', content: 'Search results: ...' }], { reading: true });
+  assert.equal(sent.reading, true);
+  assert.equal(sent.expert, undefined);
 });
