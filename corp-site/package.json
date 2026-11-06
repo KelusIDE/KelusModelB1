@@ -9,7 +9,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",
-    "deploy": "npm run build && firebase deploy --only hosting --project kelus-ide"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name kelus-corp --branch main"
   },
   "dependencies": {
     "motion": "12.43.0",
