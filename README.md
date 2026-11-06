@@ -35,7 +35,7 @@
 <p align="center">
   <img src="https://img.shields.io/badge/chat-Kani%20Otter%204.12-bce5d1?style=flat-square&amp;labelColor=151b18" alt="chat: Kani Otter 4.12">
   <img src="https://img.shields.io/badge/code-Cide%204.5-bce5d1?style=flat-square&amp;labelColor=151b18" alt="code: Cide 4.5">
-  <img src="https://img.shields.io/badge/Android-0.5.10-bce5d1?style=flat-square&amp;labelColor=151b18" alt="Android: 0.5.10">
+  <img src="https://img.shields.io/badge/Android-0.5.11-bce5d1?style=flat-square&amp;labelColor=151b18" alt="Android: 0.5.11">
 </p>
 <!-- /readme:badges -->
 
@@ -63,7 +63,7 @@ project is not dependency-free.
 
 | Client | Version |
 | :--- | :--- |
-| Android / mobile source | 0.5.10 |
+| Android / mobile source | 0.5.11 |
 | Node.js CLI | 0.18.0 |
 | VS Code extension | 0.17.0 |
 
