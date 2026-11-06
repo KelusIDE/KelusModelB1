@@ -1,9 +1,10 @@
-"""Refresh README.md's generated sections and figures from committed reports.
+"""Refresh README release sections from manifests, or historical sections from reports.
 
-    python3 -m kelus.readme          # snapshot local foundation progress, then rewrite
+    python3 -m kelus.readme          # update release metadata and figures
     python3 -m kelus.readme --check  # exit 1 if README.md or a figure is stale; write nothing
 
-Scores come only from reports that evaluated the exact checkpoint exported to
+Current release sections need no weights, checkpoints, NumPy, or live training job.
+In the historical format, scores come only from reports that evaluated the exact checkpoint exported to
 site/model/b1.json, so the README cannot describe a different model than the
 one deployed. Foundation progress lives in gitignored training-runs/; running
 this on the training machine copies a path-free summary to
@@ -458,7 +459,77 @@ def fill(text, generated):
     return text
 
 
+def current_outputs(root):
+    builds = read(root / 'kani-builds.json')
+    catalog = read(root / 'model-host/catalog.json')
+    models = []
+    for build_id, role in [('latest', 'Default chat'), ('cide', 'Coding specialist'), ('seal-3', 'Smaller chat model')]:
+        build = next(item for item in builds if item['id'] == build_id)
+        model = read(root / build['export'] / 'b1.json')
+        export_dir = Path(build['export']).relative_to('site').as_posix()
+        published = next(item for item in catalog['models'].values() if item['directory'] == export_dir)
+        if published['sha256'] != model['weights_sha256']:
+            raise ValueError(f'{build_id}: published weights and manifest checksums differ.')
+        models.append((model, role, published, build['export']))
+    chat, coder = models[0][0], models[1][0]
+    versions = {folder: read(root / folder / 'package.json')['version']
+                for folder in ['cli', 'mobile', 'vscode-extension']}
+    release_url = f'https://github.com/{catalog["repository"]}/releases/tag/{quote(catalog["tag"], safe="")}'
+    rows = ['| Model | Role | Parameters | Context | Weights |',
+            '| :--- | :--- | ---: | ---: | ---: |']
+    for model, role, published, directory in models:
+        rows.append(f'| [{model["name"]}]({directory}/b1.json) | {role} | {fmt(model["parameters"])} | '
+                    f'{fmt(model["config"]["context"])} tokens | {published["bytes"] / 1e6:.1f} MB |')
+    rows += ['', '| Client | Version |', '| :--- | :--- |',
+             f'| Android / mobile source | {versions["mobile"]} |',
+             f'| Node.js CLI | {versions["cli"]} |',
+             f'| VS Code extension | {versions["vscode-extension"]} |', '',
+             f'[Download the Android app](https://github.com/{catalog["repository"]}/releases/latest) '
+             f'· [Published model snapshot]({release_url})', '',
+             'Sizes describe the downloadable exports, not training checkpoints. '
+             'Parameter counts and context windows describe the architecture, not benchmark performance.', '',
+             'The API has a separate release configuration: ' +
+             ', '.join(f'`{model["id"]}`' for model in read(root / 'api/models.json')) +
+             '. It does not automatically follow the browser or CLI default.']
+    badges_html = ['<p align="center">']
+    for label, value in [('chat', chat['name']), ('code', coder['name']), ('Android', versions['mobile'])]:
+        badge = f'https://img.shields.io/badge/{quote(label, safe="")}-{quote(value.replace("-", "--"), safe="")}-bce5d1?style=flat-square&labelColor=151b18'
+        badges_html.append(f'  <img src="{esc(badge)}" alt="{esc(label + ": " + value)}">')
+    badges_html.append('</p>')
+    hero = '\n'.join(['<p align="center">', f'  <a href="{SITE}">', '    <picture>',
+                      f'      <source media="(prefers-color-scheme: dark)" srcset="{ASSETS}/hero-dark.svg">',
+                      f'      <img src="{ASSETS}/hero-light.svg" width="100%" alt="{esc(chat["name"])}: '
+                      f'{fmt(chat["parameters"])} parameters, {fmt(chat["config"]["context"])}-token context. '
+                      'Local chat, coding, web, CLI, and mobile clients.">',
+                      '    </picture>', '  </a>', '</p>'])
+    generated = {'hero': hero, 'badges': '\n'.join(badges_html), 'releases': '\n'.join(rows)}
+    files = {'README.md': fill((root / 'README.md').read_text(encoding='utf-8'), generated)}
+    icon = (root / 'brand/kani-otter-4/kani-otter-4.svg').read_text(encoding='utf-8')
+    icon = re.sub(r'<!--.*?-->', '', icon, flags=re.S)
+    icon = '\n'.join(line.rstrip() for line in icon.splitlines() if line.strip())
+    icon = re.sub(r'^<svg\b[^>]*>', '<svg x="1062" y="40" width="158" height="158" viewBox="0 0 512 512">', icon.strip(), count=1)
+    for theme, colors in THEMES.items():
+        cards = ''
+        for x, title, value in [(52, 'PARAMETERS', fmt(chat['parameters'])),
+                                (446, 'CHAT CONTEXT', f'{fmt(chat["config"]["context"])} tokens'),
+                                (840, 'CODING MODEL', coder['name'])]:
+            cards += (f'<rect x="{x}" y="246" width="370" height="124" rx="20" fill="{colors["surface"]}" stroke="{colors["border"]}"/>'
+                      f'<text x="{x + 24}" y="283" font-size="14" letter-spacing="2" fill="{colors["muted"]}">{title}</text>'
+                      f'<text x="{x + 24}" y="333" font-size="34" font-weight="650" fill="{colors["ink"]}">{esc(value)}</text>')
+        files[f'{ASSETS}/hero-{theme}.svg'] = (
+            '<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" role="img" aria-labelledby="title desc">'
+            f'<title id="title">{esc(chat["name"])}</title><desc id="desc">Kani models and clients built by Kelus. Architecture values from the published model manifest.</desc>'
+            f'<rect x="1" y="1" width="1278" height="418" rx="28" fill="{colors["surface"]}" stroke="{colors["border"]}"/>'
+            f'<g font-family="{esc(SANS)}"><text x="52" y="60" font-size="16" font-weight="650" letter-spacing="4" fill="{colors["secondary"]}">KANI / FROM SCRATCH</text>'
+            f'<text x="48" y="145" font-size="66" font-weight="750" fill="{colors["ink"]}">{esc(chat["name"])}</text>'
+            f'<text x="52" y="190" font-size="21" fill="{colors["secondary"]}">Own architecture. Own weights. Inference on your device.</text>'
+            f'{cards}</g>{icon}</svg>\n')
+    return files
+
+
 def outputs(root=ROOT):
+    if '<!-- readme:releases -->' in (root / 'README.md').read_text(encoding='utf-8'):
+        return current_outputs(root)
     data = released(root)
     files = {}
     for theme in THEMES:
@@ -489,7 +560,8 @@ def main():
     parser.add_argument('--check', action='store_true', help='exit 1 if anything is stale; write nothing')
     parser.add_argument('--allow-missing-reports', action='store_true', help='leave generated sections unchanged when this checkpoint has no matching reports')
     args = parser.parse_args()
-    if not args.check and snapshot_foundation():
+    current_readme = '<!-- readme:releases -->' in (ROOT / 'README.md').read_text(encoding='utf-8')
+    if not args.check and not current_readme and snapshot_foundation():
         print('updated:', SNAPSHOT)
     try:
         stale = refresh(write=not args.check)
