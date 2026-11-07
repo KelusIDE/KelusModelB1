@@ -40,7 +40,8 @@ jobs:
           grep -qi kani chat.txt
       - name: Install from the public site, once it has a script
         run: |
-          if curl -fsIL https://kani.kelus.org/install.sh >/dev/null; then
+          # The site answers unknown paths with its home page, so check this really is the script.
+          if curl -fsSL https://kani.kelus.org/install.sh | head -n 1 | grep -q '^#!/bin/sh'; then
             home=$(mktemp -d)
             curl -fsSL https://kani.kelus.org/install.sh | HOME="$home" SHELL=/bin/bash sh -s -- --no-models
             HOME="$home" "$home/.local/bin/kani" --version

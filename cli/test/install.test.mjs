@@ -53,6 +53,18 @@ test('an update keeps models already downloaded', async () => {
   } finally { await rm(home, { recursive: true, force: true }); }
 });
 
+test('the model downloader runs through the symlinks an install uses', async () => {
+  const { script, archive } = await packed;
+  const real = await mkdtemp(path.join(os.tmpdir(), 'kani-home-')), home = real + '-link';
+  try {
+    execFileSync('ln', ['-s', real, home]);
+    assert.equal(install('sh', script, home, `file://${archive}`, '--no-models', '--no-modify-path').status, 0);
+    const result = spawnSync(process.execPath, [path.join(home, '.kani/current/model-host/download.mjs'), 'no-such-model'], { encoding: 'utf8' });
+    assert.equal(result.status, 1, 'it exited without running');
+    assert.match(result.stderr, /Unknown model/);
+  } finally { await rm(home, { force: true }); await rm(real, { recursive: true, force: true }); }
+});
+
 test('a changed download installs nothing', async () => {
   const { script, out } = await packed;
   const home = await mkdtemp(path.join(os.tmpdir(), 'kani-home-')), bad = path.join(out, 'bad.tar.gz');

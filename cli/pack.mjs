@@ -3,6 +3,7 @@
 // model-host/download.mjs fetches them. Writes dist/kani-cli-VERSION.tar.gz and dist/install.sh with the sum pinned.
 import { execFileSync } from 'node:child_process';
 import { createHash } from 'node:crypto';
+import { realpathSync } from 'node:fs';
 import { copyFile, mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
@@ -53,7 +54,7 @@ export async function pack(out = path.join(HERE, 'dist')) {
   } finally { await rm(stage, { recursive: true, force: true }); }
 }
 
-if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const made = await pack(process.argv[2] && path.resolve(process.argv[2]));
   console.log(`${made.archive}\n${made.script}\nSHA-256 ${made.sha256}`);
 }

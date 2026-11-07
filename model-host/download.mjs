@@ -1,4 +1,4 @@
-import { createReadStream } from 'node:fs';
+import { createReadStream, realpathSync } from 'node:fs';
 import { mkdir, open, rename, rm, stat } from 'node:fs/promises';
 import { createHash, randomUUID } from 'node:crypto';
 import { dirname, resolve } from 'node:path';
@@ -56,7 +56,8 @@ export async function downloadModel(id, { root = ROOT, fetcher = fetch, models =
   } finally { await file?.close(); await rm(temporary, { force: true }); }
 }
 
-if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
+// Node resolves symlinks for import.meta.url but not argv, and macOS temp folders and ~/.kani/current are symlinks.
+if (process.argv[1] && realpathSync(process.argv[1]) === fileURLToPath(import.meta.url)) {
   const args = process.argv.slice(2);
   const ids = args.includes('--all') ? Object.keys(catalog.models) : args.length ? args : ['latest', 'cide'];
   try { for (const id of [...new Set(ids)]) await downloadModel(id); }

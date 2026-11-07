@@ -105,6 +105,9 @@ main() {
   done
 
   "$BIN_DIR/kani" --version >/dev/null || die 'the program was installed but will not start.'
+  if [ -n "$MODELS" ]; then
+    "$BIN_DIR/kani" 'what is 2 + 2' </dev/null >/dev/null || die 'the model did not load. Run this installer again.'
+  fi
   say "Installed Kani CLI $VERSION."
   found=$(command -v kani 2>/dev/null || true)
   if [ -n "$found" ] && [ "$found" != "$BIN_DIR/kani" ]; then say "Note: another kani comes first on your PATH, at $found."; fi
