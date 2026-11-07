@@ -1,0 +1,49 @@
+name: Kani CLI install
+
+on:
+  push:
+    paths: ['cli/**', 'site/*.js', 'model-host/**', 'kani-builds.json', '.github/workflows/cli-install.yml']
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Package and installer tests
+        run: node --test cli/test/install.test.mjs
+      - name: Install from the package, with the real model
+        run: |
+          node cli/pack.mjs
+          home=$(mktemp -d)
+          echo "KANI_TEST_HOME=$home" >> "$GITHUB_ENV"
+          HOME="$home" SHELL=/bin/bash KANI_CLI_URL="file://$PWD/$(ls cli/dist/kani-cli-*.tar.gz)" sh cli/dist/install.sh
+      - name: Use it
+        run: |
+          kani="$KANI_TEST_HOME/.local/bin/kani"
+          cd "$KANI_TEST_HOME"
+          HOME="$KANI_TEST_HOME" "$kani" --version
+          HOME="$KANI_TEST_HOME" "$kani" "what is 12 * 12" | tee calculator.txt
+          grep -q 144 calculator.txt
+          HOME="$KANI_TEST_HOME" "$kani" --max-tokens 24 "who are you?" | tee chat.txt
+          grep -qi kani chat.txt
+      - name: Install from the public site, once it has a script
+        run: |
+          if curl -fsIL https://kani.kelus.org/install.sh >/dev/null; then
+            home=$(mktemp -d)
+            curl -fsSL https://kani.kelus.org/install.sh | HOME="$home" SHELL=/bin/bash sh -s -- --no-models
+            HOME="$home" "$home/.local/bin/kani" --version
+          else
+            echo 'The public script is not published yet.'
+          fi

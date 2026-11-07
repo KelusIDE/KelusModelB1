@@ -85,7 +85,7 @@ test('key sentences skip near-duplicates', () => {
 test('attachments: PDFs are read by readPdf and answered locally; elsewhere they say where to read them', async () => {
   const bytes = new TextEncoder().encode('%PDF-1.7 fake');
   const file = { name: 'otters.pdf', size: bytes.length, arrayBuffer: async () => bytes.buffer };
-  await assert.rejects(readAttachment(file), /kelus-b1\.pages\.dev/);
+  await assert.rejects(readAttachment(file), /kani\.kelus\.org/);
   const read = await readAttachment(file, { readPdf: async () => ({ title: null, pages: PAGES, total: 4 }) });
   assert.equal(read.kind, 'pdf');
   assert.match(read.report, /^4 pages · \d+ words/);

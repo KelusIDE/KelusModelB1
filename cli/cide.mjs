@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { Model } from '../site/b1.js';
 
 let cached;
@@ -16,6 +17,6 @@ export async function loadCide() {
     return cached;
   } catch (error) {
     if (error.code !== 'ENOENT') throw error;
-    throw new Error('The configured Cide build is not exported. Run node model-host/download.mjs cide from the repository root. See kani-builds.json and CIDE.md.');
+    throw new Error(`Cide is not downloaded yet. Run: node "${fileURLToPath(new URL('../model-host/download.mjs', import.meta.url))}" cide`);
   }
 }

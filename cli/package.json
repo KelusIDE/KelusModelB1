@@ -1,6 +1,6 @@
 {
   "name": "kani-cli",
-  "version": "0.18.0",
+  "version": "0.18.1",
   "description": "Terminal chat with Kani Otter 4.12 (or any Kani build), running the model in Node with no dependencies.",
   "license": "Apache-2.0",
   "private": true,

@@ -40,7 +40,7 @@ const HELP = `Usage: kani [options] [prompt]
   kani "explain recursion"    answer one prompt and exit (also reads stdin)
 
 Workspace commands: /files, /analyze, /read, /search, /ask, /draft, /do, /svg, /draw, /diff, /apply, /discard, /vision, /web
-Coding specialist: /cide TASK; or kani --build kani-cide for learned delegation
+Coding specialist: /cide TASK${BUILDS.some(b => b.id === 'kani-cide') ? '; or kani --build kani-cide for learned delegation' : ''}
 Example: kani --cwd ./project "/analyze"
 
 Options:
@@ -114,7 +114,7 @@ async function load(directory) {
     await enableKernels();
     return new Model(manifest, weights.buffer.slice(weights.byteOffset, weights.byteOffset + weights.byteLength));
   } catch (error) {
-    if (error.code === 'ENOENT') fail(`No exported model in ${directory}.\nDownload published weights from the repository root: node model-host/download.mjs latest cide seal-3\nOr export your own: python3 -m kelus.export_web --checkpoint checkpoints/b1-v3.best.npz --out ${directory}`);
+    if (error.code === 'ENOENT') fail(`No exported model in ${directory}.\nDownload published weights: node "${path.join(ROOT, 'model-host', 'download.mjs')}" latest cide seal-3\nOr export your own: python3 -m kelus.export_web --checkpoint checkpoints/b1-v3.best.npz --out ${directory}`);
     fail(`Could not load the model in ${directory}: ${error.message}`);
   }
 }
