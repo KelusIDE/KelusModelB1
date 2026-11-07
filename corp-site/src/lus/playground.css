@@ -135,7 +135,8 @@
 .lus-gutter > span {
   display: block;
 }
-.lus-editor textarea {
+.lus-code-surface textarea,
+.lus-highlight {
   display: block;
   flex: 1;
   min-width: 0;
@@ -524,7 +525,8 @@
   .lus-editor {
     height: 315px;
   }
-  .lus-editor textarea {
+  .lus-code-surface textarea,
+  .lus-highlight {
     font-size: 11px;
     padding-right: 13px;
   }
@@ -588,5 +590,84 @@
   }
   .nav nav {
     gap: 24px;
+  }
+}
+
+.lus-code-surface {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+}
+.lus-highlight {
+  position: absolute;
+  inset: 0;
+  margin: 0;
+  overflow: auto;
+  pointer-events: none;
+  user-select: none;
+  scrollbar-color: transparent transparent;
+}
+.lus-highlight code {
+  font: inherit;
+}
+.lus-highlight,
+.lus-code-surface textarea {
+  font-variant-ligatures: none;
+  letter-spacing: normal;
+  overflow-wrap: normal;
+  overflow: auto;
+}
+.lus-code-surface textarea {
+  position: relative;
+  z-index: 1;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: #e5eedf;
+}
+.lus-code-surface textarea::selection {
+  background: #4873a080;
+  color: transparent;
+}
+.lus-code-surface.is-running .lus-highlight {
+  opacity: 0.7;
+}
+.lus-token-keyword {
+  color: #c5adff;
+}
+.lus-token-string {
+  color: #bedb99;
+}
+.lus-token-number {
+  color: #f3bf87;
+}
+.lus-token-type {
+  color: #8ed5dd;
+}
+.lus-token-function {
+  color: #f1df9e;
+}
+.lus-token-comment {
+  color: #98ac99;
+  font-style: italic;
+}
+.lus-token-operator {
+  color: #9ccaff;
+}
+.lus-token-interpolation {
+  color: #e8adba;
+}
+@media (forced-colors: active) {
+  .lus-highlight {
+    display: none;
+  }
+  .lus-code-surface textarea {
+    color: CanvasText;
+    -webkit-text-fill-color: CanvasText;
+    caret-color: CanvasText;
+  }
+  .lus-code-surface textarea::selection {
+    background: Highlight;
+    color: HighlightText;
   }
 }
