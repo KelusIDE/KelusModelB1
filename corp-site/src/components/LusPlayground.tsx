@@ -1,6 +1,7 @@
 import "../lus/playground.css";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { LUS_EXAMPLES } from "../lus/examples";
+import { tokenizeLus } from "../lus/highlight";
 import { Arrow } from "./Arrow";
 
 type Phase = "ready" | "running" | "success" | "error" | "stopped";
@@ -23,7 +24,19 @@ export function LusPlayground() {
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const editorRef = useRef<HTMLTextAreaElement>(null);
   const gutterRef = useRef<HTMLDivElement>(null);
+  const highlightRef = useRef<HTMLPreElement>(null);
+  const tokens = useMemo(() => tokenizeLus(source), [source]);
   const busy = phase === "running";
+
+  useEffect(() => {
+    const editor = editorRef.current;
+    if (!editor) return;
+    if (highlightRef.current) {
+      highlightRef.current.scrollTop = editor.scrollTop;
+      highlightRef.current.scrollLeft = editor.scrollLeft;
+    }
+    if (gutterRef.current) gutterRef.current.scrollTop = editor.scrollTop;
+  }, [source]);
 
   function cleanup() {
     workerRef.current?.terminate();
@@ -183,50 +196,79 @@ export function LusPlayground() {
                   <span key={i}>{i + 1}</span>
                 ))}
               </div>
-              <textarea
-                id="lus-code"
-                ref={editorRef}
-                value={source}
-                maxLength={32768}
-                disabled={busy}
-                onChange={(event) => {
-                  setSource(event.target.value);
-                  if (phase !== "ready") {
-                    setPhase("ready");
-                    setResult({ lines: [] });
-                  }
-                }}
-                onScroll={(event) => {
-                  if (gutterRef.current)
-                    gutterRef.current.scrollTop = event.currentTarget.scrollTop;
-                }}
-                onKeyDown={(event) => {
-                  if (
-                    event.key === "Enter" &&
-                    (event.metaKey || event.ctrlKey)
-                  ) {
-                    event.preventDefault();
-                    execute();
-                  }
-                  if (event.key === "Tab" && !event.shiftKey) {
-                    event.preventDefault();
-                    const editor = event.currentTarget;
-                    const start = editor.selectionStart;
-                    const end = editor.selectionEnd;
-                    if (source.length - (end - start) + 4 > 32768) return;
-                    setSource(
-                      source.slice(0, start) + "    " + source.slice(end),
-                    );
-                    requestAnimationFrame(() =>
-                      editor.setSelectionRange(start + 4, start + 4),
-                    );
-                  }
-                }}
-                spellCheck={false}
-                autoCapitalize="off"
-                autoCorrect="off"
-                aria-describedby="lus-editor-hint"
-              />
+              <div className={`lus-code-surface${busy ? " is-running" : ""}`}>
+                <pre
+                  className="lus-highlight"
+                  ref={highlightRef}
+                  aria-hidden="true"
+                >
+                  <code>
+                    {tokens.map((token, index) => (
+                      <span
+                        key={index}
+                        className={
+                          token.kind ? `lus-token-${token.kind}` : undefined
+                        }
+                      >
+                        {token.text}
+                      </span>
+                    ))}
+                    {"\u200b"}
+                  </code>
+                </pre>
+                <textarea
+                  id="lus-code"
+                  ref={editorRef}
+                  value={source}
+                  maxLength={32768}
+                  disabled={busy}
+                  onChange={(event) => {
+                    setSource(event.target.value);
+                    if (phase !== "ready") {
+                      setPhase("ready");
+                      setResult({ lines: [] });
+                    }
+                  }}
+                  onScroll={(event) => {
+                    if (gutterRef.current)
+                      gutterRef.current.scrollTop =
+                        event.currentTarget.scrollTop;
+                    if (highlightRef.current) {
+                      highlightRef.current.scrollTop =
+                        event.currentTarget.scrollTop;
+                      highlightRef.current.scrollLeft =
+                        event.currentTarget.scrollLeft;
+                    }
+                  }}
+                  onKeyDown={(event) => {
+                    if (
+                      event.key === "Enter" &&
+                      (event.metaKey || event.ctrlKey)
+                    ) {
+                      event.preventDefault();
+                      execute();
+                    }
+                    if (event.key === "Tab" && !event.shiftKey) {
+                      event.preventDefault();
+                      const editor = event.currentTarget;
+                      const start = editor.selectionStart;
+                      const end = editor.selectionEnd;
+                      if (source.length - (end - start) + 4 > 32768) return;
+                      setSource(
+                        source.slice(0, start) + "    " + source.slice(end),
+                      );
+                      requestAnimationFrame(() =>
+                        editor.setSelectionRange(start + 4, start + 4),
+                      );
+                    }
+                  }}
+                  spellCheck={false}
+                  wrap="off"
+                  autoCapitalize="off"
+                  autoCorrect="off"
+                  aria-describedby="lus-editor-hint"
+                />
+              </div>
             </div>
             <div className="lus-editor-footer">
               <span id="lus-editor-hint">
