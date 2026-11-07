@@ -20,7 +20,7 @@ export function AccountCard({ account }: { account: Account }) {
   return <section className="settings-section account-card" aria-labelledby="account-title">
     <h2 id="account-title"><Icon name="user" size={19} />Kelus account</h2>
     {!account.ready ? <p>Getting accounts ready…</p> : !who ? <>
-      <p>Sign in to keep your chats in your Kelus account too, and find them on kelus-b1.pages.dev. Optional: Kani works without it.</p>
+      <p>Sign in to keep your chats in your Kelus account too, and find them on kani.kelus.org. Optional: Kani works without it.</p>
       {account.canUseGoogle() && <button className="auth-button google" disabled={busy} onClick={() => void run(account.google)}><GoogleMark />Continue with Google</button>}
       <button className="auth-button email" disabled={busy} onClick={() => { setNote(null); setSheet(true); }}><Icon name="mail" size={18} />Continue with email</button>
     </> : !who.verified ? <>
@@ -31,7 +31,7 @@ export function AccountCard({ account }: { account: Account }) {
       <button className="auth-button quiet" disabled={busy} onClick={() => void run(account.signOut)}>Use a different account</button>
     </> : <>
       <div className="account-who"><span className="avatar" aria-hidden="true">{who.name[0]?.toUpperCase()}</span><span><strong>{who.name}</strong><small>{who.email}</small></span></div>
-      <p>{account.sync === 'synced' ? 'Your chats are saved to your account and sync with kelus-b1.pages.dev.'
+      <p>{account.sync === 'synced' ? 'Your chats are saved to your account and sync with kani.kelus.org.'
         : account.sync === 'offline' ? 'Offline for now. Chats sync when you are back online.' : 'Syncing your chats…'}</p>
       <button className="auth-button quiet" disabled={busy} onClick={() => setLeaving(true)}>Sign out</button>
     </>}
@@ -66,8 +66,8 @@ function EmailSheet({ account, close }: { account: Account; close: () => void })
   return <div className="modal-backdrop" onClick={close}><section className="modal sheet" role="dialog" aria-modal="true" aria-labelledby="sheet-title" onClick={e => e.stopPropagation()}>
     <div className="close-row"><h2 id="sheet-title">{mode === 'in' ? 'Welcome back' : 'Create your account'}</h2>
       <button onClick={close} aria-label="Close"><Icon name="close" size={18} /></button></div>
-    <p>{mode === 'in' ? 'Sign in with your Kelus account (the same one as the Kelus IDE and kelus-b1.pages.dev).'
-      : 'One account for Kani, the Kelus IDE and kelus-b1.pages.dev. We send a link to verify your email.'}</p>
+    <p>{mode === 'in' ? 'Sign in with your Kelus account (the same one as the Kelus IDE and kani.kelus.org).'
+      : 'One account for Kani, the Kelus IDE and kani.kelus.org. We send a link to verify your email.'}</p>
     <div className="segmented" role="group" aria-label="Account">{(['in', 'new'] as const).map(m =>
       <button key={m} type="button" aria-pressed={mode === m} onClick={() => { setMode(m); setNote(null); }}>{m === 'in' ? 'Sign in' : 'Create account'}</button>)}</div>
     <form onSubmit={e => void submit(e)}>

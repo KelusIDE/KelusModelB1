@@ -54,7 +54,7 @@ Python engine, with no API key or network connection.
 ## Requirements
 
 - A checkout of KelusModelB1 with the chat checkpoint `checkpoints/kani-otter-4-12-release.npz`
-  (the model live on kelus-b1.pages.dev). Drawing uses `checkpoints/kani-painter-v4b.npz` when present.
+  (the model live on kani.kelus.org). Drawing uses `checkpoints/kani-painter-v4b.npz` when present.
 - Python 3.10+ with NumPy.
 
 Open the repository folder in VS Code, or set **Kani: Repository Path**.

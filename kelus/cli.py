@@ -10,7 +10,7 @@
 
 Install with `python3 -m pip install -e .`, or run `python3 -m kelus.cli` without installing.
 Models are named by checkpoint file: --model b1-v3 loads checkpoints/b1-v3.best.npz.
-The default is the model live on kelus-b1.pages.dev.
+The default is the model live on kani.kelus.org.
 """
 import argparse
 import json

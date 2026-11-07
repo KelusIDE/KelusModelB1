@@ -57,7 +57,7 @@ export interface Entry { word: string; meanings: Meaning[]; url: string }
 export async function dictionary(word: string, id: LanguageId, get: Fetch = fetch): Promise<Entry | null> {
   for (const stem of stems(word, id).slice(0, 5)) {
     const ask = () => get(`https://en.wiktionary.org/api/rest_v1/page/definition/${encodeURIComponent(stem)}`,
-      { headers: { 'Api-User-Agent': 'Kani language app (https://kelus-b1.pages.dev)' } });
+      { headers: { 'Api-User-Agent': 'Kani language app (https://kani.kelus.org)' } });
     let response = await ask();
     if (response.status === 429) {
       await new Promise(resolve => setTimeout(resolve, 1500));

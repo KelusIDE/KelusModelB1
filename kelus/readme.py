@@ -21,7 +21,7 @@ import sys
 from urllib.parse import quote, urlencode
 
 ROOT = Path(__file__).resolve().parent.parent
-SITE = 'https://kelus-b1.pages.dev'
+SITE = 'https://kani.kelus.org'
 ASSETS = 'assets/readme'
 SNAPSHOT = 'reports/foundation-progress.json'
 SANS = "-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif"
@@ -357,7 +357,7 @@ def badge_color(score):
 
 def badges(data):
     live = {'style': 'flat-square', 'labelColor': BADGE_LABEL}
-    status = 'https://img.shields.io/website?' + urlencode({'url': SITE, 'label': 'kelus-b1.pages.dev', 'up_message': 'online',
+    status = 'https://img.shields.io/website?' + urlencode({'url': SITE, 'label': 'kani.kelus.org', 'up_message': 'online',
                                                             'down_message': 'offline', 'up_color': '2fa874'} | live)
     deployed = 'https://img.shields.io/badge/dynamic/json?' + urlencode({'url': SITE + '/model/b1.json', 'query': '$.parameters',
                                                                          'label': 'deployed model', 'suffix': ' parameters', 'color': 'bce5d1'} | live)
@@ -386,7 +386,7 @@ def stage(f):
 def pipeline(f):
     current = stage(f)
     nodes = [('F', 'Foundation pretraining'), ('I', 'Instruction training'),
-             ('G', 'Release gates and<br/>human verification'), ('D', 'Auto-deploy to<br/>kelus-b1.pages.dev')]
+             ('G', 'Release gates and<br/>human verification'), ('D', 'Auto-deploy to<br/>kani.kelus.org')]
     lines = ['flowchart LR']
     for i, (key, label) in enumerate(nodes):
         status = 'done' if i < current else 'now' if i == current else 'waiting'

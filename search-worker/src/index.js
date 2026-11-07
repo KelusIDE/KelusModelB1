@@ -27,7 +27,7 @@ const PRICES = { PRICE_LEVEL_FREE: 'Free', PRICE_LEVEL_INEXPENSIVE: '$', PRICE_L
 const PLACES = 5;
 const CANDIDATES = 10;
 
-const ALLOWED_ORIGINS = new Set(['https://kelus-b1.pages.dev', 'https://kelus-b1.web.app', 'https://kelus-b1.firebaseapp.com', 'https://localhost', 'capacitor://localhost']);
+const ALLOWED_ORIGINS = new Set(['https://kani.kelus.org', 'https://kelus-b1.pages.dev', 'https://kelus-b1.web.app', 'https://kelus-b1.firebaseapp.com', 'https://localhost', 'capacitor://localhost']);
 const MAX_BODY = 2048;
 const MAX_QUERY = 300;
 const RESULTS = 5;

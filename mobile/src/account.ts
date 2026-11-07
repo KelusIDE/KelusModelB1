@@ -28,7 +28,7 @@ if (location.hostname === '127.0.0.1' && new URLSearchParams(location.search).ha
   connectAuthEmulator(auth, 'http://127.0.0.1:9099', { disableWarnings: true });
   connectFirestoreEmulator(db, '127.0.0.1', 8080);
 }
-const AFTER_VERIFYING = { url: 'https://kelus-ide.pages.dev/' };
+const AFTER_VERIFYING = { url: 'https://ide.kelus.org/' };
 
 export interface Person { uid: string; email: string; name: string; verified: boolean; google: boolean }
 const person = (user: User): Person => ({

@@ -217,7 +217,7 @@ export default function App() {
         <button onClick={() => { kani.open(c); setDraft(''); setTab('chat'); follow.current = true; }} disabled={kani.busy}><strong>{c.title}</strong><small>{c.model} · {new Date(c.updated).toLocaleDateString(undefined, { month: 'short', day: 'numeric' })}</small></button>
         <button className="icon-button" disabled={kani.busy} aria-label={`Delete ${c.title}`} onClick={() => setDeleteId(c.id)}><Icon name="trash" size={18} /></button>
       </div>)}</div>
-      {kani.history.length > 0 && <p className="storage-note">{kani.account.person?.verified ? 'Your conversations are saved on this device and in your Kelus account, where kelus-b1.pages.dev shows them too.' : 'Your latest 30 conversations are saved on this device. Sign in to a Kelus account to keep them there too.'}</p>}
+      {kani.history.length > 0 && <p className="storage-note">{kani.account.person?.verified ? 'Your conversations are saved on this device and in your Kelus account, where kani.kelus.org shows them too.' : 'Your latest 30 conversations are saved on this device. Sign in to a Kelus account to keep them there too.'}</p>}
     </main>}
 
     {tab === 'learn' && <Learn backRef={learnBack} ask={prompt => { if (kani.busy) return; kani.open(); setDraft(prompt); setTab('chat'); follow.current = true; }} />}

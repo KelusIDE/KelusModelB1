@@ -1,6 +1,6 @@
 # kani-search: web search and places proxy for Kani
 
-A Cloudflare Worker between Kani (the website kelus-b1.pages.dev and the Kani app) and two APIs:
+A Cloudflare Worker between Kani (the website kani.kelus.org and the Kani app) and two APIs:
 
 - `/search`: the [LangSearch](https://langsearch.com) web search API. The browser sends only the search text;
   the Worker asks for five results and returns titles, links and up to 1,500 characters of text each.

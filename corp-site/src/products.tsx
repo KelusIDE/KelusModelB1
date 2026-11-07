@@ -45,12 +45,12 @@ export const PRODUCTS: Product[] = [
     links: [
       {
         label: "Explore Kelus IDE",
-        href: "https://kelus-ide.pages.dev",
+        href: "https://ide.kelus.org",
         style: "primary",
       },
       {
         label: "Open web editor",
-        href: "https://kelus-ide.pages.dev/ide.html",
+        href: "https://ide.kelus.org/ide.html",
         style: "text",
       },
     ],
@@ -70,7 +70,7 @@ export const PRODUCTS: Product[] = [
     links: [
       {
         label: "Meet Kani",
-        href: "https://kelus-b1.pages.dev",
+        href: "https://kani.kelus.org",
         style: "primary",
       },
       {

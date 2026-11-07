@@ -176,11 +176,11 @@ export default function App() {
           </h2>
           <a
             className="button primary"
-            href="https://kelus-ide.pages.dev/ide.html"
+            href="https://ide.kelus.org/ide.html"
           >
             Start making something <Arrow diagonal />
           </a>
-          <a className="closing-secondary" href="https://kelus-b1.pages.dev">
+          <a className="closing-secondary" href="https://kani.kelus.org">
             Or start with a conversation ↗
           </a>
         </section>
@@ -199,10 +199,10 @@ export default function App() {
             Built by Kelus.
           </p>
           <nav aria-label="Elsewhere">
-            <a href="https://kelus-ide.pages.dev">
+            <a href="https://ide.kelus.org">
               Kelus IDE <Arrow diagonal />
             </a>
-            <a href="https://kelus-b1.pages.dev">
+            <a href="https://kani.kelus.org">
               Kani <Arrow diagonal />
             </a>
             <a href="https://github.com/KelusIDE">

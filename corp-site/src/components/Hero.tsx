@@ -39,7 +39,7 @@ export function Hero() {
           <a className="button primary" href="#products">
             Find your next tool <Arrow />
           </a>
-          <a className="text-link" href="https://kelus-b1.pages.dev">
+          <a className="text-link" href="https://kani.kelus.org">
             Say hello to Kani <Arrow diagonal />
           </a>
         </div>
@@ -141,14 +141,14 @@ export function Hero() {
                   <em>idea take you?</em>
                 </p>
                 <div className="preview-prompts">
-                  <a href="https://kelus-b1.pages.dev">
+                  <a href="https://kani.kelus.org">
                     Explore an idea <span>↗</span>
                   </a>
-                  <a href="https://kelus-b1.pages.dev">
+                  <a href="https://kani.kelus.org">
                     Make something <span>↗</span>
                   </a>
                 </div>
-                <a className="preview-input" href="https://kelus-b1.pages.dev">
+                <a className="preview-input" href="https://kani.kelus.org">
                   <span>Start a conversation with Kani</span>
                   <span className="send-icon">
                     <Arrow />
@@ -207,7 +207,7 @@ export function Hero() {
                   </pre>
                   <a
                     className="editor-link"
-                    href="https://kelus-ide.pages.dev/ide.html"
+                    href="https://ide.kelus.org/ide.html"
                   >
                     Open your workspace <Arrow diagonal />
                   </a>

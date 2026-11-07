@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "kelus-corp.pages.dev: every Kelus Corp. product (React + TypeScript). Builds into dist/.",
+  "description": "kelus.org: every Kelus Corp. product (React + TypeScript). Builds into dist/.",
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",

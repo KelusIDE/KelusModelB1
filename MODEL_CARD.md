@@ -10,7 +10,7 @@ capabilities. Older checkpoints may still generate their original B1 identity.
 
 | Property | Selected checkpoint |
 |---|---|
-| File | `checkpoints/b1-v3.best.npz` (browser copy: `site/model/`, https://kelus-b1.pages.dev) |
+| File | `checkpoints/b1-v3.best.npz` (browser copy: `site/model/`, https://kani.kelus.org) |
 | Weights | Random initialization, seed 42; trained locally |
 | License | Apache-2.0 for the project's rights in released B1 weights and original code; preserve applicable notices. See [LICENSE](LICENSE), [NOTICE](NOTICE), and [LICENSING.md](LICENSING.md) for scope and third-party exceptions. |
 | Pretrained weights / external model API | None |

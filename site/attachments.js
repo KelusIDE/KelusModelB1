@@ -92,7 +92,7 @@ export async function readAttachment(file, { readPdf } = {}) {
   if (bytes.length !== file.size) throw new Error('File size changed while reading.');
   if (fileKind(file.name) === 'text') return decodeText(file.name, bytes);
   if (fileKind(file.name) === 'pdf') {
-    if (!readPdf) throw new Error(`${fileName(file.name)}: PDFs can be read in Kani on the web (kelus-b1.pages.dev). Here, export it as text first.`);
+    if (!readPdf) throw new Error(`${fileName(file.name)}: PDFs can be read in Kani on the web (kani.kelus.org). Here, export it as text first.`);
     if (String.fromCharCode(...bytes.subarray(0, 5)) !== '%PDF-') throw new Error(`${fileName(file.name)} is not a PDF file.`);
     return pdfAttachment(fileName(file.name), bytes.length, await readPdf(bytes));
   }

@@ -106,7 +106,7 @@ async function generate(id: string, messages: Message[], search: boolean) {
         text = 'I need to look that up. Turn on web search in Settings to let me search for it.';
         source = 'search_unavailable'; emit({ type: 'token', id, text });
       } else if (held && /^CIDE\s*$/.test(text)) {
-        text = 'That is a job for Cide 2, Kani’s coding model. It runs on the website: open kelus-b1.pages.dev and choose Cide 2.';
+        text = 'That is a job for Cide 2, Kani’s coding model. It runs on the website: open kani.kelus.org and choose Cide 2.';
         source = 'cide_unavailable'; emit({ type: 'token', id, text });
       } else if (held && text) emit({ type: 'token', id, text });
       if (!text && !stopped) emit({ type: 'token', id, text: 'Kani ended this reply without text. Try another wording.' });
