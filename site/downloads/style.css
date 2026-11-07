@@ -20,3 +20,6 @@ section .version { margin: 0; }
 h2 { font: 400 30px/1.1 'Instrument Serif', Georgia, serif; margin: 0 0 16px; }
 section p { font-size: 13px; line-height: 1.9; color: #73786e; }
 section a { font-size: 12px; }
+.command { margin: 18px 0; padding: 16px 18px; overflow-x: auto; border-radius: 10px; background: #151b18; color: #f4f5f0; font-size: 12px; line-height: 1.7; }
+section code { font: 12px/1.7 ui-monospace, SFMono-Regular, Menlo, monospace; overflow-wrap: anywhere; }
+.command code { color: inherit; overflow-wrap: normal; white-space: pre; }

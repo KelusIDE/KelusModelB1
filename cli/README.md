@@ -1,5 +1,16 @@
 # Kani terminal workspace tools
 
+Install on macOS or Linux (needs Node.js 22 or later, no sudo):
+
+```sh
+curl -fsSL https://kani.kelus.org/install.sh | sh
+```
+
+This puts the CLI in `~/.kani`, links `kani` into `~/.local/bin`, and downloads Kani Otter 4.12 (206 MB). Add
+`| sh -s -- --with-cide` for Cide too, `--no-models` for the program only, or `--no-modify-path` to keep your shell
+startup file as it is. Run it again to update. `/draw` is not available in an installed copy, because the Painter
+model is not published yet. Maintainers: `node cli/pack.mjs` builds the package and script in `cli/dist/`.
+
 **Cide preview:** `kani --build kani-cide` lets the trained Kani router hand
 coding requests to a separate coding checkpoint. `/cide TASK` asks it
 directly; `/model cide` stays on Cide. `/do`, `/draft`, and `/ask` use Cide

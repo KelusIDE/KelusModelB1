@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <title>Download Kani for Android, iPhone and iPad</title>
-  <meta name="description" content="Download Kani 0.5.11 for Android, or Kani 0.5.4 for iPhone and iPad, ready for your sideload tool to sign.">
+  <title>Download Kani for Android, iPhone, iPad and the terminal</title>
+  <meta name="description" content="Download Kani 0.5.11 for Android, Kani 0.5.4 for iPhone and iPad, or install the Kani CLI for macOS and Linux.">
   <link rel="icon" href="/kani-mark.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,6 +26,14 @@
       <p>Open the APK on your phone and tap Install. Android asks you to allow installs from your browser the first time.</p>
       <p>Already have Kani? Install over it and don’t uninstall first; your chats stay. From 0.5.5 on, Kani updates itself in the app. Kani 0.5.4 and older need this download once by hand.</p>
       <p class="fine">Sideload build signed with a debug certificate, not a Play Store release. SHA-256 720de6605f63ed30f40040cf3133a2051b3fa8168c0ed19538292fb18ffe3632</p>
+    </section>
+
+    <section aria-labelledby="terminal">
+      <h2 id="terminal">Terminal</h2>
+      <p class="version">Kani CLI 0.18.1 · macOS or Linux · Node.js 22 or later · 206 MB model</p>
+      <pre class="command"><code>curl -fsSL https://kani.kelus.org/install.sh | sh</code></pre>
+      <p>Then open a new terminal and run <code>kani</code>. It needs no sudo, and the model runs on your computer. Run the same line again to update.</p>
+      <p>Add Cide, the coding model (206 MB more), with <code>curl -fsSL https://kani.kelus.org/install.sh | sh -s -- --with-cide</code>.</p>
     </section>
 
     <section aria-labelledby="ios">
